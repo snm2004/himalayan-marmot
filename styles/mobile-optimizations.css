@@ -1,0 +1,234 @@
+/* Mobile-First Performance Optimizations */
+
+/* Touch-friendly interactions */
+.touch-manipulation {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Smooth scrolling for mobile */
+@media (max-width: 768px) {
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Ensure proper spacing below fixed navbar on mobile */
+  main {
+    padding-top: 190px !important;
+  }
+  
+  /* Prevent zoom on input focus */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+  
+  /* Optimize button sizes for mobile */
+  button,
+  .btn,
+  a[role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Improve mobile scrolling performance */
+  .scroll-container {
+    -webkit-overflow-scrolling: touch;
+    transform: translateZ(0);
+  }
+  
+  /* Mobile-specific animations */
+  .mobile-fade-in {
+    animation: mobileFadeIn 0.3s ease-out;
+  }
+  
+  @keyframes mobileFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Optimize image loading on mobile */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+  
+  /* Mobile-specific hover states (remove hover effects) */
+  .mobile-no-hover:hover {
+    transform: none !important;
+    transform: scale(1) !important;
+  }
+  
+  /* Improve mobile form experience */
+  .mobile-form-field {
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* Mobile-specific spacing */
+  .mobile-spacing {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  
+  /* Optimize mobile navigation */
+  .mobile-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: white;
+    border-top: 1px solid #e2e8f0;
+    padding: 16px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Mobile-specific text sizes */
+  .mobile-text-sm {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .mobile-text-base {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .mobile-text-lg {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+}
+
+/* Landscape mobile optimizations */
+@media (max-width: 768px) and (orientation: landscape) {
+  .mobile-landscape-adjust {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  
+  .hero-mobile-landscape {
+    min-height: 80vh;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 375px) {
+  .small-mobile-text {
+    font-size: 14px;
+  }
+  
+  .small-mobile-padding {
+    padding: 12px;
+  }
+  
+  .small-mobile-gap {
+    gap: 8px;
+  }
+}
+
+/* Large mobile devices */
+@media (min-width: 375px) and (max-width: 768px) {
+  .large-mobile-text {
+    font-size: 16px;
+  }
+  
+  .large-mobile-padding {
+    padding: 16px;
+  }
+}
+
+/* Performance optimizations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.mobile-optimized-image {
+  max-width: 100%;
+  height: auto;
+  /* loading and decoding are HTML attributes, not CSS properties */
+}
+
+/* Mobile-specific utility classes */
+.mobile-hidden {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .mobile-hidden {
+    display: block;
+  }
+  
+  .desktop-hidden {
+    display: none;
+  }
+  
+  /* Ensure proper spacing below fixed navbar on desktop */
+  main {
+    padding-top: 200px !important;
+  }
+}
+
+/* Mobile-first responsive grid */
+.mobile-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .mobile-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mobile-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+}
+
+/* Mobile-specific loading states */
+.mobile-loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.mobile-loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: mobileShimmer 1.5s infinite;
+}
+
+@keyframes mobileShimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}

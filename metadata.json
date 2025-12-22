@@ -1,0 +1,7 @@
+{
+  "name": "Himalayan Marmot - Premier Ladakh Bike Tours",
+  "description": "Premium bike expedition operator based in Leh, Ladakh, specializing in Himalayan BS6 bike tours to Pangong, Nubra, and Umling La.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
