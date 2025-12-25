@@ -30,13 +30,13 @@ const Booking: React.FC = () => {
             Julley! Your booking request has been received. Our lead marshal, Tsewang Norboo, or a team member will contact you on WhatsApp/Call within 2 hours to confirm your dates and fleet availability.
           </p>
           <div className="space-y-4">
-            <button 
+            <button
               onClick={() => navigate('/payments')}
               className="w-full bg-mountain-blue text-white py-4 rounded-2xl font-black font-oswald text-xl tracking-widest hover:bg-tibetan-red transition-all shadow-xl"
             >
               PROCEED TO PAYMENTS
             </button>
-            <button 
+            <button
               onClick={() => navigate('/')}
               className="w-full bg-slate-100 text-slate-500 py-4 rounded-2xl font-black font-oswald text-lg tracking-widest hover:bg-slate-200 transition-all"
             >
@@ -55,7 +55,7 @@ const Booking: React.FC = () => {
           <h1 className="text-3xl md:text-5xl font-oswald font-bold text-mountain-blue uppercase mb-3 md:mb-4 tracking-tighter">
             RESERVE YOUR <span className="text-tibetan-red">SLOT</span>
           </h1>
-          <p className="text-slate-500 text-base md:text-lg uppercase font-oswald tracking-[0.15em] md:tracking-[0.2em]">Expedition 2026 Registration</p>
+          <p className="text-slate-500 text-base md:text-lg uppercase font-oswald tracking-[0.15em] md:tracking-[0.2em]">Expedition Registration</p>
         </div>
 
         <div className="bg-white rounded-[2rem] md:rounded-[3rem] shadow-2xl overflow-hidden border border-slate-100">
@@ -126,45 +126,45 @@ const Booking: React.FC = () => {
                 <div>
                   <label className="block text-[11px] font-black uppercase text-slate-500 mb-2">Preferred Month</label>
                   <select required className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 md:px-5 py-4 md:py-4 focus:ring-2 focus:ring-mountain-blue/20 outline-none transition-all appearance-none cursor-pointer text-base touch-manipulation">
-                    <option value="May">May 2026</option>
-                    <option value="June">June 2026</option>
-                    <option value="July">July 2026</option>
-                    <option value="August">August 2026</option>
-                    <option value="September">September 2026</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
                   </select>
                 </div>
                 <div className="grid grid-cols-2 gap-3 md:gap-4">
-                   <div>
-                      <label className="block text-[10px] md:text-[11px] font-black uppercase text-slate-500 mb-2">No. of Riders</label>
-                      <input
-                        required
-                        type="number"
-                        min="1"
-                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 md:px-5 py-4 md:py-4 focus:ring-2 focus:ring-mountain-blue/20 outline-none transition-all text-base touch-manipulation"
-                        defaultValue="1"
-                      />
-                   </div>
-                   <div>
-                      <label className="block text-[10px] md:text-[11px] font-black uppercase text-slate-500 mb-2">No. of Bikes</label>
-                      <input
-                        required
-                        type="number"
-                        min="0"
-                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 md:px-5 py-4 md:py-4 focus:ring-2 focus:ring-mountain-blue/20 outline-none transition-all text-base touch-manipulation"
-                        defaultValue="1"
-                      />
-                   </div>
+                  <div>
+                    <label className="block text-[10px] md:text-[11px] font-black uppercase text-slate-500 mb-2">No. of Riders</label>
+                    <input
+                      required
+                      type="number"
+                      min="1"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 md:px-5 py-4 md:py-4 focus:ring-2 focus:ring-mountain-blue/20 outline-none transition-all text-base touch-manipulation"
+                      defaultValue="1"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[10px] md:text-[11px] font-black uppercase text-slate-500 mb-2">No. of Bikes</label>
+                    <input
+                      required
+                      type="number"
+                      min="0"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 md:px-5 py-4 md:py-4 focus:ring-2 focus:ring-mountain-blue/20 outline-none transition-all text-base touch-manipulation"
+                      defaultValue="1"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
 
             <div className="bg-golden-yellow/5 border border-golden-yellow/20 p-4 md:p-6 rounded-2xl">
-               <p className="text-sm text-slate-600 font-light flex items-start md:items-center">
-                 <span className="text-lg md:text-xl mr-3 mt-0.5 md:mt-0">💡</span>
-                 <span className="leading-relaxed">
-                   Submit this form to block your slot. No immediate payment is required until our marshal confirms the fleet status and batch availability for your dates.
-                 </span>
-               </p>
+              <p className="text-sm text-slate-600 font-light flex items-start md:items-center">
+                <span className="text-lg md:text-xl mr-3 mt-0.5 md:mt-0">💡</span>
+                <span className="leading-relaxed">
+                  Submit this form to block your slot. No immediate payment is required until our marshal confirms the fleet status and batch availability for your dates.
+                </span>
+              </p>
             </div>
 
             {/* Mobile-Optimized Submit Button */}
@@ -175,8 +175,8 @@ const Booking: React.FC = () => {
             >
               {isSubmitting ? (
                 <div className="flex items-center space-x-3">
-                   <div className="w-5 h-5 md:w-6 md:h-6 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
-                   <span>REGISTERING...</span>
+                  <div className="w-5 h-5 md:w-6 md:h-6 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+                  <span>REGISTERING...</span>
                 </div>
               ) : 'REQUEST RESERVATION'}
             </button>

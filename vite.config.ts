@@ -54,7 +54,7 @@ export default defineConfig(({ mode }) => {
         // Pre-bundle dependencies
         include: ['react', 'react-dom', 'react-router-dom'],
         // Exclude large dependencies from pre-bundling
-        exclude: ['@google/generative-ai']
+        exclude: ['@google/genai']
       },
       css: {
         // CSS code splitting

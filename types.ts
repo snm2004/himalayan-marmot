@@ -36,6 +36,7 @@ export interface TourPackage {
   startingPrice: string;
   priceTiers: PriceTier[];
   image: string;
+  pdfUrl?: string; // PDF itinerary download link
   itinerary: ItineraryDay[];
   inclusions: string[];
   exclusions: string[];

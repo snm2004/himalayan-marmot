@@ -4,7 +4,7 @@ import { TourPackage, CancellationPolicy } from './types';
 
 export const COMPANY_NAME = "Himalayan Marmot";
 export const FOUNDER_NAME = "Tsewang Norboo";
-export const CONTACT_NUMBERS = ["+91 6006114260", "+91 9971296649"]; 
+export const CONTACT_NUMBERS = ["+91 6006114260", "+91 9971296649"];
 export const EMAIL = "himalayanmarmot19@gmail.com";
 export const ADDRESS_MAIN = "Main market, near Samsung show room Leh Ladakh - 194101";
 export const ADDRESS_OFFICE = "Housing Colony, near Radio Station, Leh Ladakh, India - 194101";
@@ -69,6 +69,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
       { bike: "RE Himalayan 450cc BS6", dual: "₹19,550", solo: "₹24,499" }
     ],
     image: "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=1000&auto=format&fit=crop",
+    pdfUrl: "/Leh-to-Leh-6D5N.pdf",
     itinerary: [
       { day: 1, title: "Leh Arrival & Local", description: "Visit Leh Palace, Leh Market, and Shanti Stupa. Focus on rest and acclimatization." },
       { day: 2, title: "Sham Valley Circuit", description: "Hall of Fame, Spituk, Pathar Sahib, Magnetic Hill, and Sangam Point." },
@@ -97,6 +98,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
       { bike: "RE Himalayan 450cc BS6", dual: "₹21,499", solo: "₹27,499" }
     ],
     image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1000&auto=format&fit=crop",
+    pdfUrl: "/Leh-to-Leh-7D6N-Turtuk.pdf",
     itinerary: [
       { day: 1, title: "Leh Arrival", description: "Leh Palace, Market and Shanti Stupa visit." },
       { day: 2, title: "Sham Valley", description: "Hall of Fame, Spituk, Magnetic Hill, Sangam Point." },
@@ -126,6 +128,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
       { bike: "RE Himalayan 450cc BS6", dual: "₹23,500", solo: "₹30,850" }
     ],
     image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1000&auto=format&fit=crop",
+    pdfUrl: "/Leh-to-Leh-8D7N-Umling-La.pdf",
     itinerary: [
       { day: 1, title: "Arrival", description: "Leh Palace, Market, Shanti Stupa." },
       { day: 2, title: "Sham Valley", description: "Hall of Fame, Pathar Sahib, Magnetic Hill, Sangam." },
@@ -156,6 +159,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
       { bike: "RE Himalayan 450cc BS6", dual: "₹33,499", solo: "₹39,499" }
     ],
     image: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?q=80&w=1000&auto=format&fit=crop",
+    pdfUrl: "/Manali-Leh-Manali-11D10N.pdf",
     itinerary: [
       { day: 1, title: "Reach Manali", description: "Assemble and acclimatize in Manali." },
       { day: 2, title: "Manali to Jispa", description: "7-8 hours ride through Atal Tunnel." },
@@ -190,6 +194,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
       { bike: "RE Himalayan 450cc BS6", dual: "₹33,499", solo: "₹39,499" }
     ],
     image: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?q=80&w=1000&auto=format&fit=crop",
+    pdfUrl: "/Manali-Leh-Srinagar-11D10N.pdf",
     itinerary: [
       { day: 1, title: "Arrival at Manali", description: "Assemble and acclimatize in Manali." },
       { day: 2, title: "Manali to Sarchu/Jispa", description: "Via Rohtang Pass (12,000+ ft), 7-8 hours ride." },
@@ -224,6 +229,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
       { bike: "RE Himalayan 450cc BS6", dual: "₹35,999", solo: "₹41,999" }
     ],
     image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1000&auto=format&fit=crop",
+    pdfUrl: "/Srinagar-Leh-Manali-11D10N.pdf",
     itinerary: [
       { day: 1, title: "Arrival at Srinagar", description: "Airport pickup and Kashmir valley exploration." },
       { day: 2, title: "Srinagar to Kargil", description: "Via Sonamarg (meadow of gold), 5-6 hours drive." },

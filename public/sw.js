@@ -9,7 +9,10 @@ const DYNAMIC_CACHE = 'dynamic-v1';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
-  '/manifest.json',
+  '/src/index.css',
+  '/styles/mobile-optimizations.css',
+  '/logo.png',
+  '/himalayan-bike-new.jpg',
   // Add critical CSS and JS files here when available
 ];
 

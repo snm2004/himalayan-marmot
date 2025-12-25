@@ -5,11 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Himalayan Marmot | Authentic Ladakh Bike Tours by Local Experts | Royal Enfield Expeditions</title>
-    <meta name="description" content="Born in Leh, raised on mountain roads. Experience authentic Ladakh bike tours with local experts who know every pass, valley & village. Royal Enfield expeditions to Pangong Lake, Nubra Valley, Khardung La & Umling La. Premium safety protocols, local homestays & cultural immersion since 2012.">
-    <meta name="keywords" content="Ladakh bike tour, Royal Enfield Ladakh, Pangong Lake tour, Nubra Valley expedition, Khardung La pass, Umling La highest motorable road, Leh bike rental, Himalayan motorcycle tour, local Ladakh guides, authentic Ladakh experience, Tsewang Norboo, Hemis festival tour, Turtuk village tour">
+    <meta name="description" content="Born in Leh, raised on mountain roads. Experience authentic Ladakh bike tours with local experts who know every pass, valley & village. Royal Enfield expeditions to Pangong Lake, Nubra Valley, Khardung La & Umling La. Premium safety protocols, local homestays & cultural immersion since 2019.">
+    <meta name="keywords" content="Ladakh bike tour, Royal Enfield Ladakh, Pangong Lake tour, Nubra Valley expedition, Khardung La pass, Umling La highest motorable road, Leh bike rental, Himalayan motorcycle tour, local Ladakh guides, authentic Ladakh experience, Tsewang Norboo, Hemis festival tour, Turtuk village tour, Ladakh adventure tours, motorcycle expedition India, high altitude biking, Himalayan adventure">
     <meta name="author" content="Himalayan Marmot - Tsewang Norboo">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
     <link rel="canonical" href="https://himalayan-marmot.com">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#2D5A87">
+    <meta name="msapplication-TileColor" content="#2D5A87">
+    <meta name="application-name" content="Himalayan Marmot">
+    <meta name="apple-mobile-web-app-title" content="Himalayan Marmot">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="MobileOptimized" content="width">
+    
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="IN-LA">
+    <meta name="geo.placename" content="Leh, Ladakh, India">
+    <meta name="geo.position" content="34.1526;77.5771">
+    <meta name="ICBM" content="34.1526, 77.5771">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -128,7 +150,8 @@
         theme: {
           extend: {
             colors: {
-              'mountain-blue': '#1B4F72',
+              'mountain-blue': '#2D5A87',
+              'mountain-blue-light': '#4A90A4',
               'tibetan-red': '#A93226',
               'golden-yellow': '#F1C40F',
               'slate-grey': '#2C3E50',
@@ -141,10 +164,37 @@
               'fade-in-down': {
                 '0%': { opacity: '0', transform: 'translateY(-10px)' },
                 '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              shimmer: {
+                '0%': { transform: 'translateX(-100%)' },
+                '100%': { transform: 'translateX(100%)' },
+              },
+              'slide-in-left': {
+                '0%': { opacity: '0', transform: 'translateX(-100%)' },
+                '100%': { opacity: '1', transform: 'translateX(0)' },
+              },
+              'slide-up': {
+                '0%': { opacity: '0', transform: 'translateY(100%)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              'bounce-in': {
+                '0%': { opacity: '0', transform: 'scale(0.3)' },
+                '50%': { opacity: '1', transform: 'scale(1.05)' },
+                '70%': { transform: 'scale(0.9)' },
+                '100%': { opacity: '1', transform: 'scale(1)' },
+              },
+              'pulse-glow': {
+                '0%, 100%': { boxShadow: '0 0 5px rgba(59, 130, 246, 0.5)' },
+                '50%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.8)' },
               }
             },
             animation: {
-              'fade-in-down': 'fade-in-down 0.3s ease-out'
+              'fade-in-down': 'fade-in-down 0.3s ease-out',
+              shimmer: 'shimmer 2s infinite',
+              'slide-in-left': 'slide-in-left 0.5s ease-out',
+              'slide-up': 'slide-up 0.3s ease-out',
+              'bounce-in': 'bounce-in 0.6s ease-out',
+              'pulse-glow': 'pulse-glow 2s infinite',
             }
           }
         }
@@ -167,7 +217,7 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
+<link rel="stylesheet" href="/styles/animations.css">
 <link rel="stylesheet" href="/styles/mobile-optimizations.css">
 </head>
 <body class="bg-yellow-50 text-slate-grey overflow-x-hidden">

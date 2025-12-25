@@ -4,51 +4,57 @@ const GoogleReviews: React.FC = () => {
   const googleReviews = [
     {
       id: 1,
-      name: "Sandesh gupta",
+      name: "Kiran Nagpure",
       rating: 5,
-      date: "2 weeks ago",
-      review: "Amazing experience with Himalayan Marmot! Tsewang and his team made our Ladakh trip unforgettable. The bikes were in perfect condition and the local knowledge was invaluable. Highly recommended!",
-      avatar: "SG"
+      date: "Recently",
+      review: "An Unforgettable Ladakh Bike Trip! We recently completed a 7-night, 8-day bike trip across Ladakh, and it was truly an experience of a lifetime. The owner, Mr. Nobu, is incredibly caring and attentive to every detail. Special mention to Jimmy, Padma, and Sunny bhai who captured all the moments!",
+      avatar: "KN",
+      url: "https://share.google/L1TYg1Mg51UTK58X1"
     },
     {
       id: 2,
-      name: "rohith",
+      name: "Rajat Shrimal",
       rating: 5,
-      date: "1 month ago",
-      review: "Best bike tour company in Ladakh! Professional service, well-maintained Royal Enfield bikes, and excellent support throughout the journey. The Pangong Lake tour was breathtaking!",
-      avatar: "R"
+      date: "Recently",
+      review: "I completed my dream bike trip to Leh-Ladakh with Himalayan Marmot, and it exceeded every expectation! A huge shoutout to Padma, our tour marshal, who was the true backbone of this trip. Riding through the high passes with Himalayan Marmot felt like being part of a family!",
+      avatar: "RS",
+      url: "https://share.google/LfnnMYsj2PbqRfgsb"
     },
     {
       id: 3,
-      name: "Saketh",
+      name: "Kiran Magar",
       rating: 5,
-      date: "3 weeks ago",
-      review: "Incredible adventure through the Himalayas! The team's local expertise and hospitality made all the difference. Safety was their top priority and the bikes performed flawlessly at high altitude.",
-      avatar: "S"
+      date: "Recently",
+      review: "Thank you, Nobuji and team! We truly enjoyed the incredible 11 days trip from Srinagar, Kargil, Leh, Nubra Valley, Turtuk, Pangong, Tsomoriri & Manali. A very special thanks for arranging my birthday celebration at Pangong Lake – truly unforgettable!",
+      avatar: "KM",
+      url: "https://share.google/Uyx1XtQSjV7VFY2qz"
     },
     {
       id: 4,
-      name: "Sriya ",
+      name: "Abinash Singh",
       rating: 5,
-      date: "1 week ago",
-      review: "Outstanding service from start to finish! The Turtuk trail was an adventure of a lifetime. Tsewang's team knows every corner of Ladakh. Will definitely book again!",
-      avatar: "SR"
+      date: "Recently",
+      review: "Ladakh is a dream destination for every biker and Marmot helped me to make it true. From managing every single thing to making our trip memorable, Himalayan Marmot took care of everything. Norbu, Jimmy, Padma – every one of you gave your best!",
+      avatar: "AS",
+      url: "https://share.google/ATOW4HH1PPDhbaKrX"
     },
     {
       id: 5,
-      name: "Sarah",
+      name: "Kiran",
       rating: 5,
-      date: "2 months ago",
-      review: "Perfect organization and execution! The Umling La expedition was challenging but incredibly rewarding. The support team was always there when needed. Truly professional service!",
-      avatar: "SA"
+      date: "Recently",
+      review: "Did the Manali–Ladakh bike trip with Himalayan Marmot. The ride was well-organized with good support, experienced guides, and decent bike condition. Overall, a solid experience and worth it for the adventure!",
+      avatar: "K",
+      url: "https://share.google/r664L9Fxiizvr3wM2"
     },
     {
       id: 6,
-      name: "Vikram Singh",
+      name: "Mukesh Raja",
       rating: 5,
-      date: "3 weeks ago",
-      review: "Exceptional experience with Himalayan Marmot! The local insights, cultural experiences, and adventure combined perfectly. The bikes were reliable and the team was fantastic!",
-      avatar: "VS"
+      date: "Recently",
+      review: "We did a 10 day custom bike trip with Himalayan Marmot. Marshalls Padma and Gyal were supportive and knowledgeable. They even arranged for a birthday cake in the remote Hanle village! If you're visiting Ladakh for the first time, I highly recommend Himalayan Marmot!",
+      avatar: "MR",
+      url: "https://maps.app.goo.gl/EdGrwJgz1R1zAuWTA"
     }
   ];
 
@@ -69,9 +75,9 @@ const GoogleReviews: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-6">
-            <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" 
-              alt="Google" 
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+              alt="Google"
               className="w-8 h-8 mr-3"
             />
             <h2 className="text-tibetan-red font-oswald text-xl font-bold uppercase tracking-[0.4em]">
@@ -98,17 +104,20 @@ const GoogleReviews: React.FC = () => {
         {/* Reviews Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {googleReviews.map((review) => (
-            <div 
+            <a
               key={review.id}
-              className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              href={review.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-mountain-blue/30 cursor-pointer group"
             >
               {/* Review Header */}
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-mountain-blue rounded-full flex items-center justify-center text-white font-bold text-sm mr-4">
+                <div className="w-12 h-12 bg-mountain-blue rounded-full flex items-center justify-center text-white font-bold text-sm mr-4 group-hover:bg-tibetan-red transition-colors">
                   {review.avatar}
                 </div>
                 <div className="flex-1">
-                  <h4 className="font-bold text-mountain-blue">{review.name}</h4>
+                  <h4 className="font-bold text-mountain-blue group-hover:text-tibetan-red transition-colors">{review.name}</h4>
                   <div className="flex items-center space-x-2">
                     <div className="flex">
                       {renderStars(review.rating)}
@@ -116,9 +125,9 @@ const GoogleReviews: React.FC = () => {
                     <span className="text-slate-500 text-sm">{review.date}</span>
                   </div>
                 </div>
-                <img 
-                  src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" 
-                  alt="Google" 
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                  alt="Google"
                   className="w-5 h-5"
                 />
               </div>
@@ -127,7 +136,12 @@ const GoogleReviews: React.FC = () => {
               <p className="text-slate-700 leading-relaxed text-sm">
                 "{review.review}"
               </p>
-            </div>
+
+              {/* Click hint */}
+              <p className="text-xs text-mountain-blue/60 mt-3 group-hover:text-mountain-blue transition-colors">
+                Click to view on Google →
+              </p>
+            </a>
           ))}
         </div>
 
@@ -135,9 +149,9 @@ const GoogleReviews: React.FC = () => {
         <div className="text-center">
           <div className="bg-slate-50 rounded-2xl p-8 inline-block">
             <div className="flex items-center justify-center space-x-4 mb-4">
-              <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" 
-                alt="Google" 
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                alt="Google"
                 className="w-8 h-8"
               />
               <h4 className="text-2xl font-oswald font-bold text-mountain-blue uppercase tracking-wide">
@@ -148,14 +162,14 @@ const GoogleReviews: React.FC = () => {
               Share your Himalayan adventure experience and help other riders discover the magic of Ladakh
             </p>
             <a
-              href="https://g.page/r/YOUR_GOOGLE_BUSINESS_ID/review"
+              href="https://maps.app.goo.gl/EdGrwJgz1R1zAuWTA"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center bg-mountain-blue text-white px-8 py-4 rounded-full font-bold hover:bg-tibetan-red transition-all shadow-lg hover:shadow-xl"
             >
-              <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" 
-                alt="Google" 
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                alt="Google"
                 className="w-5 h-5 mr-3"
               />
               Write a Google Review

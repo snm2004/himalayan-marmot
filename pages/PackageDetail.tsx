@@ -54,10 +54,10 @@ const PackageDetail: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col lg:flex-row gap-12">
-          
+
           {/* Main Content */}
           <div className="lg:w-2/3">
-            
+
             {/* Interactive Route Map (New Feature) */}
             {tour.routePoints && tour.routePoints.length > 0 && (
               <div className="mb-12">
@@ -67,19 +67,19 @@ const PackageDetail: React.FC = () => {
 
             {/* Tabs */}
             <div className="flex border-b border-slate-200 mb-8 overflow-x-auto whitespace-nowrap">
-              <button 
+              <button
                 onClick={() => setActiveTab('itinerary')}
                 className={`px-8 py-4 font-oswald font-bold tracking-wider transition ${activeTab === 'itinerary' ? 'text-mountain-blue border-b-4 border-mountain-blue' : 'text-slate-400'}`}
               >
                 ITINERARY
               </button>
-              <button 
+              <button
                 onClick={() => setActiveTab('inclusions')}
                 className={`px-8 py-4 font-oswald font-bold tracking-wider transition ${activeTab === 'inclusions' ? 'text-mountain-blue border-b-4 border-mountain-blue' : 'text-slate-400'}`}
               >
                 INCLUSIONS
               </button>
-              <button 
+              <button
                 onClick={() => setActiveTab('policy')}
                 className={`px-8 py-4 font-oswald font-bold tracking-wider transition ${activeTab === 'policy' ? 'text-mountain-blue border-b-4 border-mountain-blue' : 'text-slate-400'}`}
               >
@@ -96,14 +96,14 @@ const PackageDetail: React.FC = () => {
                       {day.day}
                     </div>
                     <div className="flex justify-between items-start mb-2">
-                       <h4 className="text-xl font-oswald font-bold text-mountain-blue uppercase tracking-wide">
+                      <h4 className="text-xl font-oswald font-bold text-mountain-blue uppercase tracking-wide">
                         DAY {day.day}: {day.title}
-                       </h4>
-                       {day.elevation && (
-                         <span className="text-[10px] font-black bg-slate-100 px-3 py-1 rounded-full text-slate-500 uppercase tracking-widest border border-slate-200">
-                           {day.elevation} Peak
-                         </span>
-                       )}
+                      </h4>
+                      {day.elevation && (
+                        <span className="text-[10px] font-black bg-slate-100 px-3 py-1 rounded-full text-slate-500 uppercase tracking-widest border border-slate-200">
+                          {day.elevation} Peak
+                        </span>
+                      )}
                     </div>
                     <p className="text-slate-600 leading-relaxed font-light mb-4">
                       {day.description}
@@ -179,43 +179,50 @@ const PackageDetail: React.FC = () => {
             <div className="sticky top-24 space-y-8">
               <div className="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm">
                 <h4 className="font-oswald text-xl font-bold text-mountain-blue mb-6 uppercase border-b pb-4">Package Pricing</h4>
-                
+
                 <div className="space-y-6 mb-10">
-                   {tour.priceTiers.map((tier, idx) => (
-                     <div key={idx} className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm transition-all hover:border-golden-yellow">
-                        <p className="text-[10px] font-black uppercase text-tibetan-red tracking-widest mb-3">{tier.bike}</p>
-                        <div className="flex justify-between items-end">
-                           <div>
-                              <p className="text-[9px] uppercase font-bold text-slate-400">Dual Rider</p>
-                              <p className="text-xl font-oswald font-bold text-mountain-blue">{tier.dual}</p>
-                           </div>
-                           <div className="text-right">
-                              <p className="text-[9px] uppercase font-bold text-slate-400">Solo Rider</p>
-                              <p className="text-xl font-oswald font-bold text-mountain-blue">{tier.solo}</p>
-                           </div>
+                  {tour.priceTiers.map((tier, idx) => (
+                    <div key={idx} className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm transition-all hover:border-golden-yellow">
+                      <p className="text-[10px] font-black uppercase text-tibetan-red tracking-widest mb-3">{tier.bike}</p>
+                      <div className="flex justify-between items-end">
+                        <div>
+                          <p className="text-[9px] uppercase font-bold text-slate-400">Dual Rider</p>
+                          <p className="text-xl font-oswald font-bold text-mountain-blue">{tier.dual}</p>
                         </div>
-                     </div>
-                   ))}
+                        <div className="text-right">
+                          <p className="text-[9px] uppercase font-bold text-slate-400">Solo Rider</p>
+                          <p className="text-xl font-oswald font-bold text-mountain-blue">{tier.solo}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
 
                 <div className="space-y-3 mb-8 px-2">
-                   <div className="flex items-center text-xs text-slate-600">
-                      <span className="mr-3 text-golden-yellow">🏍️</span>
-                      <span>Maintenance & Fuel Included</span>
-                   </div>
-                   <div className="flex items-center text-xs text-slate-600">
-                      <span className="mr-3 text-golden-yellow">🏨</span>
-                      <span>MAP Stays (B&D) Included</span>
-                   </div>
-                   <div className="flex items-center text-xs text-slate-600">
-                      <span className="mr-3 text-golden-yellow">🛂</span>
-                      <span>ILP Permits Handled</span>
-                   </div>
+                  <div className="flex items-center text-xs text-slate-600">
+                    <span className="mr-3 text-golden-yellow">🏍️</span>
+                    <span>Maintenance & Fuel Included</span>
+                  </div>
+                  <div className="flex items-center text-xs text-slate-600">
+                    <span className="mr-3 text-golden-yellow">🏨</span>
+                    <span>MAP Stays (B&D) Included</span>
+                  </div>
+                  <div className="flex items-center text-xs text-slate-600">
+                    <span className="mr-3 text-golden-yellow">🛂</span>
+                    <span>ILP Permits Handled</span>
+                  </div>
                 </div>
 
                 {/* Download Itinerary Button */}
                 <button
                   onClick={() => {
+                    // If PDF URL is available, open it in new tab
+                    if (tour.pdfUrl) {
+                      window.open(tour.pdfUrl, '_blank');
+                      return;
+                    }
+
+                    // Otherwise use the print method
                     const printContent = `
                       <html>
                         <head>
@@ -316,7 +323,7 @@ const PackageDetail: React.FC = () => {
                         </body>
                       </html>
                     `;
-                    
+
                     const printWindow = window.open('', '_blank');
                     if (printWindow) {
                       printWindow.document.write(printContent);
@@ -346,7 +353,7 @@ const PackageDetail: React.FC = () => {
               <div className="bg-tibetan-red p-8 rounded-[2rem] text-white">
                 <h5 className="font-oswald text-xl font-bold mb-4 uppercase">CUSTOM GROUP?</h5>
                 <p className="font-light mb-6 opacity-90 text-sm">Planning a corporate retreat or a private club ride? We tailor tours for groups of 10+ riders.</p>
-                <a 
+                <a
                   href="https://wa.me/916006114260"
                   target="_blank"
                   className="inline-block bg-white text-tibetan-red px-8 py-3 rounded-full font-bold font-oswald uppercase tracking-widest text-xs hover:bg-golden-yellow hover:text-mountain-blue transition-all"
@@ -361,7 +368,7 @@ const PackageDetail: React.FC = () => {
       </div>
 
       {/* Sticky Bottom Booking Button (Mobile & Desktop) */}
-      <div 
+      <div
         className={`fixed bottom-0 left-0 right-0 z-[60] p-4 bg-white/80 backdrop-blur-lg border-t border-slate-100 transition-all duration-500 transform ${showStickyBtn ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -369,7 +376,7 @@ const PackageDetail: React.FC = () => {
             <p className="text-mountain-blue font-oswald font-black text-lg uppercase tracking-tight">{tour.title}</p>
             <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest">{tour.duration} Journey from {tour.startingPrice}</p>
           </div>
-          <button 
+          <button
             onClick={() => navigate('/booking')}
             className="w-full md:w-auto bg-tibetan-red text-white px-12 py-4 rounded-2xl font-black font-oswald text-lg tracking-[0.1em] hover:bg-mountain-blue transition-all shadow-2xl flex items-center justify-center space-x-3 group"
           >
