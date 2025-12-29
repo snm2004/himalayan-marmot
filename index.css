@@ -92,6 +92,66 @@
   }
 }
 
+/* Screen reader only class for accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* WhatsApp button text fix - aggressive approach */
+.whatsapp-float {
+  font-size: 0 !important;
+  line-height: 0 !important;
+  text-indent: -9999px !important;
+  overflow: hidden !important;
+}
+
+.whatsapp-float svg {
+  font-size: initial !important;
+  line-height: initial !important;
+  text-indent: 0 !important;
+}
+
+.whatsapp-float span {
+  font-size: initial !important;
+  line-height: initial !important;
+  text-indent: 0 !important;
+}
+
+/* Hide any pseudo-elements that might contain text */
+.whatsapp-float::before,
+.whatsapp-float::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Ensure only the SVG is visible on mobile */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 64px !important;
+    height: 64px !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+  
+  .whatsapp-float * {
+    font-size: 0 !important;
+  }
+  
+  .whatsapp-float svg {
+    font-size: initial !important;
+    width: 32px !important;
+    height: 32px !important;
+  }
+}
+
 /* Custom utility classes */
 .text-shadow {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);

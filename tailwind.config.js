@@ -45,7 +45,12 @@ module.exports = {
           700: '#a16207',
           800: '#854d0e',
           900: '#713f12',
-        }
+        },
+        'mountain-blue': '#2D5A87',
+        'mountain-blue-light': '#4A90A4',
+        'tibetan-red': '#A93226',
+        'golden-yellow': '#F1C40F',
+        'slate-grey': '#2C3E50',
       },
       fontFamily: {
         'oswald': ['Oswald', 'sans-serif'],
