@@ -9,7 +9,7 @@ const WhatsAppButton: React.FC = () => {
         href="https://wa.me/916006114260?text=Hi! I'm interested in Ladakh bike tours. Can you help me?"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-4 right-4 z-50 bg-[#25D366] text-white shadow-2xl hover:scale-105 active:scale-95 transition-all duration-200 flex items-center justify-center border-4 border-white w-16 h-16 rounded-full md:w-auto md:h-auto md:rounded-full md:px-6 md:py-4 md:gap-3"
+        className="fixed bottom-4 right-4 z-[999998] bg-[#25D366] text-white shadow-2xl hover:scale-105 active:scale-95 transition-all duration-200 flex items-center justify-center border-4 border-white w-16 h-16 rounded-full md:w-auto md:h-auto md:rounded-full md:px-6 md:py-4 md:gap-3"
         title="Chat with us on WhatsApp"
       >
         <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" className="md:w-6 md:h-6">

@@ -3,6 +3,8 @@ import React, { useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Chatbot from './components/Chatbot';
+import WhatsAppButton from './components/WhatsAppButton';
 import Home from './pages/Home';
 import Tours from './pages/Tours';
 import PackageDetail from './pages/PackageDetail';
@@ -37,9 +39,9 @@ const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen overflow-x-hidden">
         <Navbar />
-        <main className="flex-grow pt-[190px] md:pt-[200px] pb-20 md:pb-0">
+        <main className="flex-grow pt-[190px] md:pt-[200px] pb-20 md:pb-0 overflow-x-hidden">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/tours" element={<Tours />} />
@@ -52,6 +54,8 @@ const App: React.FC = () => {
           </Routes>
         </main>
         <Footer />
+        <Chatbot />
+        <WhatsAppButton />
       </div>
     </Router>
   );
