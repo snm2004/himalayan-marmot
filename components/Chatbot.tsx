@@ -55,7 +55,7 @@ const Chatbot: React.FC = () => {
 
 
   return (
-    <div className="fixed bottom-6 right-6 z-[9999] flex flex-col items-end">
+    <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[99999] flex flex-col items-end">
       {isOpen ? (
         <div className="bg-white w-[340px] md:w-[400px] h-[550px] rounded-[2.5rem] shadow-[0_30px_100px_-15px_rgba(0,0,0,0.4)] flex flex-col overflow-hidden border border-slate-100 animate-fade-in-down origin-bottom-right">
           {/* Header */}
@@ -154,7 +154,7 @@ const Chatbot: React.FC = () => {
             )}
             <button
               onClick={() => setIsOpen(true)}
-              className="group bg-mountain-blue text-white w-14 h-14 rounded-full shadow-[0_8px_25px_-5px_rgba(27,79,114,0.4)] flex items-center justify-center hover:scale-110 transition-all duration-300 border-3 border-white relative overflow-hidden"
+              className="group bg-mountain-blue text-white w-12 h-12 md:w-14 md:h-14 rounded-full shadow-[0_8px_25px_-5px_rgba(27,79,114,0.4)] flex items-center justify-center hover:scale-110 transition-all duration-300 border-2 md:border-3 border-white relative overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <span className="text-3xl relative z-10 transition-transform group-hover:scale-125">🦫</span>
@@ -166,7 +166,7 @@ const Chatbot: React.FC = () => {
             href="https://wa.me/916006114260"
             target="_blank"
             rel="noopener noreferrer"
-            className="group bg-green-500 text-white w-14 h-14 rounded-full shadow-[0_8px_25px_-5px_rgba(34,197,94,0.4)] flex items-center justify-center hover:scale-110 transition-all duration-300 border-3 border-white relative overflow-hidden"
+            className="group bg-green-500 text-white w-12 h-12 md:w-14 md:h-14 rounded-full shadow-[0_8px_25px_-5px_rgba(34,197,94,0.4)] flex items-center justify-center hover:scale-110 transition-all duration-300 border-2 md:border-3 border-white relative overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-tr from-green-400/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
             <svg className="w-7 h-7 relative z-10 transition-transform group-hover:scale-125" fill="currentColor" viewBox="0 0 24 24">
