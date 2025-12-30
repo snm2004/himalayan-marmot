@@ -342,11 +342,6 @@ html {
   }
 }
 /* Hero styles now handled by Tailwind classes in Hero.tsx */
-/* Keeping minimal CSS for any edge cases */
-.hero {
-  /* Fallback styles if needed */
-}
-
 /* Header positioning fix */
 .header {
   position: sticky;
@@ -356,10 +351,6 @@ html {
 }
 
 
-/* Menu open state - prevent body scroll issues */
-body.menu-open {
-  overflow-x: hidden;
-}
 /* Floating Actions - Direct body children with max z-index */
 .floating-actions {
   position: fixed !important;
