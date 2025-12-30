@@ -9,11 +9,12 @@ const DYNAMIC_CACHE = 'dynamic-v1';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
-  '/src/index.css',
+  '/index.css',
+  '/styles/animations.css',
   '/styles/mobile-optimizations.css',
   '/logo.png',
   '/himalayan-bike-new.jpg',
-  // Add critical CSS and JS files here when available
+  '/manifest.json'
 ];
 
 // Assets to cache on first request
@@ -77,8 +78,20 @@ self.addEventListener('fetch', (event) => {
     return;
   }
   
-  // Skip external requests (except images)
-  if (url.origin !== location.origin && !request.url.includes('images.unsplash.com')) {
+  // Skip external requests (except images and CDN resources)
+  if (url.origin !== location.origin &&
+      !request.url.includes('images.unsplash.com') &&
+      !request.url.includes('esm.sh') &&
+      !request.url.includes('fonts.googleapis.com') &&
+      !request.url.includes('fonts.gstatic.com')) {
+    return;
+  }
+  
+  // Skip React/TypeScript module requests - let them be handled by the browser
+  if (request.url.includes('.tsx') ||
+      request.url.includes('.ts') ||
+      request.url.includes('react') ||
+      request.url.includes('@google/genai')) {
     return;
   }
   
@@ -106,15 +119,22 @@ self.addEventListener('fetch', (event) => {
               caches.open(DYNAMIC_CACHE)
                 .then((cache) => {
                   cache.put(request, responseToCache);
+                })
+                .catch((error) => {
+                  console.warn('Failed to cache resource:', request.url, error);
                 });
             }
             
             return networkResponse;
           })
-          .catch(() => {
+          .catch((error) => {
+            console.warn('Network request failed:', request.url, error);
+            
             // Network failed, try to serve offline fallback
             if (request.destination === 'document') {
-              return caches.match('/offline.html') || new Response('Offline - Please check your connection');
+              return caches.match('/index.html') ||
+                     new Response('<!DOCTYPE html><html><head><title>Offline</title></head><body><h1>Offline</h1><p>Please check your connection</p></body></html>',
+                     { headers: { 'Content-Type': 'text/html' } });
             }
             
             // For images, return a placeholder
@@ -124,6 +144,9 @@ self.addEventListener('fetch', (event) => {
                 { headers: { 'Content-Type': 'image/svg+xml' } }
               );
             }
+            
+            // For other resources, return a network error
+            return new Response('Network Error', { status: 408, statusText: 'Request Timeout' });
           });
       })
   );
@@ -131,6 +154,11 @@ self.addEventListener('fetch', (event) => {
 
 // Helper function to determine if URL should be cached
 function shouldCache(url) {
+  // Don't cache React/TypeScript modules
+  if (url.includes('.tsx') || url.includes('.ts') || url.includes('react') || url.includes('@google/genai')) {
+    return false;
+  }
+  
   // Cache HTML pages
   if (url.includes('.html') || url.endsWith('/')) {
     return true;
@@ -141,8 +169,13 @@ function shouldCache(url) {
     return true;
   }
   
-  // Cache CSS and JS
-  if (url.match(/\.(css|js)$/)) {
+  // Cache CSS and static JS (but not modules)
+  if (url.match(/\.(css)$/) || (url.match(/\.js$/) && !url.includes('esm.sh'))) {
+    return true;
+  }
+  
+  // Cache manifest and other static assets
+  if (url.includes('manifest.json') || url.match(/\.(pdf|mov)$/)) {
     return true;
   }
   

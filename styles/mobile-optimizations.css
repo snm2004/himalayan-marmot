@@ -226,3 +226,80 @@
     left: 100%;
   }
 }
+
+/* Floating Actions Portal - High Z-Index to appear above video */
+.floating-actions {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  pointer-events: none;
+}
+
+.floating-actions > * {
+  pointer-events: auto;
+}
+
+.whatsapp-float {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  z-index: 10000;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+}
+
+.chat-float {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: #2D5A87;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 4px 20px rgba(45, 90, 135, 0.4);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 10000;
+}
+
+.chat-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(45, 90, 135, 0.6);
+}
+
+/* Mobile adjustments for floating actions */
+@media (max-width: 768px) {
+  .floating-actions {
+    bottom: 80px; /* Account for mobile navigation */
+    right: 16px;
+  }
+  
+  .whatsapp-float {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .chat-float {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+}
