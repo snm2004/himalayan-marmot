@@ -91,14 +91,6 @@ const Footer: React.FC = () => {
                 {COMPANY_NAME}
               </span>
             </Link>
-            <div className="flex flex-col space-y-5">
-               <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">Secure Payments via:</p>
-               <div className="flex justify-center md:justify-start gap-5 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" className="h-4" alt="PayPal" />
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" className="h-7" alt="MC" />
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" className="h-4" alt="Visa" />
-               </div>
-            </div>
             
             {/* Social Icons */}
             <div className="flex space-x-4 pt-4">
