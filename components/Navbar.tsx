@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const navigate = useNavigate();
-  
+
   // NEW: Ref to measure the navbar height
   const navRef = useRef<HTMLElement>(null);
 
@@ -93,14 +93,14 @@ const Navbar: React.FC = () => {
     <nav
       ref={navRef}
       className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-2xl backdrop-blur-sm transition-all duration-500 ease-in-out ${isVisible ? 'translate-y-0' : '-translate-y-full'
-      }`}>
+        }`}>
       {/* 1. Top Identity Bar - Dark Slate Blue */}
       <div className="bg-gradient-to-r from-[#2D4A6A] via-[#3D5A80] to-[#2D4A6A] text-white text-[10px] md:text-xs py-3 px-6 font-bold flex justify-between items-center border-b border-white/10 shadow-lg">
         <div className="flex items-center space-x-8">
           <span className="hidden sm:inline-flex items-center tracking-widest uppercase text-[10px] md:text-[11px] font-bold text-white opacity-95">
             <span className="mr-2 text-golden-yellow">🏔️</span> U T Ladakh's Premier Bike Tour Expert
           </span>
-          <div className="hidden lg:block">
+          <div className="block">
             <WeatherWidget />
           </div>
         </div>
