@@ -11,7 +11,6 @@ import FleetSection from '../components/FleetSection';
 import VideoGallery from '../components/VideoGallery';
 import JourneyFrames from '../components/JourneyFrames';
 import FAQ from '../components/FAQ';
-import Chatbot from '../components/Chatbot';
 import StatCounter from '../components/StatCounter';
 import { TOUR_PACKAGES, FOUNDER_NAME } from '../constants';
 
@@ -264,7 +263,6 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <Chatbot />
     </div>
   );
 };

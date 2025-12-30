@@ -13,10 +13,7 @@
     -webkit-overflow-scrolling: touch;
   }
   
-  /* Ensure proper spacing below fixed navbar on mobile */
-  main {
-    padding-top: 190px !important;
-  }
+  /* Remove conflicting padding - handled by hero container now */
   
   /* Prevent zoom on input focus */
   input[type="text"],
@@ -180,10 +177,7 @@
     display: none;
   }
   
-  /* Ensure proper spacing below fixed navbar on desktop */
-  main {
-    padding-top: 200px !important;
-  }
+  /* Remove conflicting padding - handled by hero container now */
 }
 
 /* Mobile-first responsive grid */

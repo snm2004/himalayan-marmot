@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import FloatingActionsPortal from './components/FloatingActionsPortal';
 import Home from './pages/Home';
 import Tours from './pages/Tours';
 import PackageDetail from './pages/PackageDetail';
@@ -11,6 +12,65 @@ import Contact from './pages/Contact';
 import Safety from './pages/Safety';
 import Festivals from './pages/Festivals';
 import Booking from './pages/Booking';
+
+// Enhanced dynamic header height measurement hook
+function useHeaderHeightVar() {
+  useEffect(() => {
+    const header = document.querySelector("nav"); // Main header container
+    if (!header) return;
+
+    const setVar = () => {
+      // Measure the ENTIRE header stack (utility bar + main header + navigation)
+      const totalHeaderHeight = header.getBoundingClientRect().height;
+      document.documentElement.style.setProperty("--headerH", `${totalHeaderHeight}px`);
+      
+      // Debug log to verify measurement
+      console.log('Header height updated:', totalHeaderHeight + 'px');
+    };
+
+    // Initial measurement
+    setVar();
+
+    // ResizeObserver for header changes
+    const ro = new ResizeObserver(() => {
+      // Small delay to ensure DOM is updated
+      setTimeout(setVar, 10);
+    });
+    ro.observe(header);
+
+    // Window resize and orientation change
+    window.addEventListener("resize", setVar);
+    window.addEventListener("orientationchange", () => {
+      setTimeout(setVar, 100); // Delay for orientation change
+    });
+
+    // Hamburger menu toggle detection
+    const hamburgerButton = document.querySelector('[data-testid="hamburger"], .hamburger, button[aria-expanded]');
+    if (hamburgerButton) {
+      const observer = new MutationObserver(() => {
+        setTimeout(setVar, 50); // Recalculate after menu toggle
+      });
+      observer.observe(hamburgerButton, { attributes: true, attributeFilter: ['aria-expanded', 'class'] });
+      
+      hamburgerButton.addEventListener('click', () => {
+        setTimeout(setVar, 100); // Recalculate after click
+      });
+    }
+
+    // Also listen for any class changes on the header itself
+    const headerObserver = new MutationObserver(() => {
+      setTimeout(setVar, 50);
+    });
+    headerObserver.observe(header, { attributes: true, attributeFilter: ['class'], subtree: true });
+
+    return () => {
+      ro.disconnect();
+      headerObserver.disconnect();
+      window.removeEventListener("resize", setVar);
+      window.removeEventListener("orientationchange", setVar);
+    };
+  }, []);
+}
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -21,6 +81,9 @@ const ScrollToTop = () => {
 };
 
 const App: React.FC = () => {
+  // Dynamic header height measurement
+  useHeaderHeightVar();
+
   useEffect(() => {
     // Register service worker for caching
     if ('serviceWorker' in navigator) {
@@ -37,9 +100,9 @@ const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen overflow-x-hidden">
         <Navbar />
-        <main className="flex-grow pt-[190px] md:pt-[200px] pb-20 md:pb-0">
+        <main className="flex-grow pb-20 md:pb-0 overflow-x-hidden">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/tours" element={<Tours />} />
@@ -52,6 +115,7 @@ const App: React.FC = () => {
           </Routes>
         </main>
         <Footer />
+        <FloatingActionsPortal />
       </div>
     </Router>
   );

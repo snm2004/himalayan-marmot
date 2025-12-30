@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { CONTACT_NUMBERS, TOUR_PACKAGES, TOUR_CATEGORIES } from '../constants';
 import Logo from './Logo';
@@ -10,8 +10,19 @@ const Navbar: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const navigate = useNavigate();
+  
+  // NEW: Ref to measure the navbar height
+  const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    // NEW: Function to calculate navbar height and update CSS variable
+    const updateHeaderHeight = () => {
+      if (navRef.current) {
+        const height = navRef.current.offsetHeight;
+        document.documentElement.style.setProperty('--headerH', `${height}px`);
+      }
+    };
+
     const controlNavbar = () => {
       const currentScrollY = window.scrollY;
 
@@ -40,9 +51,29 @@ const Navbar: React.FC = () => {
       }
     };
 
+    // Initial calculation and listeners
+    updateHeaderHeight();
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', updateHeaderHeight); // Recalculate if screen size changes
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', updateHeaderHeight);
+    };
   }, [lastScrollY]);
+
+  // NEW: useEffect to handle hamburger menu toggle and recalculate height
+  useEffect(() => {
+    const updateHeaderHeight = () => {
+      if (navRef.current) {
+        const height = navRef.current.offsetHeight;
+        document.documentElement.style.setProperty('--headerH', `${height}px`);
+      }
+    };
+
+    // Recalculate height when mobile menu opens/closes
+    updateHeaderHeight();
+  }, [isOpen]);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -59,7 +90,9 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-2xl backdrop-blur-sm transition-all duration-500 ease-in-out ${isVisible ? 'translate-y-0' : '-translate-y-full'
+    <nav
+      ref={navRef}
+      className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-2xl backdrop-blur-sm transition-all duration-500 ease-in-out ${isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}>
       {/* 1. Top Identity Bar - Dark Slate Blue */}
       <div className="bg-gradient-to-r from-[#2D4A6A] via-[#3D5A80] to-[#2D4A6A] text-white text-[10px] md:text-xs py-3 px-6 font-bold flex justify-between items-center border-b border-white/10 shadow-lg">
@@ -84,7 +117,7 @@ const Navbar: React.FC = () => {
           <Logo className="scale-90 md:scale-100 origin-left transform transition-all duration-300 hover:scale-105" />
 
           {/* Enhanced Functional Search Bar */}
-          <form onSubmit={handleSearch} className="hidden lg:flex flex-1 max-w-md mx-10">
+          <form onSubmit={handleSearch} className="hidden md:flex flex-1 max-w-md mx-10">
             <div className="relative w-full group">
               <input
                 type="text"
@@ -99,7 +132,7 @@ const Navbar: React.FC = () => {
             </div>
           </form>
 
-          <div className="hidden lg:flex items-center space-x-10">
+          <div className="hidden md:flex items-center space-x-10">
             <Link to="/tours" className="text-slate-800 hover:text-mountain-blue transition-all duration-300 uppercase tracking-[0.15em] font-black text-[13px] relative group">
               ALL TOURS
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-mountain-blue transition-all duration-300 group-hover:w-full"></span>
@@ -118,7 +151,7 @@ const Navbar: React.FC = () => {
             </a>
           </div>
 
-          <div className="lg:hidden flex items-center">
+          <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-3 text-mountain-blue focus:outline-none rounded-xl bg-linear-to-br from-slate-50 to-slate-100 shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95 border border-slate-200/50"
@@ -136,7 +169,7 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* 3. Enhanced Blue Bar (Sub-Nav) - Matching Logo Blue */}
-      <div className="hidden lg:block bg-gradient-to-r from-[#0088CC] via-[#00AEEF] to-[#0088CC] text-white py-3 relative shadow-xl border-t border-white/20">
+      <div className="hidden md:block bg-gradient-to-r from-[#0088CC] via-[#00AEEF] to-[#0088CC] text-white py-3 relative shadow-xl border-t border-white/20">
         <div className="max-w-7xl mx-auto px-4 flex justify-center space-x-12 text-[13px] font-black uppercase tracking-[0.2em]">
 
           <div className="group relative cursor-pointer flex items-center hover:text-white hover:bg-white/10 px-3 py-2 rounded-lg transition-all duration-300">
