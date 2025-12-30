@@ -7,15 +7,33 @@
 @import './styles/animations.css';
 @import './styles/mobile-optimizations.css';
 
+/* CSS Variables for header height - will be set dynamically by JS */
+:root {
+  --headerH: 80px; /* Default fallback, gets updated by Navbar.tsx */
+}
+
 @layer base {
-  body {
+  html, body {
+    /* Use dvh to prevent mobile browsers from cutting off the bottom */
+    min-height: 100dvh;
     overflow-x: hidden;
-    overflow-y: auto;
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: #000; /* Dark background matches hero video */
+  }
+
+  #root {
+    min-height: 100dvh;
+    overflow: visible;
+  }
+
+  /* Remove any top margin/padding from layout containers */
+  main, .page, .app, .layout {
+    margin: 0;
+    padding: 0;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -105,52 +123,6 @@
   border: 0;
 }
 
-/* WhatsApp button text fix - aggressive approach */
-.whatsapp-float {
-  font-size: 0 !important;
-  line-height: 0 !important;
-  text-indent: -9999px !important;
-  overflow: hidden !important;
-}
-
-.whatsapp-float svg {
-  font-size: initial !important;
-  line-height: initial !important;
-  text-indent: 0 !important;
-}
-
-.whatsapp-float span {
-  font-size: initial !important;
-  line-height: initial !important;
-  text-indent: 0 !important;
-}
-
-/* Hide any pseudo-elements that might contain text */
-.whatsapp-float::before,
-.whatsapp-float::after {
-  display: none !important;
-  content: none !important;
-}
-
-/* Ensure only the SVG is visible on mobile */
-@media (max-width: 768px) {
-  .whatsapp-float {
-    width: 64px !important;
-    height: 64px !important;
-    padding: 0 !important;
-    text-align: center !important;
-  }
-  
-  .whatsapp-float * {
-    font-size: 0 !important;
-  }
-  
-  .whatsapp-float svg {
-    font-size: initial !important;
-    width: 32px !important;
-    height: 32px !important;
-  }
-}
 
 /* Custom utility classes */
 .text-shadow {
@@ -363,9 +335,140 @@ html {
   .hero-heading-accent,
   .hero-text-shadow,
   .hero-tagline {
-    background: rgba(0,0,0,0.9) !important;
+    background: rgba(0, 0, 0, 0.9) !important;
     padding: 8px 12px !important;
     border-radius: 8px !important;
     border: 2px solid rgba(255,255,255,0.3) !important;
   }
+}
+/* Hero styles now handled by Tailwind classes in Hero.tsx */
+/* Keeping minimal CSS for any edge cases */
+.hero {
+  /* Fallback styles if needed */
+}
+
+/* Header positioning fix */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+  background: #fff;
+}
+
+
+/* Menu open state - prevent body scroll issues */
+body.menu-open {
+  overflow-x: hidden;
+}
+/* Floating Actions - Direct body children with max z-index */
+.floating-actions {
+  position: fixed !important;
+  right: max(16px, env(safe-area-inset-right)) !important;
+  bottom: max(16px, env(safe-area-inset-bottom)) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  z-index: 2147483647 !important;
+  pointer-events: auto !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.whatsapp-float, .chat-float {
+  width: 56px !important;
+  height: 56px !important;
+  border-radius: 999px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25) !important;
+  background: #fff !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: transform 0.2s ease !important;
+  text-decoration: none !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.whatsapp-float {
+  background: #25D366 !important;
+}
+
+.whatsapp-float:hover, .chat-float:hover {
+  transform: scale(1.05) !important;
+}
+
+.whatsapp-float svg {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.chat-float {
+  background: #2D5A87 !important;
+  color: white !important;
+  font-size: 24px !important;
+}
+
+/* Clean layout - no hacks needed with dynamic header height */
+/* Remove any potential gap-causing elements */
+.header-gradient,
+.header-spacer,
+.nav-shadow,
+.top-strip,
+.layout-gap,
+.header-divider,
+.nav-spacer,
+.header-shadow,
+.header-bg-strip,
+.top-gap {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Ensure floating actions are never hidden on any screen size */
+@media (max-width: 320px) {
+  .floating-actions {
+    right: 8px !important;
+    bottom: 8px !important;
+  }
+  
+  .whatsapp-float, .chat-float {
+    width: 48px !important;
+    height: 48px !important;
+  }
+  
+  .whatsapp-float svg {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  
+  .chat-float {
+    font-size: 20px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .floating-actions {
+    right: 12px !important;
+    bottom: 12px !important;
+  }
+}
+
+/* Force the video to respect the container shape */
+.hero video {
+  position: static !important;
+  height: auto !important;
+  width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  transform: none !important;
+}
+
+/* Ensure the hero section doesn't have any hidden padding */
+.hero {
+  padding: 0 !important;
+  margin: 0 !important;
 }

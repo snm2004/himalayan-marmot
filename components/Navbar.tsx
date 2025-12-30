@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { CONTACT_NUMBERS, TOUR_PACKAGES, TOUR_CATEGORIES } from '../constants';
 import Logo from './Logo';
@@ -10,8 +10,19 @@ const Navbar: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const navigate = useNavigate();
+  
+  // NEW: Ref to measure the navbar height
+  const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    // NEW: Function to calculate navbar height and update CSS variable
+    const updateHeaderHeight = () => {
+      if (navRef.current) {
+        const height = navRef.current.offsetHeight;
+        document.documentElement.style.setProperty('--headerH', `${height}px`);
+      }
+    };
+
     const controlNavbar = () => {
       const currentScrollY = window.scrollY;
 
@@ -40,9 +51,29 @@ const Navbar: React.FC = () => {
       }
     };
 
+    // Initial calculation and listeners
+    updateHeaderHeight();
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', updateHeaderHeight); // Recalculate if screen size changes
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', updateHeaderHeight);
+    };
   }, [lastScrollY]);
+
+  // NEW: useEffect to handle hamburger menu toggle and recalculate height
+  useEffect(() => {
+    const updateHeaderHeight = () => {
+      if (navRef.current) {
+        const height = navRef.current.offsetHeight;
+        document.documentElement.style.setProperty('--headerH', `${height}px`);
+      }
+    };
+
+    // Recalculate height when mobile menu opens/closes
+    updateHeaderHeight();
+  }, [isOpen]);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -59,7 +90,9 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-2xl backdrop-blur-sm transition-all duration-500 ease-in-out ${isVisible ? 'translate-y-0' : '-translate-y-full'
+    <nav
+      ref={navRef}
+      className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-2xl backdrop-blur-sm transition-all duration-500 ease-in-out ${isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}>
       {/* 1. Top Identity Bar - Dark Slate Blue */}
       <div className="bg-gradient-to-r from-[#2D4A6A] via-[#3D5A80] to-[#2D4A6A] text-white text-[10px] md:text-xs py-3 px-6 font-bold flex justify-between items-center border-b border-white/10 shadow-lg">
