@@ -5,8 +5,8 @@ const Hero: React.FC = () => {
   return (
     <section className="relative w-full bg-black overflow-hidden z-0" style={{ marginTop: 'var(--headerH, 213px)' }}>
 
-      {/* Video Container - maintains 16:9 aspect ratio */}
-      <div className="relative w-full aspect-video">
+      {/* Video Container - maintains 16:9 aspect ratio with max height */}
+      <div className="relative w-full aspect-video max-h-[75vh]">
         <video
           autoPlay
           muted
