@@ -95,8 +95,8 @@ const Navbar: React.FC = () => {
       className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-2xl backdrop-blur-sm transition-all duration-500 ease-in-out ${isVisible ? 'translate-y-0' : '-translate-y-full'
         }`}>
       {/* 1. Top Identity Bar - Dark Slate Blue */}
-      <div className="bg-gradient-to-r from-[#2D4A6A] via-[#3D5A80] to-[#2D4A6A] text-white text-[10px] md:text-xs py-3 px-6 font-bold flex justify-between items-center border-b border-white/10 shadow-lg">
-        <div className="flex items-center space-x-8">
+      <div className="bg-gradient-to-r from-[#2D4A6A] via-[#3D5A80] to-[#2D4A6A] text-white text-[9px] sm:text-[10px] md:text-xs py-2 sm:py-3 px-2 sm:px-6 font-bold flex justify-between items-center border-b border-white/10 shadow-lg">
+        <div className="flex items-center space-x-2 sm:space-x-8">
           <span className="hidden sm:inline-flex items-center tracking-widest uppercase text-[10px] md:text-[11px] font-bold text-white opacity-95">
             <span className="mr-2 text-golden-yellow">🏔️</span> U T Ladakh's Premier Bike Tour Expert
           </span>
@@ -104,7 +104,7 @@ const Navbar: React.FC = () => {
             <WeatherWidget />
           </div>
         </div>
-        <div className="flex items-center space-x-6 tracking-[0.2em] text-[9px] md:text-[10px] font-black text-white">
+        <div className="flex items-center space-x-2 sm:space-x-6 tracking-[0.1em] sm:tracking-[0.2em] text-[8px] sm:text-[9px] md:text-[10px] font-black text-white">
           <Link to="/contact" className="hover:text-golden-yellow transition-colors duration-300 opacity-90 hover:opacity-100">ABOUT</Link>
           <Link to="/payments" className="hover:text-golden-yellow transition-colors duration-300 opacity-90 hover:opacity-100">PAYMENTS</Link>
           <Link to="/safety" className="hover:text-golden-yellow transition-colors duration-300 opacity-90 hover:opacity-100">SAFETY</Link>
