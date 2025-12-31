@@ -26,13 +26,13 @@ const Hero: React.FC = () => {
           <div className="max-w-4xl">
 
             {/* Top Tagline */}
-            <p className="text-golden-yellow font-bold tracking-[0.3em] uppercase mb-4 text-[10px] sm:text-xs md:text-sm">
+            <p className="text-golden-yellow font-bold tracking-[0.4em] uppercase mb-6 text-xs sm:text-sm md:text-base lg:text-lg">
               LADAKH'S PREMIER BIKE EXPERTS
             </p>
 
             {/* Tibetan Script */}
             <p
-              className="text-golden-yellow/90 font-medium tracking-wider mb-2 text-xl sm:text-3xl md:text-4xl"
+              className="text-golden-yellow/90 font-medium tracking-[0.15em] mb-4 text-2xl sm:text-4xl md:text-5xl lg:text-6xl"
               style={{ textShadow: '2px 2px 10px rgba(0,0,0,0.8)' }}
             >
               རི་བོ་གངས་ཅན།
