@@ -94,17 +94,17 @@ const Navbar: React.FC = () => {
       ref={navRef}
       className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-2xl backdrop-blur-sm transition-all duration-500 ease-in-out ${isVisible ? 'translate-y-0' : '-translate-y-full'
         }`}>
-      {/* 1. Top Identity Bar - Dark Slate Blue */}
-      <div className="bg-gradient-to-r from-[#2D4A6A] via-[#3D5A80] to-[#2D4A6A] text-white text-[9px] sm:text-[10px] md:text-xs py-2 sm:py-3 px-2 sm:px-6 font-bold flex justify-between items-center border-b border-white/10 shadow-lg">
-        <div className="flex items-center space-x-2 sm:space-x-8">
-          <span className="hidden sm:inline-flex items-center tracking-widest uppercase text-[10px] md:text-[11px] font-bold text-white opacity-95">
+      {/* 1. Top Identity Bar - Dark Slate Blue - HIDDEN ON MOBILE */}
+      <div className="hidden sm:flex bg-gradient-to-r from-[#2D4A6A] via-[#3D5A80] to-[#2D4A6A] text-white text-[10px] md:text-xs py-3 px-6 font-bold justify-between items-center border-b border-white/10 shadow-lg">
+        <div className="flex items-center space-x-8">
+          <span className="inline-flex items-center tracking-widest uppercase text-[10px] md:text-[11px] font-bold text-white opacity-95">
             <span className="mr-2 text-golden-yellow">🏔️</span> U T Ladakh's Premier Bike Tour Expert
           </span>
           <div className="block">
             <WeatherWidget />
           </div>
         </div>
-        <div className="flex items-center space-x-2 sm:space-x-6 tracking-[0.1em] sm:tracking-[0.2em] text-[8px] sm:text-[9px] md:text-[10px] font-black text-white">
+        <div className="flex items-center space-x-6 tracking-[0.2em] text-[9px] md:text-[10px] font-black text-white">
           <Link to="/contact" className="hover:text-golden-yellow transition-colors duration-300 opacity-90 hover:opacity-100">ABOUT</Link>
           <Link to="/payments" className="hover:text-golden-yellow transition-colors duration-300 opacity-90 hover:opacity-100">PAYMENTS</Link>
           <Link to="/safety" className="hover:text-golden-yellow transition-colors duration-300 opacity-90 hover:opacity-100">SAFETY</Link>
@@ -113,8 +113,13 @@ const Navbar: React.FC = () => {
 
       {/* 2. Enhanced Main Brand Bar */}
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 bg-linear-to-b from-white to-gray-50/30">
-        <div className="flex justify-between items-center h-20 md:h-24">
-          <Logo className="scale-90 md:scale-100 origin-left transform transition-all duration-300 hover:scale-105" />
+        <div className="flex justify-between items-center h-16 sm:h-20 md:h-24">
+          <Logo className="scale-75 sm:scale-90 md:scale-100 origin-left transform transition-all duration-300 hover:scale-105" />
+
+          {/* Weather Widget - MOBILE ONLY */}
+          <div className="sm:hidden flex-1 flex justify-center px-2">
+            <WeatherWidget />
+          </div>
 
           {/* Enhanced Functional Search Bar */}
           <form onSubmit={handleSearch} className="hidden md:flex flex-1 max-w-md mx-10">
@@ -264,6 +269,14 @@ const Navbar: React.FC = () => {
               <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 transition-colors duration-300">🔍</div>
             </div>
           </div>
+
+          {/* Quick Links - Mobile Only (moved from top bar) */}
+          <div className="py-4 border-b border-slate-100 flex justify-around">
+            <Link to="/contact" onClick={() => setIsOpen(false)} className="text-xs font-black text-slate-600 uppercase tracking-wider hover:text-mountain-blue">ABOUT</Link>
+            <Link to="/payments" onClick={() => setIsOpen(false)} className="text-xs font-black text-slate-600 uppercase tracking-wider hover:text-mountain-blue">PAYMENTS</Link>
+            <Link to="/safety" onClick={() => setIsOpen(false)} className="text-xs font-black text-slate-600 uppercase tracking-wider hover:text-mountain-blue">SAFETY</Link>
+          </div>
+
           <Link to="/" onClick={() => setIsOpen(false)} className="py-5 text-sm font-black border-b border-slate-100 text-slate-800 uppercase tracking-widest flex justify-between items-center hover:bg-blue-50 hover:text-mountain-blue transition-all duration-300 rounded-lg px-2 group">
             HOME <span className="text-slate-300 group-hover:text-mountain-blue transition-all duration-300 transform group-hover:translate-x-1">→</span>
           </Link>

@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative w-full bg-black overflow-hidden z-0" style={{ marginTop: 'var(--headerH, 213px)' }}>
+    <section className="relative w-full bg-black overflow-hidden z-0" style={{ marginTop: 'var(--headerH, 80px)' }}>
 
-      {/* Video Container - maintains 16:9 aspect ratio with max height */}
-      <div className="relative w-full aspect-video max-h-[75vh]">
+      {/* Video Container - responsive height for mobile vs desktop */}
+      <div className="relative w-full h-[65vh] sm:h-auto sm:aspect-video sm:max-h-[75vh]">
         <video
           autoPlay
           muted

@@ -55,7 +55,7 @@ const Chatbot: React.FC = () => {
 
 
   return (
-    <div className="fixed bottom-5 right-3 sm:bottom-4 sm:right-4 md:bottom-6 md:right-6 z-[99999] flex flex-col items-end gap-3">
+    <div className="fixed bottom-20 right-4 sm:bottom-4 sm:right-4 md:bottom-6 md:right-6 z-[99999] flex flex-col items-end gap-3">
       {isOpen ? (
         <div className="bg-white w-[340px] md:w-[400px] h-[550px] rounded-[2.5rem] shadow-[0_30px_100px_-15px_rgba(0,0,0,0.4)] flex flex-col overflow-hidden border border-slate-100 animate-fade-in-down origin-bottom-right">
           {/* Header */}
