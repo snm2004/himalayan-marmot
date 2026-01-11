@@ -28,20 +28,30 @@ export interface HotelDetail {
   nights: number;
 }
 
+export interface TourVariant {
+  duration: string;
+  startingPrice: string;
+  priceTiers: PriceTier[];
+  itinerary: ItineraryDay[];
+  hotelDetails?: HotelDetail[];
+  pdfUrl?: string;
+}
+
 export interface TourPackage {
   id: string;
   title: string;
-  duration: string;
+  duration: string; // Default duration
   highlights: string[];
-  startingPrice: string;
-  priceTiers: PriceTier[];
+  startingPrice: string; // Default starting price (for calculation/display)
+  priceTiers: PriceTier[]; // Default pricing
   image: string;
-  pdfUrl?: string; // PDF itinerary download link
-  itinerary: ItineraryDay[];
+  pdfUrl?: string;
+  itinerary: ItineraryDay[]; // Default itinerary
   inclusions: string[];
   exclusions: string[];
-  routePoints?: RoutePoint[]; // New: For interactive map
-  hotelDetails?: HotelDetail[]; // New: For hotel accommodation details
+  routePoints?: RoutePoint[];
+  hotelDetails?: HotelDetail[];
+  variants?: TourVariant[]; // Optional: List of alternative durations/pricings
 }
 
 export interface CancellationPolicy {

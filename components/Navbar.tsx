@@ -121,8 +121,7 @@ const Navbar: React.FC = () => {
             <WeatherWidget />
           </div>
 
-          {/* Enhanced Functional Search Bar */}
-          <form onSubmit={handleSearch} className="hidden md:flex flex-1 max-w-md mx-10">
+          <form onSubmit={handleSearch} className="hidden md:flex flex-1 max-w-md mx-10 relative">
             <div className="relative w-full group">
               <input
                 type="text"
@@ -135,6 +134,44 @@ const Navbar: React.FC = () => {
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               </div>
             </div>
+
+            {/* Live Search Results Dropdown */}
+            {searchQuery && (
+              <div className="absolute top-full mt-4 left-0 right-0 bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden z-[100] animate-fadeIn">
+                <div className="px-4 py-2 border-b border-slate-50 bg-slate-50/50">
+                  <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Matching Expeditions</p>
+                </div>
+                <div className="max-h-64 overflow-y-auto">
+                  {TOUR_PACKAGES.filter(p =>
+                    p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    p.highlights.some(h => h.toLowerCase().includes(searchQuery.toLowerCase()))
+                  ).map(pkg => (
+                    <Link
+                      key={pkg.id}
+                      to={`/package/${pkg.id}`}
+                      onClick={() => setSearchQuery('')}
+                      className="flex items-center p-4 hover:bg-linear-to-r hover:from-blue-50 hover:to-blue-100 group transition-all"
+                    >
+                      <div className="w-12 h-12 rounded-lg overflow-hidden mr-4 shadow-md group-hover:scale-110 transition-transform">
+                        <img src={pkg.image} alt={pkg.title} className="w-full h-full object-cover" />
+                      </div>
+                      <div>
+                        <p className="font-black text-slate-800 text-xs uppercase tracking-wider group-hover:text-mountain-blue">{pkg.title}</p>
+                        <p className="text-[10px] text-slate-500 font-bold">{pkg.duration}</p>
+                      </div>
+                    </Link>
+                  ))}
+                  {TOUR_PACKAGES.filter(p =>
+                    p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    p.highlights.some(h => h.toLowerCase().includes(searchQuery.toLowerCase()))
+                  ).length === 0 && (
+                      <div className="p-8 text-center">
+                        <p className="text-slate-400 text-sm italic">No rides found matching your query.</p>
+                      </div>
+                    )}
+                </div>
+              </div>
+            )}
           </form>
 
           <div className="hidden md:flex items-center space-x-10">
@@ -142,7 +179,7 @@ const Navbar: React.FC = () => {
               ALL TOURS
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-mountain-blue transition-all duration-300 group-hover:w-full"></span>
             </Link>
-            <Link to="/festivals" className="text-slate-800 hover:text-mountain-blue transition-all duration-300 uppercase tracking-[0.15em] font-black text-[13px] relative group">
+            <Link to="/blogs" className="text-slate-800 hover:text-mountain-blue transition-all duration-300 uppercase tracking-[0.15em] font-black text-[13px] relative group">
               BLOGS
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-mountain-blue transition-all duration-300 group-hover:w-full"></span>
             </Link>
@@ -226,30 +263,6 @@ const Navbar: React.FC = () => {
             <span className="text-[#FFD700] font-black drop-shadow-sm">GROUP TOURS</span>
           </Link>
 
-          <div className="group relative cursor-pointer flex items-center hover:bg-white/20 px-4 py-2 rounded-lg transition-all duration-300">
-            <span className="text-[#FF6B9D] font-black">FESTIVAL SPECIALS</span>
-            <span className="ml-2 bg-[#FF4757] text-white text-[8px] px-2 py-0.5 rounded-full font-bold animate-pulse">NEW</span>
-            <span className="ml-1 text-[7px] group-hover:rotate-180 transition-all duration-300 opacity-70">▼</span>
-            <div className="absolute top-full pt-4 -left-4 w-80 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-              <div className="bg-white rounded-2xl shadow-2xl border border-slate-100 py-4 overflow-hidden translate-y-4 group-hover:translate-y-0 transition-all duration-300 backdrop-blur-sm">
-                <div className="px-6 py-2 border-b border-slate-100">
-                  <p className="text-xs text-slate-500 normal-case tracking-normal">{TOUR_CATEGORIES.FESTIVAL_SPECIALS.subtitle}</p>
-                </div>
-                {TOUR_CATEGORIES.FESTIVAL_SPECIALS.tours.map((tourId) => {
-                  const tour = TOUR_PACKAGES.find(t => t.id === tourId);
-                  if (!tour) return null;
-                  return (
-                    <Link key={tourId} to={`/package/${tourId}`} className="flex items-center px-6 py-3 text-slate-600 hover:bg-linear-to-r hover:from-blue-50 hover:to-blue-100 hover:text-mountain-blue transition-all duration-300 rounded-lg mx-2 group">
-                      <span className="mr-3 transition-transform duration-300 group-hover:scale-110">🎭</span>
-                      <span className="font-medium">{tour.title}</span>
-                      <span className="text-xs text-slate-400 ml-2">({tour.duration})</span>
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-
           <Link to="/contact" className="hover:bg-white/20 px-4 py-2 rounded-lg transition-all duration-300 flex items-center transform hover:scale-105 font-black">
             CONTACT US
           </Link>
@@ -260,14 +273,16 @@ const Navbar: React.FC = () => {
       {isOpen && (
         <div className="lg:hidden bg-linear-to-b from-white to-gray-50/50 border-t border-slate-200 pb-12 px-6 space-y-2 shadow-2xl animate-slide-up overflow-y-auto max-h-[80vh] backdrop-blur-sm">
           <div className="pt-8 pb-4">
-            <div className="relative">
+            <form onSubmit={handleSearch} className="relative">
               <input
                 type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Where do you want to ride?"
                 className="w-full bg-linear-to-r from-slate-50 to-slate-100 border border-slate-200 rounded-2xl py-4 px-12 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-blue-400 text-sm font-bold shadow-sm transition-all duration-300"
               />
               <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 transition-colors duration-300">🔍</div>
-            </div>
+            </form>
           </div>
 
           {/* Quick Links - Mobile Only (moved from top bar) */}

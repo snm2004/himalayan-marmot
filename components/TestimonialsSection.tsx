@@ -11,6 +11,74 @@ interface Review {
   isUserSubmitted?: boolean;
 }
 
+const RiderVideoCard: React.FC<{ videoStr: string; title: string; delay: number }> = ({ videoStr, title, delay }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  const handlePlay = () => {
+    setIsPlaying(true);
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  };
+
+  return (
+    <div
+      className={`group relative rounded-3xl overflow-hidden bg-slate-900 border border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2`}
+      style={{ animationDelay: `${delay}ms` }}
+    >
+      <div className="aspect-[9/16] md:aspect-[3/4] relative bg-black">
+        {!isPlaying ? (
+          <div className="absolute inset-0 cursor-pointer" onClick={handlePlay}>
+            {/* Thumbnail Placeholder - using the video itself mostly muted/paused or a poster if we had one. 
+                 Since we don't have posters, we'll try to show the first frame by setting t=0.1 in a hidden video or just a gradient overlay.
+                 For now, we'll use a nice gradient and title overlay.
+             */}
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-950">
+              {/* Optional: We could try to show a blurred first frame if we had an image tool, but CSS gradient is cleaner for now */}
+            </div>
+
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20"></div>
+
+            {/* Play Button */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="relative group-hover:scale-110 transition-transform duration-500">
+                <div className="absolute inset-0 bg-golden-yellow rounded-full animate-ping opacity-20"></div>
+                <div className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30 text-white shadow-xl">
+                  <span className="ml-1 text-2xl">▶</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Title */}
+            <div className="absolute bottom-0 left-0 right-0 p-6">
+              <div className="text-[10px] font-bold text-golden-yellow uppercase tracking-widest mb-2">Rider Story</div>
+              <h4 className="text-xl font-oswald font-bold text-white leading-tight">{title}</h4>
+            </div>
+          </div>
+        ) : (
+          <video
+            ref={videoRef}
+            src={videoStr}
+            className="w-full h-full object-cover"
+            controls
+            autoPlay
+            playsInline
+          />
+        )}
+      </div>
+    </div>
+  );
+};
+
+const RIDER_VIDEOS = [
+  { id: 1, src: "/hero-video-new.mp4", title: "Conquering High Passes", delay: 0 },
+  { id: 2, src: "/hero-video-new.mp4", title: "The Road to Adventure", delay: 100 },
+  { id: 3, src: "/hero-video-new.mp4", title: "Brotherhood on Bikes", delay: 200 },
+  { id: 4, src: "/hero-video-new.mp4", title: "Land of Endless Views", delay: 300 },
+];
+
 const TestimonialsSection: React.FC = () => {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [userReviews, setUserReviews] = useState<Review[]>([]);
@@ -52,7 +120,7 @@ const TestimonialsSection: React.FC = () => {
     if (!hasSandesh) {
       existingUserReviews = [sandeshReview, ...existingUserReviews];
     }
-    
+
     setUserReviews(existingUserReviews);
 
     const fetchAIReviews = async () => {
@@ -118,11 +186,11 @@ const TestimonialsSection: React.FC = () => {
       const updatedUserReviews = [newReview, ...userReviews];
       setUserReviews(updatedUserReviews);
       localStorage.setItem('himalayan_marmot_user_reviews', JSON.stringify(updatedUserReviews));
-      
+
       setSubmitSuccess(true);
       setIsSubmitting(false);
       setFormData({ name: '', rating: 5, location: '', quote: '' });
-      
+
       // Hide success message after 3 seconds
       setTimeout(() => {
         setSubmitSuccess(false);
@@ -133,8 +201,8 @@ const TestimonialsSection: React.FC = () => {
 
   const renderStars = (rating: number, interactive = false, onSelect?: (r: number) => void) => {
     return Array.from({ length: 5 }).map((_, i) => (
-      <span 
-        key={i} 
+      <span
+        key={i}
         onClick={() => interactive && onSelect && onSelect(i + 1)}
         className={`${i < rating ? "text-golden-yellow" : "text-slate-200"} ${interactive ? "cursor-pointer transition-transform hover:scale-125" : ""}`}
       >
@@ -154,12 +222,33 @@ const TestimonialsSection: React.FC = () => {
             <h3 className="text-4xl md:text-5xl font-oswald font-bold text-mountain-blue uppercase">WHAT RIDERS SAY</h3>
             <div className="h-1 w-20 bg-golden-yellow mt-6 hidden md:block"></div>
           </div>
-          <button 
+          <button
             onClick={() => setShowForm(!showForm)}
             className="bg-mountain-blue text-white px-8 py-3 rounded-full font-bold font-oswald tracking-widest hover:bg-tibetan-red transition shadow-lg text-sm uppercase"
           >
             {showForm ? 'CLOSE FORM' : 'SHARE YOUR STORY'}
           </button>
+        </div>
+
+        {/* Video Stories Section */}
+        <div className="mb-20">
+          <div className="flex items-center mb-10">
+            <div className="w-10 h-10 bg-tibetan-red rounded-full flex items-center justify-center text-white mr-4 animate-pulse">
+              ▶
+            </div>
+            <h4 className="text-2xl font-oswald font-bold text-mountain-blue uppercase tracking-wide">Video Stories</h4>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+            {RIDER_VIDEOS.map((video) => (
+              <RiderVideoCard
+                key={video.id}
+                videoStr={video.src}
+                title={video.title}
+                delay={video.delay}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Submission Form */}
@@ -177,22 +266,22 @@ const TestimonialsSection: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Name</label>
-                    <input 
+                    <input
                       required
                       type="text"
                       value={formData.name}
-                      onChange={e => setFormData({...formData, name: e.target.value})}
+                      onChange={e => setFormData({ ...formData, name: e.target.value })}
                       placeholder="e.g. Rahul Sharma"
                       className="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-mountain-blue/20"
                     />
                   </div>
                   <div>
                     <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Location</label>
-                    <input 
+                    <input
                       required
                       type="text"
                       value={formData.location}
-                      onChange={e => setFormData({...formData, location: e.target.value})}
+                      onChange={e => setFormData({ ...formData, location: e.target.value })}
                       placeholder="e.g. Bangalore, India"
                       className="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-mountain-blue/20"
                     />
@@ -201,21 +290,21 @@ const TestimonialsSection: React.FC = () => {
                 <div>
                   <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Rating</label>
                   <div className="text-3xl flex space-x-2">
-                    {renderStars(formData.rating, true, (r) => setFormData({...formData, rating: r}))}
+                    {renderStars(formData.rating, true, (r) => setFormData({ ...formData, rating: r }))}
                   </div>
                 </div>
                 <div>
                   <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Your Experience</label>
-                  <textarea 
+                  <textarea
                     required
                     rows={4}
                     value={formData.quote}
-                    onChange={e => setFormData({...formData, quote: e.target.value})}
+                    onChange={e => setFormData({ ...formData, quote: e.target.value })}
                     placeholder="Tell us about your ride, the bikes, and the views..."
                     className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-mountain-blue/20"
                   />
                 </div>
-                <button 
+                <button
                   disabled={isSubmitting}
                   type="submit"
                   className="w-full bg-golden-yellow text-mountain-blue py-4 rounded-xl font-black font-oswald text-lg tracking-[0.2em] hover:bg-mountain-blue hover:text-white transition-all shadow-xl disabled:opacity-50"
@@ -227,6 +316,7 @@ const TestimonialsSection: React.FC = () => {
           </div>
         )}
 
+        {/* Text Reviews Grid */}
         {loading ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[1, 2, 3, 4].map((n) => (
@@ -241,9 +331,22 @@ const TestimonialsSection: React.FC = () => {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Add Your Voice Card */}
+            <div
+              onClick={() => setShowForm(true)}
+              className="bg-slate-900 p-8 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-300 border-2 border-dashed border-slate-700 hover:border-golden-yellow flex flex-col items-center justify-center text-center cursor-pointer group min-h-[320px]"
+            >
+              <div className="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-golden-yellow group-hover:text-mountain-blue transition-colors duration-300">
+                <span className="text-4xl text-golden-yellow group-hover:text-mountain-blue font-light">+</span>
+              </div>
+              <h4 className="text-white font-oswald font-bold text-xl uppercase mb-3 tracking-wide">Add Your Voice</h4>
+              <p className="text-slate-400 text-sm font-light leading-relaxed max-w-[200px]">
+                Join the brotherhood. Share your journey with the next generation of riders.
+              </p>
+            </div>
             {allReviews.map((review, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className={`bg-white p-8 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-500 border flex flex-col group hover:-translate-y-2 relative overflow-hidden ${review.isUserSubmitted ? 'border-golden-yellow/30' : 'border-slate-100'}`}
               >
                 {review.isUserSubmitted && (
@@ -263,7 +366,7 @@ const TestimonialsSection: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-oswald font-bold text-mountain-blue text-sm uppercase">{review.name}</h4>
-                    <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">{review.location}</p>
+                    <p className="text-xs text-slate-400 font-bold uppercase tracking-widest">{review.location}</p>
                   </div>
                 </div>
               </div>

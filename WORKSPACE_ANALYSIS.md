@@ -406,7 +406,7 @@ optimizeDeps: {
 - **Company**: Himalayan Marmot
 - **Founder**: Tsewang Norboo
 - **Location**: Main Market, near Samsung showroom, Leh, Ladakh - 194101
-- **Phone**: +91 6006114260 / +91 9971296649
+- **Phone**: +91 6006114260
 - **Email**: himalayanmarmot19@gmail.com
 - **Google Maps**: [https://maps.app.goo.gl/hLVkQQUuSCsupyC7A](https://maps.app.goo.gl/hLVkQQUuSCsupyC7A)
 - **Instagram**: [@himalayan_marmot_2019](https://www.instagram.com/himalayan_marmot_2019/)

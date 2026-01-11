@@ -22,13 +22,13 @@ const PackageCard: React.FC<Props> = ({ tour }) => {
           className="w-full h-full object-cover group-hover:scale-110 group-hover:brightness-110 transition-all duration-1000 ease-out"
           loading="lazy"
         />
-        
+
         {/* Cinema Overlay Mask */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 opacity-50 md:opacity-40 md:group-hover:opacity-60 transition-opacity duration-700"></div>
 
         {/* Floating Badge - Mobile Optimized */}
         <div className="absolute top-4 left-4 md:top-5 md:left-5 bg-tibetan-red text-white px-3 py-1.5 md:px-5 md:py-2 rounded-full text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] md:tracking-[0.25em] shadow-2xl z-10 border border-white/20">
-          {tour.duration}
+          {tour.variants && tour.variants.length > 0 ? `Choice of ${tour.duration} / ${tour.variants[tour.variants.length - 1].duration}` : tour.duration}
         </div>
 
         {/* Price Overlay - Mobile Enhanced */}
@@ -40,17 +40,17 @@ const PackageCard: React.FC<Props> = ({ tour }) => {
             </p>
           </div>
           <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center text-mountain-blue shadow-xl transition-all duration-500 group-hover:bg-golden-yellow group-hover:scale-110 group-hover:rotate-12">
-             <span className="text-lg md:text-xl">🏍️</span>
+            <span className="text-lg md:text-xl">🏍️</span>
           </div>
         </div>
       </div>
-      
+
       {/* Content - Mobile Optimized */}
       <div className="p-6 md:p-8 flex-grow flex flex-col">
         <h3 className="text-xl md:text-2xl font-oswald font-black text-mountain-blue mb-3 md:mb-4 group-hover:text-[#00bcd4] transition-colors uppercase leading-tight tracking-tight">
           {tour.title}
         </h3>
-        
+
         <div className="flex flex-wrap gap-1.5 md:gap-2 mb-4 md:mb-6">
           {tour.highlights.slice(0, 3).map((h, i) => (
             <span key={i} className="bg-slate-50 text-slate-500 px-2.5 md:px-3 py-1 md:py-1.5 rounded-lg text-[8px] md:text-[9px] font-black uppercase tracking-widest border border-slate-100 group-hover:border-cyan-100 group-hover:bg-cyan-50/30 transition-colors">
@@ -61,13 +61,13 @@ const PackageCard: React.FC<Props> = ({ tour }) => {
             <span className="text-[9px] md:text-[10px] font-black text-slate-300 px-1">+ {tour.highlights.length - 3} MORE</span>
           )}
         </div>
-        
+
         <div className="mt-auto space-y-4 md:space-y-6">
           <div className="flex items-center text-[10px] md:text-[11px] text-slate-400 font-bold uppercase tracking-[0.15em] md:tracking-[0.2em]">
             <span className="w-6 h-6 md:w-7 md:h-7 bg-slate-100 rounded-full flex items-center justify-center mr-2 md:mr-3 text-[9px] md:text-[10px] transition-transform group-hover:rotate-180 duration-1000">⚙️</span>
             RE Himalayan BS6 Fleet
           </div>
-          
+
           {/* Mobile-Enhanced CTA Button */}
           <Link
             to={`/package/${tour.id}`}
@@ -76,7 +76,7 @@ const PackageCard: React.FC<Props> = ({ tour }) => {
             <span className="relative z-10">EXPLORE ITINERARY</span>
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></div>
           </Link>
-          
+
           {/* Mobile-Only Quick Actions */}
           <div className="flex gap-2 md:hidden">
             <a

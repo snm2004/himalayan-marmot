@@ -11,6 +11,7 @@ import Payments from './pages/Payments';
 import Contact from './pages/Contact';
 import Safety from './pages/Safety';
 import Festivals from './pages/Festivals';
+import Blogs from './pages/Blogs';
 import Booking from './pages/Booking';
 
 // Enhanced dynamic header height measurement hook
@@ -23,7 +24,7 @@ function useHeaderHeightVar() {
       // Measure the ENTIRE header stack (utility bar + main header + navigation)
       const totalHeaderHeight = header.getBoundingClientRect().height;
       document.documentElement.style.setProperty("--headerH", `${totalHeaderHeight}px`);
-      
+
       // Debug log to verify measurement
       console.log('Header height updated:', totalHeaderHeight + 'px');
     };
@@ -51,7 +52,7 @@ function useHeaderHeightVar() {
         setTimeout(setVar, 50); // Recalculate after menu toggle
       });
       observer.observe(hamburgerButton, { attributes: true, attributeFilter: ['aria-expanded', 'class'] });
-      
+
       hamburgerButton.addEventListener('click', () => {
         setTimeout(setVar, 100); // Recalculate after click
       });
@@ -97,12 +98,18 @@ const App: React.FC = () => {
     }
   }, []);
 
+  // Force body background to black on mount to prevent beige/grey bars from index.html classes
+  useEffect(() => {
+    document.body.style.backgroundColor = '#000000';
+    document.body.classList.remove('bg-yellow-50');
+  }, []);
+
   return (
     <Router>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen overflow-x-hidden">
+      <div id="app-wrapper" className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow pb-20 md:pb-0 overflow-x-hidden">
+        <main className="flex-grow pb-20 md:pb-0">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/tours" element={<Tours />} />
@@ -111,6 +118,7 @@ const App: React.FC = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/safety" element={<Safety />} />
             <Route path="/festivals" element={<Festivals />} />
+            <Route path="/blogs" element={<Blogs />} />
             <Route path="/booking" element={<Booking />} />
           </Routes>
         </main>

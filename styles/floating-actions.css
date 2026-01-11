@@ -1,0 +1,52 @@
+:root {
+  --mobile-bar-h: 64px;
+  /* Matches the 64px height logged in your console */
+  --mobile-gap: 16px;
+  --z-floating: 999999;
+  --icon-size: 56px;
+}
+
+.floating-actions {
+  position: fixed !important;
+  right: 24px !important;
+  bottom: 30px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  z-index: var(--z-floating) !important;
+  pointer-events: none !important;
+}
+
+.floating-actions>* {
+  pointer-events: auto !important;
+}
+
+.whatsapp-float,
+.chat-float {
+  width: var(--icon-size) !important;
+  height: var(--icon-size) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+  transition: transform 0.2s ease !important;
+}
+
+.whatsapp-float {
+  background-color: #25D366 !important;
+}
+
+.chat-float {
+  background-color: #2D5A87 !important;
+  color: white !important;
+  font-size: 24px !important;
+}
+
+@media (max-width: 768px) {
+  .floating-actions {
+    right: 16px !important;
+    /* This pushes them exactly above the yellow/black bottom bar */
+    bottom: calc(var(--mobile-bar-h) + var(--mobile-gap) + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}

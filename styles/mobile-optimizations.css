@@ -13,8 +13,13 @@
     -webkit-overflow-scrolling: touch;
   }
   
+  /* Remove body padding that might interfere with fixed positioning */
+  body {
+    padding-bottom: 0 !important;
+  }
+
   /* Remove conflicting padding - handled by hero container now */
-  
+
   /* Prevent zoom on input focus */
   input[type="text"],
   input[type="email"],
@@ -24,7 +29,7 @@
   textarea {
     font-size: 16px !important;
   }
-  
+
   /* Optimize button sizes for mobile */
   button,
   .btn,
@@ -32,41 +37,42 @@
     min-height: 44px;
     min-width: 44px;
   }
-  
+
   /* Improve mobile scrolling performance */
   .scroll-container {
     -webkit-overflow-scrolling: touch;
     transform: translateZ(0);
   }
-  
+
   /* Mobile-specific animations */
   .mobile-fade-in {
     animation: mobileFadeIn 0.3s ease-out;
   }
-  
+
   @keyframes mobileFadeIn {
     from {
       opacity: 0;
       transform: translateY(10px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
-  
+
   /* Optimize image loading on mobile */
   img {
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
   }
-  
+
   /* Mobile-specific hover states (remove hover effects) */
   .mobile-no-hover:hover {
     transform: none !important;
     transform: scale(1) !important;
   }
-  
+
   /* Improve mobile form experience */
   .mobile-form-field {
     appearance: none;
@@ -76,13 +82,13 @@
     font-size: 16px;
     line-height: 1.5;
   }
-  
+
   /* Mobile-specific spacing */
   .mobile-spacing {
     padding: 16px;
     margin-bottom: 16px;
   }
-  
+
   /* Optimize mobile navigation */
   .mobile-nav {
     position: fixed;
@@ -95,18 +101,18 @@
     padding: 16px;
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
   }
-  
+
   /* Mobile-specific text sizes */
   .mobile-text-sm {
     font-size: 14px;
     line-height: 1.4;
   }
-  
+
   .mobile-text-base {
     font-size: 16px;
     line-height: 1.5;
   }
-  
+
   .mobile-text-lg {
     font-size: 18px;
     line-height: 1.4;
@@ -119,7 +125,7 @@
     padding-top: 8px;
     padding-bottom: 8px;
   }
-  
+
   .hero-mobile-landscape {
     min-height: 80vh;
   }
@@ -130,11 +136,11 @@
   .small-mobile-text {
     font-size: 14px;
   }
-  
+
   .small-mobile-padding {
     padding: 12px;
   }
-  
+
   .small-mobile-gap {
     gap: 8px;
   }
@@ -145,7 +151,7 @@
   .large-mobile-text {
     font-size: 16px;
   }
-  
+
   .large-mobile-padding {
     padding: 16px;
   }
@@ -172,11 +178,11 @@
   .mobile-hidden {
     display: block;
   }
-  
+
   .desktop-hidden {
     display: none;
   }
-  
+
   /* Remove conflicting padding - handled by hero container now */
 }
 
@@ -222,84 +228,18 @@
   0% {
     left: -100%;
   }
+
   100% {
     left: 100%;
   }
 }
 
-/* Floating Actions Portal - High Z-Index to appear above video */
-.floating-actions {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  pointer-events: none;
-}
-
-.floating-actions > * {
-  pointer-events: auto;
-}
-
-.whatsapp-float {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  background: #25D366;
-  border-radius: 50%;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-  transition: all 0.3s ease;
-  text-decoration: none;
-  z-index: 10000;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
-}
-
-.chat-float {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  background: #2D5A87;
-  border-radius: 50%;
-  border: none;
-  box-shadow: 0 4px 20px rgba(45, 90, 135, 0.4);
-  transition: all 0.3s ease;
-  cursor: pointer;
-  font-size: 20px;
-  z-index: 10000;
-}
-
-.chat-float:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 25px rgba(45, 90, 135, 0.6);
-}
-
-/* Mobile adjustments for floating actions */
-@media (max-width: 768px) {
-  .floating-actions {
-    bottom: 80px; /* Account for mobile navigation */
-    right: 16px;
-  }
-  
-  .whatsapp-float {
-    width: 48px;
-    height: 48px;
-  }
-  
-  .chat-float {
-    width: 42px;
-    height: 42px;
-    font-size: 18px;
-  }
-}
+/* ============================================
+   FLOATING ACTION STYLES
+   ============================================
+   All floating action button styles have been moved to:
+   styles/floating-actions.css
+   
+   DO NOT add any .floating-actions, .whatsapp-float,
+   or .chat-float styles here to avoid conflicts.
+   ============================================ */

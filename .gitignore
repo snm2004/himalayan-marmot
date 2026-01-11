@@ -24,3 +24,17 @@ dist-ssr
 *.sw?
 .vercel
 .env*.local
+
+# Large Video Files (>100MB)
+C5409.MP4
+C5408.MP4
+C5407.MP4
+C5406.MP4
+hero-video-1.mp4
+hero-video-4.mov
+ride1.mp4
+ride4.mov
+/public/videos/ride1.mp4
+/public/videos/ride2.mp4
+/public/videos/ride3.mp4
+/public/videos/ride4.mov

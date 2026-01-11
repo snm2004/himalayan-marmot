@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Hero from '../components/Hero';
 import PackageCard from '../components/PackageCard';
@@ -16,124 +16,89 @@ import { TOUR_PACKAGES, FOUNDER_NAME } from '../constants';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState('all');
 
   return (
-    <div className="relative">
+    <>
       <Hero />
 
       {/* Why Choose Us Section (Why Himalayan Marmot) */}
       <TrustSection />
 
       {/* Complete Tour Packages Display */}
-      <section id="packages" className="py-40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-yellow-50/50">
-        <div className="text-center mb-32">
-          <h2 className="text-tibetan-red font-oswald text-xl font-bold uppercase tracking-[0.4em] mb-4">
-            Complete Tour Collection
-          </h2>
-          <h3 className="text-4xl md:text-6xl font-oswald font-bold text-mountain-blue uppercase tracking-tight mb-6">
-            All Expeditions
-          </h3>
-          <p className="text-slate-600 text-lg max-w-3xl mx-auto">
-            Explore our complete range of Himalayan motorcycle expeditions, from local adventures to grand road trips across the world's highest motorable roads.
-          </p>
-        </div>
+      {/* Complete Tour Packages Display */}
+      {/* Complete Tour Packages Display */}
+      <section id="packages" className="py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-tibetan-red font-oswald text-xl font-bold uppercase tracking-[0.4em] mb-4">
+              Complete Tour Collection
+            </h2>
+            <h3 className="text-4xl md:text-6xl font-oswald font-bold text-mountain-blue uppercase tracking-tight mb-8">
+              All Expeditions
+            </h3>
 
-        {/* Local Expeditions */}
-        <div className="mb-32">
-          <div className="flex items-center mb-12">
-            <div className="bg-cyan-500 w-1 h-12 mr-4"></div>
-            <div>
-              <h4 className="text-2xl font-oswald font-bold text-mountain-blue uppercase tracking-wide">Local Expeditions</h4>
-              <p className="text-slate-500 text-sm">Perfect for first-time riders and shorter adventures</p>
+            {/* Tab Navigation */}
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              <button
+                onClick={() => setActiveTab('all')}
+                className={`px-8 py-3 rounded-full font-oswald font-bold uppercase tracking-wider text-sm transition-all duration-300 ${activeTab === 'all'
+                  ? 'bg-mountain-blue text-white shadow-lg scale-105'
+                  : 'bg-white text-slate-500 hover:bg-slate-100 hover:text-mountain-blue'
+                  }`}
+              >
+                All Expeditions
+              </button>
+              <button
+                onClick={() => setActiveTab('local')}
+                className={`px-8 py-3 rounded-full font-oswald font-bold uppercase tracking-wider text-sm transition-all duration-300 ${activeTab === 'local'
+                  ? 'bg-cyan-600 text-white shadow-lg scale-105'
+                  : 'bg-white text-slate-500 hover:bg-cyan-50 hover:text-cyan-600'
+                  }`}
+              >
+                Local Experiencies
+              </button>
+              <button
+                onClick={() => setActiveTab('grand')}
+                className={`px-8 py-3 rounded-full font-oswald font-bold uppercase tracking-wider text-sm transition-all duration-300 ${activeTab === 'grand'
+                  ? 'bg-golden-yellow text-mountain-blue shadow-lg scale-105'
+                  : 'bg-white text-slate-500 hover:bg-yellow-50 hover:text-golden-yellow'
+                  }`}
+              >
+                Grand Road Trips
+              </button>
+              <button
+                onClick={() => setActiveTab('zanskar')}
+                className={`px-8 py-3 rounded-full font-oswald font-bold uppercase tracking-wider text-sm transition-all duration-300 ${activeTab === 'zanskar'
+                  ? 'bg-tibetan-red text-white shadow-lg scale-105'
+                  : 'bg-white text-slate-500 hover:bg-red-50 hover:text-tibetan-red'
+                  }`}
+              >
+                Zanskar Special
+              </button>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {TOUR_PACKAGES.filter(tour =>
-              tour.id === 'pangong-tso-special' || tour.id === 'turtuk-trail'
-            ).map((tour) => (
-              <PackageCard key={tour.id} tour={tour} />
-            ))}
-          </div>
-        </div>
 
-        {/* Grand Road Trips */}
-        <div className="mb-32">
-          <div className="flex items-center mb-12">
-            <div className="bg-golden-yellow w-1 h-12 mr-4"></div>
-            <div>
-              <h4 className="text-2xl font-oswald font-bold text-mountain-blue uppercase tracking-wide">Grand Road Trips</h4>
-              <p className="text-slate-500 text-sm">Epic journeys across multiple high-altitude passes</p>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {TOUR_PACKAGES.filter(tour =>
-              tour.id === 'grand-loop'
-            ).map((tour) => (
-              <PackageCard key={tour.id} tour={tour} />
-            ))}
-          </div>
-        </div>
-
-        {/* Umling La Challenge */}
-        <div className="mb-32">
-          <div className="flex items-center mb-12">
-            <div className="bg-tibetan-red w-1 h-12 mr-4"></div>
-            <div>
-              <h4 className="text-2xl font-oswald font-bold text-mountain-blue uppercase tracking-wide">Umling La Challenge</h4>
-              <p className="text-slate-500 text-sm">Conquer the world's highest motorable road</p>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {TOUR_PACKAGES.filter(tour =>
-              tour.id === 'umling-la-challenge'
-            ).map((tour) => (
-              <PackageCard key={tour.id} tour={tour} />
-            ))}
-          </div>
-        </div>
-
-        {/* Festival Specials */}
-        <div className="mb-32">
-          <div className="flex items-center mb-12">
-            <div className="bg-purple-500 w-1 h-12 mr-4"></div>
-            <div>
-              <h4 className="text-2xl font-oswald font-bold text-mountain-blue uppercase tracking-wide">Festival Specials</h4>
-              <p className="text-slate-500 text-sm">Experience Ladakh's vibrant cultural festivals</p>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {TOUR_PACKAGES.filter(tour =>
-              tour.id === 'hemis-festival-special'
-            ).map((tour) => (
-              <PackageCard key={tour.id} tour={tour} />
-            ))}
-          </div>
-        </div>
-
-        {/* Complete Overview Grid */}
-        <div className="bg-slate-50 rounded-3xl p-16 mt-24">
-          <h4 className="text-3xl font-oswald font-bold text-mountain-blue text-center mb-12 uppercase tracking-wide">
-            Complete Tour Overview
-          </h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-            {TOUR_PACKAGES.map((tour) => (
-              <div key={tour.id} className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-mountain-blue to-cyan-500 rounded-full flex items-center justify-center text-white text-2xl mb-4 mx-auto">
-                    🏍️
-                  </div>
-                  <h5 className="font-oswald font-bold text-mountain-blue mb-2 text-sm uppercase">{tour.title}</h5>
-                  <p className="text-xs text-slate-500 mb-3">{tour.duration}</p>
-                  <p className="text-golden-yellow font-bold text-lg">{tour.startingPrice}</p>
-                  <Link
-                    to={`/package/${tour.id}`}
-                    className="inline-block mt-4 bg-mountain-blue text-white px-4 py-2 rounded-full text-xs font-bold hover:bg-tibetan-red transition-all"
-                  >
-                    VIEW DETAILS
-                  </Link>
-                </div>
+          {/* Filtered Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 min-h-[500px] transition-all duration-500">
+            {TOUR_PACKAGES.filter(tour => {
+              if (activeTab === 'all') return true;
+              if (activeTab === 'local') return ['ladakh-land-of-high-passes', 'turtuk-valley', 'ride-to-heaven'].includes(tour.id);
+              if (activeTab === 'grand') return ['manali-ladakh-manali', 'manali-leh-srinagar', 'srinagar-leh-manali'].includes(tour.id);
+              if (activeTab === 'zanskar') return tour.id === 'zanskar-umling-la';
+              return true;
+            }).map((tour) => (
+              <div key={tour.id} className="animate-fade-in-up">
+                <PackageCard tour={tour} />
               </div>
             ))}
+          </div>
+
+          {/* Empty State / Description for specific tabs */}
+          <div className="mt-12 text-center text-slate-500 text-sm font-light italic">
+            {activeTab === 'local' && "Ideal for shorter stays and exploring the heart of Ladakh."}
+            {activeTab === 'grand' && "The ultimate Himalayan crossing experience. High passes, long roads."}
+            {activeTab === 'zanskar' && "For those who seek the path less traveled. Pure raw adventure."}
           </div>
         </div>
       </section>
@@ -263,7 +228,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-    </div>
+    </>
   );
 };
 

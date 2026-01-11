@@ -102,38 +102,51 @@ const WeatherWidget: React.FC = () => {
   }, [fetchWeather]);
 
   return (
-    <div className="flex items-center bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 transition-all hover:bg-white/20 group shadow-inner">
-      <div className="flex items-center border-r border-white/10 pr-3 mr-3">
-        <span className="relative flex h-2 w-2 mr-2">
+    <div className="flex items-center bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-2 sm:px-4 py-1 sm:py-1.5 transition-all hover:bg-white/20 group shadow-inner">
+      {/* Live Indicator - Compact on mobile */}
+      <div className="flex items-center border-r border-white/10 pr-1.5 sm:pr-3 mr-1.5 sm:mr-3 flex-shrink-0">
+        <span className="relative flex h-1.5 w-1.5 sm:h-2 sm:w-2 mr-1 sm:mr-2">
           <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${error ? 'bg-red-400' : isSyncing ? 'bg-amber-400' : 'bg-green-400'
             }`}></span>
-          <span className={`relative inline-flex rounded-full h-2 w-2 ${error ? 'bg-red-500' : isSyncing ? 'bg-amber-400' : 'bg-green-500'
+          <span className={`relative inline-flex rounded-full h-1.5 w-1.5 sm:h-2 sm:w-2 ${error ? 'bg-red-500' : isSyncing ? 'bg-amber-400' : 'bg-green-500'
             }`}></span>
         </span>
-        <span className="text-[7px] font-black tracking-widest text-white/40 uppercase whitespace-nowrap">
+        <span className="hidden sm:inline text-[7px] font-black tracking-widest text-white/40 uppercase whitespace-nowrap">
           {weather.isLive ? 'LIVE' : 'SYNC'}
         </span>
       </div>
 
-      <div className="flex items-center space-x-5">
-        <div className="flex items-center">
-          <span className="text-golden-yellow mr-1.5 text-[10px]">
+      <div className="flex items-center space-x-2 sm:space-x-5 flex-shrink-0">
+        {/* LEH - FORCE VISIBILITY */}
+        <div className="flex items-center gap-1">
+          <span className="text-[10px] sm:text-[10px]">
             {weather.leh.condition === 'Clear' ? '☀️' : weather.leh.condition === 'Cloudy' ? '⛅' : '🌤️'}
           </span>
-          <span className="font-black text-[8px] text-white/40 mr-1 uppercase">LEH</span>
-          <span className="font-bold text-[11px] text-white">{weather.leh.temp.toFixed(0)}°</span>
+          <span
+            className="font-bold text-white whitespace-nowrap"
+            style={{ fontSize: '12px', display: 'inline', visibility: 'visible', opacity: 1 }}
+          >
+            {weather.leh.temp.toFixed(0)}°
+          </span>
         </div>
 
-        <div className="flex items-center">
-          <span className="text-cyan-400 mr-1.5 text-[10px]">
+        {/* KHARDUNG LA - FORCE VISIBILITY */}
+        <div className="flex items-center gap-1">
+          <span className="text-[10px] sm:text-[10px]">
             {weather.khardungla.temp < 0 ? '❄️' : '🏔️'}
           </span>
-          <span className="font-black text-[8px] text-white/40 mr-1 uppercase">K-LA</span>
-          <span className="font-bold text-[11px] text-white">{weather.khardungla.temp.toFixed(1)}°</span>
+          <span
+            className="font-bold text-white whitespace-nowrap"
+            style={{ fontSize: '12px', display: 'inline', visibility: 'visible', opacity: 1 }}
+          >
+            {weather.khardungla.temp.toFixed(0)}°
+          </span>
         </div>
 
-        <div className="hidden xl:block border-l border-white/10 pl-5 ml-1">
-          <span className={`text-[8px] font-black tracking-widest uppercase ${weather.isLive ? 'text-green-400' : 'text-golden-yellow animate-pulse'
+        {/* Status - Desktop only */}
+        <div className="hidden xl:flex items-center border-l border-white/10 pl-3 sm:pl-5 ml-1">
+          <span className="font-black text-[8px] text-white/40 mr-1 uppercase hidden xl:inline">LEH</span>
+          <span className={`text-[8px] font-black tracking-widest uppercase whitespace-nowrap ${weather.isLive ? 'text-green-400' : 'text-golden-yellow animate-pulse'
             }`}>
             {weather.status}
           </span>

@@ -4,7 +4,7 @@ import { TourPackage, CancellationPolicy } from './types';
 
 export const COMPANY_NAME = "Himalayan Marmot";
 export const FOUNDER_NAME = "Tsewang Norboo";
-export const CONTACT_NUMBERS = ["+91 6006114260", "+91 9971296649"];
+export const CONTACT_NUMBERS = ["+91 6006114260"];
 export const EMAIL = "himalayanmarmot19@gmail.com";
 export const ADDRESS_MAIN = "Main market, near Samsung show room Leh Ladakh - 194101";
 export const ADDRESS_OFFICE = "Housing Colony, near Radio Station, Leh Ladakh, India - 194101";
@@ -22,10 +22,10 @@ export const IG_STATS = {
 };
 
 export const BANK_DETAILS = {
-  accountNo: "6200157200",
+  accountNo: "120001572039",
   bank: "Canara Bank",
   ifsc: "CNRB0017651",
-  accountName: "Tsewang Norboo"
+  accountName: "Himalayan Marmot"
 };
 
 export const COMMON_INCLUSIONS = [
@@ -59,269 +59,276 @@ export const CANCELLATION_POLICIES: CancellationPolicy[] = [
 
 export const TOUR_PACKAGES: TourPackage[] = [
   {
-    id: "pangong-tso-special",
-    title: "Pangong Tso Special",
+    id: "ladakh-land-of-high-passes",
+    title: "Ladakh Land of High Passes (Leh Circuit)",
     duration: "6D/5N",
-    highlights: ["Leh Palace", "Nubra Valley", "Diskit Monastery", "Pangong Lake"],
-    startingPrice: "₹18,550",
+    highlights: ["Leh Palace", "Shanti Stupa", "Hall of Fame", "Magnetic Hill", "Sangam Point", "Nubra Valley", "Pangong Lake", "Khardung La", "Best for: First Timers & Families"],
+    startingPrice: "₹18,500",
     priceTiers: [
-      { bike: "RE Himalayan 411cc BS6", dual: "₹18,550", solo: "₹23,499" },
-      { bike: "RE Himalayan 450cc BS6", dual: "₹19,550", solo: "₹24,499" }
+      { bike: "RE Himalayan 411cc BS6", dual: "₹18,500", solo: "₹24,500" },
+      { bike: "RE Himalayan 450cc BS6", dual: "₹22,500", solo: "₹28,500" }
     ],
-    image: "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=1000&auto=format&fit=crop",
-    pdfUrl: "/Leh-to-Leh-6D5N.pdf",
+    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1000&auto=format&fit=crop",
+    pdfUrl: "/packages/Ladakh Land of High Passes 2026-3.pdf",
     itinerary: [
-      { day: 1, title: "Leh Arrival & Local", description: "Visit Leh Palace, Leh Market, and Shanti Stupa. Focus on rest and acclimatization." },
-      { day: 2, title: "Sham Valley Circuit", description: "Hall of Fame, Spituk, Pathar Sahib, Magnetic Hill, and Sangam Point." },
-      { day: 3, title: "Leh to Nubra Valley", description: "Cross Khardungla Pass to reach the Valley of Flowers. Night stay in Nubra." },
-      { day: 4, title: "Nubra to Pangong via Shayok", description: "Visit Diskit Monastery and then ride via Shayok route to the majestic Pangong Lake." },
-      { day: 5, title: "Pangong to Leh via Chang La", description: "Return to Leh via Chang La Pass. Visit Thiksey and Rancho School on the way." },
-      { day: 6, title: "Leh Departure", description: "Airport transfer for your flight home." }
+      { day: 1, title: "DELHI – LEH", description: "Arrival at Leh Airport. Himalayan Marmot representative will receive you. Visit Leh Palace and Shanti Stupa in the evening. Rest for acclimatization." },
+      { day: 2, title: "LEH - MAGNETIC HILL - SANGAM", description: "Guided tour of Hall of Fame, Spituk Monastery, Pathar Sahib, Magnetic Hill, and Sangam point." },
+      { day: 3, title: "LEH – KHARDUNGLA - NUBRA VALLEY", description: "Drive over Khardung La (18,300 ft), the world's highest motorable road. Visit Hunder sand dunes for a camel safari." },
+      { day: 4, title: "NUBRA VALLEY - PANGONG VIA SHAYOK", description: "Travel to Pangong Lake via Shayok valley, visiting Diskit Monastery en route. Overnight at lakeside camp." },
+      { day: 5, title: "PANGONG - LEH VIA CHANGLA PASS", description: "Return to Leh via Changla Pass (17,350 ft), visiting Thiksey and Shey monasteries and Hemis." },
+      { day: 6, title: "LEH - DEPARTURE", description: "Morning transfer to Leh airport for your flight back home." }
     ],
-    inclusions: COMMON_INCLUSIONS,
+    inclusions: [
+      ...COMMON_INCLUSIONS,
+      "Hotel Category: Class A / Deluxe",
+      "Meal Plan: MAP (Breakfast + Dinner)"
+    ],
     exclusions: COMMON_EXCLUSIONS,
     routePoints: [
       { name: "Leh", x: 20, y: 70, elevation: "3,500m" },
       { name: "Khardung La", x: 40, y: 30, elevation: "5,359m" },
       { name: "Nubra", x: 60, y: 20, elevation: "3,000m" },
       { name: "Pangong", x: 80, y: 50, elevation: "4,250m" }
-    ]
+    ],
+    variants: []
   },
   {
-    id: "turtuk-trail",
-    title: "The Turtuk Trail",
-    duration: "7D/6N",
-    highlights: ["Turtuk Village", "Pangong Tso", "Rezang La", "Khardung La"],
-    startingPrice: "₹20,499",
-    priceTiers: [
-      { bike: "RE Himalayan 411cc BS6", dual: "₹20,499", solo: "₹26,499" },
-      { bike: "RE Himalayan 450cc BS6", dual: "₹21,499", solo: "₹27,499" }
-    ],
-    image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1000&auto=format&fit=crop",
-    pdfUrl: "/Leh-to-Leh-7D6N-Turtuk.pdf",
-    itinerary: [
-      { day: 1, title: "Leh Arrival", description: "Leh Palace, Market and Shanti Stupa visit." },
-      { day: 2, title: "Sham Valley", description: "Hall of Fame, Spituk, Magnetic Hill, Sangam Point." },
-      { day: 3, title: "Leh to Nubra", description: "Cross Khardungla to reach the Valley of Flowers." },
-      { day: 4, title: "Nubra to Turtuk", description: "Day trip to the last village of India, Turtuk. Return to Nubra for stay." },
-      { day: 5, title: "Nubra to Pangong", description: "Ride via Shayok to Pangong Lake. Overnight stay at the lake." },
-      { day: 6, title: "Pangong to Leh", description: "Return via Rezang la and Tsagala La to Leh." },
-      { day: 7, title: "Departure", description: "Transfer to Leh Airport." }
-    ],
-    inclusions: COMMON_INCLUSIONS,
-    exclusions: COMMON_EXCLUSIONS,
-    routePoints: [
-      { name: "Leh", x: 20, y: 80, elevation: "3,500m" },
-      { name: "Nubra", x: 40, y: 40, elevation: "3,000m" },
-      { name: "Turtuk", x: 10, y: 20, elevation: "2,800m" },
-      { name: "Pangong", x: 80, y: 60, elevation: "4,250m" }
-    ]
-  },
-  {
-    id: "umling-la-challenge",
-    title: "Umling La Challenge",
-    duration: "8D/7N",
-    highlights: ["Highest Road", "Hanle", "Pangong", "Turtuk"],
-    startingPrice: "₹22,500",
-    priceTiers: [
-      { bike: "RE Himalayan 411cc BS6", dual: "₹22,500", solo: "₹29,850" },
-      { bike: "RE Himalayan 450cc BS6", dual: "₹23,500", solo: "₹30,850" }
-    ],
-    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1000&auto=format&fit=crop",
-    pdfUrl: "/Leh-to-Leh-8D7N-Umling-La.pdf",
-    itinerary: [
-      { day: 1, title: "Arrival", description: "Leh Palace, Market, Shanti Stupa." },
-      { day: 2, title: "Sham Valley", description: "Hall of Fame, Pathar Sahib, Magnetic Hill, Sangam." },
-      { day: 3, title: "Leh to Nubra", description: "Khardungla crossing to Nubra Valley." },
-      { day: 4, title: "Nubra to Turtuk", description: "Turtuk Village exploration and return to Nubra." },
-      { day: 5, title: "Nubra to Pangong", description: "Via Shayok and Diskit Monastery to Pangong." },
-      { day: 6, title: "Pangong to Hanle", description: "Via Rezang la and Tsagala La to Hanle (Dark Sky Sanctuary)." },
-      { day: 7, title: "Hanle to Leh via Umling La", description: "Conquer the World's Highest Road: Umling La Pass and return to Leh." },
-      { day: 8, title: "Departure", description: "Airport Drop." }
-    ],
-    inclusions: COMMON_INCLUSIONS,
-    exclusions: COMMON_EXCLUSIONS,
-    routePoints: [
-      { name: "Leh", x: 20, y: 70, elevation: "3,500m" },
-      { name: "Pangong", x: 60, y: 50, elevation: "4,250m" },
-      { name: "Hanle", x: 85, y: 70, elevation: "4,300m" },
-      { name: "Umling La", x: 95, y: 90, elevation: "5,882m" }
-    ]
-  },
-  {
-    id: "grand-loop",
-    title: "Manali-Leh-Manali Loop",
+    id: "manali-ladakh-manali",
+    title: "Manali – Ladakh – Manali (Umling La + Tsomoriri)",
     duration: "11D/10N",
-    highlights: ["Atal Tunnel", "Sarchu", "Umling La", "Tso Moriri"],
-    startingPrice: "₹29,999",
+    highlights: ["Rohtang Pass", "Jispa", "Leh", "Khardung La", "Nubra Valley", "Umling La", "Tso Moriri", "Best for: Adventure Seekers & High Altitude Lovers"],
+    startingPrice: "₹36,500",
     priceTiers: [
-      { bike: "RE Himalayan 411cc BS6", dual: "₹32,499", solo: "₹38,499" },
-      { bike: "RE Himalayan 450cc BS6", dual: "₹33,499", solo: "₹39,499" }
+      { bike: "RE Himalayan 411cc BS6", dual: "₹36,500", solo: "₹42,500" },
+      { bike: "RE Himalayan 450cc BS6", dual: "₹39,999", solo: "₹46,500" }
     ],
     image: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?q=80&w=1000&auto=format&fit=crop",
-    pdfUrl: "/Manali-Leh-Manali-11D10N.pdf",
+    pdfUrl: "/packages/Manali - Ladakh - Manalai 2026 5.pdf",
     itinerary: [
-      { day: 1, title: "Reach Manali", description: "Assemble and acclimatize in Manali." },
-      { day: 2, title: "Manali to Jispa", description: "7-8 hours ride through Atal Tunnel." },
-      { day: 3, title: "Jispa to Leh", description: "Long ride across Baralacha Pass and Gata Loops." },
-      { day: 4, title: "Leh to Nubra", description: "Cross Khardungla to reach Valley of Flowers." },
-      { day: 5, title: "Nubra to Turtuk", description: "Border village excursion and return to Nubra." },
-      { day: 6, title: "Nubra to Pangong", description: "Via Shayok and Diskit to the Blue Lake." },
-      { day: 7, title: "Pangong to Hanle", description: "Ride via Rezang la and Tsagala La." },
-      { day: 8, title: "Hanle to Tso Moriri", description: "Via Umling La Pass to the turquoise Tso Moriri lake." },
-      { day: 9, title: "Tso Moriri to Sarchu", description: "Via Tso Kar lake (8-9 hours)." },
-      { day: 10, title: "Sarchu to Manali", description: "Final descent to Manali." },
-      { day: 11, title: "Departure", description: "Trip ends at Manali." }
+      { day: 1, title: "MANALI - SARCHU", description: "Manali – Sarchu – Leh – Sham Valley – Nubra – Pangong – Hanle – Umling La – Tso Moriri – Sarchu – Manali – Delhi (Volvo)" },
+      { day: 2, title: "Manali to Jispa", description: "Ride via Rohtang Pass to the picturesque village of Jispa." },
+      { day: 3, title: "Jispa to Leh", description: "Scale five major mountain passes including Tanglang La to reach Leh." },
+      { day: 4, title: "Leh - Sham Valley", description: "Visit Sangam Point, Magnetic Hill, Hall of Fame, and Spituk Monastery." },
+      { day: 5, title: "Leh to Nubra Valley Via Khardungla Pass", description: "Cross Khardung La Pass (18,380 ft) to reach Nubra Valley sand dunes." },
+      { day: 6, title: "Nubra Valley via Shayok - Pangong", description: "Drive alongside the Shayok river to reach high-altitude Pangong Tso lake." },
+      { day: 7, title: "Pangong to Hanle via Rezang la", description: "Travel through remote border regions via Rezang La war memorial." },
+      { day: 8, title: "Hanle - Tsomiri via Umling la pass", description: "Scale Umling La (19,300 ft), the world's highest motorable pass." },
+      { day: 9, title: "Tsomiri - Sarchu", description: "Begin return journey by crossing high passes to reach Sarchu plateau." },
+      { day: 10, title: "Sarchu - Manali", description: "Ride back to Manali via Baralacha La and Rohtang Pass." },
+      { day: 11, title: "Manali - Delhi", description: "Depart from Manali via Volvo bus for the final leg to Delhi." }
     ],
-    inclusions: COMMON_INCLUSIONS,
+    inclusions: [
+      ...COMMON_INCLUSIONS,
+      "Hotel Category: Deluxe (Hanle Standard Homestay)",
+      "Meal Plan: MAP (Breakfast + Dinner)"
+    ],
     exclusions: COMMON_EXCLUSIONS,
     routePoints: [
       { name: "Manali", x: 10, y: 95, elevation: "2,050m" },
       { name: "Sarchu", x: 30, y: 70, elevation: "4,290m" },
       { name: "Leh", x: 50, y: 40, elevation: "3,500m" },
-      { name: "Umling La", x: 90, y: 60, elevation: "5,882m" },
-      { name: "Tso Moriri", x: 75, y: 80, elevation: "4,522m" }
+      { name: "Pangong", x: 75, y: 55, elevation: "4,250m" },
+      { name: "Umling La", x: 90, y: 80, elevation: "5,882m" },
+      { name: "Tso Moriri", x: 80, y: 75, elevation: "4,522m" }
     ]
   },
   {
-    id: "manali-ladakh-srinagar",
-    title: "Manali-Ladakh-Srinagar Circuit",
+    id: "manali-leh-srinagar",
+    title: "Manali – Leh – Srinagar Trip (Umling La + Kargil)",
     duration: "11D/10N",
-    highlights: ["Manali", "Sarchu", "Leh", "Nubra", "Pangong", "Turtuk", "Kargil", "Srinagar"],
-    startingPrice: "₹32,499",
+    highlights: ["Rohtang Pass", "Khardung La", "Pangong Tso", "Hanle", "Umling La", "Zojila Pass", "Srinagar", "Best for: Complete Himalayan Experience"],
+    startingPrice: "₹36,500",
     priceTiers: [
-      { bike: "RE Himalayan 411cc BS6", dual: "₹32,499", solo: "₹38,499" },
-      { bike: "RE Himalayan 450cc BS6", dual: "₹33,499", solo: "₹39,499" }
+      { bike: "RE Himalayan 411cc BS6", dual: "₹36,500", solo: "₹42,500" },
+      { bike: "RE Himalayan 450cc BS6", dual: "₹39,999", solo: "₹46,500" }
     ],
     image: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?q=80&w=1000&auto=format&fit=crop",
-    pdfUrl: "/Manali-Leh-Srinagar-11D10N.pdf",
+    pdfUrl: "/packages/Manali leh -Srinagar 2026 3.pdf",
     itinerary: [
-      { day: 1, title: "Arrival at Manali", description: "Assemble and acclimatize in Manali." },
-      { day: 2, title: "Manali to Sarchu/Jispa", description: "Via Rohtang Pass (12,000+ ft), 7-8 hours ride." },
-      { day: 3, title: "Sarchu to Leh", description: "Long ride across Baralacha Pass and Gata Loops." },
-      { day: 4, title: "Leh Local Sightseeing", description: "Hall of Fame, Shanti Stupa, Leh Palace, Market." },
-      { day: 5, title: "Leh to Nubra Valley", description: "Cross Khardung La to reach Valley of Flowers." },
-      { day: 6, title: "Nubra to Turtuk", description: "Visit the last village of India and return to Nubra." },
-      { day: 7, title: "Nubra to Pangong", description: "Via Shayok route to the blue lake." },
-      { day: 8, title: "Pangong to Leh", description: "Via Chang La Pass with scenic stops." },
-      { day: 9, title: "Leh to Kargil", description: "Via Lamayuru and Mulbekh monasteries." },
-      { day: 10, title: "Kargil to Srinagar", description: "Via Drass and Sonamarg to Kashmir valley." },
-      { day: 11, title: "Departure from Srinagar", description: "Airport transfer." }
+      { day: 1, title: "Reached in Manali", description: "Arrive in Manali, check into hotel, and explore the local mall road." },
+      { day: 2, title: "Manali to Jispa", description: "Journey via high-altitude Rohtang Pass to a riverside camp in Jispa." },
+      { day: 3, title: "Jispa to Leh", description: "Traverse More Plains and multiple 16,000+ ft passes to reach Leh." },
+      { day: 4, title: "Leh - Sham Valley", description: "Visit Magnetic Hill, Sangam Point, and the War Memorial." },
+      { day: 5, title: "Leh to Nubra Valley Via Khardungla Pass", description: "Cross mighty Khardung La (18,380 ft) to reach the Nubra cold desert." },
+      { day: 6, title: "Nubra Valley via Shayok - Pangong", description: "Drive through beautiful Shayok valley to iconic blue waters of Pangong Tso." },
+      { day: 7, title: "Pangong to Hanle via Rezang la", description: "Ride through restricted border region to arrive in Hanle." },
+      { day: 8, title: "Hanle - Leh via Umling la pass", description: "Conquer the world's highest motorable road at Umling La (19,300 ft)." },
+      { day: 9, title: "Leh to Kargil via Fotula", description: "Journey towards Kargil, stopping at the Lamayuru 'Moonland'." },
+      { day: 10, title: "Kargil to Srinagar via Zojila", description: "Cross Zojila Pass to reach the beautiful valley of Srinagar." },
+      { day: 11, title: "Delhi Departure", description: "Morning transfer to Srinagar airport for your flight home." }
     ],
-    inclusions: COMMON_INCLUSIONS,
+    inclusions: [
+      ...COMMON_INCLUSIONS,
+      "Hotel Category: Deluxe (Hanle Standard Homestay)",
+      "Meal Plan: MAP (Breakfast + Dinner)"
+    ],
     exclusions: COMMON_EXCLUSIONS,
     routePoints: [
       { name: "Manali", x: 10, y: 95, elevation: "2,050m" },
       { name: "Sarchu", x: 30, y: 70, elevation: "4,290m" },
       { name: "Leh", x: 50, y: 40, elevation: "3,500m" },
-      { name: "Pangong", x: 80, y: 50, elevation: "4,250m" },
-      { name: "Srinagar", x: 20, y: 10, elevation: "1,585m" }
+      { name: "Pangong", x: 75, y: 55, elevation: "4,250m" },
+      { name: "Kargil", x: 35, y: 20, elevation: "2,676m" },
+      { name: "Srinagar", x: 25, y: 10, elevation: "1,585m" }
     ]
   },
   {
     id: "srinagar-leh-manali",
-    title: "Srinagar-Leh-Manali Circuit",
+    title: "Srinagar – Leh – Manali (Turtuk + Umling La + Tsomoriri)",
     duration: "11D/10N",
-    highlights: ["Srinagar", "Sonamarg", "Kargil", "Leh", "Nubra", "Pangong", "Hanle", "Tso Moriri", "Manali"],
-    startingPrice: "₹34,999",
+    highlights: ["Srinagar", "Kargil", "Leh", "Nubra", "Pangong", "Hanle", "Tso Moriri", "Best for: High Passes & Culture Mix"],
+    startingPrice: "₹36,500",
     priceTiers: [
-      { bike: "RE Himalayan 411cc BS6", dual: "₹34,999", solo: "₹40,999" },
-      { bike: "RE Himalayan 450cc BS6", dual: "₹35,999", solo: "₹41,999" }
+      { bike: "RE Himalayan 411cc BS6", dual: "₹36,500", solo: "₹42,500" },
+      { bike: "RE Himalayan 450cc BS6", dual: "₹39,000", solo: "₹46,500" }
     ],
     image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1000&auto=format&fit=crop",
-    pdfUrl: "/Srinagar-Leh-Manali-11D10N.pdf",
+    pdfUrl: "/packages/Srinagar Leh Manali-2026.pdf",
     itinerary: [
-      { day: 1, title: "Arrival at Srinagar", description: "Airport pickup and Kashmir valley exploration." },
-      { day: 2, title: "Srinagar to Kargil", description: "Via Sonamarg (meadow of gold), 5-6 hours drive." },
-      { day: 3, title: "Kargil to Leh", description: "Via Lamayuru monastery and Magnetic Hill." },
-      { day: 4, title: "Leh Acclimatization", description: "Local sightseeing and rest day." },
-      { day: 5, title: "Leh to Nubra Valley", description: "Cross world's highest motorable pass - Khardung La." },
-      { day: 6, title: "Nubra Valley Exploration", description: "Diskit Monastery, sand dunes, double-humped camels." },
-      { day: 7, title: "Nubra to Pangong", description: "Via Shayok route to the famous blue lake." },
-      { day: 8, title: "Pangong to Hanle", description: "Via Rezang La to India's dark sky sanctuary." },
-      { day: 9, title: "Hanle to Tso Moriri", description: "High altitude lake at 4,522m elevation." },
-      { day: 10, title: "Tso Moriri to Manali", description: "Long descent via Sarchu, 10-12 hours." },
-      { day: 11, title: "Departure from Manali", description: "Trip ends at Manali." }
+      { day: 1, title: "Arrive Srinagar", description: "Arrival and transfer to hotel in Srinagar." },
+      { day: 2, title: "Srinagar to Kargil", description: "Drive through Zojila Pass and Drass to Kargil." },
+      { day: 3, title: "Kargil to Leh", description: "Visit Mulbekh & Lamayuru monasteries and Moon Landscape." },
+      { day: 4, title: "Leh to Nubra Valley", description: "Ride over Khardung La to the camel safari in Hunder." },
+      { day: 5, title: "Nubra to Turtuk", description: "Explore the unique culture of Turtuk village." },
+      { day: 6, title: "Nubra to Pangong", description: "Ride to the famous blue Pangong Lake via Shyok valley." },
+      { day: 7, title: "Pangong to Hanle", description: "Off-road journey via Rezang La and Tsaga La." },
+      { day: 8, title: "Hanle to Tso Moriri", description: "Visit the legendary Umling La (19,300 ft) before reaching Tso Moriri lake." },
+      { day: 9, title: "Tso Moriri to Sarchu", description: "Cross Tso Kar lake, Lachungla, and Nakeela passes." },
+      { day: 10, title: "Sarchu to Manali", description: "Final leg across Baralacha Pass and Rohtang/Atal Tunnel to Manali." },
+      { day: 11, title: "Departure", description: "Transfer to Manali bus stand/airport." }
     ],
-    inclusions: COMMON_INCLUSIONS,
+    inclusions: [
+      ...COMMON_INCLUSIONS,
+      "Hotel Category: Deluxe (some Standard camps/homestay)",
+      "Meal Plan: MAP (Breakfast + Dinner)"
+    ],
     exclusions: COMMON_EXCLUSIONS,
     routePoints: [
-      { name: "Srinagar", x: 15, y: 15, elevation: "1,585m" },
-      { name: "Kargil", x: 25, y: 25, elevation: "2,676m" },
+      { name: "Srinagar", x: 20, y: 10, elevation: "1,585m" },
+      { name: "Kargil", x: 30, y: 25, elevation: "2,676m" },
       { name: "Leh", x: 50, y: 40, elevation: "3,500m" },
+      { name: "Pangong", x: 75, y: 55, elevation: "4,250m" },
       { name: "Hanle", x: 85, y: 70, elevation: "4,300m" },
+      { name: "Tso Moriri", x: 80, y: 75, elevation: "4,522m" },
       { name: "Manali", x: 10, y: 95, elevation: "2,050m" }
     ]
   },
   {
-    id: "grand-himalayan-loop",
-    title: "Grand Himalayan Loop",
-    duration: "10D/9N",
-    highlights: ["Srinagar", "Kargil", "Leh", "Nubra", "Pangong", "Hanle", "Tso Moriri", "Manali"],
-    startingPrice: "₹35,500",
+    id: "zanskar-umling-la",
+    title: "Explore Zanskar to Umling La (Most Extreme)",
+    duration: "12D/11N",
+    highlights: ["Shinkula Pass", "Phugtal Monastery", "Zanskar", "Umling La", "Pangong Tso", "Best for: Extreme Riders & Off-road"],
+    startingPrice: "₹44,500",
     priceTiers: [
-      { bike: "RE Himalayan 411cc BS6", dual: "₹35,500", solo: "₹44,200" },
-      { bike: "RE Himalayan 450cc BS6", dual: "₹38,500", solo: "₹47,200" }
+      { bike: "RE Himalayan 411cc BS6", dual: "₹44,500", solo: "₹52,799" },
+      { bike: "RE Himalayan 450cc BS6", dual: "₹48,500", solo: "₹56,500" }
     ],
     image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1000&auto=format&fit=crop",
+    pdfUrl: "/packages/ZAngskar to UMling LA-6.pdf",
     itinerary: [
-      { day: 1, title: "Arrival at Srinagar", description: "Airport pickup and Kashmir valley exploration. Stay at Kashmir Deluxe." },
-      { day: 2, title: "Srinagar to Kargil", description: "Via Sonamarg (meadow of gold). Stay at Black Sheep/Similar." },
-      { day: 3, title: "Kargil to Leh", description: "Via Lamayuru monastery and Magnetic Hill. Stay at Shava Ladakh/Similar." },
-      { day: 4, title: "Leh to Nubra Valley", description: "Cross Khardung La to reach Valley of Flowers. Stay at Organic Boutique/Similar." },
-      { day: 5, title: "Nubra to Pangong", description: "Via Shayok route to the famous blue lake. Stay at Royal Forest/Similar." },
-      { day: 6, title: "Pangong to Hanle", description: "Via Rezang La to India's dark sky sanctuary. Stay at Lotus Camp/Similar." },
-      { day: 7, title: "Hanle to Tso Moriri", description: "High altitude lake at 4,522m elevation. Stay at Dolphin House/Similar." },
-      { day: 8, title: "Tso Moriri to Sarchu", description: "Via Tso Kar lake crossing. Stay at Gypsy Camp/Similar." },
-      { day: 9, title: "Sarchu to Manali", description: "Final descent via Rohtang Pass. Stay at Keylong Inn/Similar." },
-      { day: 10, title: "Departure from Manali", description: "Trip ends at Manali with airport transfer." }
+      { day: 0, title: "Delhi to Manali", description: "Overnight bus journey from Delhi." },
+      { day: 1, title: "Manali Arrival", description: "Bike handover and local Manali exploration." },
+      { day: 2, title: "Manali to Jispa", description: "Drive through Atal Tunnel into the Lahaul Valley." },
+      { day: 3, title: "Jispa to Padum", description: "Cross the high Shinkula Pass (16,580 ft) to enter Zanskar." },
+      { day: 4, title: "Padum to Purne", description: "Visit Phugtal Monastery, uniquely built into a cliff side." },
+      { day: 5, title: "Padum to Leh", description: "Epic journey via Lingshet through the Zanskar mountains to Leh." },
+      { day: 6, title: "Leh to Nubra", description: "Ride over Khardung La to the high-altitude desert." },
+      { day: 7, title: "Nubra to Pangong", description: "Visit Diskit monastery followed by the ride to Pangong Lake." },
+      { day: 8, title: "Pangong to Hanle", description: "Off-road ride along the border via Rezang La." },
+      { day: 9, title: "Hanle to Tsomoriri", description: "Summit Umling La (19,300 ft) before reaching Tso Moriri." },
+      { day: 10, title: "Tsomoriri to Sarchu", description: "Crossing the vast Moore Plains." },
+      { day: 11, title: "Sarchu to Manali", description: "Final descent back to Manali over Baralacha Pass." },
+      { day: 12, title: "Departure", description: "Transfer from Manali for onward journey." }
     ],
-    inclusions: COMMON_INCLUSIONS,
+    inclusions: [
+      ...COMMON_INCLUSIONS,
+      "Hotel Category: Mixed Deluxe/Standard camps/homestays",
+      "Meal Plan: MAP (Breakfast + Dinner)"
+    ],
     exclusions: COMMON_EXCLUSIONS,
-    hotelDetails: [
-      { city: "Srinagar", hotel: "Kashmir Deluxe/Similar", category: "Deluxe", mealPlan: "Breakfast/Dinner", nights: 1 },
-      { city: "Kargil", hotel: "Black Sheep/Similar", category: "Deluxe", mealPlan: "Breakfast/Dinner", nights: 1 },
-      { city: "Leh", hotel: "Shava Ladakh/Similar", category: "Deluxe", mealPlan: "Breakfast/Dinner", nights: 1 },
-      { city: "Nubra Valley", hotel: "Organic Boutique/Similar", category: "Deluxe", mealPlan: "Breakfast/Dinner", nights: 1 },
-      { city: "Pangong Lake", hotel: "Royal Forest/Similar", category: "Deluxe", mealPlan: "Breakfast/Dinner", nights: 1 },
-      { city: "Hanle", hotel: "Lotus Camp/Similar", category: "Standard", mealPlan: "Breakfast/Dinner", nights: 1 },
-      { city: "Tso Moriri", hotel: "Dolphin House/Similar", category: "Deluxe", mealPlan: "Breakfast/Dinner", nights: 1 },
-      { city: "Sarchu", hotel: "Gypsy Camp/Similar", category: "Standard", mealPlan: "Breakfast/Dinner", nights: 1 },
-      { city: "Manali", hotel: "Keylong Inn/Similar", category: "Deluxe", mealPlan: "Breakfast/Dinner", nights: 1 }
-    ],
     routePoints: [
-      { name: "Srinagar", x: 15, y: 15, elevation: "1,585m" },
-      { name: "Kargil", x: 25, y: 25, elevation: "2,676m" },
+      { name: "Manali", x: 10, y: 95, elevation: "2,050m" },
+      { name: "Jispa", x: 25, y: 80, elevation: "3,200m" },
+      { name: "Padum", x: 40, y: 60, elevation: "3,669m" },
       { name: "Leh", x: 50, y: 40, elevation: "3,500m" },
-      { name: "Hanle", x: 85, y: 70, elevation: "4,300m" },
-      { name: "Manali", x: 10, y: 95, elevation: "2,050m" }
+      { name: "Pangong", x: 75, y: 55, elevation: "4,250m" },
+      { name: "Umling La", x: 90, y: 80, elevation: "5,882m" }
     ]
   },
   {
-    // Fix: Added missing hemis-festival-special referred to in Festivals.tsx
-    id: "hemis-festival-special",
-    title: "Hemis Festival Special",
+    id: "ride-to-heaven",
+    title: "Ride to Heaven (Umling La + Hanle)",
+    duration: "8D/7N",
+    highlights: ["Hanle", "Umling La", "Pangong Tso", "Nubra Valley", "Best for: Leisure & Scenic Riders"],
+    startingPrice: "₹26,000",
+    priceTiers: [
+      { bike: "RE Himalayan 411cc BS6", dual: "₹26,000", solo: "₹30,500" },
+      { bike: "RE Himalayan 450cc BS6", dual: "₹29,000", solo: "₹36,500" }
+    ],
+    image: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?q=80&w=1000&auto=format&fit=crop",
+    pdfUrl: "/packages/Ride To Heaven 2026.pdf",
+    itinerary: [
+      { day: 1, title: "Leh – Leh", description: "Arrival at Leh Airport, hotel transfer, and a full day of rest for acclimatization." },
+      { day: 2, title: "Leh Sightseeing", description: "Visit Hall of Fame, Spituk, Pathar Sahib, Magnetic Hill, and Sangam." },
+      { day: 3, title: "Leh to Nubra Valley", description: "Ride through Khardung La Pass (18,380 ft) to visit Hunder sand dunes." },
+      { day: 4, title: "Nubra Valley to Turtuk", description: "Visit remote Turtuk village, the last village on the Indo-Pak border." },
+      { day: 5, title: "Nubra Valley to Pangong", description: "Scenic ride to Pangong Lake via the Shyok river route." },
+      { day: 6, title: "Pangong to Hanle", description: "Off-road ride along the lake to Hanle via Rezang La." },
+      { day: 7, title: "Hanle to Leh", description: "Return to Leh via Umling La, the world's highest motorable pass (19,024 ft)." },
+      { day: 8, title: "Leh-Departure", description: "Transfer to Leh airport for your flight." }
+    ],
+    inclusions: [
+      ...COMMON_INCLUSIONS,
+      "Hotel Category: Deluxe (Hanle Standard Homestay)",
+      "Meal Plan: MAP (Breakfast + Dinner)"
+    ],
+    exclusions: COMMON_EXCLUSIONS,
+    routePoints: [
+      { name: "Leh", x: 20, y: 70, elevation: "3,500m" },
+      { name: "Nubra", x: 50, y: 20, elevation: "3,000m" },
+      { name: "Pangong", x: 70, y: 50, elevation: "4,250m" },
+      { name: "Hanle", x: 80, y: 75, elevation: "4,300m" },
+      { name: "Umling La", x: 90, y: 85, elevation: "5,882m" }
+    ]
+  },
+  {
+    id: "turtuk-valley",
+    title: "Ladakh With Turtuk Valley",
     duration: "7D/6N",
-    highlights: ["Hemis Monastery", "Masked Dance", "Leh Local", "Pangong Lake"],
-    startingPrice: "₹21,500",
+    highlights: ["Turtuk Village", "Pangong Tso", "Nubra Valley", "Khardung La", "Best for: Culture & Landscape Photography"],
+    startingPrice: "₹22,500",
     priceTiers: [
-      { bike: "RE Himalayan 411cc BS6", dual: "₹21,500", solo: "₹27,500" },
-      { bike: "RE Himalayan 450cc BS6", dual: "₹22,500", solo: "₹28,500" }
+      { bike: "RE Himalayan 411cc BS6", dual: "₹22,500", solo: "₹27,500" },
+      { bike: "RE Himalayan 450cc BS6", dual: "₹27,500", solo: "₹32,500" }
     ],
-    image: "https://images.unsplash.com/photo-1590050752117-23a9d7fc20c8?q=80&w=1000&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1000&auto=format&fit=crop",
+    pdfUrl: "/packages/turtuk Valley2026-9.pdf",
     itinerary: [
-      { day: 1, title: "Leh Arrival", description: "Acclimatize and rest." },
-      { day: 2, title: "Hemis Festival Day 1", description: "Witness the grand opening and masked dances." },
-      { day: 3, title: "Hemis Festival Day 2", description: "Further exploration of the festival and rituals." },
-      { day: 4, title: "Leh to Nubra", description: "Via Khardungla." },
-      { day: 5, title: "Nubra to Pangong", description: "Via Shayok." },
-      { day: 6, title: "Pangong to Leh", description: "Via Changla." },
-      { day: 7, title: "Departure", description: "Airport transfer." }
+      { day: 1, title: "Leh – Leh", description: "Welcome at Leh airport and full day rest for altitude adjustment." },
+      { day: 2, title: "Leh Sightseeing", description: "Local tour of Hall of Fame, Pathar Sahib, Magnetic Hill, and Sangam." },
+      { day: 3, title: "Leh to Nubra Valley", description: "Ride across Khardung La to the Hunder sand dunes." },
+      { day: 4, title: "Nubra to Turtuk", description: "Visit the northernmost village of Turtuk." },
+      { day: 5, title: "Nubra to Pangong", description: "Journey to Pangong Lake via the Shyok river route." },
+      { day: 6, title: "Pangong to Leh", description: "Return via Changla Pass, visiting Thiksey monastery and Shey Palace." },
+      { day: 7, title: "Leh-Departure", description: "Transfer to airport for departure flight." }
     ],
-    inclusions: COMMON_INCLUSIONS,
-    exclusions: COMMON_EXCLUSIONS
-  }
+    inclusions: [
+      ...COMMON_INCLUSIONS,
+      "Hotel Category: Deluxe",
+      "Meal Plan: MAP (Breakfast + Dinner)"
+    ],
+    exclusions: COMMON_EXCLUSIONS,
+    routePoints: [
+      { name: "Leh", x: 20, y: 80, elevation: "3,500m" },
+      { name: "Khardung La", x: 35, y: 40, elevation: "5,359m" },
+      { name: "Nubra", x: 40, y: 20, elevation: "3,000m" },
+      { name: "Turtuk", x: 10, y: 15, elevation: "2,800m" },
+      { name: "Pangong", x: 80, y: 60, elevation: "4,250m" }
+    ]
+  },
 ];
+
+// Local Tours Packages
 
 export const FLEET = [
   {
@@ -336,7 +343,7 @@ export const FLEET = [
     engine: "450cc Single Cylinder",
     power: "40 bhp @ 8000 rpm",
     feature: "Enhanced power delivery & improved fuel efficiency",
-    image: "/himalayan-bike-new.jpg"
+    image: "/royalenfieldhimalayan450rightsideview.webp"
   }
 ];
 
@@ -363,17 +370,12 @@ export const TOUR_CATEGORIES = {
   LOCAL_EXPEDITIONS: {
     title: "Local Expeditions",
     subtitle: "6-8 Days | Leh Based",
-    tours: ["pangong-tso-special", "turtuk-trail", "umling-la-challenge"]
+    tours: ["ladakh-land-of-high-passes", "turtuk-valley", "ride-to-heaven"]
   },
   GRAND_CIRCUITS: {
     title: "Grand Circuits",
-    subtitle: "10-11 Days | Multi-City",
-    tours: ["grand-loop", "grand-himalayan-loop", "manali-ladakh-srinagar", "srinagar-leh-manali"]
-  },
-  FESTIVAL_SPECIALS: {
-    title: "Festival Specials",
-    subtitle: "Cultural Tours",
-    tours: ["hemis-festival-special"]
+    subtitle: "10-12 Days | Multi-City",
+    tours: ["manali-ladakh-manali", "manali-leh-srinagar", "srinagar-leh-manali", "zanskar-umling-la"]
   }
 };
 
@@ -397,5 +399,35 @@ export const USP_LIST = [
     title: "གསང་སྔགས། Hidden Stories",
     desc: "Secret viewpoints, monastery stories, family recipes. Things guidebooks can't teach.",
     icon: "📿"
+  }
+];
+
+export const BLOG_POSTS = [
+  {
+    id: "best-time-to-visit-ladakh",
+    title: "Best Time to Visit Ladakh: A Rider's Guide",
+    excerpt: "Planning your trip? Learn about the pass opening times, weather patterns, and the magical seasons of the Himalayas.",
+    date: "May 15, 2025",
+    author: "Tsewang Norboo",
+    category: "Planning",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1000&auto=format&fit=crop"
+  },
+  {
+    id: "essential-gear-list",
+    title: "Essential Gear List for High Altitude Expeditions",
+    excerpt: "Don't leave without these essentials. A comprehensive list of riding gear, clothing, and medicine for your Zanskar or Leh trip.",
+    date: "June 02, 2025",
+    author: "Himalayan Marmot Team",
+    category: "Gear",
+    image: "https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=1000&auto=format&fit=crop"
+  },
+  {
+    id: "hidden-monasteries-of-zanskar",
+    title: "The Hidden Monasteries of Zanskar",
+    excerpt: "Beyond the tourist trails lie ancient sanctuaries built into cliffs. Discover the spiritual secrets of the Phugtal and Lingshed.",
+    date: "June 20, 2025",
+    author: "Tsewang Norboo",
+    category: "Culture",
+    image: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?q=80&w=1000&auto=format&fit=crop"
   }
 ];

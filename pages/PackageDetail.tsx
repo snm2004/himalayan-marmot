@@ -9,8 +9,18 @@ const PackageDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const tour = TOUR_PACKAGES.find(p => p.id === id);
+
+  // State for selected duration/variant
+  const [selectedDuration, setSelectedDuration] = useState<string>(tour?.duration || "");
   const [activeTab, setActiveTab] = useState<'itinerary' | 'policy' | 'inclusions'>('itinerary');
   const [showStickyBtn, setShowStickyBtn] = useState(false);
+
+  // Sync state if tour changes
+  useEffect(() => {
+    if (tour) {
+      setSelectedDuration(tour.duration);
+    }
+  }, [tour]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,18 +47,47 @@ const PackageDetail: React.FC = () => {
     );
   }
 
+  // Get current data based on selected duration
+  const currentVariant = tour.variants?.find(v => v.duration === selectedDuration);
+  const displayDuration = currentVariant?.duration || tour.duration;
+  const displayPrice = currentVariant?.startingPrice || tour.startingPrice;
+  const displayTiers = currentVariant?.priceTiers || tour.priceTiers;
+  const displayItinerary = currentVariant?.itinerary || tour.itinerary;
+  const displayPdf = currentVariant?.pdfUrl || tour.pdfUrl;
+
   return (
-    <div className="bg-white relative">
+    <div className="bg-white relative" style={{ paddingTop: 'var(--headerH, 100px)' }}>
       {/* Hero Header */}
-      <div className="relative h-[50vh] flex items-center justify-center text-white">
+      <div className="relative min-h-[50vh] flex items-center justify-center text-white py-12 md:py-20">
         <div className="absolute inset-0 z-0">
-          <img src={tour.image} className="w-full h-full object-cover" alt={tour.title} />
+          <img src={tour.image} className="w-full h-full object-cover transition-opacity duration-700" alt={tour.title} />
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
-        <div className="relative z-10 text-center px-4">
-          <p className="text-golden-yellow font-oswald font-bold tracking-widest uppercase mb-2">{tour.duration} JOURNEY</p>
-          <h1 className="text-4xl md:text-6xl font-oswald font-bold mb-4 uppercase">{tour.title}</h1>
-          <div className="h-1 w-24 bg-golden-yellow mx-auto"></div>
+        <div className="relative z-10 text-center px-4 w-full max-w-4xl">
+          <p className="text-golden-yellow font-oswald font-bold tracking-[0.3em] uppercase mb-4 animate-fadeIn">EXPLORE THE UNKNOWN</p>
+          <h1 className="text-4xl md:text-7xl font-oswald font-bold mb-8 uppercase tracking-tight drop-shadow-2xl">
+            {tour.title}
+          </h1>
+
+          {/* Duration Selector Dropdown */}
+          <div className="inline-flex flex-col items-center bg-black/40 backdrop-blur-md px-6 py-6 rounded-[2.5rem] border-2 border-white/10 shadow-2xl animate-slideUp">
+            <label className="text-[10px] font-black uppercase text-white/70 tracking-widest mb-3">Select Expedition Duration</label>
+            <div className="flex items-center space-x-4">
+              <select
+                value={selectedDuration}
+                onChange={(e) => setSelectedDuration(e.target.value)}
+                className="bg-golden-yellow text-mountain-blue font-oswald font-bold px-6 py-2 rounded-full border-none outline-none focus:ring-2 focus:ring-white transition"
+              >
+                <option value={tour.duration}>{tour.duration} (Standard)</option>
+                {tour.variants?.map((v, idx) => (
+                  <option key={idx} value={v.duration}>{v.duration}</option>
+                ))}
+              </select>
+              <div className="text-white font-oswald text-xl">
+                Starts from <span className="text-golden-yellow">{displayPrice}</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -66,32 +105,35 @@ const PackageDetail: React.FC = () => {
             )}
 
             {/* Tabs */}
-            <div className="flex border-b border-slate-200 mb-8 overflow-x-auto whitespace-nowrap">
+            <div className="flex border-b border-slate-200 mb-8 overflow-x-auto whitespace-nowrap scrollbar-hide">
               <button
                 onClick={() => setActiveTab('itinerary')}
-                className={`px-8 py-4 font-oswald font-bold tracking-wider transition ${activeTab === 'itinerary' ? 'text-mountain-blue border-b-4 border-mountain-blue' : 'text-slate-400'}`}
+                className={`px-8 py-4 font-oswald font-bold tracking-wider transition relative ${activeTab === 'itinerary' ? 'text-mountain-blue' : 'text-slate-400'}`}
               >
                 ITINERARY
+                {activeTab === 'itinerary' && <div className="absolute bottom-0 left-0 right-0 h-1 bg-mountain-blue animate-shimmer" />}
               </button>
               <button
                 onClick={() => setActiveTab('inclusions')}
-                className={`px-8 py-4 font-oswald font-bold tracking-wider transition ${activeTab === 'inclusions' ? 'text-mountain-blue border-b-4 border-mountain-blue' : 'text-slate-400'}`}
+                className={`px-8 py-4 font-oswald font-bold tracking-wider transition relative ${activeTab === 'inclusions' ? 'text-mountain-blue' : 'text-slate-400'}`}
               >
                 INCLUSIONS
+                {activeTab === 'inclusions' && <div className="absolute bottom-0 left-0 right-0 h-1 bg-mountain-blue animate-shimmer" />}
               </button>
               <button
                 onClick={() => setActiveTab('policy')}
-                className={`px-8 py-4 font-oswald font-bold tracking-wider transition ${activeTab === 'policy' ? 'text-mountain-blue border-b-4 border-mountain-blue' : 'text-slate-400'}`}
+                className={`px-8 py-4 font-oswald font-bold tracking-wider transition relative ${activeTab === 'policy' ? 'text-mountain-blue' : 'text-slate-400'}`}
               >
                 POLICIES
+                {activeTab === 'policy' && <div className="absolute bottom-0 left-0 right-0 h-1 bg-mountain-blue animate-shimmer" />}
               </button>
             </div>
 
             {/* Tab Panels */}
             {activeTab === 'itinerary' && (
-              <div className="space-y-12 relative before:content-[''] before:absolute before:left-[19px] before:top-0 before:bottom-0 before:w-0.5 before:bg-slate-100">
-                {tour.itinerary.map((day) => (
-                  <div key={day.day} className="relative pl-12 group/day">
+              <div className="space-y-12 relative before:content-[''] before:absolute before:left-[19px] before:top-0 before:bottom-0 before:w-0.5 before:bg-slate-100 animate-fadeIn">
+                {displayItinerary.map((day) => (
+                  <div key={day.day} className="relative pl-12 group/day animate-slideIn">
                     <div className="absolute left-0 top-0 w-10 h-10 bg-golden-yellow rounded-full flex items-center justify-center font-oswald font-bold text-mountain-blue z-10 transition-transform group-hover/day:scale-110">
                       {day.day}
                     </div>
@@ -181,7 +223,7 @@ const PackageDetail: React.FC = () => {
                 <h4 className="font-oswald text-xl font-bold text-mountain-blue mb-6 uppercase border-b pb-4">Package Pricing</h4>
 
                 <div className="space-y-6 mb-10">
-                  {tour.priceTiers.map((tier, idx) => (
+                  {displayTiers.map((tier, idx) => (
                     <div key={idx} className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm transition-all hover:border-golden-yellow">
                       <p className="text-[10px] font-black uppercase text-tibetan-red tracking-widest mb-3">{tier.bike}</p>
                       <div className="flex justify-between items-end">
@@ -217,8 +259,8 @@ const PackageDetail: React.FC = () => {
                 <button
                   onClick={() => {
                     // If PDF URL is available, open it in new tab
-                    if (tour.pdfUrl) {
-                      window.open(tour.pdfUrl, '_blank');
+                    if (displayPdf) {
+                      window.open(displayPdf, '_blank');
                       return;
                     }
 
@@ -248,17 +290,17 @@ const PackageDetail: React.FC = () => {
                         <body>
                           <div class="header">
                             <div class="title">${tour.title}</div>
-                            <div class="subtitle">${tour.duration} • Starting from ${tour.startingPrice}</div>
+                            <div class="subtitle">${displayDuration} • Starting from ${displayPrice}</div>
                           </div>
                           
                           <div class="section">
                             <div class="section-title">Tour Overview</div>
-                            <p>Experience the ultimate adventure through the breathtaking landscapes of Ladakh with our expertly crafted ${tour.duration} journey.</p>
+                            <p>Experience the ultimate adventure through the breathtaking landscapes of Ladakh with our expertly crafted ${displayDuration} journey.</p>
                           </div>
 
                           <div class="section">
                             <div class="section-title">Detailed Itinerary</div>
-                            ${tour.itinerary.map((day, idx) => `
+                            ${displayItinerary.map((day, idx) => `
                               <div class="day">
                                 <div class="day-title">Day ${day.day}: ${day.title}</div>
                                 <p>${day.description}</p>
@@ -288,7 +330,7 @@ const PackageDetail: React.FC = () => {
                                 </tr>
                               </thead>
                               <tbody>
-                                ${tour.priceTiers.map(tier => `
+                                ${displayTiers.map(tier => `
                                   <tr>
                                     <td>${tier.bike}</td>
                                     <td>${tier.dual}</td>
@@ -374,7 +416,7 @@ const PackageDetail: React.FC = () => {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="hidden md:block">
             <p className="text-mountain-blue font-oswald font-black text-lg uppercase tracking-tight">{tour.title}</p>
-            <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest">{tour.duration} Journey from {tour.startingPrice}</p>
+            <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest">{displayDuration} Journey from {displayPrice}</p>
           </div>
           <button
             onClick={() => navigate('/booking')}
