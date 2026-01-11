@@ -143,7 +143,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
       { bike: "RE Himalayan 450cc BS6", dual: "₹39,999", solo: "₹46,500" }
     ],
     image: "/Manali - Leh - Srinagar.png",
-    pdfUrl: "/packages/manali-leh-srinagar-2026-3.pdf",
+    pdfUrl: "/packages/manali-leh-srinagar-2026-5.pdf",
     itinerary: [
       { day: 1, title: "Reached in Manali", description: "Arrive in Manali, check into hotel, and explore the local mall road." },
       { day: 2, title: "Manali to Jispa", description: "Journey via high-altitude Rohtang Pass to a riverside camp in Jispa." },
