@@ -84,30 +84,6 @@ const Tours: React.FC = () => {
         </div>
       </section>
 
-      {/* Festival Specials */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-oswald font-bold text-slate-900 mb-4">
-              {TOUR_CATEGORIES.FESTIVAL_SPECIALS.title}
-            </h2>
-            <p className="text-xl text-slate-600 mb-2">
-              {TOUR_CATEGORIES.FESTIVAL_SPECIALS.subtitle}
-            </p>
-            <p className="text-slate-500 max-w-2xl mx-auto">
-              Experience Ladakh's rich Buddhist culture during traditional festivals. 
-              These special tours are timed with major monastery celebrations.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {getCategoryTours('FESTIVAL_SPECIALS').map((tour) => (
-              <PackageCard key={tour!.id} tour={tour!} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="bg-gradient-to-r from-tibetan-red to-mountain-blue text-white py-20">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
