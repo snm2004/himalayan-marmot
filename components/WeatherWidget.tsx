@@ -14,9 +14,9 @@ interface WeatherData {
 
 const WeatherWidget: React.FC = () => {
   const [weather, setWeather] = useState<WeatherData>({
-    leh: { temp: 13, condition: 'Clear' },
-    khardungla: { temp: -3, condition: 'Snow' },
-    status: 'LOADING...',
+    leh: { temp: -4, condition: 'Clear' },
+    khardungla: { temp: -19, condition: 'Snow' },
+    status: 'LEH: EXTREME COLD',
     lastUpdated: '--:--',
     isLive: false
   });
