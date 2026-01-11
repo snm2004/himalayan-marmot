@@ -100,11 +100,6 @@ const JourneyInFrames: React.FC = () => {
                     }}
                   />
                 </div>
-                <div className="p-4">
-                  <h3 className="text-sm font-bold text-mountain-blue uppercase tracking-wide">
-                    {image.title}
-                  </h3>
-                </div>
               </div>
             ))}
           </div>
