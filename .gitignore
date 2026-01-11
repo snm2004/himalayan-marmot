@@ -26,6 +26,10 @@ dist-ssr
 .env*.local
 
 # Large Video Files (>100MB)
+public/C5409.MP4
+public/C5408.MP4
+public/C5407.MP4
+public/C5406.MP4
 C5409.MP4
 C5408.MP4
 C5407.MP4
