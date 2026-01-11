@@ -39,12 +39,6 @@ const JourneyFrames: React.FC = () => {
       location: "Pangong Tso, Ladakh"
     },
     {
-      id: 2,
-      src: "/journey in frames (2).png",
-      title: "Himalayan Peaks",
-      location: "Khardung La Pass"
-    },
-    {
       id: 3,
       src: "/journey in frames (3).png",
       title: "Royal Enfield Adventure",
