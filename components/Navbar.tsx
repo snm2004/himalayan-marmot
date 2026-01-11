@@ -179,6 +179,10 @@ const Navbar: React.FC = () => {
               ALL TOURS
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-mountain-blue transition-all duration-300 group-hover:w-full"></span>
             </Link>
+            <Link to="/journey-in-frames" className="text-slate-800 hover:text-mountain-blue transition-all duration-300 uppercase tracking-[0.15em] font-black text-[13px] relative group">
+              JOURNEY IN FRAMES
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-mountain-blue transition-all duration-300 group-hover:w-full"></span>
+            </Link>
             <Link to="/blogs" className="text-slate-800 hover:text-mountain-blue transition-all duration-300 uppercase tracking-[0.15em] font-black text-[13px] relative group">
               BLOGS
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-mountain-blue transition-all duration-300 group-hover:w-full"></span>
@@ -297,6 +301,9 @@ const Navbar: React.FC = () => {
           </Link>
           <Link to="/tours" onClick={() => setIsOpen(false)} className="py-5 text-sm font-black border-b border-slate-100 text-slate-800 uppercase tracking-widest flex justify-between items-center hover:bg-blue-50 hover:text-mountain-blue transition-all duration-300 rounded-lg px-2 group">
             ALL TOURS <span className="text-slate-300 group-hover:text-mountain-blue transition-all duration-300 transform group-hover:translate-x-1">→</span>
+          </Link>
+          <Link to="/journey-in-frames" onClick={() => setIsOpen(false)} className="py-5 text-sm font-black border-b border-slate-100 text-slate-800 uppercase tracking-widest flex justify-between items-center hover:bg-blue-50 hover:text-mountain-blue transition-all duration-300 rounded-lg px-2 group">
+            JOURNEY IN FRAMES <span className="text-slate-300 group-hover:text-mountain-blue transition-all duration-300 transform group-hover:translate-x-1">→</span>
           </Link>
           <div className="py-5 border-b border-slate-50">
             <p className="text-[10px] font-black text-slate-400 mb-4 uppercase tracking-widest">Local Expeditions</p>
