@@ -46,18 +46,30 @@ const JourneyFrames: React.FC = () => {
     },
     {
       id: 4,
-      src: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      src: "/journey in frames (4).png",
       title: "Monastery Views",
       location: "Hemis Monastery"
     },
     {
       id: 5,
-      src: "/journey in frames (4).png",
-
-
+      src: "/DSC04203.JPG",
+      title: "Rider at Sunrise",
+      location: "Leh outskirts"
     },
     {
       id: 6,
+      src: "/DSC07330.JPG",
+      title: "Mountain Trail",
+      location: "Zanskar Range"
+    },
+    {
+      id: 7,
+      src: "/DSC08054.JPG",
+      title: "High Pass View",
+      location: "Umling La"
+    },
+    {
+      id: 8,
       src: "/rider-umling-la.png",
       title: "High Altitude Roads",
       location: "Umling La Pass"
