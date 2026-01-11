@@ -74,6 +74,20 @@ const JourneyFrames: React.FC = () => {
       title: "High Altitude Roads",
       location: "Umling La Pass"
     }
+    ,
+    {
+      id: 9,
+      src: "/journey frames (5).png",
+      title: "Lakeside Moments",
+      location: "Pangong Lake"
+    }
+    ,
+    {
+      id: 10,
+      src: "/journey frames (6).png",
+      title: "Evening Trails",
+      location: "Srinagar Valley"
+    }
   ];
 
   return (
