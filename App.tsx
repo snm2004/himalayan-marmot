@@ -12,6 +12,7 @@ import Contact from './pages/Contact';
 import Safety from './pages/Safety';
 import Festivals from './pages/Festivals';
 import Blogs from './pages/Blogs';
+import BlogDetail from './pages/BlogDetail';
 import Booking from './pages/Booking';
 import JourneyInFrames from './pages/JourneyInFrames';
 
@@ -120,6 +121,7 @@ const App: React.FC = () => {
             <Route path="/safety" element={<Safety />} />
             <Route path="/festivals" element={<Festivals />} />
             <Route path="/blogs" element={<Blogs />} />
+            <Route path="/blog/:id" element={<BlogDetail />} />
             <Route path="/journey-in-frames" element={<JourneyInFrames />} />
             <Route path="/booking" element={<Booking />} />
           </Routes>

@@ -427,5 +427,615 @@ export const BLOG_POSTS = [
     author: "Tsewang Norboo",
     category: "Culture",
     image: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?q=80&w=1000&auto=format&fit=crop"
+  },
+  {
+    id: "conquering-khardung-la",
+    title: "Conquering Khardung La: World's Highest Motorable Road",
+    excerpt: "Experience the thrill of riding at 18,380 feet. Tips, challenges, and what to expect on this legendary mountain pass.",
+    date: "July 08, 2025",
+    author: "Tsewang Norboo",
+    category: "Adventure",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1000&auto=format&fit=crop"
+  },
+  {
+    id: "altitude-sickness-prevention",
+    title: "Altitude Sickness: Prevention and Management Guide",
+    excerpt: "Stay safe at high altitudes. Learn the symptoms, prevention strategies, and emergency protocols for riding above 10,000 feet.",
+    date: "July 22, 2025",
+    author: "Himalayan Marmot Team",
+    category: "Safety",
+    image: "https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=1000&auto=format&fit=crop"
+  },
+  {
+    id: "pangong-lake-complete-guide",
+    title: "Pangong Lake: The Complete Rider's Guide",
+    excerpt: "From Leh to the stunning blue waters of Pangong Tso. Route details, camping spots, and photography tips for this iconic destination.",
+    date: "August 05, 2025",
+    author: "Tsewang Norboo",
+    category: "Destinations",
+    image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1000&auto=format&fit=crop"
+  },
+  {
+    id: "royal-enfield-maintenance-ladakh",
+    title: "Royal Enfield Maintenance Tips for Ladakh Tours",
+    excerpt: "Keep your bike running smoothly in extreme conditions. Essential maintenance checks and common issues to watch for on mountain roads.",
+    date: "August 18, 2025",
+    author: "Himalayan Marmot Team",
+    category: "Maintenance",
+    image: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=1000&auto=format&fit=crop"
+  },
+  {
+    id: "ladakhi-cuisine-food-guide",
+    title: "Ladakhi Cuisine: A Food Lover's Guide to the Himalayas",
+    excerpt: "Discover authentic Ladakhi dishes from momos to thukpa. Where to eat, what to try, and the cultural significance of local food.",
+    date: "September 02, 2025",
+    author: "Tsewang Norboo",
+    category: "Culture",
+    image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1000&auto=format&fit=crop"
+  },
+  {
+    id: "photography-tips-himalayas",
+    title: "Capturing the Himalayas: Photography Tips for Riders",
+    excerpt: "Master landscape photography on two wheels. Camera settings, best times, and techniques for stunning mountain shots.",
+    date: "September 15, 2025",
+    author: "Himalayan Marmot Team",
+    category: "Photography",
+    image: "https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?q=80&w=1000&auto=format&fit=crop"
+  },
+  {
+    id: "nubra-valley-sand-dunes",
+    title: "Nubra Valley: Where Desert Meets Mountains",
+    excerpt: "Ride through the surreal landscape of Nubra Valley. Double-humped camels, sand dunes, and the journey through Khardung La.",
+    date: "October 01, 2025",
+    author: "Tsewang Norboo",
+    category: "Destinations",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1000&auto=format&fit=crop"
+  },
+  {
+    id: "solo-vs-group-riding",
+    title: "Solo Riding vs Group Tours: Which is Right for You?",
+    excerpt: "Weighing the pros and cons of solo adventures versus guided group expeditions in the Himalayas.",
+    date: "October 12, 2025",
+    author: "Himalayan Marmot Team",
+    category: "Planning",
+    image: "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?q=80&w=1000&auto=format&fit=crop"
+  },
+  {
+    id: "permits-and-documentation",
+    title: "Inner Line Permits and Documentation for Ladakh",
+    excerpt: "Navigate the paperwork hassle-free. Complete guide to permits, IDs, and documents needed for restricted areas in Ladakh.",
+    date: "October 28, 2025",
+    author: "Tsewang Norboo",
+    category: "Planning",
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1000&auto=format&fit=crop"
+  }
+];
+
+// Detailed blog posts with full content
+export const BLOG_POSTS_DETAILED = [
+  {
+    id: "best-time-to-visit-ladakh",
+    title: "Best Time to Visit Ladakh: A Rider's Guide",
+    excerpt: "Planning your trip? Learn about the pass opening times, weather patterns, and the magical seasons of the Himalayas.",
+    date: "May 15, 2025",
+    author: "Tsewang Norboo",
+    category: "Planning",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1000&auto=format&fit=crop",
+    readTime: "8 min read",
+    content: [
+      {
+        heading: "Understanding Ladakh's Seasons",
+        paragraphs: [
+          "Ladakh, often called the 'Land of High Passes,' experiences extreme weather conditions throughout the year. The region remains cut off from the rest of India for nearly six months due to heavy snowfall that blocks the mountain passes. Understanding the seasonal patterns is crucial for planning your motorcycle expedition.",
+          "The riding season in Ladakh is relatively short, typically running from late May to mid-September. However, each month within this window offers a unique experience, and choosing the right time depends on your preferences, riding experience, and what you want to see."
+        ]
+      },
+      {
+        heading: "May to June: The Opening Season",
+        paragraphs: [
+          "Late May marks the beginning of the riding season when the Border Roads Organisation (BRO) clears the snow from major passes like Rohtang La and Khardung La. This period is characterized by cool temperatures, occasional snowfall at high altitudes, and pristine landscapes with snow-capped peaks.",
+          "The Manali-Leh highway typically opens around late May, while the Srinagar-Leh route opens slightly earlier in mid-May. During this time, you'll witness the dramatic transformation as the region awakens from its winter slumber."
+        ],
+        list: [
+          {
+            title: "Temperature Range",
+            description: "Day: 15-20°C, Night: 0-5°C at Leh; High passes can be -5 to 5°C"
+          },
+          {
+            title: "Road Conditions",
+            description: "Freshly cleared but may have patches of ice and slush at higher altitudes"
+          },
+          {
+            title: "Crowds",
+            description: "Moderate tourist traffic, peaceful monasteries and villages"
+          },
+          {
+            title: "Best For",
+            description: "Experienced riders who enjoy challenging conditions and pristine snow views"
+          }
+        ],
+        tips: [
+          "Carry extra warm clothing and waterproof gear",
+          "Check pass opening status daily with BRO",
+          "Book accommodations in advance as many hotels are still opening",
+          "Expect road closures due to sudden snowfall",
+          "Carry tire chains for emergency situations"
+        ]
+      },
+      {
+        heading: "July to August: Peak Season",
+        paragraphs: [
+          "July and August constitute the peak tourist season in Ladakh. The weather is at its warmest, all passes are open, and the region is in full bloom. This is when Ladakh receives the maximum number of visitors, and the infrastructure is fully operational.",
+          "The famous Hemis Festival usually falls in July, offering a unique cultural experience. The days are long and pleasant, perfect for extended riding sessions and photography. However, this is also when you'll encounter the most traffic on popular routes."
+        ],
+        list: [
+          {
+            title: "Temperature Range",
+            description: "Day: 20-30°C, Night: 10-15°C at Leh; High passes: 5-15°C"
+          },
+          {
+            title: "Road Conditions",
+            description: "Excellent on main highways, dusty on remote routes"
+          },
+          {
+            title: "Crowds",
+            description: "Heavy tourist traffic, especially on Manali-Leh and Pangong routes"
+          },
+          {
+            title: "Best For",
+            description: "First-time visitors, families, and those seeking comfortable weather"
+          }
+        ],
+        tips: [
+          "Book hotels and homestays at least 2-3 months in advance",
+          "Start early morning rides to avoid traffic on popular routes",
+          "Carry sunscreen and sunglasses - UV radiation is intense",
+          "Stay hydrated - the dry climate can be deceptive",
+          "Expect higher prices for accommodation and services"
+        ]
+      },
+      {
+        heading: "September: The Golden Month",
+        paragraphs: [
+          "September is arguably the best time to visit Ladakh for motorcycle enthusiasts. The summer crowds have thinned out, the weather remains pleasant, and the landscape transforms into stunning shades of gold and brown. The clear skies offer exceptional visibility and photography opportunities.",
+          "This is the month when experienced riders prefer to visit. The roads are in their best condition after the summer maintenance, and you'll have more space to enjoy the rides without the peak season rush."
+        ],
+        list: [
+          {
+            title: "Temperature Range",
+            description: "Day: 15-25°C, Night: 5-10°C at Leh; High passes: 0-10°C"
+          },
+          {
+            title: "Road Conditions",
+            description: "Excellent, well-maintained after summer season"
+          },
+          {
+            title: "Crowds",
+            description: "Moderate, significantly less than July-August"
+          },
+          {
+            title: "Best For",
+            description: "Photographers, experienced riders, and those seeking solitude"
+          }
+        ],
+        tips: [
+          "Carry layers as temperature variations increase",
+          "Some high-altitude lakes may start freezing by late September",
+          "Book early as many hotels start closing by month-end",
+          "Perfect time for Pangong and Tso Moriri visits",
+          "Ideal for attempting challenging routes like Umling La"
+        ]
+      },
+      {
+        heading: "Pass Opening and Closing Dates",
+        paragraphs: [
+          "The exact opening and closing dates of passes vary each year depending on snowfall and weather conditions. Here's a general timeline based on historical data:"
+        ],
+        list: [
+          {
+            title: "Rohtang La (13,050 ft)",
+            description: "Opens: Late May | Closes: Mid-October"
+          },
+          {
+            title: "Khardung La (17,582 ft)",
+            description: "Opens: Late May | Closes: Late October"
+          },
+          {
+            title: "Chang La (17,590 ft)",
+            description: "Opens: Late May | Closes: Late October"
+          },
+          {
+            title: "Tanglang La (17,480 ft)",
+            description: "Opens: Mid-May | Closes: Mid-October"
+          },
+          {
+            title: "Umling La (19,300 ft)",
+            description: "Opens: Early June | Closes: Early October"
+          }
+        ],
+        warning: "Always check current pass status with local authorities or BRO before planning your route. Weather conditions can change rapidly, and passes may close temporarily even during the season."
+      },
+      {
+        heading: "Weather Considerations for Riders",
+        paragraphs: [
+          "Ladakh's weather is notoriously unpredictable. Even during summer, you can experience four seasons in a single day. Morning rides might start in freezing temperatures, warm up to pleasant afternoons, and end with cold evenings. High-altitude passes can see sudden snowfall even in July.",
+          "The region receives minimal rainfall due to its location in the rain shadow of the Himalayas. However, when it does rain, it can cause landslides and road blockages. The thin atmosphere at high altitudes means intense UV radiation, rapid temperature changes, and lower oxygen levels."
+        ],
+        tips: [
+          "Always carry rain gear regardless of the season",
+          "Pack thermal wear even for summer trips",
+          "Use high SPF sunscreen and lip balm",
+          "Acclimatize properly - spend at least 2 days in Leh before high-altitude rides",
+          "Monitor weather forecasts daily and be flexible with your itinerary"
+        ]
+      },
+      {
+        heading: "Our Recommendation",
+        paragraphs: [
+          "For first-time visitors and those seeking comfortable conditions, we recommend July to early August. The weather is predictable, all facilities are operational, and you'll have the full Ladakh experience with festivals and cultural events.",
+          "For experienced riders seeking the best riding conditions and fewer crowds, September is ideal. The roads are in excellent condition, the weather is still pleasant, and you'll have more authentic interactions with locals.",
+          "For adventure seekers who don't mind challenging conditions and want to see Ladakh in its raw beauty, late May to June offers a unique experience with snow-covered landscapes and the thrill of riding on freshly opened passes.",
+          "Regardless of when you choose to visit, Ladakh will leave you with memories that last a lifetime. The key is proper preparation, flexibility, and respect for the mountains."
+        ]
+      }
+    ]
+  },
+  {
+    id: "essential-gear-list",
+    title: "Essential Gear List for High Altitude Expeditions",
+    excerpt: "Don't leave without these essentials. A comprehensive list of riding gear, clothing, and medicine for your Zanskar or Leh trip.",
+    date: "June 02, 2025",
+    author: "Himalayan Marmot Team",
+    category: "Gear",
+    image: "https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=1000&auto=format&fit=crop",
+    readTime: "10 min read",
+    content: [
+      {
+        heading: "Introduction to High-Altitude Riding Gear",
+        paragraphs: [
+          "Riding in the Himalayas is unlike any other motorcycle adventure. The extreme altitude, unpredictable weather, and challenging terrain demand specialized gear and equipment. Proper preparation can make the difference between an unforgettable adventure and a dangerous situation.",
+          "This comprehensive guide covers everything you need for a safe and comfortable Ladakh motorcycle expedition. We've organized it into categories based on priority and usage, drawing from years of experience guiding riders through the Himalayas."
+        ]
+      },
+      {
+        heading: "Riding Gear (Critical)",
+        paragraphs: [
+          "Your riding gear is your first line of defense against the elements and potential accidents. In Ladakh's extreme conditions, quality gear isn't a luxury—it's a necessity."
+        ],
+        list: [
+          {
+            title: "Riding Jacket",
+            description: "Waterproof, windproof jacket with removable thermal liner. Must have CE-approved armor at shoulders, elbows, and back. Brands like Royal Enfield, Rynox, or Alpinestars recommended."
+          },
+          {
+            title: "Riding Pants",
+            description: "Abrasion-resistant pants with knee and hip armor. Waterproof or with rain liner. Avoid jeans—they offer no protection."
+          },
+          {
+            title: "Helmet",
+            description: "Full-face ISI/DOT certified helmet. Dual visor (clear and tinted) recommended. Ensure proper fit as you'll wear it 6-8 hours daily."
+          },
+          {
+            title: "Gloves",
+            description: "Two pairs minimum: Waterproof winter gloves for cold mornings and high passes, and summer riding gloves for warmer sections."
+          },
+          {
+            title: "Riding Boots",
+            description: "Ankle-high, waterproof boots with good grip. Must provide ankle support and protection. Break them in before the trip."
+          },
+          {
+            title: "Knee Guards",
+            description: "Essential for protection and warmth. Adjustable straps for comfort during long rides."
+          },
+          {
+            title: "Elbow Guards",
+            description: "Additional protection beyond jacket armor. Particularly important for off-road sections."
+          },
+          {
+            title: "Balaclava/Neck Warmer",
+            description: "Protects face and neck from cold winds and dust. Essential at high passes."
+          }
+        ],
+        tips: [
+          "Test all gear before the trip - comfort matters on 8-hour riding days",
+          "Ensure gear is broken in to avoid chafing and discomfort",
+          "Carry spare visor or goggles in case of damage",
+          "Layer your clothing - it's easier to remove layers than to add warmth",
+          "Bright colored gear increases visibility on mountain roads"
+        ]
+      },
+      {
+        heading: "Clothing Layers (Essential)",
+        paragraphs: [
+          "The key to comfort in Ladakh is layering. You'll experience temperature swings of 20-30°C in a single day. The layering system allows you to adapt quickly to changing conditions."
+        ],
+        list: [
+          {
+            title: "Base Layer",
+            description: "Thermal innerwear (top and bottom). Merino wool or synthetic moisture-wicking material. Carry 2-3 sets."
+          },
+          {
+            title: "Mid Layer",
+            description: "Fleece jacket or down jacket for insulation. Lightweight and compressible. Essential for high passes and evenings."
+          },
+          {
+            title: "Outer Layer",
+            description: "Windproof and waterproof jacket (can be your riding jacket). Must be breathable to prevent sweat accumulation."
+          },
+          {
+            title: "Regular Clothing",
+            description: "4-5 t-shirts, 2-3 pairs of comfortable pants, 5-6 pairs of socks (including woolen), underwear for 7-8 days."
+          },
+          {
+            title: "Evening Wear",
+            description: "Comfortable tracksuit or warm casual wear for hotel/camp evenings. Down jacket for cold nights."
+          },
+          {
+            title: "Sun Protection",
+            description: "Wide-brimmed hat or cap, sunglasses (UV400 protection), bandana or buff for dust protection."
+          }
+        ],
+        tips: [
+          "Pack clothes in waterproof bags or dry sacks",
+          "Avoid cotton - it retains moisture and takes forever to dry",
+          "Carry extra socks - your feet will thank you",
+          "Quick-dry fabrics are your best friend",
+          "Don't overpack - laundry facilities are available in Leh"
+        ]
+      },
+      {
+        heading: "Medical Kit (Critical)",
+        paragraphs: [
+          "A well-stocked medical kit is non-negotiable for high-altitude travel. Altitude sickness, minor injuries, and stomach issues are common. Being prepared can prevent a minor issue from becoming a major problem."
+        ],
+        list: [
+          {
+            title: "Altitude Sickness",
+            description: "Diamox (Acetazolamide) 250mg - consult doctor before trip. Dexamethasone for emergencies. Start Diamox 24 hours before ascending."
+          },
+          {
+            title: "Pain Relief",
+            description: "Paracetamol, Ibuprofen, Aspirin. Essential for headaches and body aches from long rides."
+          },
+          {
+            title: "Digestive Issues",
+            description: "ORS packets, anti-diarrheal (Loperamide), antacids, probiotics. Water purification tablets."
+          },
+          {
+            title: "Cold & Flu",
+            description: "Antihistamines, cough syrup, throat lozenges, nasal decongestant."
+          },
+          {
+            title: "First Aid",
+            description: "Bandages, antiseptic cream, band-aids, gauze, medical tape, scissors, tweezers."
+          },
+          {
+            title: "Skin Care",
+            description: "Sunscreen SPF 50+, lip balm with SPF, moisturizer, petroleum jelly (for chafing)."
+          },
+          {
+            title: "Eye Care",
+            description: "Eye drops for dryness and dust irritation. Essential in Ladakh's dry climate."
+          },
+          {
+            title: "Personal Medications",
+            description: "Any prescription medicines you regularly take, plus extras. Carry prescriptions."
+          }
+        ],
+        warning: "Consult your doctor before the trip, especially regarding altitude sickness medication. Carry a detailed medical history if you have any pre-existing conditions. Know the location of hospitals in Leh and along your route."
+      },
+      {
+        heading: "Electronics and Gadgets",
+        paragraphs: [
+          "Modern technology enhances safety and captures memories, but the harsh environment demands rugged, reliable equipment."
+        ],
+        list: [
+          {
+            title: "Mobile Phone",
+            description: "Fully charged with offline maps downloaded. BSNL has best coverage in Ladakh. Carry power bank (20,000mAh minimum)."
+          },
+          {
+            title: "Camera",
+            description: "DSLR, mirrorless, or action camera. Extra batteries (they drain faster in cold). Memory cards with ample storage."
+          },
+          {
+            title: "GPS Device",
+            description: "Dedicated GPS or smartphone with offline navigation. Google Maps offline mode works well."
+          },
+          {
+            title: "Headlamp/Torch",
+            description: "LED headlamp with extra batteries. Essential for early morning starts and power cuts."
+          },
+          {
+            title: "Universal Adapter",
+            description: "Power outlets vary. Carry multi-plug adapter and extension cord."
+          },
+          {
+            title: "Portable Charger",
+            description: "Solar charger is useful but not reliable. Carry multiple power banks."
+          }
+        ],
+        tips: [
+          "Keep electronics in waterproof bags",
+          "Batteries drain faster in cold - keep them warm",
+          "Download offline entertainment for long evenings",
+          "Carry all charging cables and adapters",
+          "Back up photos regularly - memory cards can fail"
+        ]
+      },
+      {
+        heading: "Personal Items and Toiletries",
+        paragraphs: [
+          "Personal hygiene becomes challenging at high altitudes. Pack smart and carry essentials that work in limited water conditions."
+        ],
+        list: [
+          {
+            title: "Toiletries",
+            description: "Toothbrush, toothpaste, soap, shampoo (small bottles), deodorant, razor, nail clipper."
+          },
+          {
+            title: "Wet Wipes",
+            description: "Large pack - invaluable when water is scarce or too cold for washing."
+          },
+          {
+            title: "Hand Sanitizer",
+            description: "Multiple small bottles. Use frequently to prevent illness."
+          },
+          {
+            title: "Toilet Paper",
+            description: "Carry your own - not always available at remote stops."
+          },
+          {
+            title: "Towel",
+            description: "Quick-dry microfiber towel. Compact and dries fast."
+          },
+          {
+            title: "Laundry",
+            description: "Small packet of detergent for hand washing clothes."
+          }
+        ]
+      },
+      {
+        heading: "Documents and Money",
+        paragraphs: [
+          "Proper documentation is crucial for permits and emergencies. Keep multiple copies and digital backups."
+        ],
+        list: [
+          {
+            title: "Identity Proof",
+            description: "Original Aadhar card, passport, or voter ID. Carry 3-4 photocopies."
+          },
+          {
+            title: "Permits",
+            description: "Inner Line Permit for restricted areas. We arrange these, but carry copies."
+          },
+          {
+            title: "Driving License",
+            description: "Valid motorcycle license. International license if you're a foreign national."
+          },
+          {
+            title: "Insurance",
+            description: "Travel and health insurance documents. Bike insurance papers."
+          },
+          {
+            title: "Emergency Contacts",
+            description: "Printed list of emergency numbers, embassy contacts (for foreigners), family contacts."
+          },
+          {
+            title: "Cash",
+            description: "₹15,000-20,000 in small denominations. ATMs are limited and often out of service."
+          },
+          {
+            title: "Cards",
+            description: "Credit/debit cards as backup. Inform bank about travel to avoid blocks."
+          }
+        ],
+        tips: [
+          "Keep documents in waterproof pouch",
+          "Carry digital copies on phone and email",
+          "Distribute cash in different bags",
+          "Keep emergency cash separate from daily use money",
+          "Carry small denominations - change is often unavailable"
+        ]
+      },
+      {
+        heading: "Miscellaneous Essentials",
+        paragraphs: [
+          "These items might seem minor but prove invaluable during the journey."
+        ],
+        list: [
+          {
+            title: "Water Bottles",
+            description: "2-3 bottles (1 liter each). Insulated bottle keeps water from freezing at high passes."
+          },
+          {
+            title: "Snacks",
+            description: "Energy bars, dry fruits, chocolates, glucose tablets. Essential for energy at high altitudes."
+          },
+          {
+            title: "Backpack",
+            description: "30-40L daypack for daily essentials. Waterproof cover included."
+          },
+          {
+            title: "Plastic Bags",
+            description: "Multiple sizes for organizing gear and keeping things dry."
+          },
+          {
+            title: "Duct Tape",
+            description: "Small roll - fixes almost anything temporarily."
+          },
+          {
+            title: "Cable Ties",
+            description: "Useful for securing loose items on bike."
+          },
+          {
+            title: "Notebook and Pen",
+            description: "For journaling, noting expenses, or leaving messages."
+          },
+          {
+            title: "Book or Kindle",
+            description: "For entertainment during rest days or evenings."
+          }
+        ]
+      },
+      {
+        heading: "What NOT to Bring",
+        paragraphs: [
+          "Equally important is knowing what to leave behind. Overpacking is a common mistake that makes the journey uncomfortable."
+        ],
+        list: [
+          {
+            title: "Excessive Clothing",
+            description: "You'll wear the same riding gear daily. 5-6 days of regular clothes is enough."
+          },
+          {
+            title: "Heavy Books",
+            description: "Use Kindle or phone apps instead."
+          },
+          {
+            title: "Expensive Jewelry",
+            description: "Unnecessary and risky. Leave valuables at home."
+          },
+          {
+            title: "Hair Dryer",
+            description: "Power is limited, and it's an unnecessary luxury."
+          },
+          {
+            title: "Too Many Shoes",
+            description: "Riding boots and one pair of comfortable shoes/sandals is enough."
+          },
+          {
+            title: "Large Suitcases",
+            description: "Use duffel bags or backpacks that fit easily on bikes."
+          }
+        ]
+      },
+      {
+        heading: "Final Packing Tips",
+        paragraphs: [
+          "Pack smart, not heavy. Remember, you'll be carrying everything on a motorcycle through challenging terrain. Every kilogram matters.",
+          "Use compression bags for clothes, keep frequently used items accessible, and distribute weight evenly in your luggage. Pack a small bag with essentials (documents, medicines, valuables) that you can quickly grab in emergencies.",
+          "Most importantly, don't stress about forgetting something. Leh has shops where you can buy most essentials, though at higher prices. The key is having the critical safety gear and documents—everything else is manageable."
+        ]
+      }
+    ]
+  },
+  {
+    id: "hidden-monasteries-of-zanskar",
+    title: "The Hidden Monasteries of Zanskar",
+    excerpt: "Beyond the tourist trails lie ancient sanctuaries built into cliffs. Discover the spiritual secrets of the Phugtal and Lingshed.",
+    date: "June 20, 2025",
+    author: "Tsewang Norboo",
+    category: "Culture",
+    image: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?q=80&w=1000&auto=format&fit=crop",
+    readTime: "7 min read",
+    content: [
+      {
+        heading: "Introduction",
+        paragraphs: [
+          "Content for this blog post will be added soon. This is a placeholder for the Hidden Monasteries of Zanskar article."
+        ]
+      }
+    ]
   }
 ];

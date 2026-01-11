@@ -1,6 +1,4 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 
 interface FrameImage {
   id: number;
@@ -68,10 +66,7 @@ const JourneyInFrames: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col">
-      <Navbar />
-      
-      <main className="flex-grow pt-32 md:pt-40 pb-20">
+    <div className="min-h-screen bg-slate-50 pt-[180px] md:pt-[200px] pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">
@@ -104,9 +99,6 @@ const JourneyInFrames: React.FC = () => {
             ))}
           </div>
         </div>
-      </main>
-
-      <Footer />
     </div>
   );
 };
