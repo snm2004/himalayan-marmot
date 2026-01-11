@@ -102,9 +102,9 @@ const WeatherWidget: React.FC = () => {
   }, [fetchWeather]);
 
   return (
-    <div className="flex items-center bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-2 sm:px-4 py-1 sm:py-1.5 transition-all hover:bg-white/20 group shadow-inner">
+    <div className="flex items-center bg-gradient-to-r from-[#2D4A6A] to-[#3D5A80] sm:bg-white/10 sm:backdrop-blur-md border border-[#1e3a5f] sm:border-white/20 rounded-full px-2 sm:px-4 py-1 sm:py-1.5 transition-all hover:bg-[#1e3a5f] sm:hover:bg-white/20 group shadow-lg sm:shadow-inner">
       {/* Live Indicator - Compact on mobile */}
-      <div className="flex items-center border-r border-white/10 pr-1.5 sm:pr-3 mr-1.5 sm:mr-3 flex-shrink-0">
+      <div className="flex items-center border-r border-white/20 sm:border-white/10 pr-1.5 sm:pr-3 mr-1.5 sm:mr-3 flex-shrink-0">
         <span className="relative flex h-1.5 w-1.5 sm:h-2 sm:w-2 mr-1 sm:mr-2">
           <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${error ? 'bg-red-400' : isSyncing ? 'bg-amber-400' : 'bg-green-400'
             }`}></span>
