@@ -73,10 +73,10 @@ const RiderVideoCard: React.FC<{ videoStr: string; title: string; delay: number 
 };
 
 const RIDER_VIDEOS = [
-  { id: 1, src: "/hero-video-new.mp4", title: "Conquering High Passes", delay: 0 },
-  { id: 2, src: "/hero-video-new.mp4", title: "The Road to Adventure", delay: 100 },
-  { id: 3, src: "/hero-video-new.mp4", title: "Brotherhood on Bikes", delay: 200 },
-  { id: 4, src: "/hero-video-new.mp4", title: "Land of Endless Views", delay: 300 },
+  { id: 1, src: "/C5406.MP4", title: "Conquering High Passes", delay: 0 },
+  { id: 2, src: "/C5407.MP4", title: "The Road to Adventure", delay: 100 },
+  { id: 3, src: "/C5408.MP4", title: "Brotherhood on Bikes", delay: 200 },
+  { id: 4, src: "/C5409.MP4", title: "Land of Endless Views", delay: 300 },
 ];
 
 const TestimonialsSection: React.FC = () => {
