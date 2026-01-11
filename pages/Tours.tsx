@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { TOUR_PACKAGES, TOUR_CATEGORIES } from '../constants';
 import PackageCard from '../components/PackageCard';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const Tours: React.FC = () => {
   const getCategoryTours = (categoryKey: keyof typeof TOUR_CATEGORIES) => {
@@ -12,7 +14,10 @@ const Tours: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-50 flex flex-col">
+      <Navbar />
+      <main className="flex-grow">
+      <div className="min-h-screen bg-slate-50">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-mountain-blue via-slate-800 to-slate-900 text-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -128,6 +133,9 @@ const Tours: React.FC = () => {
           </div>
         </div>
       </section>
+      </div>
+      </main>
+      <Footer />
     </div>
   );
 };
