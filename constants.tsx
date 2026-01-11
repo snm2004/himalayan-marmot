@@ -4,7 +4,7 @@ import { TourPackage, CancellationPolicy } from './types';
 
 export const COMPANY_NAME = "Himalayan Marmot";
 export const FOUNDER_NAME = "Tsewang Norboo";
-export const CONTACT_NUMBERS = ["+91 6006114260"];
+export const CONTACT_NUMBERS = ["+91 6006114260", "+91 9906367672"];
 export const EMAIL = "himalayanmarmot19@gmail.com";
 export const ADDRESS_MAIN = "Main market, near Samsung show room Leh Ladakh - 194101";
 export const ADDRESS_OFFICE = "Housing Colony, near Radio Station, Leh Ladakh, India - 194101";
@@ -68,8 +68,8 @@ export const TOUR_PACKAGES: TourPackage[] = [
       { bike: "RE Himalayan 411cc BS6", dual: "₹18,500", solo: "₹24,500" },
       { bike: "RE Himalayan 450cc BS6", dual: "₹22,500", solo: "₹28,500" }
     ],
-    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1000&auto=format&fit=crop",
-    pdfUrl: "/packages/Ladakh Land of High Passes 2026-3.pdf",
+    image: "/Ladakh Land of High Passes (Leh Circuit).png",
+    pdfUrl: "/packages/ladakh-land-of-high-passes-2026-3.pdf",
     itinerary: [
       { day: 1, title: "DELHI – LEH", description: "Arrival at Leh Airport. Himalayan Marmot representative will receive you. Visit Leh Palace and Shanti Stupa in the evening. Rest for acclimatization." },
       { day: 2, title: "LEH - MAGNETIC HILL - SANGAM", description: "Guided tour of Hall of Fame, Spituk Monastery, Pathar Sahib, Magnetic Hill, and Sangam point." },
@@ -102,8 +102,8 @@ export const TOUR_PACKAGES: TourPackage[] = [
       { bike: "RE Himalayan 411cc BS6", dual: "₹36,500", solo: "₹42,500" },
       { bike: "RE Himalayan 450cc BS6", dual: "₹39,999", solo: "₹46,500" }
     ],
-    image: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?q=80&w=1000&auto=format&fit=crop",
-    pdfUrl: "/packages/Manali - Ladakh - Manalai 2026 5.pdf",
+    image: "/Manali - Ladakh - Manali.png",
+    pdfUrl: "/packages/manali-ladakh-manali-2026-5.pdf",
     itinerary: [
       { day: 1, title: "MANALI - SARCHU", description: "Manali – Sarchu – Leh – Sham Valley – Nubra – Pangong – Hanle – Umling La – Tso Moriri – Sarchu – Manali – Delhi (Volvo)" },
       { day: 2, title: "Manali to Jispa", description: "Ride via Rohtang Pass to the picturesque village of Jispa." },
@@ -142,8 +142,8 @@ export const TOUR_PACKAGES: TourPackage[] = [
       { bike: "RE Himalayan 411cc BS6", dual: "₹36,500", solo: "₹42,500" },
       { bike: "RE Himalayan 450cc BS6", dual: "₹39,999", solo: "₹46,500" }
     ],
-    image: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?q=80&w=1000&auto=format&fit=crop",
-    pdfUrl: "/packages/Manali leh -Srinagar 2026 3.pdf",
+    image: "/Manali - Leh - Srinagar.png",
+    pdfUrl: "/packages/manali-leh-srinagar-2026-3.pdf",
     itinerary: [
       { day: 1, title: "Reached in Manali", description: "Arrive in Manali, check into hotel, and explore the local mall road." },
       { day: 2, title: "Manali to Jispa", description: "Journey via high-altitude Rohtang Pass to a riverside camp in Jispa." },
@@ -183,7 +183,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
       { bike: "RE Himalayan 450cc BS6", dual: "₹39,000", solo: "₹46,500" }
     ],
     image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1000&auto=format&fit=crop",
-    pdfUrl: "/packages/Srinagar Leh Manali-2026.pdf",
+    pdfUrl: "/packages/srinagar-leh-manali-2026.pdf",
     itinerary: [
       { day: 1, title: "Arrive Srinagar", description: "Arrival and transfer to hotel in Srinagar." },
       { day: 2, title: "Srinagar to Kargil", description: "Drive through Zojila Pass and Drass to Kargil." },
@@ -223,8 +223,8 @@ export const TOUR_PACKAGES: TourPackage[] = [
       { bike: "RE Himalayan 411cc BS6", dual: "₹44,500", solo: "₹52,799" },
       { bike: "RE Himalayan 450cc BS6", dual: "₹48,500", solo: "₹56,500" }
     ],
-    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1000&auto=format&fit=crop",
-    pdfUrl: "/packages/ZAngskar to UMling LA-6.pdf",
+    image: "/Zanskar to Umling LA.png",
+    pdfUrl: "/packages/zangskar-to-umling-la-6.pdf",
     itinerary: [
       { day: 0, title: "Delhi to Manali", description: "Overnight bus journey from Delhi." },
       { day: 1, title: "Manali Arrival", description: "Bike handover and local Manali exploration." },
@@ -266,7 +266,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
       { bike: "RE Himalayan 450cc BS6", dual: "₹29,000", solo: "₹36,500" }
     ],
     image: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?q=80&w=1000&auto=format&fit=crop",
-    pdfUrl: "/packages/Ride To Heaven 2026.pdf",
+    pdfUrl: "/packages/ride-to-heaven-2026.pdf",
     itinerary: [
       { day: 1, title: "Leh – Leh", description: "Arrival at Leh Airport, hotel transfer, and a full day of rest for acclimatization." },
       { day: 2, title: "Leh Sightseeing", description: "Visit Hall of Fame, Spituk, Pathar Sahib, Magnetic Hill, and Sangam." },
@@ -301,8 +301,8 @@ export const TOUR_PACKAGES: TourPackage[] = [
       { bike: "RE Himalayan 411cc BS6", dual: "₹22,500", solo: "₹27,500" },
       { bike: "RE Himalayan 450cc BS6", dual: "₹27,500", solo: "₹32,500" }
     ],
-    image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1000&auto=format&fit=crop",
-    pdfUrl: "/packages/turtuk Valley2026-9.pdf",
+    image: "/Turtuk Valley.png",
+    pdfUrl: "/packages/turtuk-valley-2026-9.pdf",
     itinerary: [
       { day: 1, title: "Leh – Leh", description: "Welcome at Leh airport and full day rest for altitude adjustment." },
       { day: 2, title: "Leh Sightseeing", description: "Local tour of Hall of Fame, Pathar Sahib, Magnetic Hill, and Sangam." },
