@@ -101,7 +101,7 @@ const VideoGallery: React.FC = () => {
               <div className="bg-tibetan-red text-white w-10 h-10 rounded-full flex items-center justify-center mr-5 transition-transform group-hover:scale-110 group-hover:rotate-12">
                  <span className="text-xs">▶</span>
               </div>
-              <span className="font-oswald font-black uppercase tracking-[0.2em] text-sm">Follow Travel Songs India</span>
+              <span className="font-oswald font-black uppercase tracking-[0.2em] text-sm">Follow Himalayan Marmot</span>
             </a>
             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-600">Official Media Partner</p>
           </div>

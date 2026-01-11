@@ -10,7 +10,7 @@ export const ADDRESS_MAIN = "Housing Colony, near Radio Station, Leh Ladakh, Ind
 export const ADDRESS_OFFICE = "Main market, near Samsung show room Leh Ladakh - 194101";
 export const MAPS_URL = "https://maps.app.goo.gl/hLVkQQUuSCsupyC7A";
 export const INSTAGRAM_URL = "https://www.instagram.com/himalayan_marmot_2019/";
-export const YOUTUBE_URL = "https://www.youtube.com/@travelsongsindia";
+export const YOUTUBE_URL = "https://www.youtube.com/@Ladakhpackage";
 
 export const IG_STATS = {
   handle: "himalayan_marmot_2019",
@@ -359,10 +359,8 @@ export const UPCOMING_FESTIVALS = [
 
 // Fix: Add missing YOUTUBE_VIDEOS export required by VideoGallery.tsx
 export const YOUTUBE_VIDEOS = [
-  { id: "pNSBrWDu6Fc", title: "Ladakh Adventure Journey" },
-  { id: "rzSrTC1r1lM", title: "Himalayan Expedition" },
-  { id: "p7jcWjXYAbA", title: "Travel Songs India - Ladakh" },
-  { id: "-dLha0UP8qA", title: "Ladakh Bike Tour Experience" }
+  { id: "KfktZV7t1To", title: "Ladakh Adventure Journey" },
+  { id: "qGQROLS_Ed8", title: "Ladakh Bike Tour Experience" }
 ];
 
 // Tour Categories for Navigation
