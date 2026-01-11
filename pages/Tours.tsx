@@ -8,9 +8,9 @@ import Footer from '../components/Footer';
 const Tours: React.FC = () => {
   const getCategoryTours = (categoryKey: keyof typeof TOUR_CATEGORIES) => {
     const category = TOUR_CATEGORIES[categoryKey];
-    return category.tours.map(tourId => 
-      TOUR_PACKAGES.find(tour => tour.id === tourId)
-    ).filter(Boolean);
+    return category.tours
+      .map(tourId => TOUR_PACKAGES.find(tour => tour.id === tourId))
+      .filter((tour) => tour !== undefined) as typeof TOUR_PACKAGES;
   };
 
   return (
