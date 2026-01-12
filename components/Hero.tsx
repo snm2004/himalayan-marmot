@@ -2,11 +2,9 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const VIDEO_PLAYLIST = [
-  "/hero-video-new.mp4",
-  // "/hero-video-1.mp4", // Too large for Vercel (>100MB)
-  // "/hero-video-2.mp4",
-  // "/hero-video-3.mp4", 
-  // "/hero-video-4.mov"  // Too large for Vercel (>100MB)
+  "/hero-video-1.mp4",
+  "/hero-video-2.mp4",
+  "/hero-video-3.mp4",
 ];
 
 const FALLBACK_IMAGE = "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=2070&auto=format&fit=crop";
