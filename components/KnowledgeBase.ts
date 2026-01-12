@@ -365,7 +365,7 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
     {
         keywords: ['best time', 'when to visit', 'season', 'weather', 'what\'s the best time', 'when should i visit', 'good time to visit', 'when is the best', 'ideal time', 'perfect time', 'visit ladakh when', 'month to visit'],
         answer: "**Best Time to Visit Ladakh**:\n\n🌟 **September** (BEST!)\n• Clear skies, perfect visibility\n• Fewer crowds than July-Aug\n• Perfect weather (15-25°C)\n• Golden landscapes for photos\n• All passes accessible\n\n☀️ **July-August** (Peak Season)\n• Warmest weather\n• All high passes open\n• Hemis Festival (June-July)\n• Maximum crowds\n• Book early\n\n❄️ **May-June** (Opening Season)\n• Some passes still snowy\n• Cool weather (10-18°C)\n• Fewer tourists\n• Challenging for high passes\n• Good for acclimation\n\n⚠️ **Avoid**: October-April (snow, roads closed)\n\n🎯 **Recommendation**: June-July for peak, September for best experience!",
-        priority: 10
+        priority: 15
     },
     {
         keywords: ['packing', 'what to bring', 'packing list', 'luggage'],
