@@ -28,12 +28,12 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
     // PACKAGES & PRICING (Comprehensive)
     // ==========================================
     {
-        keywords: ['price', 'cost', 'rates', 'how much', 'expensive', 'pricing'],
+        keywords: ['price', 'prices', 'pricing', 'priced', 'cost', 'costs', 'costing', 'rate', 'rates', 'how much', 'how much cost', 'how much price', 'expensive', 'cheap', 'affordable', 'budget', 'fee', 'fees', 'charge', 'charges', 'amount', 'money', 'pay', 'payment', 'what price', 'what cost', 'what rate', 'tell price', 'tell cost', 'show price', 'show cost', 'give price', 'give cost', 'price list', 'cost list', 'rate list', 'price details', 'cost details', 'pricing details', 'tour price', 'tour cost', 'tour rate', 'package price', 'package cost', 'package rate', 'trip price', 'trip cost', 'trip rate', 'expedition price', 'expedition cost', 'know price', 'know cost', 'want to know price', 'want to know cost', 'tell me price', 'tell me cost', 'info about price', 'info about cost', 'information about price', 'information about cost', 'prise', 'pric', 'prce', 'cst', 'cots', 'expnsive', 'expensiv', 'afordable', 'buget'],
         answer: "Our 2026 expeditions at 2024 prices! 💰\n\n• **Land of High Passes** (6D/5N): ₹18,500\n• **Turtuk Valley** (7D/6N): ₹22,500\n• **Ride to Heaven** (8D/7N): ₹26,000\n• **Manali-Ladakh-Manali** (11D/10N): ₹36,500\n• **Manali-Leh-Srinagar** (11D/10N): ₹36,500\n• **Srinagar-Leh-Manali** (11D/10N): ₹36,500\n• **Zanskar to Umling La** (12D/11N): ₹44,500\n\n*Prices for dual riding with Himalayan 411cc",
         priority: 10
     },
     {
-        keywords: ['package', 'tour', 'expedition', 'options', 'list', 'all tours'],
+        keywords: ['package', 'packages', 'tour', 'tours', 'touring', 'expedition', 'expeditions', 'trip', 'trips', 'options', 'option', 'list', 'all tours', 'all packages', 'all expeditions', 'all trips', 'show tours', 'show packages', 'show expeditions', 'what tours', 'what packages', 'what expeditions', 'which tours', 'which packages', 'which expeditions', 'available tours', 'available packages', 'available expeditions', 'tour options', 'package options', 'expedition options', 'trip options', 'tour list', 'package list', 'expedition list', 'trip list', 'have tours', 'have packages', 'have expeditions', 'offer tours', 'offer packages', 'offer expeditions', 'provide tours', 'provide packages', 'provide expeditions', 'tour details', 'package details', 'expedition details', 'trip details', 'know about tours', 'know about packages', 'tell me tours', 'tell me packages', 'show me tours', 'show me packages', 'see tours', 'see packages', 'view tours', 'view packages', 'pakage', 'pacakge', 'packge', 'tur', 'turs', 'expidition', 'expedtion', 'trp', 'trips'],
         answer: "We offer 7 curated Royal Enfield expeditions:\n\n1. **Land of High Passes** (6D) - Best for beginners\n2. **Turtuk Valley** (7D) - Cultural depth\n3. **Ride to Heaven** (8D) - Perfect balance\n4. **Manali-Ladakh-Manali** (11D) - Classic adventure\n5. **Manali-Leh-Srinagar** (11D) - Complete Himalayan\n6. **Srinagar-Leh-Manali** (11D) - Kashmir to Ladakh\n7. **Zanskar & Umling La** (12D) - For the brave",
         priority: 10
     },
@@ -137,7 +137,7 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
     // BIKES & FLEET (Comprehensive)
     // ==========================================
     {
-        keywords: ['bike', 'motorcycle', 'royal enfield', 'fleet', 'which bike'],
+        keywords: ['bike', 'bikes', 'biking', 'biker', 'motorcycle', 'motorcycles', 'motorbike', 'motorbikes', 'royal enfield', 'enfield', 'fleet', 'vehicles', 'vehicle', 'ride', 'rides', 'riding', 'which bike', 'what bike', 'about bike', 'know about bike', 'tell me about bike', 'bike info', 'bike information', 'want to know about bike', 'tell about bike', 'info about bike', 'information about bike', 'show bike', 'show bikes', 'show me bike', 'show me bikes', 'see bike', 'see bikes', 'view bike', 'view bikes', 'available bike', 'available bikes', 'bike available', 'bikes available', 'bike options', 'bike choices', 'have bike', 'have bikes', 'got bike', 'got bikes', 'provide bike', 'provide bikes', 'offer bike', 'offer bikes', 'bike details', 'bike specs', 'bike specifications', 'what kind of bike', 'what type of bike', 'which motorcycle', 'what motorcycle', 'bike model', 'bike models', 'model bike', 'models bike', 'bke', 'biks', 'byke', 'bykes', 'motercycle', 'motorcyle', 'motorbke', 'abotu bike', 'abot bike', 'knwo about bike', 'konw about bike'],
         answer: "We use only Royal Enfield Himalayan BS6! 🏍️\n\n1. **Himalayan 411cc** (Oil Cooled)\n   • 24.3 BHP\n   • Proven workhorse\n   • Excellent for mountains\n\n2. **Himalayan 450cc** (Liquid Cooled)\n   • 40 BHP\n   • More power\n   • Latest technology\n\nBoth are purpose-built for Himalayan terrain!",
         priority: 10
     },
@@ -484,18 +484,123 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
         keywords: ['julley', 'julay'],
         answer: "Julley! 🙏 That's how we greet in Ladakh - it means hello, goodbye, and thank you all in one! How can I help you plan your Ladakh adventure?",
         priority: 6
+    },
+    
+    // Follow-up and conversational keywords
+    {
+        keywords: ['more', 'describe', 'tell me more', 'details', 'elaborate', 'explain', 'information'],
+        answer: "I'd be happy to provide more details! 📋\n\nWhat would you like to know more about?\n\n• **Tour Packages** - Specific itineraries, day-wise plans\n• **Pricing** - Dual vs solo, bike options, inclusions\n• **Bikes** - 411cc vs 450cc comparison, specifications\n• **Safety** - AMS prevention, medical support, oxygen\n• **Booking** - How to book, payment methods, cancellation\n• **Destinations** - Khardung La, Pangong, Nubra, Umling La\n• **Best Time** - Month-by-month weather guide\n• **Packing** - What to bring, gear rental\n\nJust ask about any specific topic!",
+        priority: 7
+    },
+    {
+        keywords: ['yes', 'yeah', 'yep', 'sure', 'ok', 'okay', 'continue'],
+        answer: "Great! What specific aspect would you like to explore?\n\n💡 **Try asking**:\n• \"Tell me about Land of High Passes\"\n• \"What's included in the package?\"\n• \"Difference between 411 and 450?\"\n• \"How to prevent altitude sickness?\"\n• \"Best time to visit?\"\n• \"How to book?\"\n\nI'm here to help! 🏍️",
+        priority: 6
+    },
+    {
+        keywords: ['no', 'nope', 'not really', 'nothing'],
+        answer: "No problem! If you have any questions later, I'm here 24/7. You can also:\n\n📞 Call us: +91 6006114260\n💬 WhatsApp: Click the button below\n📧 Email: himalayanmarmot19@gmail.com\n\nJulley! 🦫",
+        priority: 6
+    },
+    {
+        keywords: ['compare', 'comparison', 'difference', 'vs', 'versus', 'which one', 'which is better'],
+        answer: "I can help you compare! 🔍\n\n**What would you like to compare?**\n\n🏍️ **Bikes**: \"411 vs 450\" or \"which bike for beginners\"\n📦 **Packages**: \"shortest vs longest tour\" or \"beginner vs advanced\"\n💰 **Pricing**: \"dual vs solo\" or \"cheapest vs expensive\"\n📅 **Timing**: \"May vs September\" or \"peak vs off-season\"\n\nJust ask your comparison question!",
+        priority: 7
+    },
+    {
+        keywords: ['recommend', 'suggestion', 'suggest', 'advice', 'should i'],
+        answer: "Happy to recommend! 💡\n\n**Tell me about yourself**:\n\n👤 **Experience Level**:\n• First-timer? → Land of High Passes (6D)\n• Experienced? → Zanskar to Umling La (12D)\n\n⏰ **Time Available**:\n• 6-7 days? → Local expeditions\n• 10-12 days? → Grand circuits\n\n💪 **Fitness Level**:\n• Moderate? → Easier packages\n• Excellent? → Extreme adventures\n\n💰 **Budget**:\n• ₹18,500-26,000 → Local tours\n• ₹36,500-44,500 → Grand circuits\n\nWhat's your situation?",
+        priority: 8
+    },
+    {
+        keywords: ['confused', 'not sure', 'dont know', 'help me choose', 'undecided'],
+        answer: "No worries! Let me help you decide. 🤔\n\n**Quick Questions**:\n\n1️⃣ **First time in Ladakh?**\n   → Yes: Start with Land of High Passes (6D)\n   → No: Try advanced routes\n\n2️⃣ **How many days can you spare?**\n   → 6-8 days: Local expeditions\n   → 10-12 days: Grand circuits\n\n3️⃣ **Riding experience?**\n   → Beginner: 411cc, easier routes\n   → Advanced: 450cc, challenging terrain\n\n4️⃣ **Budget range?**\n   → ₹18-26k: Local tours\n   → ₹36-44k: Complete circuits\n\nAnswer these and I'll recommend the perfect package!",
+        priority: 8
+    },
+    {
+        keywords: ['all', 'everything', 'complete', 'full', 'entire'],
+        answer: "Here's the complete overview! 📚\n\n**7 Tour Packages**:\n1. Land of High Passes (6D) - ₹18,500\n2. Turtuk Valley (7D) - ₹22,500\n3. Ride to Heaven (8D) - ₹26,000\n4. Manali-Ladakh-Manali (11D) - ₹36,500\n5. Manali-Leh-Srinagar (11D) - ₹36,500\n6. Srinagar-Leh-Manali (11D) - ₹36,500\n7. Zanskar to Umling La (12D) - ₹44,500\n\n**2 Bike Options**:\n• Himalayan 411cc (₹base price)\n• Himalayan 450cc (+₹3-4k)\n\n**Season**: May-September\n**Group Size**: 15-20 riders\n**Includes**: Bike, fuel, accommodation, meals, permits, safety\n\nWhat specific aspect interests you?",
+        priority: 7
     }
 ];
 
+// Levenshtein distance for typo tolerance
+const levenshteinDistance = (str1: string, str2: string): number => {
+    const matrix: number[][] = [];
+    
+    for (let i = 0; i <= str2.length; i++) {
+        matrix[i] = [i];
+    }
+    
+    for (let j = 0; j <= str1.length; j++) {
+        matrix[0][j] = j;
+    }
+    
+    for (let i = 1; i <= str2.length; i++) {
+        for (let j = 1; j <= str1.length; j++) {
+            if (str2.charAt(i - 1) === str1.charAt(j - 1)) {
+                matrix[i][j] = matrix[i - 1][j - 1];
+            } else {
+                matrix[i][j] = Math.min(
+                    matrix[i - 1][j - 1] + 1,
+                    matrix[i][j - 1] + 1,
+                    matrix[i - 1][j] + 1
+                );
+            }
+        }
+    }
+    
+    return matrix[str2.length][str1.length];
+};
+
+// Fuzzy matching with typo tolerance
+const fuzzyMatch = (query: string, keyword: string, threshold: number = 2): boolean => {
+    // Exact match
+    if (query.includes(keyword)) return true;
+    
+    // Check if keyword is in query with typos
+    const words = query.split(/\s+/);
+    for (const word of words) {
+        if (levenshteinDistance(word, keyword) <= threshold) {
+            return true;
+        }
+    }
+    
+    return false;
+};
+
+// Remove common filler words
+const cleanQuery = (query: string): string => {
+    const fillers = ['i', 'want', 'to', 'know', 'about', 'tell', 'me', 'can', 'you', 'please', 'the', 'a', 'an', 'is', 'are', 'what', 'how', 'show', 'give', 'need', 'info', 'information', 'details'];
+    const words = query.toLowerCase().split(/\s+/);
+    return words.filter(word => !fillers.includes(word) && word.length > 2).join(' ');
+};
+
 export const findAnswer = (query: string): string => {
     const lowerQuery = query.toLowerCase();
+    const cleanedQuery = cleanQuery(lowerQuery);
 
     const matches = KNOWLEDGE_BASE.map(entry => {
-        const matchCount = entry.keywords.reduce((count, keyword) => {
+        let matchCount = 0;
+        
+        // Exact keyword matching
+        matchCount += entry.keywords.reduce((count, keyword) => {
             const escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
             const regex = new RegExp(`\\b${escapedKeyword}\\b`, 'i');
-            return regex.test(lowerQuery) ? count + 1 : count;
+            return regex.test(lowerQuery) ? count + 2 : count; // Higher weight for exact matches
         }, 0);
+        
+        // Fuzzy matching for typos
+        matchCount += entry.keywords.reduce((count, keyword) => {
+            return fuzzyMatch(lowerQuery, keyword, 2) ? count + 1 : count;
+        }, 0);
+        
+        // Match against cleaned query (without filler words)
+        if (cleanedQuery) {
+            matchCount += entry.keywords.reduce((count, keyword) => {
+                return cleanedQuery.includes(keyword) ? count + 1.5 : count;
+            }, 0);
+        }
 
         const score = matchCount > 0 ? matchCount + (entry.priority || 0) : 0;
         return { ...entry, score };

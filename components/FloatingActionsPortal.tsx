@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import Chatbot from "./Chatbot";
+import Chatbot from "./ChatbotEnhanced";
 
 /**
  * FloatingActionsPortal Component

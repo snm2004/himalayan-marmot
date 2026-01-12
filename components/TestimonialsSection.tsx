@@ -11,16 +11,20 @@ interface Review {
   isUserSubmitted?: boolean;
 }
 
-const RiderVideoCard: React.FC<{ videoStr: string; title: string; delay: number }> = ({ videoStr, title, delay }) => {
+const RiderVideoCard: React.FC<{ videoId: string; title: string; delay: number }> = ({ videoId, title, delay }) => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = React.useRef<HTMLVideoElement>(null);
 
   const handlePlay = () => {
     setIsPlaying(true);
-    if (videoRef.current) {
-      videoRef.current.play();
-    }
   };
+
+  // Extract YouTube video ID from URL
+  const getYouTubeId = (url: string) => {
+    const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&?]+)/);
+    return match ? match[1] : url;
+  };
+
+  const embedId = getYouTubeId(videoId);
 
   return (
     <div
@@ -30,13 +34,15 @@ const RiderVideoCard: React.FC<{ videoStr: string; title: string; delay: number 
       <div className="aspect-[9/16] md:aspect-[3/4] relative bg-black">
         {!isPlaying ? (
           <div className="absolute inset-0 cursor-pointer" onClick={handlePlay}>
-            {/* Thumbnail Placeholder - using the video itself mostly muted/paused or a poster if we had one. 
-                 Since we don't have posters, we'll try to show the first frame by setting t=0.1 in a hidden video or just a gradient overlay.
-                 For now, we'll use a nice gradient and title overlay.
-             */}
-            <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-950">
-              {/* Optional: We could try to show a blurred first frame if we had an image tool, but CSS gradient is cleaner for now */}
-            </div>
+            {/* YouTube Thumbnail */}
+            <img
+              src={`https://img.youtube.com/vi/${embedId}/maxresdefault.jpg`}
+              alt={title}
+              className="absolute inset-0 w-full h-full object-cover"
+              onError={(e) => {
+                e.currentTarget.src = `https://img.youtube.com/vi/${embedId}/hqdefault.jpg`;
+              }}
+            />
 
             {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20"></div>
@@ -58,13 +64,13 @@ const RiderVideoCard: React.FC<{ videoStr: string; title: string; delay: number 
             </div>
           </div>
         ) : (
-          <video
-            ref={videoRef}
-            src={videoStr}
-            className="w-full h-full object-cover"
-            controls
-            autoPlay
-            playsInline
+          <iframe
+            className="w-full h-full"
+            src={`https://www.youtube.com/embed/${embedId}?autoplay=1&rel=0`}
+            title={title}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
           />
         )}
       </div>
@@ -73,10 +79,10 @@ const RiderVideoCard: React.FC<{ videoStr: string; title: string; delay: number 
 };
 
 const RIDER_VIDEOS = [
-  { id: 1, src: "/C5406.MP4", title: "Conquering High Passes", delay: 0 },
-  { id: 2, src: "/C5407.MP4", title: "The Road to Adventure", delay: 100 },
-  { id: 3, src: "/C5408.MP4", title: "Brotherhood on Bikes", delay: 200 },
-  { id: 4, src: "/C5409.MP4", title: "Land of Endless Views", delay: 300 },
+  { id: 1, src: "https://youtu.be/QNp7oC5krEc", title: "Conquering High Passes", delay: 0 },
+  { id: 2, src: "https://youtu.be/lXU3tleWiW8", title: "The Road to Adventure", delay: 100 },
+  { id: 3, src: "https://youtu.be/iy5OhhSTiUw", title: "Brotherhood on Bikes", delay: 200 },
+  { id: 4, src: "https://youtu.be/36bzTnCq_cA", title: "Land of Endless Views", delay: 300 },
 ];
 
 const TestimonialsSection: React.FC = () => {
