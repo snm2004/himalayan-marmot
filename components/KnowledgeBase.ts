@@ -24,8 +24,8 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
         priority: 8
     },
 {
-        keywords: ['which page', 'what page', 'where am i', 'current page', 'this page', 'page name', 'which page am i', 'what page am i', 'where am i on', 'what page is this', 'which page is this'],
-        answer: "You're currently on the **All Tours** page! 🗺️\n\nThis page shows our complete collection of Ladakh motorcycle expeditions. Scroll down to explore:\n\n📍 **Local Expeditions** (6-8 days) - Leh-based tours\n🏔️ **Grand Circuits** (11-12 days) - Complete Himalayan journeys\n\nEach tour card shows the route, duration, and starting price. Click 'EXPLORE ITINERARY' on any tour to see the full day-by-day plan!",
+        keywords: ['which page', 'what page', 'where am i', 'current page', 'this page', 'page name', 'which page am i', 'what page am i', 'where am i on', 'what page is this', 'which page is this', 'page', 'location'],
+        answer: "📍 **Page Navigation Guide**:\n\nYou're viewing our website! Here's what each page offers:\n\n🏠 **Home** - Overview, values, founder story, testimonials\n🗺️ **Tours** - All 7 expedition packages with details\n📅 **Booking** - Reserve your slot, payments, FAQs\n📞 **Contact** - Phone, email, WhatsApp, office location\n🏥 **Safety** - AMS prevention, oxygen, medical protocols\n📚 **Blogs** - Ladakh guides, tips, festivals, culture\n🎬 **Journey in Frames** - Gallery of rider photos\n\n💡 **Tip**: Use the menu at the top to navigate between pages. I can answer questions about any section!",
         priority: 10
     },
 
@@ -363,8 +363,8 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
     // TRAVEL TIPS & PREPARATION
     // ==========================================
     {
-        keywords: ['best time', 'when to visit', 'season', 'weather'],
-        answer: "**Best Time to Visit Ladakh**:\n\n🌟 **September** (Best!)\n• Clear skies\n• Fewer crowds\n• Perfect weather\n• Golden landscapes\n\n☀️ **July-August** (Peak)\n• Warmest weather\n• All passes open\n• Hemis Festival\n• Maximum crowds\n\n❄️ **May-June** (Opening)\n• Snow on passes\n• Cool weather\n• Fewer tourists\n• Challenging conditions\n\n⚠️ **Season**: Late May to Mid-September",
+        keywords: ['best time', 'when to visit', 'season', 'weather', 'what\'s the best time', 'when should i visit', 'good time to visit', 'when is the best', 'ideal time', 'perfect time', 'visit ladakh when', 'month to visit'],
+        answer: "**Best Time to Visit Ladakh**:\n\n🌟 **September** (BEST!)\n• Clear skies, perfect visibility\n• Fewer crowds than July-Aug\n• Perfect weather (15-25°C)\n• Golden landscapes for photos\n• All passes accessible\n\n☀️ **July-August** (Peak Season)\n• Warmest weather\n• All high passes open\n• Hemis Festival (June-July)\n• Maximum crowds\n• Book early\n\n❄️ **May-June** (Opening Season)\n• Some passes still snowy\n• Cool weather (10-18°C)\n• Fewer tourists\n• Challenging for high passes\n• Good for acclimation\n\n⚠️ **Avoid**: October-April (snow, roads closed)\n\n🎯 **Recommendation**: June-July for peak, September for best experience!",
         priority: 10
     },
     {
