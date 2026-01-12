@@ -82,7 +82,6 @@ const RIDER_VIDEOS = [
   { id: 1, src: "https://youtu.be/QNp7oC5krEc", title: "Conquering High Passes", delay: 0 },
   { id: 2, src: "https://youtu.be/lXU3tleWiW8", title: "The Road to Adventure", delay: 100 },
   { id: 3, src: "https://youtu.be/iy5OhhSTiUw", title: "Brotherhood on Bikes", delay: 200 },
-  { id: 4, src: "https://youtu.be/36bzTnCq_cA", title: "Land of Endless Views", delay: 300 },
 ];
 
 const TestimonialsSection: React.FC = () => {
