@@ -243,7 +243,7 @@ const TestimonialsSection: React.FC = () => {
             {RIDER_VIDEOS.map((video) => (
               <RiderVideoCard
                 key={video.id}
-                videoStr={video.src}
+                videoId={video.src}
                 title={video.title}
                 delay={video.delay}
               />

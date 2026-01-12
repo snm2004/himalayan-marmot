@@ -1,6 +1,10 @@
 # Large Video Files (>100MB)
-# Note: C5406-C5409 videos are needed for testimonials section
-# If deployment fails due to size, host these externally (YouTube/Vimeo/CDN)
+# Note: Rider testimonial videos now hosted on YouTube
+# Local video files excluded from deployment
+C5406.MP4
+C5407.MP4
+C5408.MP4
+C5409.MP4
 hero-video-1.mp4
 hero-video-4.mov
 ride1.mp4
