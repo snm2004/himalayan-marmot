@@ -1,13 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { X, Send, ExternalLink } from 'lucide-react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { findAnswerWithContext } from './KnowledgeBaseEnhanced';
-import { KNOWLEDGE_BASE } from './KnowledgeBase';
+import { X, Send } from 'lucide-react';
+import { findAnswer } from './KnowledgeBase';
 
 interface Message {
     role: 'user' | 'assistant';
     content: string;
-    links?: Array<{ text: string; url: string }>;
 }
 
 const QUICK_QUESTIONS = [
@@ -19,8 +16,6 @@ const QUICK_QUESTIONS = [
 ];
 
 export default function ChatbotEnhanced() {
-    const location = useLocation();
-    const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState<Message[]>([
         {
@@ -80,26 +75,15 @@ export default function ChatbotEnhanced() {
         setConversationHistory(newHistory);
 
         setTimeout(() => {
-            // Get context-aware response
-            const currentPage = location.pathname;
-            const response = findAnswerWithContext(messageText, newHistory, currentPage);
+            // Get response from knowledge base
+            const answer = findAnswer(messageText);
             
             setMessages(prev => [...prev, { 
                 role: 'assistant', 
-                content: response.answer,
-                links: response.links 
+                content: answer
             }]);
             setIsLoading(false);
         }, 600);
-    };
-
-    const handleLinkClick = (url: string) => {
-        if (url.startsWith('http')) {
-            window.open(url, '_blank');
-        } else {
-            navigate(url);
-            setIsOpen(false);
-        }
     };
 
     const clearHistory = () => {
@@ -181,22 +165,6 @@ export default function ChatbotEnhanced() {
                                         }`}
                                 >
                                     <p className="text-sm whitespace-pre-line leading-relaxed">{msg.content}</p>
-                                    
-                                    {/* Links */}
-                                    {msg.links && msg.links.length > 0 && (
-                                        <div className="mt-3 space-y-2">
-                                            {msg.links.map((link, linkIdx) => (
-                                                <button
-                                                    key={linkIdx}
-                                                    onClick={() => handleLinkClick(link.url)}
-                                                    className="flex items-center gap-2 w-full px-3 py-2 bg-gradient-to-r from-[#2D5A87] to-[#1B4F72] text-white rounded-lg text-xs font-medium hover:shadow-md transition-all"
-                                                >
-                                                    <ExternalLink size={14} />
-                                                    <span>{link.text}</span>
-                                                </button>
-                                            ))}
-                                        </div>
-                                    )}
                                 </div>
                             </div>
                         ))}
