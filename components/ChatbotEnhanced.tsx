@@ -128,7 +128,7 @@ export default function ChatbotEnhanced() {
                                 <h3 className="font-oswald font-bold text-lg tracking-wide uppercase">Himalayan Marmot</h3>
                                 <p className="text-xs opacity-90 flex items-center gap-1 font-roboto">
                                     <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                                    Context-Aware AI
+                                    Your Mountain Guide
                                 </p>
                             </div>
                         </div>
