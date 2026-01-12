@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { X, Send, ExternalLink } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { findAnswerWithContext } from './KnowledgeBaseEnhanced';
+import { KNOWLEDGE_BASE } from './KnowledgeBase';
 
 interface Message {
     role: 'user' | 'assistant';

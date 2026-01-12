@@ -23,6 +23,55 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
         answer: "I can help you with:\n\n📦 Tour packages & pricing\n🏍️ Bike specifications\n📅 Best time to visit\n🎒 Packing & preparation\n🏥 Health & safety tips\n💰 Booking & payments\n📍 Destinations & routes\n🏨 Accommodation details\n\nJust ask away!",
         priority: 8
     },
+{
+        keywords: ['which page', 'what page', 'where am i', 'current page', 'this page', 'page name', 'which page am i', 'what page am i', 'where am i on', 'what page is this', 'which page is this'],
+        answer: "You're currently on the **All Tours** page! 🗺️\n\nThis page shows our complete collection of Ladakh motorcycle expeditions. Scroll down to explore:\n\n📍 **Local Expeditions** (6-8 days) - Leh-based tours\n🏔️ **Grand Circuits** (11-12 days) - Complete Himalayan journeys\n\nEach tour card shows the route, duration, and starting price. Click 'EXPLORE ITINERARY' on any tour to see the full day-by-day plan!",
+        priority: 10
+    },
+
+    // ==========================================
+    // LADAKH CULTURE & TRADITIONS
+    // ==========================================
+    {
+        keywords: ['culture', 'cultural', 'tradition', 'traditional', 'customs', 'ladakhi culture', 'local culture', 'about culture', 'tell me about culture', 'ladakh culture', 'cultural heritage', 'heritage'],
+        answer: "**Ladakh's Rich Cultural Heritage** 🙏\n\nLadakh is a unique blend of Tibetan Buddhism and ancient traditions:\n\n🕉️ **Buddhist Heritage**:\n• 1000+ year old monasteries\n• Prayer flags everywhere (carrying blessings in wind)\n• Prayer wheels (spin clockwise for good karma)\n• Mani walls (sacred stone carvings)\n\n👥 **People & Language**:\n• Ladakhi language (Tibetan dialect)\n• 'Julley' = Hello/Goodbye/Thank you (most important word!)\n• Warm, hospitable mountain people\n• Strong community bonds\n\n🎭 **Festivals**:\n• Hemis Festival (June-July) - Masked dances\n• Losar (Tibetan New Year)\n• Dosmoche (February) - Evil spirit exorcism\n\n🏛️ **Architecture**:\n• Whitewashed mud-brick houses\n• Flat roofs for drying crops\n• Buddhist stupas at village entrances\n\nOur tours include monastery visits with local guides who share authentic stories!",
+        priority: 9
+    },
+    {
+        keywords: ['food', 'cuisine', 'eat', 'eating', 'dish', 'dishes', 'ladakhi food', 'local food', 'traditional food', 'what to eat', 'food in ladakh', 'ladakh food', 'meals', 'dining', 'restaurant'],
+        answer: "**Ladakhi Cuisine - Mountain Flavors** 🍜\n\n**Must-Try Traditional Dishes**:\n\n1. **Thukpa** (Noodle Soup)\n   • Hearty Tibetan noodle soup\n   • Perfect for cold mountain weather\n   • Vegetarian or with meat\n\n2. **Momos** (Dumplings)\n   • Steamed or fried dumplings\n   • Filled with vegetables or meat\n   • Served with spicy chutney\n\n3. **Butter Tea (Gur Gur Chai)**\n   • Salted tea with yak butter\n   • High-calorie energy drink\n   • Acquired taste but essential!\n\n4. **Skyu** (Pasta Stew)\n   • Traditional Ladakhi pasta\n   • Thick vegetable stew\n   • Comfort food of the mountains\n\n5. **Tingmo** (Steamed Bread)\n   • Fluffy steamed buns\n   • Eaten with curry or vegetables\n\n6. **Apricot Jam**\n   • Made from local apricots\n   • Sweet and tangy\n   • Available everywhere\n\n🍽️ **Dining Tips**:\n• Most restaurants serve Tibetan, Indian & Chinese\n• Vegetarian options widely available\n• Lunch costs ₹200-400 per meal\n• Try local bakeries for fresh bread\n\n**Our tours include**: Breakfast & Dinner at hotels. Lunch stops at authentic local restaurants!",
+        priority: 9
+    },
+    {
+        keywords: ['monastery', 'monasteries', 'gompa', 'temple', 'temples', 'buddhist', 'buddhism', 'monks', 'lama', 'spiritual', 'religious', 'prayer', 'meditation'],
+        answer: "**Sacred Monasteries of Ladakh** 🕉️\n\n**Major Monasteries We Visit**:\n\n1. **Thiksey Monastery**\n   • 12-story complex\n   • Stunning Maitreya Buddha statue\n   • Morning prayers at 6 AM (magical!)\n\n2. **Hemis Monastery**\n   • Largest & wealthiest in Ladakh\n   • Famous Hemis Festival (June-July)\n   • Ancient thangkas & artifacts\n\n3. **Diskit Monastery** (Nubra Valley)\n   • 32-meter Maitreya Buddha statue\n   • Panoramic valley views\n   • 14th century foundation\n\n4. **Lamayuru Monastery**\n   • Oldest in Ladakh (11th century)\n   • 'Moonland' landscape\n   • Cave meditation chambers\n\n5. **Alchi Monastery**\n   • UNESCO World Heritage Site\n   • 1000-year-old wall paintings\n   • Unique Indo-Himalayan art\n\n**Monastery Etiquette**:\n✅ Remove shoes before entering\n✅ Walk clockwise around stupas\n✅ Don't point feet at Buddha statues\n✅ Ask before photographing\n✅ Dress modestly\n✅ Maintain silence in prayer halls\n✅ Small donations appreciated\n\n🙏 **Spiritual Experience**:\n• Attend morning prayers (chanting)\n• Spin prayer wheels clockwise\n• Light butter lamps\n• Receive blessings from monks\n\nOur local guides explain the symbolism and stories behind each monastery!",
+        priority: 9
+    },
+    {
+        keywords: ['festival', 'festivals', 'celebration', 'celebrations', 'event', 'events', 'hemis', 'losar', 'cultural event', 'local festival'],
+        answer: "**Ladakh's Vibrant Festivals** 🎭\n\n**Major Festivals**:\n\n1. **Hemis Festival** (June-July)\n   • Biggest monastery festival\n   • Colorful masked dances (Cham)\n   • Celebrates Guru Padmasambhava\n   • Once every 12 years: Sacred thangka display\n   • Best time to visit for culture!\n\n2. **Losar** (Tibetan New Year - Feb/March)\n   • 15-day celebration\n   • Traditional dances & music\n   • Special foods & butter sculptures\n   • Family gatherings\n\n3. **Dosmoche** (February)\n   • Exorcism of evil spirits\n   • Ritual dances at Leh Palace\n   • Torma (ritual cake) offerings\n\n4. **Ladakh Festival** (September)\n   • Government-organized cultural fest\n   • Traditional music & dance\n   • Archery competitions\n   • Polo matches\n   • Handicraft exhibitions\n\n5. **Phyang Tsedup** (July-August)\n   • Sacred mask dances\n   • Oracle predictions\n   • Colorful costumes\n\n**Festival Tips**:\n• Book tours 3-4 months in advance\n• Accommodation fills up quickly\n• Prices slightly higher during festivals\n• Amazing photo opportunities\n• Authentic cultural immersion\n\nWant to time your tour with a festival? Contact us for special festival packages!",
+        priority: 8
+    },
+    {
+        keywords: ['local people', 'ladakhi people', 'locals', 'people of ladakh', 'community', 'villagers', 'native', 'indigenous', 'tribes'],
+        answer: "**The Warm People of Ladakh** 👥\n\n**Ladakhi Character**:\n• Incredibly hospitable & friendly\n• 'Julley' culture - always smiling\n• Strong Buddhist values\n• Resilient mountain people\n• Multilingual (Ladakhi, Hindi, English)\n\n**Traditional Lifestyle**:\n🏡 **Villages**:\n• Mud-brick houses with flat roofs\n• Solar panels everywhere\n• Community water channels\n• Shared agricultural work\n\n👨‍🌾 **Occupations**:\n• Agriculture (barley, wheat, peas)\n• Animal husbandry (yaks, dzos, sheep)\n• Tourism (growing sector)\n• Handicrafts (pashmina, carpets)\n\n👗 **Traditional Dress**:\n• **Goncha** (long woolen robe)\n• **Perak** (women's turquoise headdress)\n• **Tibi** (ceremonial hat)\n• Worn during festivals\n\n🎵 **Arts & Crafts**:\n• Thangka paintings\n• Wood carving\n• Pashmina weaving\n• Silver jewelry\n• Traditional music & dance\n\n**Our Local Connection**:\n• Founder Tsewang Norboo is Leh-born\n• 100% local support staff\n• Stay with local families (optional)\n• Learn authentic stories\n• Support local economy directly\n\nYou're not just tourists - you're guests in our home!",
+        priority: 8
+    },
+    {
+        keywords: ['language', 'speak', 'speaking', 'words', 'phrases', 'ladakhi language', 'local language', 'tibetan', 'learn ladakhi', 'common phrases'],
+        answer: "**Essential Ladakhi Phrases** 🗣️\n\n**Greetings**:\n• **Julley** (ju-lay) = Hello/Goodbye/Thank you (most important!)\n• **Khamzang-in-le?** = How are you?\n• **Khamzang-in** = I'm fine\n\n**Courtesy**:\n• **Thugs-je-che** = Thank you (formal)\n• **Gon-da** = Sorry/Excuse me\n• **Kacho** = Okay/Alright\n\n**Useful Words**:\n• **Cha** = Tea\n• **Chu** = Water\n• **Kha-le** = Food\n• **Gon-pa** = Monastery\n• **La** = Mountain pass\n• **Tso** = Lake\n\n**Directions**:\n• **Yod** = Yes\n• **Min** = No\n• **Ga-bar?** = Where?\n• **Ga-gi-re?** = How much?\n\n**Numbers**:\n• **Chik** = One\n• **Nyi** = Two\n• **Sum** = Three\n• **Zhi** = Four\n• **Nga** = Five\n\n**Fun Fact**: Ladakhi is a Tibetan dialect written in Tibetan script. Most locals also speak Hindi and English!\n\n💡 **Pro Tip**: Just saying 'Julley' with a smile opens every door in Ladakh!",
+        priority: 7
+    },
+    {
+        keywords: ['handicraft', 'handicrafts', 'shopping', 'souvenirs', 'buy', 'market', 'bazaar', 'pashmina', 'carpet', 'thangka', 'local products', 'what to buy'],
+        answer: "**Ladakh Shopping & Handicrafts** 🛍️\n\n**Authentic Ladakhi Products**:\n\n1. **Pashmina Shawls**\n   • Made from Changthang goat wool\n   • Incredibly soft & warm\n   • Price: ₹2,000-50,000+\n   • Buy from: Leh Main Bazaar\n\n2. **Thangka Paintings**\n   • Buddhist religious art\n   • Hand-painted on cloth\n   • Price: ₹500-10,000+\n   • Buy from: Monastery shops\n\n3. **Tibetan Carpets**\n   • Hand-woven wool carpets\n   • Traditional designs\n   • Price: ₹5,000-50,000\n   • Buy from: Carpet cooperatives\n\n4. **Prayer Flags & Wheels**\n   • Colorful Buddhist flags\n   • Portable prayer wheels\n   • Price: ₹50-500\n   • Buy from: Monastery shops\n\n5. **Apricot Products**\n   • Dried apricots\n   • Apricot oil\n   • Apricot jam\n   • Price: ₹200-800\n   • Buy from: Local markets\n\n6. **Silver Jewelry**\n   • Traditional Ladakhi designs\n   • Turquoise stones\n   • Price: ₹500-5,000\n   • Buy from: Leh Bazaar\n\n**Best Shopping Areas**:\n📍 **Leh Main Bazaar** - Everything!\n📍 **Tibetan Refugee Market** - Handicrafts\n📍 **Moti Market** - Local products\n📍 **Monastery Shops** - Authentic items\n\n**Shopping Tips**:\n✅ Bargain politely (except fixed-price shops)\n✅ Check quality carefully\n✅ Ask for authenticity certificates (pashmina)\n✅ Support local artisans\n✅ Avoid plastic bags\n\n💡 **Our tours include**: Free time for shopping in Leh with local guide recommendations!",
+        priority: 7
+    },
+    {
+        keywords: ['music', 'dance', 'song', 'traditional music', 'folk music', 'ladakhi music', 'cultural performance', 'folk dance'],
+        answer: "**Ladakhi Music & Dance** 🎵\n\n**Traditional Music**:\n\n🎶 **Instruments**:\n• **Daman** (Frame drum)\n• **Surna** (Oboe-like instrument)\n• **Dungchen** (Long trumpet)\n• **Gyaling** (Ceremonial horn)\n• **Damaru** (Hand drum)\n\n🎭 **Folk Dances**:\n\n1. **Jabro**\n   • Harvest celebration dance\n   • Group circle dance\n   • Rhythmic foot stomping\n\n2. **Shondol**\n   • Archery festival dance\n   • Colorful costumes\n   • Celebrates victory\n\n3. **Kompa Tsum-tsak**\n   • Three-step dance\n   • Performed at weddings\n   • Graceful movements\n\n4. **Cham Dance**\n   • Sacred monastery dance\n   • Elaborate masks & costumes\n   • Tells Buddhist stories\n   • Performed during festivals\n\n**Folk Songs**:\n• Work songs (during farming)\n• Love songs (romantic ballads)\n• Religious chants (monastery prayers)\n• Festival songs (celebrations)\n\n**Where to Experience**:\n🎪 **Ladakh Festival** (September) - Best showcase\n🏛️ **Cultural Centers** in Leh - Evening performances\n🕉️ **Monastery Festivals** - Sacred dances\n🏨 **Hotel Cultural Nights** - Tourist performances\n\n💡 **Our tours**: We can arrange cultural evening programs with traditional music & dance performances!",
+        priority: 7
+    },
 
     // ==========================================
     // PACKAGES & PRICING (Comprehensive)
@@ -559,9 +608,28 @@ const fuzzyMatch = (query: string, keyword: string, threshold: number = 2): bool
     if (query.includes(keyword)) return true;
     
     // Check if keyword is in query with typos
-    const words = query.split(/\s+/);
-    for (const word of words) {
-        if (levenshteinDistance(word, keyword) <= threshold) {
+    const queryWords = query.split(/\s+/);
+    const keywordWords = keyword.split(/\s+/);
+    
+    // Single word keyword - check against all query words
+    if (keywordWords.length === 1) {
+        for (const word of queryWords) {
+            if (levenshteinDistance(word, keywordWords[0]) <= threshold) {
+                return true;
+            }
+        }
+    } else {
+        // Multi-word keyword - check if all words match with typos
+        let matchedWords = 0;
+        for (const kw of keywordWords) {
+            for (const qw of queryWords) {
+                if (levenshteinDistance(qw, kw) <= threshold) {
+                    matchedWords++;
+                    break;
+                }
+            }
+        }
+        if (matchedWords === keywordWords.length) {
             return true;
         }
     }
