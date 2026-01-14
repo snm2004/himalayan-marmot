@@ -1,255 +1,121 @@
-// Service Worker for Himalayan Marmot Website
-// Provides offline functionality and caching
+// public/sw.js
+// Himalayan Marmot Service Worker (Vite)
+// Fixes stale index.html by using network-first for documents.
 
-const CACHE_NAME = 'himalayan-marmot-v1';
-const STATIC_CACHE = 'static-v1';
-const DYNAMIC_CACHE = 'dynamic-v1';
+const CACHE_VERSION = 'v2'; // Change to v3, v4 etc. to trigger update
+const STATIC_CACHE = `static-${CACHE_VERSION}`;
+const DYNAMIC_CACHE = `dynamic-${CACHE_VERSION}`;
 
-// Assets to cache immediately
+// Cache these immediately (keep minimal — Vite build files are hashed anyway)
 const STATIC_ASSETS = [
-  '/',
-  '/index.html',
-  '/index.css',
-  '/styles/animations.css',
-  '/styles/mobile-optimizations.css',
+  '/',              // will cache as navigation fallback
+  '/index.html',    // fallback only
+  '/manifest.json',
   '/logo.png',
   '/himalayan-bike-new.jpg',
-  '/manifest.json'
 ];
 
-// Assets to cache on first request
-const DYNAMIC_ASSETS = [
-  '/package/',
-  '/contact',
-  '/safety',
-  '/festivals',
-  '/booking',
-  '/payments'
-];
-
-// Install event - cache static assets
+// INSTALL — cache static
 self.addEventListener('install', (event) => {
-  console.log('Service Worker installing...');
-  
-  event.waitUntil(
-    caches.open(STATIC_CACHE)
-      .then((cache) => {
-        console.log('Caching static assets');
-        return cache.addAll(STATIC_ASSETS);
-      })
-      .catch((error) => {
-        console.error('Failed to cache static assets:', error);
-      })
-  );
-  
-  // Skip waiting to activate immediately
   self.skipWaiting();
-});
 
-// Activate event - clean up old caches
-self.addEventListener('activate', (event) => {
-  console.log('Service Worker activating...');
-  
   event.waitUntil(
-    caches.keys()
-      .then((cacheNames) => {
-        return Promise.all(
-          cacheNames.map((cacheName) => {
-            if (cacheName !== STATIC_CACHE && cacheName !== DYNAMIC_CACHE) {
-              console.log('Deleting old cache:', cacheName);
-              return caches.delete(cacheName);
-            }
-          })
-        );
-      })
-  );
-  
-  // Take control of all clients immediately
-  self.clients.claim();
-});
-
-// Fetch event - serve from cache, fallback to network
-self.addEventListener('fetch', (event) => {
-  const { request } = event;
-  const url = new URL(request.url);
-  
-  // Skip non-GET requests
-  if (request.method !== 'GET') {
-    return;
-  }
-  
-  // Skip external requests (except images and CDN resources)
-  if (url.origin !== location.origin &&
-      !request.url.includes('images.unsplash.com') &&
-      !request.url.includes('esm.sh') &&
-      !request.url.includes('fonts.googleapis.com') &&
-      !request.url.includes('fonts.gstatic.com')) {
-    return;
-  }
-  
-  // Skip React/TypeScript module requests - let them be handled by the browser
-  if (request.url.includes('.tsx') ||
-      request.url.includes('.ts') ||
-      request.url.includes('react') ||
-      request.url.includes('@google/genai')) {
-    return;
-  }
-  
-  event.respondWith(
-    caches.match(request)
-      .then((cachedResponse) => {
-        if (cachedResponse) {
-          // Serve from cache
-          return cachedResponse;
-        }
-        
-        // Fetch from network and cache dynamic content
-        return fetch(request)
-          .then((networkResponse) => {
-            // Don't cache if not a valid response
-            if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
-              return networkResponse;
-            }
-            
-            // Clone the response
-            const responseToCache = networkResponse.clone();
-            
-            // Cache dynamic content
-            if (shouldCache(request.url)) {
-              caches.open(DYNAMIC_CACHE)
-                .then((cache) => {
-                  cache.put(request, responseToCache);
-                })
-                .catch((error) => {
-                  console.warn('Failed to cache resource:', request.url, error);
-                });
-            }
-            
-            return networkResponse;
-          })
-          .catch((error) => {
-            console.warn('Network request failed:', request.url, error);
-            
-            // Network failed, try to serve offline fallback
-            if (request.destination === 'document') {
-              return caches.match('/index.html') ||
-                     new Response('<!DOCTYPE html><html><head><title>Offline</title></head><body><h1>Offline</h1><p>Please check your connection</p></body></html>',
-                     { headers: { 'Content-Type': 'text/html' } });
-            }
-            
-            // For images, return a placeholder
-            if (request.destination === 'image') {
-              return new Response(
-                '<svg xmlns="http://www.w3.org/2000/svg" width="200" height="150" viewBox="0 0 200 150"><rect width="200" height="150" fill="#f0f0f0"/><text x="100" y="75" text-anchor="middle" fill="#999">Image unavailable</text></svg>',
-                { headers: { 'Content-Type': 'image/svg+xml' } }
-              );
-            }
-            
-            // For other resources, return a network error
-            return new Response('Network Error', { status: 408, statusText: 'Request Timeout' });
-          });
-      })
+    caches.open(STATIC_CACHE).then((cache) => cache.addAll(STATIC_ASSETS)).catch(() => { })
   );
 });
 
-// Helper function to determine if URL should be cached
+// ACTIVATE — cleanup old caches
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    (async () => {
+      const keys = await caches.keys();
+      await Promise.all(
+        keys.map((key) => {
+          if (key !== STATIC_CACHE && key !== DYNAMIC_CACHE) return caches.delete(key);
+        })
+      );
+      await self.clients.claim();
+    })()
+  );
+});
+
+// Helper: decide what to cache
 function shouldCache(url) {
-  // Don't cache React/TypeScript modules
-  if (url.includes('.tsx') || url.includes('.ts') || url.includes('react') || url.includes('@google/genai')) {
-    return false;
-  }
-  
-  // Cache HTML pages
-  if (url.includes('.html') || url.endsWith('/')) {
-    return true;
-  }
-  
-  // Cache images
-  if (url.includes('images.unsplash.com') || url.match(/\.(jpg|jpeg|png|gif|webp|svg)$/)) {
-    return true;
-  }
-  
-  // Cache CSS and static JS (but not modules)
-  if (url.match(/\.(css)$/) || (url.match(/\.js$/) && !url.includes('esm.sh'))) {
-    return true;
-  }
-  
-  // Cache manifest and other static assets
-  if (url.includes('manifest.json') || url.match(/\.(pdf|mov)$/)) {
-    return true;
-  }
-  
-  // Cache API responses (if any)
-  if (url.includes('/api/')) {
-    return true;
-  }
-  
+  // cache images, css, js, fonts
+  if (url.match(/\.(png|jpg|jpeg|webp|gif|svg)$/i)) return true;
+  if (url.match(/\.(css)$/i)) return true;
+  if (url.match(/\.(js)$/i)) return true;
+  if (url.includes('fonts.googleapis.com') || url.includes('fonts.gstatic.com')) return true;
   return false;
 }
 
-// Background sync for offline form submissions
-self.addEventListener('sync', (event) => {
-  if (event.tag === 'contact-form') {
-    event.waitUntil(
-      // Handle offline form submissions
-      handleOfflineFormSubmission()
-    );
-  }
-});
+// FETCH
+self.addEventListener('fetch', (event) => {
+  const req = event.request;
+  const url = new URL(req.url);
 
-async function handleOfflineFormSubmission() {
-  // Implementation for handling offline form submissions
-  console.log('Handling offline form submission');
-}
+  // Only GET
+  if (req.method !== 'GET') return;
 
-// Push notifications (for future use)
-self.addEventListener('push', (event) => {
-  if (event.data) {
-    const data = event.data.json();
-    
-    const options = {
-      body: data.body,
-      icon: '/icon-192x192.png',
-      badge: '/badge-72x72.png',
-      vibrate: [100, 50, 100],
-      data: {
-        dateOfArrival: Date.now(),
-        primaryKey: data.primaryKey
-      },
-      actions: [
-        {
-          action: 'explore',
-          title: 'View Tours',
-          icon: '/action-icon.png'
-        },
-        {
-          action: 'close',
-          title: 'Close',
-          icon: '/close-icon.png'
+  // ✅ IMPORTANT: HTML/documents = NETWORK FIRST (prevents old version showing)
+  if (req.destination === 'document' || req.mode === 'navigate') {
+    event.respondWith(
+      (async () => {
+        try {
+          const fresh = await fetch(req, { cache: 'no-store' });
+          const copy = fresh.clone();
+          const cache = await caches.open(STATIC_CACHE);
+          await cache.put(req, copy);
+          return fresh;
+        } catch (e) {
+          const cached = await caches.match(req);
+          return cached || (await caches.match('/index.html'));
         }
-      ]
-    };
-    
-    event.waitUntil(
-      self.registration.showNotification(data.title, options)
+      })()
     );
+    return;
   }
+
+  // Allow same-origin + trusted CDNs
+  const allowedExternal =
+    url.origin === location.origin ||
+    req.url.includes('images.unsplash.com') ||
+    req.url.includes('fonts.googleapis.com') ||
+    req.url.includes('fonts.gstatic.com') ||
+    req.url.includes('esm.sh');
+
+  if (!allowedExternal) return;
+
+  // For static assets: cache-first, then network fallback
+  event.respondWith(
+    (async () => {
+      const cached = await caches.match(req);
+      if (cached) return cached;
+
+      try {
+        const res = await fetch(req);
+        // cache only good responses
+        if (res && res.status === 200 && shouldCache(req.url)) {
+          const copy = res.clone();
+          const cache = await caches.open(DYNAMIC_CACHE);
+          await cache.put(req, copy);
+        }
+        return res;
+      } catch (e) {
+        // fallback image placeholder if needed
+        if (req.destination === 'image') {
+          return new Response(
+            '<svg xmlns="http://www.w3.org/2000/svg" width="200" height="150"><rect width="200" height="150" fill="#f0f0f0"/><text x="100" y="75" text-anchor="middle" fill="#999">Offline</text></svg>',
+            { headers: { 'Content-Type': 'image/svg+xml' } }
+          );
+        }
+        return new Response('Offline', { status: 503 });
+      }
+    })()
+  );
 });
 
-// Handle notification clicks
-self.addEventListener('notificationclick', (event) => {
-  event.notification.close();
-  
-  if (event.action === 'explore') {
-    event.waitUntil(
-      clients.openWindow('/')
-    );
-  }
-});
-
-// Performance monitoring
+// Optional: handle "SKIP_WAITING" message for instant update
 self.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'PERFORMANCE_MARK') {
-    console.log('Performance mark:', event.data.name, event.data.time);
-  }
+  if (event.data === 'SKIP_WAITING') self.skipWaiting();
 });
