@@ -23,7 +23,7 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
         answer: "I can help you with:\n\n📦 Tour packages & pricing\n🏍️ Bike specifications\n📅 Best time to visit\n🎒 Packing & preparation\n🏥 Health & safety tips\n💰 Booking & payments\n📍 Destinations & routes\n🏨 Accommodation details\n\nJust ask away!",
         priority: 8
     },
-{
+    {
         keywords: ['which page', 'what page', 'where am i', 'current page', 'this page', 'page name', 'which page am i', 'what page am i', 'where am i on', 'what page is this', 'which page is this', 'page', 'location'],
         answer: "📍 **Page Navigation Guide**:\n\nYou're viewing our website! Here's what each page offers:\n\n🏠 **Home** - Overview, values, founder story, testimonials\n🗺️ **Tours** - All 7 expedition packages with details\n📅 **Booking** - Reserve your slot, payments, FAQs\n📞 **Contact** - Phone, email, WhatsApp, office location\n🏥 **Safety** - AMS prevention, oxygen, medical protocols\n📚 **Blogs** - Ladakh guides, tips, festivals, culture\n🎬 **Journey in Frames** - Gallery of rider photos\n\n💡 **Tip**: Use the menu at the top to navigate between pages. I can answer questions about any section!",
         priority: 10
@@ -477,7 +477,7 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
     // ==========================================
     {
         keywords: ['contact', 'phone', 'call', 'whatsapp', 'number'],
-        answer: "📞 **Contact Himalayan Marmot**:\n\n**WhatsApp/Call**: +91 6006114260\n**Alternative**: +91 9906367672\n**Email**: himalayanmarmot19@gmail.com\n\n📍 **Office**: Main Market, near Samsung showroom, Leh Ladakh - 194101\n\n🕐 **Hours**: 9 AM - 8 PM (IST)\n\n💬 WhatsApp is fastest for booking!",
+        answer: "📞 **Contact Himalayan Marmot**:\n\n**WhatsApp/Call**: +91 6006114260\n**Alternative**: +91 9906367672\n**Email**: himalayanmarmot19@gmail.com\n\n📍 **Office**: Main market, near Samsung show room, Leh Ladakh - 194101\n\n🕐 **Hours**: 9 AM - 8 PM (IST)\n\n💬 WhatsApp is fastest for booking!",
         priority: 10
     },
     {
@@ -502,7 +502,7 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
     },
     {
         keywords: ['office', 'location', 'address', 'where are you'],
-        answer: "**Our Locations**:\n\n🏢 **Main Office**:\nMain Market, near Samsung showroom\nLeh, Ladakh - 194101\n\n🏠 **Residential**:\nHousing Colony, near Radio Station\nLeh, Ladakh - 194101\n\n📍 **Google Maps**: https://maps.app.goo.gl/hLVkQQUuSCsupyC7A\n\n💡 Visit us when you arrive in Leh!",
+        answer: "**Our Locations**:\n\n🏠 **Main Store**:\nHousing Colony, near Radio Station\nLeh, Ladakh - 194101\n\n🏢 **Office**:\nMain market, near Samsung show room\nLeh, Ladakh - 194101\n\n📍 **Google Maps**: https://maps.app.goo.gl/hLVkQQUuSCsupyC7A\n\n💡 Visit us when you arrive in Leh!",
         priority: 7
     },
     {
@@ -534,7 +534,7 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
         answer: "Julley! 🙏 That's how we greet in Ladakh - it means hello, goodbye, and thank you all in one! How can I help you plan your Ladakh adventure?",
         priority: 6
     },
-    
+
     // Follow-up and conversational keywords
     {
         keywords: ['more', 'describe', 'tell me more', 'details', 'elaborate', 'explain', 'information'],
@@ -576,15 +576,15 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
 // Levenshtein distance for typo tolerance
 const levenshteinDistance = (str1: string, str2: string): number => {
     const matrix: number[][] = [];
-    
+
     for (let i = 0; i <= str2.length; i++) {
         matrix[i] = [i];
     }
-    
+
     for (let j = 0; j <= str1.length; j++) {
         matrix[0][j] = j;
     }
-    
+
     for (let i = 1; i <= str2.length; i++) {
         for (let j = 1; j <= str1.length; j++) {
             if (str2.charAt(i - 1) === str1.charAt(j - 1)) {
@@ -598,7 +598,7 @@ const levenshteinDistance = (str1: string, str2: string): number => {
             }
         }
     }
-    
+
     return matrix[str2.length][str1.length];
 };
 
@@ -606,11 +606,11 @@ const levenshteinDistance = (str1: string, str2: string): number => {
 const fuzzyMatch = (query: string, keyword: string, threshold: number = 2): boolean => {
     // Exact match
     if (query.includes(keyword)) return true;
-    
+
     // Check if keyword is in query with typos
     const queryWords = query.split(/\s+/);
     const keywordWords = keyword.split(/\s+/);
-    
+
     // Single word keyword - check against all query words
     if (keywordWords.length === 1) {
         for (const word of queryWords) {
@@ -633,7 +633,7 @@ const fuzzyMatch = (query: string, keyword: string, threshold: number = 2): bool
             return true;
         }
     }
-    
+
     return false;
 };
 
@@ -650,19 +650,19 @@ export const findAnswer = (query: string): string => {
 
     const matches = KNOWLEDGE_BASE.map(entry => {
         let matchCount = 0;
-        
+
         // Exact keyword matching
         matchCount += entry.keywords.reduce((count, keyword) => {
             const escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
             const regex = new RegExp(`\\b${escapedKeyword}\\b`, 'i');
             return regex.test(lowerQuery) ? count + 2 : count; // Higher weight for exact matches
         }, 0);
-        
+
         // Fuzzy matching for typos
         matchCount += entry.keywords.reduce((count, keyword) => {
             return fuzzyMatch(lowerQuery, keyword, 2) ? count + 1 : count;
         }, 0);
-        
+
         // Match against cleaned query (without filler words)
         if (cleanedQuery) {
             matchCount += entry.keywords.reduce((count, keyword) => {
