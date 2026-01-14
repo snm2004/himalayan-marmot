@@ -53,7 +53,7 @@ export const COMMON_EXCLUSIONS = [
 export const CANCELLATION_POLICIES: CancellationPolicy[] = [
   { period: "From booking till 30 days of departure", deduction: "40% of package cost" },
   { period: "From 30 to 15 days of departure", deduction: "60% of package cost" },
-  { period: "From 15 hrs to 7 days of departure", deduction: "85% of package cost" },
+  { period: "From 15 days to 7 days of departure", deduction: "85% of package cost" },
   { period: "Less than 7 days of departure", deduction: "100% of package cost" }
 ];
 

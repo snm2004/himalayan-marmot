@@ -15,6 +15,7 @@ import Blogs from './pages/Blogs';
 import BlogDetail from './pages/BlogDetail';
 import Booking from './pages/Booking';
 import JourneyInFrames from './pages/JourneyInFrames';
+import Terms from './pages/Terms';
 
 // Enhanced dynamic header height measurement hook
 function useHeaderHeightVar() {
@@ -76,10 +77,22 @@ function useHeaderHeightVar() {
 }
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
+
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (hash) {
+      // Small timeout to ensure DOM is ready
+      setTimeout(() => {
+        const element = document.getElementById(hash.replace('#', ''));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
+
   return null;
 };
 
@@ -124,6 +137,7 @@ const App: React.FC = () => {
             <Route path="/blog/:id" element={<BlogDetail />} />
             <Route path="/journey-in-frames" element={<JourneyInFrames />} />
             <Route path="/booking" element={<Booking />} />
+            <Route path="/terms" element={<Terms />} />
           </Routes>
         </main>
         <Footer />
