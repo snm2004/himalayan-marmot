@@ -1,121 +1,99 @@
-// public/sw.js
-// Himalayan Marmot Service Worker (Vite)
-// Fixes stale index.html by using network-first for documents.
+/* public/sw.js */
+const VERSION = 'v2026-01-14-01'; // 👈 change this each deployment (or keep auto via build later)
+const STATIC_CACHE = `static-${VERSION}`;
+const DYNAMIC_CACHE = `dynamic-${VERSION}`;
 
-const CACHE_VERSION = 'v2'; // Change to v3, v4 etc. to trigger update
-const STATIC_CACHE = `static-${CACHE_VERSION}`;
-const DYNAMIC_CACHE = `dynamic-${CACHE_VERSION}`;
-
-// Cache these immediately (keep minimal — Vite build files are hashed anyway)
 const STATIC_ASSETS = [
-  '/',              // will cache as navigation fallback
-  '/index.html',    // fallback only
+  '/',                // important
+  '/index.html',
   '/manifest.json',
   '/logo.png',
   '/himalayan-bike-new.jpg',
+
+  // If these exist in your app:
+  '/index.css',
+  '/styles/animations.css',
+  '/styles/mobile-optimizations.css',
 ];
 
-// INSTALL — cache static
 self.addEventListener('install', (event) => {
   self.skipWaiting();
-
   event.waitUntil(
-    caches.open(STATIC_CACHE).then((cache) => cache.addAll(STATIC_ASSETS)).catch(() => { })
+    caches.open(STATIC_CACHE).then((cache) => cache.addAll(STATIC_ASSETS))
   );
 });
 
-// ACTIVATE — cleanup old caches
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    (async () => {
-      const keys = await caches.keys();
-      await Promise.all(
+    caches.keys().then((keys) =>
+      Promise.all(
         keys.map((key) => {
-          if (key !== STATIC_CACHE && key !== DYNAMIC_CACHE) return caches.delete(key);
+          if (key !== STATIC_CACHE && key !== DYNAMIC_CACHE) {
+            return caches.delete(key);
+          }
         })
-      );
-      await self.clients.claim();
-    })()
+      )
+    )
   );
+  self.clients.claim();
 });
 
-// Helper: decide what to cache
-function shouldCache(url) {
-  // cache images, css, js, fonts
-  if (url.match(/\.(png|jpg|jpeg|webp|gif|svg)$/i)) return true;
-  if (url.match(/\.(css)$/i)) return true;
-  if (url.match(/\.(js)$/i)) return true;
-  if (url.includes('fonts.googleapis.com') || url.includes('fonts.gstatic.com')) return true;
-  return false;
-}
-
-// FETCH
+// ✅ Cache strategy:
+// - HTML: Network first (always try latest)
+// - CSS/JS/Images: Stale-while-revalidate (fast + updates)
 self.addEventListener('fetch', (event) => {
   const req = event.request;
-  const url = new URL(req.url);
 
-  // Only GET
   if (req.method !== 'GET') return;
 
-  // ✅ IMPORTANT: HTML/documents = NETWORK FIRST (prevents old version showing)
-  if (req.destination === 'document' || req.mode === 'navigate') {
-    event.respondWith(
-      (async () => {
-        try {
-          const fresh = await fetch(req, { cache: 'no-store' });
-          const copy = fresh.clone();
-          const cache = await caches.open(STATIC_CACHE);
-          await cache.put(req, copy);
-          return fresh;
-        } catch (e) {
-          const cached = await caches.match(req);
-          return cached || (await caches.match('/index.html'));
-        }
-      })()
-    );
-    return;
-  }
+  const url = new URL(req.url);
 
-  // Allow same-origin + trusted CDNs
-  const allowedExternal =
-    url.origin === location.origin ||
+  // allow same-origin + some CDNs
+  const allowed =
+    url.origin === self.location.origin ||
     req.url.includes('images.unsplash.com') ||
     req.url.includes('fonts.googleapis.com') ||
     req.url.includes('fonts.gstatic.com') ||
     req.url.includes('esm.sh');
 
-  if (!allowedExternal) return;
+  if (!allowed) return;
 
-  // For static assets: cache-first, then network fallback
-  event.respondWith(
-    (async () => {
-      const cached = await caches.match(req);
-      if (cached) return cached;
+  // HTML documents -> network first
+  if (req.destination === 'document') {
+    event.respondWith(networkFirst(req));
+    return;
+  }
 
-      try {
-        const res = await fetch(req);
-        // cache only good responses
-        if (res && res.status === 200 && shouldCache(req.url)) {
-          const copy = res.clone();
-          const cache = await caches.open(DYNAMIC_CACHE);
-          await cache.put(req, copy);
-        }
-        return res;
-      } catch (e) {
-        // fallback image placeholder if needed
-        if (req.destination === 'image') {
-          return new Response(
-            '<svg xmlns="http://www.w3.org/2000/svg" width="200" height="150"><rect width="200" height="150" fill="#f0f0f0"/><text x="100" y="75" text-anchor="middle" fill="#999">Offline</text></svg>',
-            { headers: { 'Content-Type': 'image/svg+xml' } }
-          );
-        }
-        return new Response('Offline', { status: 503 });
-      }
-    })()
-  );
+  // CSS/JS/IMG/FONT -> stale while revalidate
+  event.respondWith(staleWhileRevalidate(req));
 });
 
-// Optional: handle "SKIP_WAITING" message for instant update
-self.addEventListener('message', (event) => {
-  if (event.data === 'SKIP_WAITING') self.skipWaiting();
-});
+async function networkFirst(req) {
+  const cache = await caches.open(DYNAMIC_CACHE);
+  try {
+    const fresh = await fetch(req);
+    cache.put(req, fresh.clone());
+    return fresh;
+  } catch (e) {
+    const cached = await cache.match(req);
+    if (cached) return cached;
+    // fallback to cached index for SPA style sites
+    const staticCache = await caches.open(STATIC_CACHE);
+    return (await staticCache.match('/index.html')) || new Response('Offline', { status: 503 });
+  }
+}
+
+async function staleWhileRevalidate(req) {
+  const cache = await caches.open(DYNAMIC_CACHE);
+  const cached = await cache.match(req);
+
+  const fetchPromise = fetch(req)
+    .then((fresh) => {
+      // cache only valid responses
+      if (fresh && fresh.status === 200) cache.put(req, fresh.clone());
+      return fresh;
+    })
+    .catch(() => null);
+
+  return cached || (await fetchPromise) || new Response('Offline', { status: 503 });
+}
