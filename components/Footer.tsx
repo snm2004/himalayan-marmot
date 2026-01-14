@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { COMPANY_NAME, ADDRESS_MAIN, CONTACT_NUMBERS, EMAIL, FOUNDER_NAME, FLEET, MAPS_URL, INSTAGRAM_URL, YOUTUBE_URL } from '../constants';
+import { COMPANY_NAME, ADDRESS_OFFICE, CONTACT_NUMBERS, EMAIL, FOUNDER_NAME, FLEET, MAPS_URL, INSTAGRAM_URL, YOUTUBE_URL } from '../constants';
 
 const Footer: React.FC = () => {
   return (
@@ -142,7 +142,7 @@ const Footer: React.FC = () => {
                   rel="noreferrer"
                   className="leading-relaxed text-center md:text-left hover:text-golden-yellow transition-colors"
                 >
-                  {ADDRESS_MAIN}
+                  {ADDRESS_OFFICE}
                 </a>
               </li>
               <li className="flex flex-col md:flex-row items-center md:items-start gap-4">
