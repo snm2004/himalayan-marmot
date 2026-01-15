@@ -529,7 +529,7 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
         priority: 7
     },
     {
-        keywords: ['instagram', 'social media', 'facebook', 'youtube'],
+        keywords: ['instagram', 'social media', 'youtube'],
         answer: "**Follow Us**:\n\n📸 **Instagram**: @himalayan_marmot_2019\n• 5,136 followers\n• 280+ posts\n• Real tour photos & videos\n\n📺 **YouTube**: @Ladakhpackage\n• Tour videos\n• Rider testimonials\n• Destination guides\n\n💡 See real experiences from our riders!",
         priority: 7
     },

@@ -337,17 +337,53 @@ export const TOUR_PACKAGES: TourPackage[] = [
       { bike: "RE Himalayan 450cc BS6", dual: "₹34,500", solo: "₹38,500" }
     ],
     image: "/puga valley.png",
-    pdfUrl: "/packages/Hanley%20to%20Puga%20valley%20.pdf",
+    pdfUrl: "/packages/Hanley_to_Puga_Valley.pdf",
     itinerary: [
-      { day: 1, title: "Delhi – Leh", description: "Arrival at Leh Airport, transfer to hotel. Relax and acclimatize. Overnight at Hotel." },
-      { day: 2, title: "Leh Sightseeing", description: "Visit Hall of Fame, Spituk, Pathar Sahib, Magnetic Hill, and Sangam point." },
-      { day: 3, title: "Leh - Nubra Valley via Khardung La", description: "Ride over Khardung La (18,300 ft) to Nubra Valley. Visit sand dunes for camel safari." },
-      { day: 4, title: "Nubra Valley to Turtuk Village", description: "Ride to Turtuk, a unique Balti village on the border. Return to Nubra." },
-      { day: 5, title: "Nubra Valley – Pangong via Shayok", description: "Ride to Pangong Lake via Shyok valley. Visit Diskit Monastery en route." },
-      { day: 6, title: "Pangong to Hanle via Rezang La", description: "Ride along the lake to Hanle via Rezang La. Visit the observatory (Umling La permit required)." },
-      { day: 7, title: "Hanle – Tso Moriri via Umling La", description: "Ride to Umling La (19,300 ft) - world's highest pass, then to Tso Moriri." },
-      { day: 8, title: "Tso Moriri – Leh via Puga Valley", description: "Return to Leh via Puga Valley (hot springs), Thiksey and Shey monasteries." },
-      { day: 9, title: "Leh Departure", description: "Transfer to airport for departure." }
+      {
+        day: 1,
+        title: "Delhi – Leh",
+        description: "Airport and take you to your hotel. Relax by the courtyard upon arrival. While you enjoy your cup of tea / butter tea, the room keys will be handed over to you. Spend the day free for high altitude acclimatization. Overnight stay at Hotel."
+      },
+      {
+        day: 2,
+        title: "LEH - HALL OF FAME- SPITUK - PATHAR SAHIB - MAGNETIC HILL- SANGAM - LEH",
+        description: "Morning after breakfast, we will take you on a guided tour of the popular tourist spots like the Hall of Fame, Pathar Sahib, Magnetic Hill, and Sangam point. Overnight stay at Hotel."
+      },
+      {
+        day: 3,
+        title: "Leh - Nubra Valley via Khardung La Pass (5-6 Hours)",
+        description: "Morning after a relaxed breakfast, we will take you to Nubra Valley. The route from Leh takes the traveler over the Khardung-La, the highest motorable road in the world (18,300 feet / 5,578 m). The view from the top of the pass is amazing. One can see all the way south over the Indus valley to the seemingly endless peaks and ridges of the Zanskar range, and north to the giants of the Saser massif. From Khardung-La, you drive towards Nubra Valley, popularly known as the Valley of Flowers. You will also visit sand dunes famous for cold desert camel-safari. Overnight at the Hotel."
+      },
+      {
+        day: 4,
+        title: "Nubra Valley to Turtuk Village (5-6 Hours)",
+        description: "Today, you’ll ride to the highlight of your Ladakh tour package - Turtuk. Located on the India-Pakistan border, it is a small village on the banks of the Shayok River with unparalleled natural beauty. The place is culturally, linguistically and historically different from what you’ve seen till now in your Ladakh holiday as it falls under the Gilgit-Baltistan region. We will go back to Nubra valley after your Lunch. Overnight stay at Hotel."
+      },
+      {
+        day: 5,
+        title: "Nubra Valley – Via-Shayok – Pangong (5-6 Hours)",
+        description: "After breakfast leave for Pangong Lake (14,500 ft), via Shyok valley, en route you will visit Diskit Monastery. Arrive Pangong Lake is the highest salt water Lake in the World, shared by two countries India & China. Enjoy the beauty of the lake on the Banks of Pangong Lake while appreciating the changing colors and fascinating high altitude of the Lake. Overnight stay at Cottage."
+      },
+      {
+        day: 6,
+        title: "Pangong to Hanle via Rezang la and Tsagala La (7-8 hrs)",
+        description: "Today is all about traversing the distance from Pangong to Hanle Vai Rezang la (14500 ft an off-beat route added to make this Leh tour package special. We will ride from Pangong to Hanle post breakfast, and then, even the air will say that you have come a long way. The immaculate waters of Pangong lake will still be a part of our journey – pegged to leave us spellbound as we ride alongside its shore. We will cross Merek Village and then Chushul. Riding further on the Loma bridge, we will move towards Hanley – a beauty-inducing historic village that hosts the highest astronomical observatory in the world. Not to mention, this ravishing place is one of the restricted areas in Ladakh – open to only domestic tourists with permits. We will check in to the home stay and give in to the comfort of a modest but cozy stay. Overnight stay at Home stay."
+      },
+      {
+        day: 7,
+        title: "Hanley – Tsomriri via Umling la pass (7-8 Hours)",
+        description: "Today after an early breakfast you will check out from the Hotel first we will visit world highest motorable road Umlingla pass (19300ft) and drive to tso Moriri via Mahey bridge. Overnight Stay at Camp."
+      },
+      {
+        day: 8,
+        title: "Tsomoriri – Leh via Puga valley (7-8 Hours)",
+        description: "After early Breakfast Leave for Leh via puga valley famous for hot spring water and its landscape, en route will visit:- Thiksey (25 KMS SOUTH OF LEH) Thiksey, one of the most imposing monasteries belonging to the 15th century, stands on a crag overlooking the floodplain on the east bank of the Indus. The monastery belongs to the Gelugpa order (Yellow sect). There is a 15m high Buddha figure at the entrance of the new temple. SHEY (15 KMS SOUTH OF LEH) On the East bank of the Indus river lies the beautiful Shey Monastery. Up to the 16th century it was the royal palace. There is a 17.5 m high blue haired Maitreya Buddha of copper, brass gilded and studded with precious gemstones. RANCHO SCHOOL:- Where 3 idiots were made. Overnight stay at Hotel."
+      },
+      {
+        day: 9,
+        title: "Leh Departure",
+        description: "After breakfast Proceed to Airport."
+      }
     ],
     inclusions: [
       ...COMMON_INCLUSIONS,
