@@ -91,12 +91,12 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
     // ==========================================
     {
         keywords: ['price', 'prices', 'pricing', 'cost', 'rates', 'how much'],
-        answer: "Our 2026 expeditions at 2024 prices! 💰\n\n• [Land of High Passes](/package/ladakh-land-of-high-passes) (6D/5N): ₹18,500\n• [Turtuk Valley](/package/turtuk-valley) (7D/6N): ₹22,500\n• [Ride to Heaven](/package/ride-to-heaven) (8D/7N): ₹26,000\n• [Manali-Ladakh-Manali](/package/manali-ladakh-manali) (11D/10N): ₹36,500\n• [Manali-Leh-Srinagar](/package/manali-leh-srinagar) (11D/10N): ₹36,500\n• [Srinagar-Leh-Manali](/package/srinagar-leh-manali) (11D/10N): ₹36,500\n• [Zanskar to Umling La](/package/zanskar-umling-la) (12D/11N): ₹44,500\n\n*Prices for dual riding with Himalayan 411cc",
+        answer: "Our 2026 expeditions at 2024 prices! 💰\n\n• [Land of High Passes](/package/ladakh-land-of-high-passes) (6D/5N): ₹18,500\n• [Turtuk Valley](/package/turtuk-valley) (7D/6N): ₹22,500\n• [Ride to Heaven](/package/ride-to-heaven) (8D/7N): ₹26,000\n• [Hanley to Puga Valley](/package/hanle-puga-valley) (9D/8N): ₹30,500\n• [Manali-Ladakh-Manali](/package/manali-ladakh-manali) (11D/10N): ₹36,500\n• [Manali-Leh-Srinagar](/package/manali-leh-srinagar) (11D/10N): ₹36,500\n• [Srinagar-Leh-Manali](/package/srinagar-leh-manali) (11D/10N): ₹36,500\n• [Zanskar to Umling La](/package/zanskar-umling-la) (12D/11N): ₹44,500\n\n*Prices for dual riding with Himalayan 411cc",
         priority: 10
     },
     {
         keywords: ['package', 'packages', 'tours', 'expeditions', 'trips', 'list', 'options'],
-        answer: "We offer 7 curated Royal Enfield expeditions:\n\n1. [Land of High Passes](/package/ladakh-land-of-high-passes) (6D) - Best for beginners\n2. [Turtuk Valley](/package/turtuk-valley) (7D) - Cultural depth\n3. [Ride to Heaven](/package/ride-to-heaven) (8D) - Perfect balance\n4. [Manali-Ladakh-Manali](/package/manali-ladakh-manali) (11D) - Classic adventure\n5. [Manali-Leh-Srinagar](/package/manali-leh-srinagar) (11D) - Complete Himalayan\n6. [Srinagar-Leh-Manali](/package/srinagar-leh-manali) (11D) - Kashmir to Ladakh\n7. [Zanskar & Umling La](/package/zanskar-umling-la) (12D) - For the brave\n\nClick any package to see details!",
+        answer: "We offer 8 curated Royal Enfield expeditions:\n\n1. [Land of High Passes](/package/ladakh-land-of-high-passes) (6D) - Best for beginners\n2. [Turtuk Valley](/package/turtuk-valley) (7D) - Cultural depth\n3. [Ride to Heaven](/package/ride-to-heaven) (8D) - Perfect balance\n4. [Hanley to Puga Valley](/package/hanle-puga-valley) (9D) - Off-beat Adventure\n5. [Manali-Ladakh-Manali](/package/manali-ladakh-manali) (11D) - Classic adventure\n6. [Manali-Leh-Srinagar](/package/manali-leh-srinagar) (11D) - Complete Himalayan\n7. [Srinagar-Leh-Manali](/package/srinagar-leh-manali) (11D) - Kashmir to Ladakh\n8. [Zanskar & Umling La](/package/zanskar-umling-la) (12D) - For the brave\n\nClick any package to see details!",
         priority: 10
     },
     {
@@ -199,7 +199,7 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
     // BIKES & FLEET (Comprehensive)
     // ==========================================
     {
-        keywords: ['bike', 'bikes', 'biking', 'biker', 'motorcycle', 'motorcycles', 'motorbike', 'motorbikes', 'royal enfield', 'enfield', 'fleet', 'vehicles', 'vehicle', 'ride', 'rides', 'riding', 'which bike', 'what bike', 'about bike', 'know about bike', 'tell me about bike', 'bike info', 'bike information', 'want to know about bike', 'tell about bike', 'info about bike', 'information about bike', 'show bike', 'show bikes', 'show me bike', 'show me bikes', 'see bike', 'see bikes', 'view bike', 'view bikes', 'available bike', 'available bikes', 'bike available', 'bikes available', 'bike options', 'bike choices', 'have bike', 'have bikes', 'got bike', 'got bikes', 'provide bike', 'provide bikes', 'offer bike', 'offer bikes', 'bike details', 'bike specs', 'bike specifications', 'what kind of bike', 'what type of bike', 'which motorcycle', 'what motorcycle', 'bike model', 'bike models', 'model bike', 'models bike', 'bke', 'biks', 'byke', 'bykes', 'motercycle', 'motorcyle', 'motorbke', 'abotu bike', 'abot bike', 'knwo about bike', 'konw about bike'],
+        keywords: ['bike', 'bikes', 'biking', 'biker', 'motorcycle', 'motorcycles', 'motorbike', 'motorbikes', 'royal enfield', 'enfield', 'fleet', 'vehicles', 'vehicle', 'ride', 'rides', 'riding', 'which bike', 'what bike', 'about bike', 'know about bike', 'tell me about bike', 'bike info', 'bike information', 'want to know about bike', 'tell about bike', 'info about bike', 'information about bike', 'show bike', 'show bikes', 'show me bike', 'show me bikes', 'see bike', 'see bikes', 'view bike', 'view bikes', 'available bike', 'available bikes', 'bike available', 'bikes available', 'bike options', 'bike choices', 'have bike', 'have bikes', 'got bike', 'got bikes', 'provide bike', 'provide bikes', 'offer bike', 'offer bikes', 'bike details', 'bike specs', 'bike specifications', 'what kind of bike', 'what type of bike', 'which motorcycle', 'what motorcycle', 'bike model', 'bike models', 'model bike', 'models bike', 'bke', 'biks', 'byke', 'bykes', 'motercycle', 'motorcyle', 'motorbke', 'abotu bike', 'abot bike', 'knwo about bike', 'konw about bike', 'abotu bikes', 'abot bikes'],
         answer: "We use only Royal Enfield Himalayan BS6! 🏍️\n\n1. **Himalayan 411cc** (Oil Cooled)\n   • 24.3 BHP\n   • Proven workhorse\n   • Excellent for mountains\n\n2. **Himalayan 450cc** (Liquid Cooled)\n   • 40 BHP\n   • More power\n   • Latest technology\n\nBoth are purpose-built for Himalayan terrain!",
         priority: 10
     },
@@ -591,7 +591,7 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
     },
     {
         keywords: ['all', 'everything', 'complete', 'full', 'entire'],
-        answer: "Here's the complete overview! 📚\n\n**7 Tour Packages**:\n1. [Land of High Passes](/package/ladakh-land-of-high-passes) (6D) - ₹18,500\n2. [Turtuk Valley](/package/turtuk-valley) (7D) - ₹22,500\n3. [Ride to Heaven](/package/ride-to-heaven) (8D) - ₹26,000\n4. [Manali-Ladakh-Manali](/package/manali-ladakh-manali) (11D) - ₹36,500\n5. [Manali-Leh-Srinagar](/package/manali-leh-srinagar) (11D) - ₹36,500\n6. [Srinagar-Leh-Manali](/package/srinagar-leh-manali) (11D) - ₹36,500\n7. [Zanskar to Umling La](/package/zanskar-umling-la) (12D) - ₹44,500\n\n**2 Bike Options**:\n• Himalayan 411cc (₹base price)\n• Himalayan 450cc (+₹3-4k)\n\n**Season**: May-September\n**Group Size**: 15-20 riders\n**Includes**: Bike, fuel, accommodation, meals, permits, safety\n\nWhat specific aspect interests you?",
+        answer: "Here's the complete overview! 📚\n\n**8 Tour Packages**:\n1. [Land of High Passes](/package/ladakh-land-of-high-passes) (6D) - ₹18,500\n2. [Turtuk Valley](/package/turtuk-valley) (7D) - ₹22,500\n3. [Ride to Heaven](/package/ride-to-heaven) (8D) - ₹26,000\n4. [Hanley to Puga Valley](/package/hanle-puga-valley) (9D) - ₹30,500\n5. [Manali-Ladakh-Manali](/package/manali-ladakh-manali) (11D) - ₹36,500\n6. [Manali-Leh-Srinagar](/package/manali-leh-srinagar) (11D) - ₹36,500\n7. [Srinagar-Leh-Manali](/package/srinagar-leh-manali) (11D) - ₹36,500\n8. [Zanskar to Umling La](/package/zanskar-umling-la) (12D) - ₹44,500\n\n**2 Bike Options**:\n• Himalayan 411cc (₹base price)\n• Himalayan 450cc (+₹3-4k)\n\n**Season**: May-September\n**Group Size**: 15-20 riders\n**Includes**: Bike, fuel, accommodation, meals, permits, safety\n\nWhat specific aspect interests you?",
         priority: 7
     }
 ];
@@ -599,6 +599,11 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
 // Levenshtein distance for typo tolerance
 const levenshteinDistance = (str1: string, str2: string): number => {
     const matrix: number[][] = [];
+
+    // Optimize for common case: exact match
+    if (str1 === str2) return 0;
+    if (str1.length === 0) return str2.length;
+    if (str2.length === 0) return str1.length;
 
     for (let i = 0; i <= str2.length; i++) {
         matrix[i] = [i];

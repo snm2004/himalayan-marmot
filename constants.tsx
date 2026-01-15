@@ -325,6 +325,45 @@ export const TOUR_PACKAGES: TourPackage[] = [
       { name: "Turtuk", x: 10, y: 75, elevation: "2,800m" },
       { name: "Pangong", x: 80, y: 45, elevation: "4,250m" }
     ],
+  },
+  {
+    id: "hanle-puga-valley",
+    title: "Hanley to Puga Valley (Umling La + Tso Moriri)",
+    duration: "9D/8N",
+    highlights: ["Leh", "Nubra Valley", "Pangong Tso", "Hanle", "Umling La", "Tso Moriri", "Puga Valley", "Best for: Adventure & Off-beat"],
+    startingPrice: "₹30,500",
+    priceTiers: [
+      { bike: "RE Himalayan 411cc BS6", dual: "₹30,500", solo: "₹34,500" },
+      { bike: "RE Himalayan 450cc BS6", dual: "₹34,500", solo: "₹38,500" }
+    ],
+    image: "/puga valley.png",
+    pdfUrl: "/packages/Hanley%20to%20Puga%20valley%20.pdf",
+    itinerary: [
+      { day: 1, title: "Delhi – Leh", description: "Arrival at Leh Airport, transfer to hotel. Relax and acclimatize. Overnight at Hotel." },
+      { day: 2, title: "Leh Sightseeing", description: "Visit Hall of Fame, Spituk, Pathar Sahib, Magnetic Hill, and Sangam point." },
+      { day: 3, title: "Leh - Nubra Valley via Khardung La", description: "Ride over Khardung La (18,300 ft) to Nubra Valley. Visit sand dunes for camel safari." },
+      { day: 4, title: "Nubra Valley to Turtuk Village", description: "Ride to Turtuk, a unique Balti village on the border. Return to Nubra." },
+      { day: 5, title: "Nubra Valley – Pangong via Shayok", description: "Ride to Pangong Lake via Shyok valley. Visit Diskit Monastery en route." },
+      { day: 6, title: "Pangong to Hanle via Rezang La", description: "Ride along the lake to Hanle via Rezang La. Visit the observatory (Umling La permit required)." },
+      { day: 7, title: "Hanle – Tso Moriri via Umling La", description: "Ride to Umling La (19,300 ft) - world's highest pass, then to Tso Moriri." },
+      { day: 8, title: "Tso Moriri – Leh via Puga Valley", description: "Return to Leh via Puga Valley (hot springs), Thiksey and Shey monasteries." },
+      { day: 9, title: "Leh Departure", description: "Transfer to airport for departure." }
+    ],
+    inclusions: [
+      ...COMMON_INCLUSIONS,
+      "Hotel Category: Deluxe",
+      "Meal Plan: MAP (Breakfast + Dinner)"
+    ],
+    exclusions: COMMON_EXCLUSIONS,
+    routePoints: [
+      { name: "Leh", x: 20, y: 60, elevation: "3,500m" },
+      { name: "Nubra", x: 50, y: 70, elevation: "3,000m" },
+      { name: "Turtuk", x: 10, y: 75, elevation: "2,800m" },
+      { name: "Pangong", x: 70, y: 45, elevation: "4,250m" },
+      { name: "Hanle", x: 80, y: 44, elevation: "4,300m" },
+      { name: "Umling La", x: 90, y: 10, elevation: "5,882m" },
+      { name: "Tso Moriri", x: 80, y: 40, elevation: "4,522m" }
+    ]
   }
 ];
 
@@ -368,7 +407,7 @@ export const TOUR_CATEGORIES = {
   LOCAL_EXPEDITIONS: {
     title: "Local Expeditions",
     subtitle: "6-8 Days | Leh Based",
-    tours: ["ladakh-land-of-high-passes", "turtuk-valley", "ride-to-heaven"]
+    tours: ["ladakh-land-of-high-passes", "turtuk-valley", "ride-to-heaven", "hanle-puga-valley"]
   },
   GRAND_CIRCUITS: {
     title: "Grand Circuits",

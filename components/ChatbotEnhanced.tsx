@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { X, Send } from 'lucide-react';
 import { findAnswer } from './KnowledgeBase';
-import { useNavigate } from 'react-router-dom';
+import { TOUR_PACKAGES } from '../constants';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 interface Message {
     role: 'user' | 'assistant';
@@ -18,6 +19,7 @@ const QUICK_QUESTIONS = [
 
 export default function ChatbotEnhanced() {
     const navigate = useNavigate();
+    const location = useLocation();
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState<Message[]>([
         {
@@ -39,28 +41,39 @@ export default function ChatbotEnhanced() {
         scrollToBottom();
     }, [messages]);
 
-    // Save conversation to localStorage
-    useEffect(() => {
-        if (messages.length > 1) {
-            localStorage.setItem('chatbot_history', JSON.stringify(messages));
-        }
-    }, [messages]);
+    // Context mapping for page awareness
+    const PAGE_CONTEXT: Record<string, string> = {
+        '/': "",
+        '/tours': "You are currently viewing all our tour packages! We have 8 curated expeditions ranging from 6 to 12 days. Need help choosing one?",
+        '/booking': "Ready to start your adventure? You can secure your slot with just ₹5,000 advance payment. Let me know if you need bank details!",
+        '/contact': "Need to talk to us directly? You can find our phone numbers, email, and office location here. We are available 9 AM - 8 PM.",
+        '/safety': "Safety is our #1 priority. On this page, you can read about our oxygen support, medical kits, and expert Road Captains.",
+        '/blogs': "Welcome to our Travel Blog! Here you'll find expert guides on packing, best time to visit, and cultural stories.",
+        '/journey-in-frames': "This is our photo gallery featuring real moments from our past expeditions. See what the adventure looks like!",
+        '/payments': "Here you can see our payment options. We accept UPI and Bank Transfers.",
+        '/terms': "Please read our Terms & Conditions carefully regarding cancellations and refunds.",
+        '/festivals': "Ladakh's festivals are colorful and vibrant! Check dates here to align your trip with a cultural event."
+    };
 
-    // Load conversation from localStorage on mount
+    // Detect page changes and add context message
     useEffect(() => {
-        const saved = localStorage.getItem('chatbot_history');
-        if (saved) {
-            try {
-                const savedMessages = JSON.parse(saved);
-                if (savedMessages.length > 1) {
-                    setMessages(savedMessages);
-                    setShowSuggestions(false);
-                }
-            } catch (e) {
-                console.error('Failed to load chat history', e);
-            }
+        // Reset if on home page and likely a fresh session
+        if (location.pathname === '/' && messages.length <= 1) return;
+
+        const contextMsg = PAGE_CONTEXT[location.pathname];
+
+        // Only send if it's not already the last message to avoid duplicates
+        const lastMsg = messages[messages.length - 1];
+        if (contextMsg && lastMsg?.content !== `📍 **Page Info**: ${contextMsg}`) {
+            // Small delay to feel natural after navigation
+            setTimeout(() => {
+                setMessages(prev => [...prev, {
+                    role: 'assistant',
+                    content: `📍 **Page Info**: ${contextMsg}`
+                }]);
+            }, 800);
         }
-    }, []);
+    }, [location.pathname]);
 
     const handleSend = async (text?: string) => {
         const messageText = text || input;
@@ -75,6 +88,31 @@ export default function ChatbotEnhanced() {
         // Update conversation history
         const newHistory = [...conversationHistory, messageText];
         setConversationHistory(newHistory);
+
+        // Check for "Current Page" / "Context" queries
+        const lowerText = messageText.toLowerCase();
+        if (lowerText.includes('which page') || lowerText.includes('this page') || lowerText.includes('where am i') || lowerText.includes('what page') || lowerText.includes('tell me about this')) {
+            if (location.pathname.startsWith('/package/')) {
+                const pkgId = location.pathname.split('/')[2];
+                const pkg = TOUR_PACKAGES.find(p => p.id === pkgId);
+
+                if (pkg) {
+                    setMessages(prev => [...prev, {
+                        role: 'assistant',
+                        content: `🏔️ **Current Expedition**: ${pkg.title}\n\n• **Duration**: ${pkg.duration}\n• **Price**: Starts ${pkg.startingPrice}\n• **Highlights**: ${pkg.highlights.join(', ')}\n\nWould you like to see the itinerary or book this tour?`
+                    }]);
+                    setIsLoading(false);
+                    return;
+                }
+            } else if (PAGE_CONTEXT[location.pathname]) {
+                setMessages(prev => [...prev, {
+                    role: 'assistant',
+                    content: `📍 ${PAGE_CONTEXT[location.pathname]}`
+                }]);
+                setIsLoading(false);
+                return;
+            }
+        }
 
         setTimeout(() => {
             // Get response from knowledge base
@@ -95,7 +133,6 @@ export default function ChatbotEnhanced() {
         }]);
         setConversationHistory([]);
         setShowSuggestions(true);
-        localStorage.removeItem('chatbot_history');
     };
 
     // Handle link clicks with React Router
