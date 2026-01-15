@@ -504,6 +504,16 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
         priority: 8
     },
     {
+        keywords: ['who are you', 'what are you', 'are you a bot', 'are you human', 'who am i talking to'],
+        answer: "I'm the **Himalayan Marmot AI Assistant**! 🦫\n\nI'm a virtual mountain guide designed to help you plan your perfect Ladakh adventure. I can help you with:\n\n• Finding the right tour package\n• Checking prices and dates\n• Explaining the routes\n• Answering questions about bikes and gear\n\nWhile I'm an AI, my knowledge comes directly from **Tsewang Norboo**, the founder and local expert!",
+        priority: 10
+    },
+    {
+        keywords: ['your name', 'what is your name', 'name'],
+        answer: "I don't have a specific name, but you can call me **Marmot Bot**! 🦫\n\nI'm named after the Himalayan Marmots found in the high passes of Ladakh - they are friendly, resilient, and always on the lookout... just like me!",
+        priority: 9
+    },
+    {
         keywords: ['local', 'ladakhi', 'born in leh', 'authentic'],
         answer: "**Why Choose Local Operator**:\n\n✅ **Himalayan Marmot is 100% Local**:\n• Tsewang born in Leh\n• Family business\n• Deep local knowledge\n• Community connections\n• Authentic experiences\n\n🏔️ **Benefits**:\n• Hidden gems & secret spots\n• Local food & culture\n• Better emergency support\n• Fair prices\n• Supporting local economy\n\n🙏 \"This is our home, not just business\"",
         priority: 9
