@@ -43,7 +43,7 @@ export default function ChatbotEnhanced() {
 
     // Context mapping for page awareness
     const PAGE_CONTEXT: Record<string, string> = {
-        '/': "",
+        '/': "You are on the **Home Page** of Himalayan Marmot. From here, you can browse all our [Expeditions](/tours), read our [Blogs](/blogs), or check our [Safety Standards](/safety).",
         '/tours': "You are currently viewing all our tour packages! We have 8 curated expeditions ranging from 6 to 12 days. Need help choosing one?",
         '/booking': "Ready to start your adventure? You can secure your slot with just ₹5,000 advance payment. Let me know if you need bank details!",
         '/contact': "Need to talk to us directly? You can find our phone numbers, email, and office location here. We are available 9 AM - 8 PM.",
