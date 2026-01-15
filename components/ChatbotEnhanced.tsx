@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { X, Send } from 'lucide-react';
 import { findAnswer } from './KnowledgeBase';
+import { useNavigate } from 'react-router-dom';
 
 interface Message {
     role: 'user' | 'assistant';
@@ -16,6 +17,7 @@ const QUICK_QUESTIONS = [
 ];
 
 export default function ChatbotEnhanced() {
+    const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState<Message[]>([
         {
@@ -96,6 +98,16 @@ export default function ChatbotEnhanced() {
         localStorage.removeItem('chatbot_history');
     };
 
+    // Handle link clicks with React Router
+    const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
+        if (url.startsWith('/')) {
+            e.preventDefault(); // Prevent default anchor behavior for internal links
+            navigate(url);
+            setIsOpen(false); // Optionally close chatbot on navigation
+        }
+        // For external links, default behavior (opening in new tab) will apply
+    };
+
     return (
         <>
             {/* Floating Chat Button */}
@@ -168,13 +180,15 @@ export default function ChatbotEnhanced() {
                                         {msg.content.split(/(\[.*?\]\(.*?\))/g).map((part, i) => {
                                             const match = part.match(/\[(.*?)\]\((.*?)\)/);
                                             if (match) {
+                                                const url = match[2];
                                                 return (
                                                     <a
                                                         key={i}
-                                                        href={match[2]}
+                                                        href={url}
+                                                        onClick={(e) => handleLinkClick(e, url)}
                                                         className="text-golden-yellow underline font-bold hover:text-white transition-colors"
-                                                        target={match[2].startsWith('http') ? '_blank' : '_self'}
-                                                        rel={match[2].startsWith('http') ? 'noopener noreferrer' : undefined}
+                                                        target={url.startsWith('http') ? '_blank' : undefined}
+                                                        rel={url.startsWith('http') ? 'noopener noreferrer' : undefined}
                                                     >
                                                         {match[1]}
                                                     </a>
