@@ -90,6 +90,15 @@ const TestimonialsSection: React.FC = () => {
             <h3 className="text-4xl md:text-5xl font-oswald font-bold text-mountain-blue uppercase">WHAT RIDERS SAY</h3>
             <div className="h-1 w-20 bg-golden-yellow mt-6 hidden md:block"></div>
           </div>
+          <a
+            href="https://wa.me/916006114260?text=Hi%20Himalayan%20Marmot,%20I'd%20like%20to%20share%20my%20story!"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-mountain-blue text-white px-8 py-3 rounded-full font-bold font-oswald tracking-widest hover:bg-tibetan-red transition shadow-lg text-sm uppercase flex items-center group"
+          >
+            <span className="mr-2 text-lg group-hover:scale-110 transition-transform">💬</span>
+            SHARE YOUR STORY
+          </a>
         </div>
 
         {/* Video Stories Section */}
