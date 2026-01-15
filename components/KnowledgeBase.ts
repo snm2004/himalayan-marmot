@@ -91,12 +91,12 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
     // ==========================================
     {
         keywords: ['price', 'prices', 'pricing', 'cost', 'rates', 'how much'],
-        answer: "Our 2026 expeditions at 2024 prices! 💰\n\n• [Land of High Passes](/package/ladakh-land-of-high-passes) (6D/5N): ₹18,500\n• [Turtuk Valley](/package/turtuk-valley) (7D/6N): ₹22,500\n• [Ride to Heaven](/package/ride-to-heaven) (8D/7N): ₹26,000\n• [Manali-Ladakh-Manali](/package/manali-ladakh-manali) (11D/10N): ₹36,500\n• [Manali-Leh-Srinagar](/package/manali-leh-srinagar) (11D/10N): ₹36,500\n• [Srinagar-Leh-Manali](/package/srinagar-leh-manali) (11D/10N): ₹36,500\n• [Zanskar to Umling La](/package/zanskar-to-umling-la) (12D/11N): ₹44,500\n\n*Prices for dual riding with Himalayan 411cc",
+        answer: "Our 2026 expeditions at 2024 prices! 💰\n\n• [Land of High Passes](/package/ladakh-land-of-high-passes) (6D/5N): ₹18,500\n• [Turtuk Valley](/package/turtuk-valley) (7D/6N): ₹22,500\n• [Ride to Heaven](/package/ride-to-heaven) (8D/7N): ₹26,000\n• [Manali-Ladakh-Manali](/package/manali-ladakh-manali) (11D/10N): ₹36,500\n• [Manali-Leh-Srinagar](/package/manali-leh-srinagar) (11D/10N): ₹36,500\n• [Srinagar-Leh-Manali](/package/srinagar-leh-manali) (11D/10N): ₹36,500\n• [Zanskar to Umling La](/package/zanskar-umling-la) (12D/11N): ₹44,500\n\n*Prices for dual riding with Himalayan 411cc",
         priority: 10
     },
     {
         keywords: ['package', 'packages', 'tours', 'expeditions', 'trips', 'list', 'options'],
-        answer: "We offer 7 curated Royal Enfield expeditions:\n\n1. [Land of High Passes](/package/ladakh-land-of-high-passes) (6D) - Best for beginners\n2. [Turtuk Valley](/package/turtuk-valley) (7D) - Cultural depth\n3. [Ride to Heaven](/package/ride-to-heaven) (8D) - Perfect balance\n4. [Manali-Ladakh-Manali](/package/manali-ladakh-manali) (11D) - Classic adventure\n5. [Manali-Leh-Srinagar](/package/manali-leh-srinagar) (11D) - Complete Himalayan\n6. [Srinagar-Leh-Manali](/package/srinagar-leh-manali) (11D) - Kashmir to Ladakh\n7. [Zanskar & Umling La](/package/zanskar-to-umling-la) (12D) - For the brave\n\nClick any package to see details!",
+        answer: "We offer 7 curated Royal Enfield expeditions:\n\n1. [Land of High Passes](/package/ladakh-land-of-high-passes) (6D) - Best for beginners\n2. [Turtuk Valley](/package/turtuk-valley) (7D) - Cultural depth\n3. [Ride to Heaven](/package/ride-to-heaven) (8D) - Perfect balance\n4. [Manali-Ladakh-Manali](/package/manali-ladakh-manali) (11D) - Classic adventure\n5. [Manali-Leh-Srinagar](/package/manali-leh-srinagar) (11D) - Complete Himalayan\n6. [Srinagar-Leh-Manali](/package/srinagar-leh-manali) (11D) - Kashmir to Ladakh\n7. [Zanskar & Umling La](/package/zanskar-umling-la) (12D) - For the brave\n\nClick any package to see details!",
         priority: 10
     },
     {
@@ -106,7 +106,7 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
     },
     {
         keywords: ['longest tour', 'maximum days', '12 days', 'most days'],
-        answer: "Our longest expedition is [Zanskar to Umling La](/package/zanskar-to-umling-la) (12D/11N) at ₹44,500.\n\nThis extreme adventure includes:\n• Zanskar Valley\n• Phugtal Monastery\n• Umling La (19,300 ft)\n• Pangong, Hanle, Tso Moriri\n• Most challenging terrain\n\nFor experienced riders only!",
+        answer: "Our longest expedition is [Zanskar to Umling La](/package/zanskar-umling-la) (12D/11N) at ₹44,500.\n\nThis extreme adventure includes:\n• Zanskar Valley\n• Phugtal Monastery\n• Umling La (19,300 ft)\n• Pangong, Hanle, Tso Moriri\n• Most challenging terrain\n\nFor experienced riders only!",
         priority: 8
     },
     {
@@ -116,7 +116,7 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
     },
     {
         keywords: ['expensive', 'premium', 'highest price', 'most expensive'],
-        answer: "Premium expedition: [Zanskar to Umling La](/package/zanskar-to-umling-la) at ₹44,500-₹56,500.\n\nWhy premium:\n• 12 days of adventure\n• Remote Zanskar Valley\n• Highest passes\n• Off-road challenges\n• Extreme terrain\n• Maximum altitude exposure\n\nWorth every rupee for serious riders!",
+        answer: "Premium expedition: [Zanskar to Umling La](/package/zanskar-umling-la) at ₹44,500-₹56,500.\n\nWhy premium:\n• 12 days of adventure\n• Remote Zanskar Valley\n• Highest passes\n• Off-road challenges\n• Extreme terrain\n• Maximum altitude exposure\n\nWorth every rupee for serious riders!",
         priority: 8
     },
     {
@@ -151,7 +151,7 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
     },
     {
         keywords: ['zanskar', 'zanskar umling', 'extreme', '12 days', 'phugtal'],
-        answer: "**[Zanskar to Umling La](/package/zanskar-to-umling-la)** (12D/11N) - ₹44,500\n\n✨ Best for: Extreme Riders\n\n📍 Highlights:\n• Shinkula Pass (16,580 ft)\n• Phugtal Monastery (cliff monastery)\n• Zanskar Valley\n• Padum, Purne\n• Leh, Nubra, Pangong\n• Hanle & Umling La\n\n⚠️ Advanced riders only. [View details](/package/zanskar-to-umling-la)",
+        answer: "**[Zanskar to Umling La](/package/zanskar-umling-la)** (12D/11N) - ₹44,500\n\n✨ Best for: Extreme Riders\n\n📍 Highlights:\n• Shinkula Pass (16,580 ft)\n• Phugtal Monastery (cliff monastery)\n• Zanskar Valley\n• Padum, Purne\n• Leh, Nubra, Pangong\n• Hanle & Umling La\n\n⚠️ Advanced riders only. [View details](/package/zanskar-umling-la)",
         priority: 9
     },
     {
