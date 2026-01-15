@@ -1,14 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const VIDEO_PLAYLIST = [
-  "/hero-video-new.mp4",
-];
+
 
 const FALLBACK_IMAGE = "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=2070&auto=format&fit=crop";
 
 const Hero: React.FC = () => {
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -18,11 +15,13 @@ const Hero: React.FC = () => {
         console.log("Autoplay prevented:", error);
       });
     }
-  }, [currentVideoIndex]);
-
-  const handleVideoEnded = () => {
-    setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % VIDEO_PLAYLIST.length);
-  };
+    if (videoRef.current) {
+      videoRef.current.load();
+      videoRef.current.play().catch(error => {
+        console.log("Autoplay prevented:", error);
+      });
+    }
+  }, []);
 
   return (
     <section
@@ -44,12 +43,17 @@ const Hero: React.FC = () => {
           poster={FALLBACK_IMAGE}
           className="force-hero-video-cover"
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-          onEnded={handleVideoEnded}
+          onEnded={() => {
+            if (videoRef.current) {
+              videoRef.current.play();
+            }
+          }}
         >
-          <source
-            src={VIDEO_PLAYLIST[currentVideoIndex]}
-            type={VIDEO_PLAYLIST[currentVideoIndex].endsWith('.mov') ? 'video/quicktime' : 'video/mp4'}
-          />
+          {/* Primary Source: High Quality MOV */}
+          <source src="/hero-video-new.mov" type="video/quicktime" />
+          {/* Fallback Source: Compressed MP4 (for better compatibility) */}
+          <source src="/hero-video-new.mp4" type="video/mp4" />
+
           <img src={FALLBACK_IMAGE} alt="Himalayan Landscape" className="w-full h-full object-cover" />
         </video>
 
