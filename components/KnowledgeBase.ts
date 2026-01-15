@@ -14,7 +14,7 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
     {
         keywords: ['hi', 'hello', 'hey', 'start', 'greetings', 'julley', 'namaste'],
         answer: "Julley! 🦫 Welcome to Himalayan Marmot. I'm your digital guide for the ultimate Ladakh motorcycle adventure.\n\n**Quick Actions**:\n• [📦 View Packages](/tours)\n• [📅 Book Now](/booking)\n• [📞 Contact Us](/contact)\n• [🏍️ Our Bikes](/about)\n\nAsk me about our 2026 expeditions, Royal Enfield bikes, safety protocols, or travel tips!",
-        priority: 10
+        priority: 2
     },
     {
         keywords: ['who are you', 'what do you do', 'bot', 'human', 'ai'],
@@ -570,18 +570,18 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
         priority: 7
     },
     {
-        keywords: ['recommend', 'suggestion', 'suggest', 'advice', 'should i'],
-        answer: "Happy to recommend! 💡\n\n**Tell me about yourself**:\n\n👤 **Experience Level**:\n• First-timer? → Land of High Passes (6D)\n• Experienced? → Zanskar to Umling La (12D)\n\n⏰ **Time Available**:\n• 6-7 days? → Local expeditions\n• 10-12 days? → Grand circuits\n\n💪 **Fitness Level**:\n• Moderate? → Easier packages\n• Excellent? → Extreme adventures\n\n💰 **Budget**:\n• ₹18,500-26,000 → Local tours\n• ₹36,500-44,500 → Grand circuits\n\nWhat's your situation?",
+        keywords: ['recommend', 'suggestion', 'suggest', 'advice', 'should i', 'best', 'better', 'top', 'choice', 'choose', 'which one', 'which package'],
+        answer: "Happy to recommend! 💡\n\n**Tell me about yourself**:\n\n👤 **Experience Level**:\n• First-timer? → [Land of High Passes](/package/ladakh-land-of-high-passes) (6D)\n• Experienced? → [Zanskar to Umling La](/package/zanskar-to-umling-la) (12D)\n\n⏰ **Time Available**:\n• 6-7 days? → Local expeditions\n• 10-12 days? → Grand circuits\n\n💪 **Fitness Level**:\n• Moderate? → Easier packages\n• Excellent? → Extreme adventures\n\n💰 **Budget**:\n• ₹18,500-26,000 → Local tours\n• ₹36,500-44,500 → Grand circuits\n\nWhat's your situation?",
         priority: 8
     },
     {
         keywords: ['confused', 'not sure', 'dont know', 'help me choose', 'undecided'],
-        answer: "No worries! Let me help you decide. 🤔\n\n**Quick Questions**:\n\n1️⃣ **First time in Ladakh?**\n   → Yes: Start with Land of High Passes (6D)\n   → No: Try advanced routes\n\n2️⃣ **How many days can you spare?**\n   → 6-8 days: Local expeditions\n   → 10-12 days: Grand circuits\n\n3️⃣ **Riding experience?**\n   → Beginner: 411cc, easier routes\n   → Advanced: 450cc, challenging terrain\n\n4️⃣ **Budget range?**\n   → ₹18-26k: Local tours\n   → ₹36-44k: Complete circuits\n\nAnswer these and I'll recommend the perfect package!",
+        answer: "No worries! Let me help you decide. 🤔\n\n**Quick Questions**:\n\n1️⃣ **First time in Ladakh?**\n   → Yes: Start with [Land of High Passes](/package/ladakh-land-of-high-passes)\n   → No: Try advanced routes\n\n2️⃣ **How many days can you spare?**\n   → 6-8 days: Local expeditions\n   → 10-12 days: Grand circuits\n\n3️⃣ **Riding experience?**\n   → Beginner: 411cc, easier routes\n   → Advanced: 450cc, challenging terrain\n\n4️⃣ **Budget range?**\n   → ₹18-26k: Local tours\n   → ₹36-44k: Complete circuits\n\nAnswer these and I'll recommend the perfect package!",
         priority: 8
     },
     {
         keywords: ['all', 'everything', 'complete', 'full', 'entire'],
-        answer: "Here's the complete overview! 📚\n\n**7 Tour Packages**:\n1. Land of High Passes (6D) - ₹18,500\n2. Turtuk Valley (7D) - ₹22,500\n3. Ride to Heaven (8D) - ₹26,000\n4. Manali-Ladakh-Manali (11D) - ₹36,500\n5. Manali-Leh-Srinagar (11D) - ₹36,500\n6. Srinagar-Leh-Manali (11D) - ₹36,500\n7. Zanskar to Umling La (12D) - ₹44,500\n\n**2 Bike Options**:\n• Himalayan 411cc (₹base price)\n• Himalayan 450cc (+₹3-4k)\n\n**Season**: May-September\n**Group Size**: 15-20 riders\n**Includes**: Bike, fuel, accommodation, meals, permits, safety\n\nWhat specific aspect interests you?",
+        answer: "Here's the complete overview! 📚\n\n**7 Tour Packages**:\n1. [Land of High Passes](/package/ladakh-land-of-high-passes) (6D) - ₹18,500\n2. [Turtuk Valley](/package/turtuk-valley) (7D) - ₹22,500\n3. [Ride to Heaven](/package/ride-to-heaven) (8D) - ₹26,000\n4. [Manali-Ladakh-Manali](/package/manali-ladakh-manali) (11D) - ₹36,500\n5. [Manali-Leh-Srinagar](/package/manali-leh-srinagar) (11D) - ₹36,500\n6. [Srinagar-Leh-Manali](/package/srinagar-leh-manali) (11D) - ₹36,500\n7. [Zanskar to Umling La](/package/zanskar-to-umling-la) (12D) - ₹44,500\n\n**2 Bike Options**:\n• Himalayan 411cc (₹base price)\n• Himalayan 450cc (+₹3-4k)\n\n**Season**: May-September\n**Group Size**: 15-20 riders\n**Includes**: Bike, fuel, accommodation, meals, permits, safety\n\nWhat specific aspect interests you?",
         priority: 7
     }
 ];
@@ -620,6 +620,9 @@ const fuzzyMatch = (query: string, keyword: string, threshold: number = 2): bool
     // Exact match
     if (query.includes(keyword)) return true;
 
+    // Use stricter threshold for short words to avoid false positives
+    const effectiveThreshold = keyword.length <= 4 ? 1 : threshold;
+
     // Check if keyword is in query with typos
     const queryWords = query.split(/\s+/);
     const keywordWords = keyword.split(/\s+/);
@@ -627,7 +630,7 @@ const fuzzyMatch = (query: string, keyword: string, threshold: number = 2): bool
     // Single word keyword - check against all query words
     if (keywordWords.length === 1) {
         for (const word of queryWords) {
-            if (levenshteinDistance(word, keywordWords[0]) <= threshold) {
+            if (levenshteinDistance(word, keywordWords[0]) <= effectiveThreshold) {
                 return true;
             }
         }
@@ -636,7 +639,7 @@ const fuzzyMatch = (query: string, keyword: string, threshold: number = 2): bool
         let matchedWords = 0;
         for (const kw of keywordWords) {
             for (const qw of queryWords) {
-                if (levenshteinDistance(qw, kw) <= threshold) {
+                if (levenshteinDistance(qw, kw) <= effectiveThreshold) {
                     matchedWords++;
                     break;
                 }
@@ -652,7 +655,7 @@ const fuzzyMatch = (query: string, keyword: string, threshold: number = 2): bool
 
 // Remove common filler words
 const cleanQuery = (query: string): string => {
-    const fillers = ['i', 'want', 'to', 'know', 'about', 'tell', 'me', 'can', 'you', 'please', 'the', 'a', 'an', 'is', 'are', 'what', 'how', 'show', 'give', 'need', 'info', 'information', 'details'];
+    const fillers = ['i', 'want', 'to', 'know', 'about', 'tell', 'me', 'can', 'you', 'please', 'the', 'a', 'an', 'is', 'are', 'what', 'how', 'show', 'give', 'need', 'info', 'information', 'details', 'which'];
     const words = query.toLowerCase().split(/\s+/);
     return words.filter(word => !fillers.includes(word) && word.length > 2).join(' ');
 };
