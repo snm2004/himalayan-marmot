@@ -571,7 +571,7 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
     },
     {
         keywords: ['recommend', 'suggestion', 'suggest', 'advice', 'should i', 'best', 'better', 'top', 'choice', 'choose', 'which one', 'which package'],
-        answer: "Happy to recommend! 💡\n\n**Tell me about yourself**:\n\n👤 **Experience Level**:\n• First-timer? → [Land of High Passes](/package/ladakh-land-of-high-passes) (6D)\n• Experienced? → [Zanskar to Umling La](/package/zanskar-to-umling-la) (12D)\n\n⏰ **Time Available**:\n• 6-7 days? → Local expeditions\n• 10-12 days? → Grand circuits\n\n💪 **Fitness Level**:\n• Moderate? → Easier packages\n• Excellent? → Extreme adventures\n\n💰 **Budget**:\n• ₹18,500-26,000 → Local tours\n• ₹36,500-44,500 → Grand circuits\n\nWhat's your situation?",
+        answer: "Happy to recommend! 💡\n\n**Tell me about yourself**:\n\n👤 **Experience Level**:\n• First-timer? → [Land of High Passes](/package/ladakh-land-of-high-passes) (6D)\n• Experienced? → [Zanskar to Umling La](/package/zanskar-umling-la) (12D)\n\n⏰ **Time Available**:\n• 6-7 days? → Local expeditions\n• 10-12 days? → Grand circuits\n\n💪 **Fitness Level**:\n• Moderate? → Easier packages\n• Excellent? → Extreme adventures\n\n💰 **Budget**:\n• ₹18,500-26,000 → Local tours\n• ₹36,500-44,500 → Grand circuits\n\nWhat's your situation?",
         priority: 8
     },
     {
@@ -581,7 +581,7 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
     },
     {
         keywords: ['all', 'everything', 'complete', 'full', 'entire'],
-        answer: "Here's the complete overview! 📚\n\n**7 Tour Packages**:\n1. [Land of High Passes](/package/ladakh-land-of-high-passes) (6D) - ₹18,500\n2. [Turtuk Valley](/package/turtuk-valley) (7D) - ₹22,500\n3. [Ride to Heaven](/package/ride-to-heaven) (8D) - ₹26,000\n4. [Manali-Ladakh-Manali](/package/manali-ladakh-manali) (11D) - ₹36,500\n5. [Manali-Leh-Srinagar](/package/manali-leh-srinagar) (11D) - ₹36,500\n6. [Srinagar-Leh-Manali](/package/srinagar-leh-manali) (11D) - ₹36,500\n7. [Zanskar to Umling La](/package/zanskar-to-umling-la) (12D) - ₹44,500\n\n**2 Bike Options**:\n• Himalayan 411cc (₹base price)\n• Himalayan 450cc (+₹3-4k)\n\n**Season**: May-September\n**Group Size**: 15-20 riders\n**Includes**: Bike, fuel, accommodation, meals, permits, safety\n\nWhat specific aspect interests you?",
+        answer: "Here's the complete overview! 📚\n\n**7 Tour Packages**:\n1. [Land of High Passes](/package/ladakh-land-of-high-passes) (6D) - ₹18,500\n2. [Turtuk Valley](/package/turtuk-valley) (7D) - ₹22,500\n3. [Ride to Heaven](/package/ride-to-heaven) (8D) - ₹26,000\n4. [Manali-Ladakh-Manali](/package/manali-ladakh-manali) (11D) - ₹36,500\n5. [Manali-Leh-Srinagar](/package/manali-leh-srinagar) (11D) - ₹36,500\n6. [Srinagar-Leh-Manali](/package/srinagar-leh-manali) (11D) - ₹36,500\n7. [Zanskar to Umling La](/package/zanskar-umling-la) (12D) - ₹44,500\n\n**2 Bike Options**:\n• Himalayan 411cc (₹base price)\n• Himalayan 450cc (+₹3-4k)\n\n**Season**: May-September\n**Group Size**: 15-20 riders\n**Includes**: Bike, fuel, accommodation, meals, permits, safety\n\nWhat specific aspect interests you?",
         priority: 7
     }
 ];
