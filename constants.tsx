@@ -1039,3 +1039,44 @@ export const BLOG_POSTS_DETAILED = [
     ]
   }
 ];
+
+export const TESTIMONIALS = [
+  {
+    id: 1,
+    name: "Sandesh Gupta",
+    location: "Hyderabad, India",
+    quote: "The best bike trip of my life! The BS6 Himalayan was in perfect condition for the Khardung La climb. The support team was literally a lifesaver when I got a flat tire near Nubra.",
+    rating: 5,
+    date: "June 2024"
+  },
+  {
+    id: 2,
+    name: "Sarah Jenkins",
+    location: "London, UK",
+    quote: "Tsewang and his team are true professionals. The safety protocols gave me immense peace of mind, especially as a solo female rider. The oxygen readings every morning showed they really care.",
+    rating: 5,
+    date: "July 2024"
+  },
+  {
+    id: 3,
+    name: "Vikram Singh",
+    location: "Delhi, India",
+    quote: "Authentic Ladakhi experience. These guys aren't just tour operators, they are mountain brothers. The homestay arranged in Hanle was the highlight of my trip.",
+    rating: 5,
+    date: "August 2024"
+  },
+  {
+    id: 4,
+    name: "Daniel Rossi",
+    location: "Milan, Italy",
+    quote: "Riding the new Himalayan 450 in the Himalayas was a dream. Marmot organized everything perfectly - permits, fuel, mechanic support. Pure adventure, zero stress.",
+    rating: 5,
+    date: "September 2024"
+  }
+];
+
+export const RIDER_VIDEOS = [
+  { id: 1, src: "https://youtu.be/QNp7oC5krEc", title: "Conquering High Passes", delay: 0 },
+  { id: 2, src: "https://youtu.be/lXU3tleWiW8", title: "The Road to Adventure", delay: 100 },
+  { id: 3, src: "https://youtu.be/iy5OhhSTiUw", title: "Brotherhood on Bikes", delay: 200 },
+];
