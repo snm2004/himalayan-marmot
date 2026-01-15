@@ -77,9 +77,9 @@ export default function ChatbotEnhanced() {
         setTimeout(() => {
             // Get response from knowledge base
             const answer = findAnswer(messageText);
-            
-            setMessages(prev => [...prev, { 
-                role: 'assistant', 
+
+            setMessages(prev => [...prev, {
+                role: 'assistant',
                 content: answer
             }]);
             setIsLoading(false);
@@ -164,7 +164,25 @@ export default function ChatbotEnhanced() {
                                         : 'bg-white text-slate-800 rounded-bl-sm shadow-sm border border-slate-100'
                                         }`}
                                 >
-                                    <p className="text-sm whitespace-pre-line leading-relaxed">{msg.content}</p>
+                                    <p className="text-sm whitespace-pre-line leading-relaxed">
+                                        {msg.content.split(/(\[.*?\]\(.*?\))/g).map((part, i) => {
+                                            const match = part.match(/\[(.*?)\]\((.*?)\)/);
+                                            if (match) {
+                                                return (
+                                                    <a
+                                                        key={i}
+                                                        href={match[2]}
+                                                        className="text-golden-yellow underline font-bold hover:text-white transition-colors"
+                                                        target={match[2].startsWith('http') ? '_blank' : '_self'}
+                                                        rel={match[2].startsWith('http') ? 'noopener noreferrer' : undefined}
+                                                    >
+                                                        {match[1]}
+                                                    </a>
+                                                );
+                                            }
+                                            return part;
+                                        })}
+                                    </p>
                                 </div>
                             </div>
                         ))}

@@ -8,9 +8,12 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
     // ==========================================
     // GENERAL WELCOME & GREETINGS
     // ==========================================
+    // ==========================================
+    // GENERAL WELCOME & GREETINGS
+    // ==========================================
     {
         keywords: ['hi', 'hello', 'hey', 'start', 'greetings', 'julley', 'namaste'],
-        answer: "Julley! 🦫 Welcome to Himalayan Marmot. I'm your digital guide for the ultimate Ladakh motorcycle adventure. Ask me about our 2026 expeditions, Royal Enfield bikes, safety protocols, or travel tips!",
+        answer: "Julley! 🦫 Welcome to Himalayan Marmot. I'm your digital guide for the ultimate Ladakh motorcycle adventure.\n\n**Quick Actions**:\n• [📦 View Packages](/tours)\n• [📅 Book Now](/booking)\n• [📞 Contact Us](/contact)\n• [🏍️ Our Bikes](/about)\n\nAsk me about our 2026 expeditions, Royal Enfield bikes, safety protocols, or travel tips!",
         priority: 10
     },
     {
@@ -20,13 +23,23 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
     },
     {
         keywords: ['help', 'what can you do', 'assist'],
-        answer: "I can help you with:\n\n📦 Tour packages & pricing\n🏍️ Bike specifications\n📅 Best time to visit\n🎒 Packing & preparation\n🏥 Health & safety tips\n💰 Booking & payments\n📍 Destinations & routes\n🏨 Accommodation details\n\nJust ask away!",
+        answer: "I can help you with:\n\n[📦 Tour Packages](/tours) & pricing\n[🏍️ Bike Specs](/about)\n[📅 Best Time](/blogs)\n[🎒 Packing List](/blogs)\n[🏥 Safety Tips](/safety)\n[💰 Booking](/booking)\n\nJust ask away!",
         priority: 8
     },
     {
-        keywords: ['which page', 'what page', 'where am i', 'current page', 'this page', 'page name', 'which page am i', 'what page am i', 'where am i on', 'what page is this', 'which page is this', 'page', 'location'],
-        answer: "📍 **Page Navigation Guide**:\n\nYou're viewing our website! Here's what each page offers:\n\n🏠 **Home** - Overview, values, founder story, testimonials\n🗺️ **Tours** - All 7 expedition packages with details\n📅 **Booking** - Reserve your slot, payments, FAQs\n📞 **Contact** - Phone, email, WhatsApp, office location\n🏥 **Safety** - AMS prevention, oxygen, medical protocols\n📚 **Blogs** - Ladakh guides, tips, festivals, culture\n🎬 **Journey in Frames** - Gallery of rider photos\n\n💡 **Tip**: Use the menu at the top to navigate between pages. I can answer questions about any section!",
+        keywords: ['booking', 'book', 'reserve', 'reservation'],
+        answer: "**Ready to Book?** 🏍️\n\nClick here to start your adventure: **[Book Now](/booking)**\n\nOr contact us directly:\n• [WhatsApp Us](https://wa.me/916006114260)\n• Call: +91 6006114260\n\nSecure your slot with just ₹5,000 advance!",
         priority: 10
+    },
+    {
+        keywords: ['contact', 'phone', 'email', 'number', 'whatsapp'],
+        answer: "**Get in Touch** 📞\n\n• **WhatsApp**: [Chat with Founder](https://wa.me/916006114260)\n• **Call**: +91 6006114260\n• **Email**: himalayanmarmot19@gmail.com\n• **Visit**: [Contact Page](/contact)\n\nWe are available 9 AM - 8 PM IST.",
+        priority: 10
+    },
+    {
+        keywords: ['navigation', 'menu', 'go to', 'open', 'show me'],
+        answer: "**Where would you like to go?**\n\n• [🏠 Home](/) \n• [📦 Tours](/tours)\n• [📅 Booking](/booking)\n• [📞 Contact](/contact)\n• [🏥 Safety](/safety)\n• [📚 Blogs](/blogs)\n• [📸 Gallery](/journey-in-frames)",
+        priority: 8
     },
 
     // ==========================================
@@ -74,71 +87,71 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
     },
 
     // ==========================================
-    // PACKAGES & PRICING (Comprehensive)
+    // PACKAGES & PRICING (With Links)
     // ==========================================
     {
-        keywords: ['price', 'prices', 'pricing', 'priced', 'cost', 'costs', 'costing', 'rate', 'rates', 'how much', 'how much cost', 'how much price', 'expensive', 'cheap', 'affordable', 'budget', 'fee', 'fees', 'charge', 'charges', 'amount', 'money', 'pay', 'payment', 'what price', 'what cost', 'what rate', 'tell price', 'tell cost', 'show price', 'show cost', 'give price', 'give cost', 'price list', 'cost list', 'rate list', 'price details', 'cost details', 'pricing details', 'tour price', 'tour cost', 'tour rate', 'package price', 'package cost', 'package rate', 'trip price', 'trip cost', 'trip rate', 'expedition price', 'expedition cost', 'know price', 'know cost', 'want to know price', 'want to know cost', 'tell me price', 'tell me cost', 'info about price', 'info about cost', 'information about price', 'information about cost', 'prise', 'pric', 'prce', 'cst', 'cots', 'expnsive', 'expensiv', 'afordable', 'buget'],
-        answer: "Our 2026 expeditions at 2024 prices! 💰\n\n• **Land of High Passes** (6D/5N): ₹18,500\n• **Turtuk Valley** (7D/6N): ₹22,500\n• **Ride to Heaven** (8D/7N): ₹26,000\n• **Manali-Ladakh-Manali** (11D/10N): ₹36,500\n• **Manali-Leh-Srinagar** (11D/10N): ₹36,500\n• **Srinagar-Leh-Manali** (11D/10N): ₹36,500\n• **Zanskar to Umling La** (12D/11N): ₹44,500\n\n*Prices for dual riding with Himalayan 411cc",
+        keywords: ['price', 'prices', 'pricing', 'cost', 'rates', 'how much'],
+        answer: "Our 2026 expeditions at 2024 prices! 💰\n\n• [Land of High Passes](/package/ladakh-land-of-high-passes) (6D/5N): ₹18,500\n• [Turtuk Valley](/package/turtuk-valley) (7D/6N): ₹22,500\n• [Ride to Heaven](/package/ride-to-heaven) (8D/7N): ₹26,000\n• [Manali-Ladakh-Manali](/package/manali-ladakh-manali) (11D/10N): ₹36,500\n• [Manali-Leh-Srinagar](/package/manali-leh-srinagar) (11D/10N): ₹36,500\n• [Srinagar-Leh-Manali](/package/srinagar-leh-manali) (11D/10N): ₹36,500\n• [Zanskar to Umling La](/package/zanskar-to-umling-la) (12D/11N): ₹44,500\n\n*Prices for dual riding with Himalayan 411cc",
         priority: 10
     },
     {
-        keywords: ['package', 'packages', 'tour', 'tours', 'touring', 'expedition', 'expeditions', 'trip', 'trips', 'options', 'option', 'list', 'all tours', 'all packages', 'all expeditions', 'all trips', 'show tours', 'show packages', 'show expeditions', 'what tours', 'what packages', 'what expeditions', 'which tours', 'which packages', 'which expeditions', 'available tours', 'available packages', 'available expeditions', 'tour options', 'package options', 'expedition options', 'trip options', 'tour list', 'package list', 'expedition list', 'trip list', 'have tours', 'have packages', 'have expeditions', 'offer tours', 'offer packages', 'offer expeditions', 'provide tours', 'provide packages', 'provide expeditions', 'tour details', 'package details', 'expedition details', 'trip details', 'know about tours', 'know about packages', 'tell me tours', 'tell me packages', 'show me tours', 'show me packages', 'see tours', 'see packages', 'view tours', 'view packages', 'pakage', 'pacakge', 'packge', 'tur', 'turs', 'expidition', 'expedtion', 'trp', 'trips'],
-        answer: "We offer 7 curated Royal Enfield expeditions:\n\n1. **Land of High Passes** (6D) - Best for beginners\n2. **Turtuk Valley** (7D) - Cultural depth\n3. **Ride to Heaven** (8D) - Perfect balance\n4. **Manali-Ladakh-Manali** (11D) - Classic adventure\n5. **Manali-Leh-Srinagar** (11D) - Complete Himalayan\n6. **Srinagar-Leh-Manali** (11D) - Kashmir to Ladakh\n7. **Zanskar & Umling La** (12D) - For the brave",
+        keywords: ['package', 'packages', 'tours', 'expeditions', 'trips', 'list', 'options'],
+        answer: "We offer 7 curated Royal Enfield expeditions:\n\n1. [Land of High Passes](/package/ladakh-land-of-high-passes) (6D) - Best for beginners\n2. [Turtuk Valley](/package/turtuk-valley) (7D) - Cultural depth\n3. [Ride to Heaven](/package/ride-to-heaven) (8D) - Perfect balance\n4. [Manali-Ladakh-Manali](/package/manali-ladakh-manali) (11D) - Classic adventure\n5. [Manali-Leh-Srinagar](/package/manali-leh-srinagar) (11D) - Complete Himalayan\n6. [Srinagar-Leh-Manali](/package/srinagar-leh-manali) (11D) - Kashmir to Ladakh\n7. [Zanskar & Umling La](/package/zanskar-to-umling-la) (12D) - For the brave\n\nClick any package to see details!",
         priority: 10
     },
     {
         keywords: ['shortest tour', 'minimum days', 'quickest', '6 days'],
-        answer: "Our shortest tour is **Land of High Passes** (6D/5N) at ₹18,500.\n\nPerfect for first-timers! Covers:\n• Leh sightseeing\n• Khardung La (18,380 ft)\n• Nubra Valley\n• Pangong Lake\n• Chang La Pass\n\nIdeal if you have limited vacation time.",
+        answer: "Our shortest tour is [Land of High Passes](/package/ladakh-land-of-high-passes) (6D/5N) at ₹18,500.\n\nPerfect for first-timers! Covers:\n• Leh sightseeing\n• Khardung La (18,380 ft)\n• Nubra Valley\n• Pangong Lake\n• Chang La Pass\n\nIdeal if you have limited vacation time.",
         priority: 8
     },
     {
         keywords: ['longest tour', 'maximum days', '12 days', 'most days'],
-        answer: "Our longest expedition is **Zanskar to Umling La** (12D/11N) at ₹44,500.\n\nThis extreme adventure includes:\n• Zanskar Valley\n• Phugtal Monastery\n• Umling La (19,300 ft)\n• Pangong, Hanle, Tso Moriri\n• Most challenging terrain\n\nFor experienced riders only!",
+        answer: "Our longest expedition is [Zanskar to Umling La](/package/zanskar-to-umling-la) (12D/11N) at ₹44,500.\n\nThis extreme adventure includes:\n• Zanskar Valley\n• Phugtal Monastery\n• Umling La (19,300 ft)\n• Pangong, Hanle, Tso Moriri\n• Most challenging terrain\n\nFor experienced riders only!",
         priority: 8
     },
     {
         keywords: ['cheapest', 'budget', 'affordable', 'lowest price'],
-        answer: "Most affordable: **Land of High Passes** at ₹18,500 (dual riding, Himalayan 411cc).\n\nIncludes:\n✅ 6 Days/5 Nights\n✅ All major highlights\n✅ Accommodation & meals\n✅ Bike, fuel, permits\n✅ Safety equipment\n\nBest value for money!",
+        answer: "Most affordable: [Land of High Passes](/package/ladakh-land-of-high-passes) at ₹18,500 (dual riding, Himalayan 411cc).\n\nIncludes:\n✅ 6 Days/5 Nights\n✅ All major highlights\n✅ Accommodation & meals\n✅ Bike, fuel, permits\n✅ Safety equipment\n\nBest value for money!",
         priority: 9
     },
     {
         keywords: ['expensive', 'premium', 'highest price', 'most expensive'],
-        answer: "Premium expedition: **Zanskar to Umling La** at ₹44,500-₹56,500.\n\nWhy premium:\n• 12 days of adventure\n• Remote Zanskar Valley\n• Highest passes\n• Off-road challenges\n• Extreme terrain\n• Maximum altitude exposure\n\nWorth every rupee for serious riders!",
+        answer: "Premium expedition: [Zanskar to Umling La](/package/zanskar-to-umling-la) at ₹44,500-₹56,500.\n\nWhy premium:\n• 12 days of adventure\n• Remote Zanskar Valley\n• Highest passes\n• Off-road challenges\n• Extreme terrain\n• Maximum altitude exposure\n\nWorth every rupee for serious riders!",
         priority: 8
     },
     {
         keywords: ['land of high passes', 'leh circuit', 'beginner package', '6d5n'],
-        answer: "**Land of High Passes (6D/5N)** - ₹18,500\n\n✨ Best for: First-timers & Families\n\n📍 Highlights:\n• Leh Palace & Shanti Stupa\n• Hall of Fame, Magnetic Hill\n• Khardung La (18,380 ft)\n• Nubra Valley sand dunes\n• Pangong Lake\n• Chang La Pass\n\n🏍️ Bikes: 411cc (₹18,500) or 450cc (₹22,500)",
+        answer: "**[Land of High Passes](/package/ladakh-land-of-high-passes)** (6D/5N) - ₹18,500\n\n✨ Best for: First-timers & Families\n\n📍 Highlights:\n• Leh Palace & Shanti Stupa\n• Hall of Fame, Magnetic Hill\n• Khardung La (18,380 ft)\n• Nubra Valley sand dunes\n• Pangong Lake\n• Chang La Pass\n\n[Click to View Itinerary](/package/ladakh-land-of-high-passes)",
         priority: 9
     },
     {
         keywords: ['turtuk', 'turtuk valley', '7 days', 'balti culture'],
-        answer: "**Turtuk Valley (7D/6N)** - ₹22,500\n\n✨ Best for: Culture & Photography\n\n📍 Highlights:\n• Turtuk Village (last village on Indo-Pak border)\n• Balti culture experience\n• Nubra Valley\n• Pangong Lake\n• Khardung La & Chang La\n\n🏍️ Bikes: 411cc (₹22,500) or 450cc (₹27,500)",
+        answer: "**[Turtuk Valley](/package/turtuk-valley)** (7D/6N) - ₹22,500\n\n✨ Best for: Culture & Photography\n\n📍 Highlights:\n• Turtuk Village (last village on Indo-Pak border)\n• Balti culture experience\n• Nubra Valley\n• Pangong Lake\n• Khardung La & Chang La\n\n[Click to View Details](/package/turtuk-valley)",
         priority: 9
     },
     {
         keywords: ['ride to heaven', 'hanle', '8 days', 'umling'],
-        answer: "**Ride to Heaven (8D/7N)** - ₹26,000\n\n✨ Best for: Scenic & Leisure Riders\n\n📍 Highlights:\n• Hanle Observatory (Dark Sky Reserve)\n• Umling La (19,300 ft) - World's highest pass\n• Pangong Lake\n• Nubra Valley & Turtuk\n• Stargazing at Hanle ✨\n\n🏍️ Bikes: 411cc (₹26,000) or 450cc (₹29,000)",
+        answer: "**[Ride to Heaven](/package/ride-to-heaven)** (8D/7N) - ₹26,000\n\n✨ Best for: Scenic & Leisure Riders\n\n📍 Highlights:\n• Hanle Observatory (Dark Sky Reserve)\n• Umling La (19,300 ft) - World's highest pass\n• Pangong Lake\n• Nubra Valley & Turtuk\n• Stargazing at Hanle ✨\n\n[Click to View Details](/package/ride-to-heaven)",
         priority: 9
     },
     {
         keywords: ['manali ladakh manali', 'manali circuit', '11 days manali'],
-        answer: "**Manali-Ladakh-Manali (11D/10N)** - ₹36,500\n\n✨ Best for: Adventure Seekers\n\n📍 Highlights:\n• Atal Tunnel, Rohtang Pass\n• Jispa, Sarchu, More Plains\n• Multiple high passes\n• Nubra, Pangong, Hanle\n• Umling La & Tso Moriri\n\n🏍️ Bikes: 411cc (₹36,500) or 450cc (₹39,999)",
+        answer: "**[Manali-Ladakh-Manali](/package/manali-ladakh-manali)** (11D/10N) - ₹36,500\n\n✨ Best for: Adventure Seekers\n\n📍 Highlights:\n• Atal Tunnel, Rohtang Pass\n• Jispa, Sarchu, More Plains\n• Multiple high passes\n• Nubra, Pangong, Hanle\n• Umling La & Tso Moriri\n\n[Click to View Details](/package/manali-ladakh-manali)",
         priority: 9
     },
     {
         keywords: ['manali leh srinagar', 'kashmir ladakh', 'srinagar end'],
-        answer: "**Manali-Leh-Srinagar (11D/10N)** - ₹36,500\n\n✨ Best for: Complete Himalayan Experience\n\n📍 Highlights:\n• Manali to Leh via high passes\n• Nubra, Pangong, Hanle\n• Umling La (19,300 ft)\n• Kargil & Drass\n• Zojila Pass\n• End in beautiful Srinagar\n\n🏍️ Bikes: 411cc (₹36,500) or 450cc (₹39,999)",
+        answer: "**[Manali-Leh-Srinagar](/package/manali-leh-srinagar)** (11D/10N) - ₹36,500\n\n✨ Best for: Complete Himalayan Experience\n\n📍 Highlights:\n• Manali to Leh via high passes\n• Nubra, Pangong, Hanle\n• Umling La (19,300 ft)\n• Kargil & Drass\n• Zojila Pass\n• End in beautiful Srinagar\n\n[Click to View Details](/package/manali-leh-srinagar)",
         priority: 9
     },
     {
         keywords: ['srinagar leh manali', 'kashmir start', 'srinagar to manali'],
-        answer: "**Srinagar-Leh-Manali (11D/10N)** - ₹36,500\n\n✨ Best for: High Passes & Culture\n\n📍 Highlights:\n• Start from Srinagar\n• Zojila, Kargil\n• Leh, Nubra, Turtuk\n• Pangong, Hanle\n• Tso Moriri\n• Umling La\n• End in Manali\n\n🏍️ Bikes: 411cc (₹36,500) or 450cc (₹39,000)",
+        answer: "**[Srinagar-Leh-Manali](/package/srinagar-leh-manali)** (11D/10N) - ₹36,500\n\n✨ Best for: High Passes & Culture\n\n📍 Highlights:\n• Start from Srinagar\n• Zojila, Kargil\n• Leh, Nubra, Turtuk\n• Pangong, Hanle\n• Tso Moriri\n• Umling La\n• End in Manali\n\n[Click to View Details](/package/srinagar-leh-manali)",
         priority: 9
     },
     {
         keywords: ['zanskar', 'zanskar umling', 'extreme', '12 days', 'phugtal'],
-        answer: "**Zanskar to Umling La (12D/11N)** - ₹44,500\n\n✨ Best for: Extreme Riders\n\n📍 Highlights:\n• Shinkula Pass (16,580 ft)\n• Phugtal Monastery (cliff monastery)\n• Zanskar Valley\n• Padum, Purne\n• Leh, Nubra, Pangong\n• Hanle & Umling La\n\n🏍️ Bikes: 411cc (₹44,500) or 450cc (₹48,500)\n⚠️ Advanced riders only",
+        answer: "**[Zanskar to Umling La](/package/zanskar-to-umling-la)** (12D/11N) - ₹44,500\n\n✨ Best for: Extreme Riders\n\n📍 Highlights:\n• Shinkula Pass (16,580 ft)\n• Phugtal Monastery (cliff monastery)\n• Zanskar Valley\n• Padum, Purne\n• Leh, Nubra, Pangong\n• Hanle & Umling La\n\n⚠️ Advanced riders only. [View details](/package/zanskar-to-umling-la)",
         priority: 9
     },
     {
