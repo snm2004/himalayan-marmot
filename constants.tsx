@@ -325,7 +325,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
       { name: "Turtuk", x: 10, y: 15, elevation: "2,800m" },
       { name: "Pangong", x: 80, y: 60, elevation: "4,250m" }
     ]
-  },
+  }
 ];
 
 // Local Tours Packages

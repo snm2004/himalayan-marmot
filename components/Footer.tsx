@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { COMPANY_NAME, ADDRESS_OFFICE, CONTACT_NUMBERS, EMAIL, FOUNDER_NAME, FLEET, MAPS_URL, INSTAGRAM_URL, YOUTUBE_URL } from '../constants';
+import { COMPANY_NAME, ADDRESS_OFFICE, CONTACT_NUMBERS, EMAIL, FOUNDER_NAME, FLEET, MAPS_URL, INSTAGRAM_URL, YOUTUBE_URL, TOUR_PACKAGES } from '../constants';
 
 const Footer: React.FC = () => {
   return (
@@ -122,11 +122,14 @@ const Footer: React.FC = () => {
           <div className="text-center md:text-left">
             <h5 className="font-oswald text-lg font-bold mb-10 uppercase tracking-[0.3em] text-golden-yellow">Expeditions</h5>
             <ul className="space-y-5 font-black text-slate-500 text-[11px] uppercase tracking-[0.15em]">
-              <li><Link to="/" className="hover:text-cyan-500 transition-colors">Pangong Lake Tour</Link></li>
-              <li><Link to="/" className="hover:text-cyan-500 transition-colors">Highest Road: Umling La</Link></li>
-              <li><Link to="/" className="hover:text-cyan-500 transition-colors">The Turtuk Trail</Link></li>
-              <li><Link to="/" className="hover:text-cyan-500 transition-colors">Manali to Leh Loop</Link></li>
-              <li><Link to="/" className="hover:text-cyan-500 transition-colors">Corporate Retreats</Link></li>
+              {TOUR_PACKAGES.slice(0, 6).map((pkg) => (
+                <li key={pkg.id}>
+                  <Link to={`/package/${pkg.id}`} className="hover:text-cyan-500 transition-colors">
+                    {pkg.title}
+                  </Link>
+                </li>
+              ))}
+              <li><Link to="/tours" className="hover:text-cyan-500 transition-colors text-golden-yellow">View All Tours →</Link></li>
             </ul>
           </div>
 
