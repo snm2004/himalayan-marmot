@@ -214,7 +214,7 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
         priority: 9
     },
     {
-        keywords: ['411 vs 450', 'difference 411 450', 'which bike better', 'compare bikes'],
+        keywords: ['411 vs 450', 'difference 411 450', 'which bike better', 'compare bikes', 'best bike', 'which bike is best', 'better bike'],
         answer: "**Himalayan 411cc vs 450cc**:\n\n**411cc**:\n✅ More affordable\n✅ Lower seat height (800mm)\n✅ Proven reliability\n✅ Easier for beginners\n✅ Oil cooled (simpler)\n\n**450cc**:\n✅ More power (40 BHP vs 24)\n✅ Better fuel efficiency\n✅ Liquid cooling (better for long rides)\n✅ Latest technology\n✅ Lighter (196kg vs 199kg)\n\n💡 Choose 411 for reliability, 450 for performance",
         priority: 9
     },
@@ -581,7 +581,7 @@ export const KNOWLEDGE_BASE: KBEntry[] = [
     },
     {
         keywords: ['recommend', 'suggestion', 'suggest', 'advice', 'should i', 'best', 'better', 'top', 'choice', 'choose', 'which one', 'which package'],
-        answer: "Happy to recommend! 💡\n\n**Tell me about yourself**:\n\n👤 **Experience Level**:\n• First-timer? → [Land of High Passes](/package/ladakh-land-of-high-passes) (6D)\n• Experienced? → [Zanskar to Umling La](/package/zanskar-umling-la) (12D)\n\n⏰ **Time Available**:\n• 6-7 days? → Local expeditions\n• 10-12 days? → Grand circuits\n\n💪 **Fitness Level**:\n• Moderate? → Easier packages\n• Excellent? → Extreme adventures\n\n💰 **Budget**:\n• ₹18,500-26,000 → Local tours\n• ₹36,500-44,500 → Grand circuits\n\nWhat's your situation?",
+        answer: "Happy to recommend! 💡\n\n**What are you looking for?**\n\n🏍️ **Best Bike?**\n• **411cc**: Best for comfort & value. Reliable workhorse.\n• **450cc**: Best for power & speed. Modern tech.\n\n🏔️ **Best Tour Package?**\n• **First-timer?** → [Land of High Passes](/package/ladakh-land-of-high-passes) (6D)\n• **Experienced?** → [Zanskar to Umling La](/package/zanskar-umling-la) (12D)\n• **Budget?** → [Manali-Ladakh](/package/manali-ladakh-manali) (11D)\n\nAnswer these and I'll give a specific suggestion!",
         priority: 8
     },
     {
