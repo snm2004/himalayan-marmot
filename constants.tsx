@@ -85,10 +85,10 @@ export const TOUR_PACKAGES: TourPackage[] = [
     ],
     exclusions: COMMON_EXCLUSIONS,
     routePoints: [
-      { name: "Leh", x: 20, y: 70, elevation: "3,500m" },
-      { name: "Khardung La", x: 40, y: 30, elevation: "5,359m" },
-      { name: "Nubra", x: 60, y: 20, elevation: "3,000m" },
-      { name: "Pangong", x: 80, y: 50, elevation: "4,250m" }
+      { name: "Leh", x: 20, y: 60, elevation: "3,500m" },
+      { name: "Khardung La", x: 40, y: 20, elevation: "5,359m" },
+      { name: "Nubra", x: 60, y: 70, elevation: "3,000m" },
+      { name: "Pangong", x: 80, y: 45, elevation: "4,250m" }
     ],
     variants: []
   },
@@ -125,11 +125,11 @@ export const TOUR_PACKAGES: TourPackage[] = [
     exclusions: COMMON_EXCLUSIONS,
     routePoints: [
       { name: "Manali", x: 10, y: 95, elevation: "2,050m" },
-      { name: "Sarchu", x: 30, y: 70, elevation: "4,290m" },
-      { name: "Leh", x: 50, y: 40, elevation: "3,500m" },
-      { name: "Pangong", x: 75, y: 55, elevation: "4,250m" },
-      { name: "Umling La", x: 90, y: 80, elevation: "5,882m" },
-      { name: "Tso Moriri", x: 80, y: 75, elevation: "4,522m" }
+      { name: "Sarchu", x: 30, y: 45, elevation: "4,290m" },
+      { name: "Leh", x: 50, y: 60, elevation: "3,500m" },
+      { name: "Pangong", x: 75, y: 45, elevation: "4,250m" },
+      { name: "Umling La", x: 90, y: 10, elevation: "5,882m" },
+      { name: "Tso Moriri", x: 80, y: 40, elevation: "4,522m" }
     ]
   },
   {
@@ -165,11 +165,11 @@ export const TOUR_PACKAGES: TourPackage[] = [
     exclusions: COMMON_EXCLUSIONS,
     routePoints: [
       { name: "Manali", x: 10, y: 95, elevation: "2,050m" },
-      { name: "Sarchu", x: 30, y: 70, elevation: "4,290m" },
-      { name: "Leh", x: 50, y: 40, elevation: "3,500m" },
-      { name: "Pangong", x: 75, y: 55, elevation: "4,250m" },
-      { name: "Kargil", x: 35, y: 20, elevation: "2,676m" },
-      { name: "Srinagar", x: 25, y: 10, elevation: "1,585m" }
+      { name: "Sarchu", x: 30, y: 45, elevation: "4,290m" },
+      { name: "Leh", x: 50, y: 60, elevation: "3,500m" },
+      { name: "Pangong", x: 75, y: 45, elevation: "4,250m" },
+      { name: "Kargil", x: 35, y: 80, elevation: "2,676m" },
+      { name: "Srinagar", x: 25, y: 90, elevation: "1,585m" }
     ]
   },
   {
@@ -204,12 +204,12 @@ export const TOUR_PACKAGES: TourPackage[] = [
     ],
     exclusions: COMMON_EXCLUSIONS,
     routePoints: [
-      { name: "Srinagar", x: 20, y: 10, elevation: "1,585m" },
-      { name: "Kargil", x: 30, y: 25, elevation: "2,676m" },
-      { name: "Leh", x: 50, y: 40, elevation: "3,500m" },
-      { name: "Pangong", x: 75, y: 55, elevation: "4,250m" },
-      { name: "Hanle", x: 85, y: 70, elevation: "4,300m" },
-      { name: "Tso Moriri", x: 80, y: 75, elevation: "4,522m" },
+      { name: "Srinagar", x: 20, y: 90, elevation: "1,585m" },
+      { name: "Kargil", x: 30, y: 80, elevation: "2,676m" },
+      { name: "Leh", x: 50, y: 60, elevation: "3,500m" },
+      { name: "Pangong", x: 75, y: 45, elevation: "4,250m" },
+      { name: "Hanle", x: 85, y: 44, elevation: "4,300m" },
+      { name: "Tso Moriri", x: 80, y: 40, elevation: "4,522m" },
       { name: "Manali", x: 10, y: 95, elevation: "2,050m" }
     ]
   },
@@ -248,12 +248,12 @@ export const TOUR_PACKAGES: TourPackage[] = [
     exclusions: COMMON_EXCLUSIONS,
     routePoints: [
       { name: "Manali", x: 10, y: 95, elevation: "2,050m" },
-      { name: "Jispa", x: 25, y: 80, elevation: "3,200m" },
-      { name: "Padum", x: 40, y: 60, elevation: "3,669m" },
-      { name: "Leh", x: 50, y: 40, elevation: "3,500m" },
-      { name: "Pangong", x: 75, y: 55, elevation: "4,250m" },
-      { name: "Umling La", x: 90, y: 80, elevation: "5,882m" }
-    ]
+      { name: "Jispa", x: 25, y: 65, elevation: "3,200m" },
+      { name: "Padum", x: 40, y: 58, elevation: "3,669m" },
+      { name: "Leh", x: 50, y: 60, elevation: "3,500m" },
+      { name: "Pangong", x: 75, y: 45, elevation: "4,250m" },
+      { name: "Umling La", x: 90, y: 10, elevation: "5,882m" }
+    ],
   },
   {
     id: "ride-to-heaven",
@@ -284,12 +284,12 @@ export const TOUR_PACKAGES: TourPackage[] = [
     ],
     exclusions: COMMON_EXCLUSIONS,
     routePoints: [
-      { name: "Leh", x: 20, y: 70, elevation: "3,500m" },
-      { name: "Nubra", x: 50, y: 20, elevation: "3,000m" },
-      { name: "Pangong", x: 70, y: 50, elevation: "4,250m" },
-      { name: "Hanle", x: 80, y: 75, elevation: "4,300m" },
-      { name: "Umling La", x: 90, y: 85, elevation: "5,882m" }
-    ]
+      { name: "Leh", x: 20, y: 60, elevation: "3,500m" },
+      { name: "Nubra", x: 50, y: 70, elevation: "3,000m" },
+      { name: "Pangong", x: 70, y: 45, elevation: "4,250m" },
+      { name: "Hanle", x: 80, y: 44, elevation: "4,300m" },
+      { name: "Umling La", x: 90, y: 10, elevation: "5,882m" }
+    ],
   },
   {
     id: "turtuk-valley",
@@ -319,12 +319,12 @@ export const TOUR_PACKAGES: TourPackage[] = [
     ],
     exclusions: COMMON_EXCLUSIONS,
     routePoints: [
-      { name: "Leh", x: 20, y: 80, elevation: "3,500m" },
-      { name: "Khardung La", x: 35, y: 40, elevation: "5,359m" },
-      { name: "Nubra", x: 40, y: 20, elevation: "3,000m" },
-      { name: "Turtuk", x: 10, y: 15, elevation: "2,800m" },
-      { name: "Pangong", x: 80, y: 60, elevation: "4,250m" }
-    ]
+      { name: "Leh", x: 20, y: 60, elevation: "3,500m" },
+      { name: "Khardung La", x: 35, y: 20, elevation: "5,359m" },
+      { name: "Nubra", x: 40, y: 70, elevation: "3,000m" },
+      { name: "Turtuk", x: 10, y: 75, elevation: "2,800m" },
+      { name: "Pangong", x: 80, y: 45, elevation: "4,250m" }
+    ],
   }
 ];
 
