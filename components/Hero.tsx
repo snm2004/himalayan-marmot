@@ -49,10 +49,8 @@ const Hero: React.FC = () => {
             }
           }}
         >
-          {/* Primary Source: High Quality MOV */}
-          <source src="/hero-video-new.mov" type="video/quicktime" />
-          {/* Fallback Source: Compressed MP4 (for better compatibility) */}
-          <source src="/hero-video-new.mp4" type="video/mp4" />
+          {/* Primary Source: Updated Hero Video */}
+          <source src="/hero-video.mp4" type="video/mp4" />
 
           <img src={FALLBACK_IMAGE} alt="Himalayan Landscape" className="w-full h-full object-cover" />
         </video>
