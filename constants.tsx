@@ -400,6 +400,48 @@ export const TOUR_PACKAGES: TourPackage[] = [
       { name: "Umling La", x: 90, y: 10, elevation: "5,882m" },
       { name: "Tso Moriri", x: 80, y: 40, elevation: "4,522m" }
     ]
+  },
+  {
+    id: "suru-zanskar-valley",
+    title: "Suru Valley to Zangskar Valley",
+    duration: "10D/9N",
+    highlights: ["Suru Valley", "Zangskar Valley", "Phugtal Monastery", "Shinku La", "Umling La", "Tso Moriri", "Best for: Adventure & Culture"],
+    startingPrice: "₹30,500",
+    priceTiers: [
+      { bike: "RE Himalayan 411cc BS6", dual: "₹30,500", solo: "₹36,500" },
+      { bike: "RE Himalayan 450cc BS6", dual: "₹33,500", solo: "₹38,500" }
+    ],
+    image: "/suru valley.png", // Reusing image as placeholder, or user needs to provide one. Using a generic one for now.
+    pdfUrl: "/packages/Suru_Valley_to_Zanskar_Valley.pdf",
+    itinerary: [
+      { day: 1, title: "DELHI – LEH", description: "Arrival at Leh Airport. Transfer to hotel. Visit Leh Palace and Shanti Stupa. Acclimatization." },
+      { day: 2, title: "LEH - SURU VALLEY", description: "Drive to Suru Valley via Hall of Fame, Magnetic Hill, Sangam, and Lamayuru/Mulbekh monasteries." },
+      { day: 3, title: "SURU VALLEY - KARGIL - PADUM", description: "Cross Pensi La (14,400 ft) to Padum. View Drang Drung Glacier and Rangdum Monastery." },
+      { day: 4, title: "PADUM - SHINKU LA PASS – SERCHU", description: "Drive to Serchu via Shinku La (5090m) and Gonbo Ranjon. Trek to Phugtal Monastery." },
+      { day: 5, title: "SERCHU - TSOMIRI LAKE", description: "Drive to Tso Moriri via Baralacha La, Nakee La, Lachung La, and Puga Valley." },
+      { day: 6, title: "TSOMORIRI LAKE - HANLEY - UMLING LA", description: "Drive to Hanle via Mahey Bridge. Visit Umling La (19,300 ft) and return to Hanle." },
+      { day: 7, title: "HANLEY - PANGONG LAKE", description: "Drive to Pangong Tso via Rezang La and Tsaga La." },
+      { day: 8, title: "PANGONG - NUBRA VALLEY", description: "Drive to Nubra Valley via Shyok. Visit Diskit Monastery and sand dunes." },
+      { day: 9, title: "NUBRA VALLEY - LEH", description: "Return to Leh via Khardung La (18,300 ft)." },
+      { day: 10, title: "LEH - Delhi", description: "Transfer to airport for departure." }
+    ],
+    inclusions: [
+      ...COMMON_INCLUSIONS,
+      "Hotel Category: Deluxe / Standard (Camps/Homestay)",
+      "Meal Plan: MAP (Breakfast + Dinner)"
+    ],
+    exclusions: COMMON_EXCLUSIONS,
+    routePoints: [
+      { name: "Leh", x: 20, y: 60, elevation: "3,500m" },
+      { name: "Suru Valley", x: 30, y: 80, elevation: "3,000m" },
+      { name: "Padum", x: 40, y: 58, elevation: "3,669m" },
+      { name: "Serchu", x: 30, y: 45, elevation: "4,290m" },
+      { name: "Tso Moriri", x: 80, y: 40, elevation: "4,522m" },
+      { name: "Hanle", x: 85, y: 44, elevation: "4,300m" },
+      { name: "Umling La", x: 90, y: 10, elevation: "5,882m" },
+      { name: "Pangong", x: 70, y: 45, elevation: "4,250m" },
+      { name: "Nubra", x: 50, y: 70, elevation: "3,000m" }
+    ]
   }
 ];
 
@@ -448,7 +490,7 @@ export const TOUR_CATEGORIES = {
   GRAND_CIRCUITS: {
     title: "Grand Circuits",
     subtitle: "10-12 Days | Multi-City",
-    tours: ["manali-ladakh-manali", "manali-leh-srinagar", "srinagar-leh-manali", "zanskar-umling-la"]
+    tours: ["suru-zanskar-valley", "manali-ladakh-manali", "manali-leh-srinagar", "srinagar-leh-manali", "zanskar-umling-la"]
   }
 };
 

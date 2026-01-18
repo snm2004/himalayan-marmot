@@ -85,7 +85,7 @@ const Home: React.FC = () => {
               if (activeTab === 'all') return true;
               if (activeTab === 'local') return ['ladakh-land-of-high-passes', 'turtuk-valley', 'ride-to-heaven'].includes(tour.id);
               if (activeTab === 'grand') return ['manali-ladakh-manali', 'manali-leh-srinagar', 'srinagar-leh-manali'].includes(tour.id);
-              if (activeTab === 'zanskar') return tour.id === 'zanskar-umling-la';
+              if (activeTab === 'zanskar') return ['zanskar-umling-la', 'suru-zanskar-valley'].includes(tour.id);
               return true;
             }).map((tour) => (
               <div key={tour.id} className="animate-fade-in-up">
