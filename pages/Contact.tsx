@@ -4,7 +4,7 @@ import { ADDRESS_MAIN, ADDRESS_OFFICE, CONTACT_NUMBERS, EMAIL, FOUNDER_NAME, MAP
 
 const Contact: React.FC = () => {
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white min-h-screen pt-[180px] md:pt-[200px]">
       {/* Header */}
       <div className="bg-mountain-blue py-20 text-white">
         <div className="max-w-7xl mx-auto px-4 text-center">
@@ -15,7 +15,7 @@ const Contact: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 mb-20">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          
+
           {/* Contact Info Cards */}
           <div className="bg-white p-10 rounded-2xl shadow-2xl border border-slate-100 text-center flex flex-col items-center">
             <div className="text-4xl mb-6 text-tibetan-red">📍</div>
@@ -50,10 +50,10 @@ const Contact: React.FC = () => {
 
         {/* Map Placeholder/CTA */}
         <div className="mt-16 bg-slate-100 rounded-3xl overflow-hidden h-[500px] relative">
-          <img 
-            src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=2000&auto=format&fit=crop" 
-            className="w-full h-full object-cover grayscale opacity-30" 
-            alt="Leh Map" 
+          <img
+            src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=2000&auto=format&fit=crop"
+            className="w-full h-full object-cover grayscale opacity-30"
+            alt="Leh Map"
           />
           <div className="absolute inset-0 flex items-center justify-center p-4">
             <div className="bg-white p-10 rounded-3xl shadow-2xl max-w-lg text-center border-4 border-golden-yellow">
@@ -61,7 +61,7 @@ const Contact: React.FC = () => {
               <p className="text-slate-600 font-light mb-8">
                 We are located in the heart of Leh Main Market, near the Samsung showroom. Stop by for a cup of Ladakhi Butter Tea and let's talk about your next adventure!
               </p>
-              <a 
+              <a
                 href={MAPS_URL}
                 target="_blank"
                 rel="noreferrer"
