@@ -16,6 +16,7 @@ import BlogDetail from './pages/BlogDetail';
 import Booking from './pages/Booking';
 import JourneyInFrames from './pages/JourneyInFrames';
 import Terms from './pages/Terms';
+import PackingList from './pages/PackingList';
 
 // Enhanced dynamic header height measurement hook
 function useHeaderHeightVar() {
@@ -138,6 +139,7 @@ const App: React.FC = () => {
             <Route path="/journey-in-frames" element={<JourneyInFrames />} />
             <Route path="/booking" element={<Booking />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/packing-list" element={<PackingList />} />
           </Routes>
         </main>
         <Footer />

@@ -187,6 +187,10 @@ const Navbar: React.FC = () => {
               BLOGS
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-mountain-blue transition-all duration-300 group-hover:w-full"></span>
             </Link>
+            <Link to="/packing-list" className="text-slate-800 hover:text-mountain-blue transition-all duration-300 uppercase tracking-[0.15em] font-black text-[13px] relative group">
+              PACKING TOOL
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-mountain-blue transition-all duration-300 group-hover:w-full"></span>
+            </Link>
 
             <a
               href={`tel:${CONTACT_NUMBERS[0]}`}

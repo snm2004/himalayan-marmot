@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { TOUR_PACKAGES, CANCELLATION_POLICIES } from '../constants';
-import RouteMap from '../components/RouteMap';
+import InteractiveMap from '../components/InteractiveMap';
 import HotelDetailsTable from '../components/HotelDetailsTable';
 
 const PackageDetail: React.FC = () => {
@@ -99,8 +99,8 @@ const PackageDetail: React.FC = () => {
 
             {/* Interactive Route Map (New Feature) */}
             {tour.routePoints && tour.routePoints.length > 0 && (
-              <div className="mb-12">
-                <RouteMap points={tour.routePoints} title={tour.title} />
+              <div className="mb-12 h-[500px] w-full rounded-[3rem] overflow-hidden shadow-2xl border border-slate-200 relative z-0">
+                <InteractiveMap routePoints={tour.routePoints} />
               </div>
             )}
 
