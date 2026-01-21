@@ -279,7 +279,7 @@ const Navbar: React.FC = () => {
 
       {/* Enhanced Mobile Drawer */}
       {isOpen && (
-        <div className="lg:hidden bg-linear-to-b from-white to-gray-50/50 border-t border-slate-200 pb-12 px-6 space-y-2 shadow-2xl animate-slide-up overflow-y-auto max-h-[80vh] backdrop-blur-sm">
+        <div className="lg:hidden bg-linear-to-b from-white to-gray-50/50 border-t border-slate-200 pb-20 px-6 space-y-2 shadow-2xl animate-slide-up overflow-y-auto max-h-[calc(100vh-80px)] backdrop-blur-sm">
           <div className="pt-8 pb-4">
             <form onSubmit={handleSearch} className="relative">
               <input
@@ -309,6 +309,13 @@ const Navbar: React.FC = () => {
           <Link to="/journey-in-frames" onClick={() => setIsOpen(false)} className="py-5 text-sm font-black border-b border-slate-100 text-slate-800 uppercase tracking-widest flex justify-between items-center hover:bg-blue-50 hover:text-mountain-blue transition-all duration-300 rounded-lg px-2 group">
             JOURNEY IN FRAMES <span className="text-slate-300 group-hover:text-mountain-blue transition-all duration-300 transform group-hover:translate-x-1">→</span>
           </Link>
+          <Link to="/blogs" onClick={() => setIsOpen(false)} className="py-5 text-sm font-black border-b border-slate-100 text-slate-800 uppercase tracking-widest flex justify-between items-center hover:bg-blue-50 hover:text-mountain-blue transition-all duration-300 rounded-lg px-2 group">
+            BLOGS <span className="text-slate-300 group-hover:text-mountain-blue transition-all duration-300 transform group-hover:translate-x-1">→</span>
+          </Link>
+          <Link to="/packing-list" onClick={() => setIsOpen(false)} className="py-5 text-sm font-black border-b border-slate-100 text-slate-800 uppercase tracking-widest flex justify-between items-center hover:bg-blue-50 hover:text-mountain-blue transition-all duration-300 rounded-lg px-2 group">
+            PACKING TOOL <span className="text-slate-300 group-hover:text-mountain-blue transition-all duration-300 transform group-hover:translate-x-1">→</span>
+          </Link>
+
           <div className="py-5 border-b border-slate-50">
             <p className="text-[10px] font-black text-slate-400 mb-4 uppercase tracking-widest">Local Expeditions</p>
             <div className="grid grid-cols-1 gap-4">
