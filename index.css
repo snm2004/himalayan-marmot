@@ -70,3 +70,56 @@
   z-index: 10000;
   background: #fff;
 }
+
+@media print {
+  @page {
+    margin: 20mm;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  /* Hide UI elements */
+  .no-print,
+  nav,
+  footer,
+  .footer,
+  button,
+  header {
+    display: none !important;
+  }
+
+  /* Reset layout for print */
+  #root,
+  .app,
+  main {
+    display: block !important;
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  /* Fix container width */
+  .max-w-4xl {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Ensure checklist items look good */
+  .bg-white {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
+
+  /* Show print-only elements */
+  .print-only {
+    display: block !important;
+  }
+}
+
+/* Helper for things that should only show in print */
+.print-only {
+  display: none;
+}

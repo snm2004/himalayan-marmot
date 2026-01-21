@@ -22,10 +22,22 @@ const BASE_ITEMS: PackingItem[] = [
     { id: 'doc-3', label: 'Medical Insurance Card', category: 'Documents', requiredFor: ['all'], isChecked: false },
     { id: 'doc-4', label: 'Emergency Contact Numbers (Laminated)', category: 'Documents', requiredFor: ['all'], isChecked: false },
 
+    // ESSENTIALS (New)
+    { id: 'ess-1', label: 'Cash (Small Denominations - ATMs rare)', category: 'Essentials', requiredFor: ['all'], isChecked: false },
+    { id: 'ess-2', label: 'Reusable Water Bottle', category: 'Essentials', requiredFor: ['all'], isChecked: false },
+    { id: 'ess-3', label: 'Power Strip (for multiple devices)', category: 'Gadgets', requiredFor: ['all'], isChecked: false },
+    { id: 'ess-4', label: 'Dry Fruits / Energy Bars', category: 'Essentials', requiredFor: ['all'], isChecked: false },
+
+    // TOILETRIES (New)
+    { id: 'toil-1', label: 'Sunscreen (SPF 50+)', category: 'Toiletries', requiredFor: ['all'], isChecked: false },
+    { id: 'toil-2', label: 'Lip Balm (High UV protection)', category: 'Toiletries', requiredFor: ['all'], isChecked: false },
+    { id: 'toil-3', label: 'Moisturizer / Cold Cream', category: 'Toiletries', requiredFor: ['all'], isChecked: false },
+    { id: 'toil-4', label: 'Wet Wipes & Toilet Paper', category: 'Toiletries', requiredFor: ['all'], isChecked: false },
+
     // RIDING GEAR
-    { id: 'gear-1', label: 'CE Level 2 Riding Jacket', category: 'Riding Gear', requiredFor: ['Solo Rider', 'Pillion'], isChecked: false },
+    { id: 'gear-1', label: 'CE Level 2 Riding Jacket (Check if provided)', category: 'Riding Gear', requiredFor: ['Solo Rider', 'Pillion'], isChecked: false },
     { id: 'gear-2', label: 'Waterproof Riding Gloves (2 Pairs)', category: 'Riding Gear', requiredFor: ['Solo Rider', 'Pillion'], isChecked: false },
-    { id: 'gear-3', label: 'Knee Guards / Bionic Knees', category: 'Riding Gear', requiredFor: ['Solo Rider', 'Pillion'], isChecked: false },
+    { id: 'gear-3', label: 'Knee Guards / Bionic Knees (Check if provided)', category: 'Riding Gear', requiredFor: ['Solo Rider', 'Pillion'], isChecked: false },
     { id: 'gear-4', label: 'Full Face Helmet (DOT/ISI)', category: 'Riding Gear', requiredFor: ['Solo Rider', 'Pillion'], isChecked: false },
     { id: 'gear-5', label: 'Balaclava (Skull Cap)', category: 'Riding Gear', requiredFor: ['Solo Rider', 'Pillion'], isChecked: false },
     { id: 'gear-6', label: 'Raincoat / Poncho', category: 'Riding Gear', requiredFor: ['all'], isChecked: false }, // Everyone needs rain protection in July/Aug
@@ -35,12 +47,14 @@ const BASE_ITEMS: PackingItem[] = [
     { id: 'cloth-2', label: 'Fleece Jacket', category: 'Clothing', requiredFor: ['all'], isChecked: false },
     { id: 'cloth-3', label: 'Quick Dry T-Shirts', category: 'Clothing', requiredFor: ['all'], isChecked: false },
     { id: 'cloth-4', label: 'UV Sunglasses', category: 'Clothing', requiredFor: ['all'], isChecked: false },
+    { id: 'cloth-5', label: 'Woolen Socks (3-4 pairs)', category: 'Clothing', requiredFor: ['all'], isChecked: false },
 
     // MEDICAL
     { id: 'med-1', label: 'Diamox (Acetazolamide) - Consult Doctor', category: 'Medical Kit', requiredFor: ['all'], isChecked: false },
     { id: 'med-2', label: 'Camphor (Kapoor) - Helps breathing', category: 'Medical Kit', requiredFor: ['all'], isChecked: false },
     { id: 'med-3', label: 'ORS Packets (Hydration is key)', category: 'Medical Kit', requiredFor: ['all'], isChecked: false },
     { id: 'med-4', label: 'Pain Relief Spray (Volini/Moov)', category: 'Medical Kit', requiredFor: ['all'], isChecked: false },
+    { id: 'med-5', label: 'Basic First Aid (Bandages, Betadine)', category: 'Medical Kit', requiredFor: ['all'], isChecked: false },
 
     // TECH
     { id: 'tech-1', label: 'Power Bank (20,000 mAh)', category: 'Gadgets', requiredFor: ['all'], isChecked: false },
@@ -130,11 +144,23 @@ const PackingList: React.FC = () => {
                 description="Don't forget the essentials! Interactive packing checklist for your Ladakh motorcycle expedition."
                 url="/packing-list"
             />
-            <div className="min-h-screen bg-slate-50 pt-[120px] pb-20">
+            {/* Print Only Header */}
+            <div className="print-only p-8 text-center border-b-2 border-slate-800 mb-8">
+                <img src="/logo.png" alt="Himalayan Marmot" className="h-16 mx-auto mb-4" />
+                <h1 className="text-4xl font-oswald font-bold uppercase">Expedition Checklist</h1>
+                <p className="text-sm mt-2">Generated from Himalayan Marmot Packing Tool</p>
+                <div className="mt-4 flex justify-between text-xs font-bold border-t border-slate-300 pt-2">
+                    <span>Month: {preferences.month}</span>
+                    <span>Type: {preferences.riderType}</span>
+                    <span>Duration: {preferences.duration}</span>
+                </div>
+            </div>
+
+            <div className="min-h-screen bg-slate-50 pt-[120px] pb-20 no-print-padding">
 
                 <div className="max-w-4xl mx-auto px-4">
-                    {/* Header */}
-                    <div className="text-center mb-12">
+                    {/* Header - Screen Only */}
+                    <div className="text-center mb-12 no-print">
                         <h1 className="text-4xl md:text-6xl font-oswald font-black text-mountain-blue uppercase mb-4 tracking-tighter">
                             PACK YOUR <span className="text-tibetan-red">BAGS</span>
                         </h1>
@@ -204,8 +230,8 @@ const PackingList: React.FC = () => {
                         </div>
                     ) : (
                         <div className="animate-fade-in-up">
-                            {/* Progress Bar */}
-                            <div className="bg-white p-6 rounded-3xl shadow-lg border border-slate-100 mb-8 sticky top-[100px] z-30">
+                            {/* Progress Bar - Screen Only */}
+                            <div className="bg-white p-6 rounded-3xl shadow-lg border border-slate-100 mb-8 sticky z-30 no-print" style={{ top: 'calc(var(--headerH) + 20px)' }}>
                                 <div className="flex justify-between items-end mb-2">
                                     <div>
                                         <h3 className="text-xl font-oswald font-bold text-mountain-blue">PACKING PROGRESS</h3>
@@ -221,28 +247,28 @@ const PackingList: React.FC = () => {
                                 </div>
                             </div>
 
-                            <div className="space-y-8">
+                            <div className="space-y-8 print:space-y-4">
                                 {categories.map(cat => {
                                     const catItems = items.filter(i => i.category === cat);
                                     const allChecked = catItems.every(i => i.isChecked);
 
                                     return (
-                                        <div key={cat} className={`bg-white rounded-[2rem] p-6 md:p-8 shadow-xl border-l-[6px] transition-all ${allChecked ? 'border-green-400 opacity-60' : 'border-golden-yellow'}`}>
-                                            <h3 className="text-2xl font-oswald font-bold uppercase mb-6 flex items-center">
+                                        <div key={cat} className={`bg-white rounded-[2rem] p-6 md:p-8 shadow-xl border-l-[6px] transition-all print:shadow-none print:rounded-none print:p-0 print:mb-4 print:border-none ${allChecked ? 'border-green-400 opacity-60 print:opacity-100' : 'border-golden-yellow'}`}>
+                                            <h3 className="text-2xl font-oswald font-bold uppercase mb-6 flex items-center print:mb-2 print:text-lg print:border-b print:border-slate-800">
                                                 {cat}
-                                                {allChecked && <span className="ml-3 text-green-500 text-lg">✅ DONE</span>}
+                                                {allChecked && <span className="ml-3 text-green-500 text-lg no-print">✅ DONE</span>}
                                             </h3>
-                                            <div className="space-y-3">
+                                            <div className="space-y-3 print:space-y-1">
                                                 {catItems.map(item => (
                                                     <div
                                                         key={item.id}
                                                         onClick={() => toggleItem(item.id)}
-                                                        className={`flex items-center p-4 rounded-xl cursor-pointer transition-all ${item.isChecked ? 'bg-slate-50 text-slate-400' : 'bg-slate-50 hover:bg-blue-50 text-slate-800'}`}
+                                                        className={`flex items-center p-4 rounded-xl cursor-pointer transition-all ${item.isChecked ? 'bg-slate-50 text-slate-400' : 'bg-slate-50 hover:bg-blue-50 text-slate-800'} print:bg-white print:p-1 print:text-black`}
                                                     >
-                                                        <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center mr-4 transition-all ${item.isChecked ? 'bg-green-500 border-green-500' : 'border-slate-300'}`}>
-                                                            {item.isChecked && <span className="text-white text-xs font-bold">✓</span>}
+                                                        <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center mr-4 transition-all ${item.isChecked ? 'bg-green-500 border-green-500 print:bg-white print:border-black' : 'border-slate-300 print:border-black'} print:w-4 print:h-4`}>
+                                                            {item.isChecked && <span className="text-white text-xs font-bold print:text-black">✓</span>}
                                                         </div>
-                                                        <span className={`font-bold text-sm md:text-base ${item.isChecked ? 'line-through decoration-2' : ''}`}>
+                                                        <span className={`font-bold text-sm md:text-base ${item.isChecked ? 'line-through decoration-2 print:no-underline' : ''}`}>
                                                             {item.label}
                                                         </span>
                                                     </div>
@@ -253,12 +279,18 @@ const PackingList: React.FC = () => {
                                 })}
                             </div>
 
-                            <div className="mt-12 text-center bg-mountain-blue text-white p-8 rounded-[2rem]">
+                            <div className="mt-12 text-center bg-mountain-blue text-white p-8 rounded-[2rem] no-print">
                                 <h2 className="text-2xl font-oswald font-bold uppercase mb-4">All Packed?</h2>
                                 <p className="mb-6 opacity-80">Make sure to verify your documents twice! We can't wait to see you in Leh.</p>
                                 <button onClick={() => window.print()} className="bg-white text-mountain-blue px-8 py-3 rounded-xl font-bold uppercase tracking-widest hover:bg-golden-yellow transition-colors">
                                     Print CheckList
                                 </button>
+                            </div>
+
+                            {/* Print Footer */}
+                            <div className="print-only mt-8 pt-4 border-t border-slate-300 text-center text-xs text-slate-500">
+                                <p>Safe Travels! - himalayanmarmot.com</p>
+                                <p>+91 6006114260 | himalayanmarmot19@gmail.com</p>
                             </div>
                         </div>
                     )}
