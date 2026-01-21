@@ -156,7 +156,7 @@ const PackingList: React.FC = () => {
                 </div>
             </div>
 
-            <div className="min-h-screen bg-slate-50 pt-[120px] pb-20 no-print-padding">
+            <div className="min-h-screen bg-slate-50 pt-[200px] pb-20 no-print-padding">
 
                 <div className="max-w-4xl mx-auto px-4">
                     {/* Header - Screen Only */}
