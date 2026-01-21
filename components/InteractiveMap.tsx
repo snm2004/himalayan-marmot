@@ -50,7 +50,16 @@ const COORDINATES: Record<string, [number, number]> = {
     "Magnetic Hill": [34.1706, 77.3491],
     "Sangam": [34.1977, 77.3371],
     "Turtuk": [34.8436, 76.8290],
-    "Thang": [34.8872, 76.7960]
+    "Thang": [34.8872, 76.7960],
+    // Spiti Valley Locations
+    "Kaza": [32.2252, 78.0706],
+    "Tabo": [32.0934, 78.3813],
+    "Chandratal": [32.4833, 77.6167],
+    "Kunzum La": [32.4042, 77.6253],
+    "Kunzum Pass": [32.4042, 77.6253],
+    "Serchu": [32.9100, 77.5800], // Alias for Sarchu
+    "Delhi": [28.6139, 77.2090],
+    "New Delhi": [28.6139, 77.2090]
 };
 
 // Component to auto-zoom to fit bounds

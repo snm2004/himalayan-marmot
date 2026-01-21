@@ -85,10 +85,13 @@ export const TOUR_PACKAGES: TourPackage[] = [
     ],
     exclusions: COMMON_EXCLUSIONS,
     routePoints: [
+      { name: "Delhi", x: 0, y: 0, elevation: "216m" },
       { name: "Leh", x: 20, y: 60, elevation: "3,500m" },
       { name: "Khardung La", x: 40, y: 20, elevation: "5,359m" },
       { name: "Nubra", x: 60, y: 70, elevation: "3,000m" },
-      { name: "Pangong", x: 80, y: 45, elevation: "4,250m" }
+      { name: "Pangong", x: 80, y: 45, elevation: "4,250m" },
+      { name: "Leh", x: 20, y: 60, elevation: "3,500m" },
+      { name: "Delhi", x: 0, y: 0, elevation: "216m" }
     ],
     variants: []
   },
@@ -124,12 +127,16 @@ export const TOUR_PACKAGES: TourPackage[] = [
     ],
     exclusions: COMMON_EXCLUSIONS,
     routePoints: [
+      { name: "Delhi", x: 0, y: 0, elevation: "216m" },
       { name: "Manali", x: 10, y: 95, elevation: "2,050m" },
       { name: "Sarchu", x: 30, y: 45, elevation: "4,290m" },
       { name: "Leh", x: 50, y: 60, elevation: "3,500m" },
       { name: "Pangong", x: 75, y: 45, elevation: "4,250m" },
       { name: "Umling La", x: 90, y: 10, elevation: "5,882m" },
-      { name: "Tso Moriri", x: 80, y: 40, elevation: "4,522m" }
+      { name: "Tso Moriri", x: 80, y: 40, elevation: "4,522m" },
+      { name: "Sarchu", x: 30, y: 45, elevation: "4,290m" },
+      { name: "Manali", x: 10, y: 95, elevation: "2,050m" },
+      { name: "Delhi", x: 0, y: 0, elevation: "216m" }
     ]
   },
   {
@@ -164,12 +171,14 @@ export const TOUR_PACKAGES: TourPackage[] = [
     ],
     exclusions: COMMON_EXCLUSIONS,
     routePoints: [
+      { name: "Delhi", x: 0, y: 0, elevation: "216m" },
       { name: "Manali", x: 10, y: 95, elevation: "2,050m" },
       { name: "Sarchu", x: 30, y: 45, elevation: "4,290m" },
       { name: "Leh", x: 50, y: 60, elevation: "3,500m" },
       { name: "Pangong", x: 75, y: 45, elevation: "4,250m" },
       { name: "Kargil", x: 35, y: 80, elevation: "2,676m" },
-      { name: "Srinagar", x: 25, y: 90, elevation: "1,585m" }
+      { name: "Srinagar", x: 25, y: 90, elevation: "1,585m" },
+      { name: "Delhi", x: 0, y: 0, elevation: "216m" }
     ]
   },
   {
@@ -204,13 +213,16 @@ export const TOUR_PACKAGES: TourPackage[] = [
     ],
     exclusions: COMMON_EXCLUSIONS,
     routePoints: [
+      { name: "Delhi", x: 0, y: 0, elevation: "216m" },
       { name: "Srinagar", x: 20, y: 90, elevation: "1,585m" },
       { name: "Kargil", x: 30, y: 80, elevation: "2,676m" },
       { name: "Leh", x: 50, y: 60, elevation: "3,500m" },
+      { name: "Nubra", x: 60, y: 70, elevation: "3,000m" },
       { name: "Pangong", x: 75, y: 45, elevation: "4,250m" },
       { name: "Hanle", x: 85, y: 44, elevation: "4,300m" },
       { name: "Tso Moriri", x: 80, y: 40, elevation: "4,522m" },
-      { name: "Manali", x: 10, y: 95, elevation: "2,050m" }
+      { name: "Manali", x: 10, y: 95, elevation: "2,050m" },
+      { name: "Delhi", x: 0, y: 0, elevation: "216m" }
     ]
   },
   {
@@ -247,12 +259,18 @@ export const TOUR_PACKAGES: TourPackage[] = [
     ],
     exclusions: COMMON_EXCLUSIONS,
     routePoints: [
+      { name: "Delhi", x: 0, y: 0, elevation: "216m" },
       { name: "Manali", x: 10, y: 95, elevation: "2,050m" },
       { name: "Jispa", x: 25, y: 65, elevation: "3,200m" },
       { name: "Padum", x: 40, y: 58, elevation: "3,669m" },
       { name: "Leh", x: 50, y: 60, elevation: "3,500m" },
+      { name: "Nubra", x: 60, y: 70, elevation: "3,000m" },
       { name: "Pangong", x: 75, y: 45, elevation: "4,250m" },
-      { name: "Umling La", x: 90, y: 10, elevation: "5,882m" }
+      { name: "Hanle", x: 85, y: 40, elevation: "4,300m" },
+      { name: "Umling La", x: 90, y: 10, elevation: "5,882m" },
+      { name: "Tso Moriri", x: 80, y: 40, elevation: "4,522m" },
+      { name: "Manali", x: 10, y: 95, elevation: "2,050m" },
+      { name: "Delhi", x: 0, y: 0, elevation: "216m" }
     ],
   },
   {
@@ -392,13 +410,16 @@ export const TOUR_PACKAGES: TourPackage[] = [
     ],
     exclusions: COMMON_EXCLUSIONS,
     routePoints: [
+      { name: "Delhi", x: 0, y: 0, elevation: "216m" },
       { name: "Leh", x: 20, y: 60, elevation: "3,500m" },
       { name: "Nubra", x: 50, y: 70, elevation: "3,000m" },
       { name: "Turtuk", x: 10, y: 75, elevation: "2,800m" },
       { name: "Pangong", x: 70, y: 45, elevation: "4,250m" },
       { name: "Hanle", x: 80, y: 44, elevation: "4,300m" },
       { name: "Umling La", x: 90, y: 10, elevation: "5,882m" },
-      { name: "Tso Moriri", x: 80, y: 40, elevation: "4,522m" }
+      { name: "Tso Moriri", x: 80, y: 40, elevation: "4,522m" },
+      { name: "Leh", x: 20, y: 60, elevation: "3,500m" },
+      { name: "Delhi", x: 0, y: 0, elevation: "216m" }
     ]
   },
   {
@@ -432,6 +453,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
     ],
     exclusions: COMMON_EXCLUSIONS,
     routePoints: [
+      { name: "Delhi", x: 0, y: 0, elevation: "216m" },
       { name: "Leh", x: 20, y: 60, elevation: "3,500m" },
       { name: "Suru Valley", x: 30, y: 80, elevation: "3,000m" },
       { name: "Padum", x: 40, y: 58, elevation: "3,669m" },
@@ -440,7 +462,53 @@ export const TOUR_PACKAGES: TourPackage[] = [
       { name: "Hanle", x: 85, y: 44, elevation: "4,300m" },
       { name: "Umling La", x: 90, y: 10, elevation: "5,882m" },
       { name: "Pangong", x: 70, y: 45, elevation: "4,250m" },
-      { name: "Nubra", x: 50, y: 70, elevation: "3,000m" }
+      { name: "Nubra", x: 50, y: 70, elevation: "3,000m" },
+      { name: "Leh", x: 20, y: 60, elevation: "3,500m" },
+      { name: "Delhi", x: 0, y: 0, elevation: "216m" }
+    ]
+  },
+  {
+    id: "spiti-bike-tour",
+    title: "Spiti Bike Tour",
+    duration: "7D/6N",
+    highlights: ["Manali", "Kaza", "Tabo", "Chandratal", "Kunzum Pass", "Hikkim", "Langza", "Best for: Adventure & Culture"],
+    startingPrice: "₹28,499",
+    priceTiers: [
+      { bike: "RE Himalayan 411cc", dual: "₹28,499", solo: "₹33,499" },
+      { bike: "RE Himalayan 450cc", dual: "₹32,499", solo: "₹37,499" }
+    ],
+    image: "/spity.png",
+    pdfUrl: "/packages/Spiti Bike tour 2026.pdf",
+    itinerary: [
+      { day: 1, title: "Delhi – Manali", description: "Begin your Spiti bike trip by arriving in the vibrant hill town of Manali. Spend the day exploring local attractions such as the Hadimba Temple, Manu Temple, and the bustling Mall Road. Acclimate to the altitude, and soak in the scenic beauty." },
+      { day: 2, title: "Manali to Kaza", description: "Embark on a thrilling ride from Manali to Kaza, the heart of Spiti Valley. Enjoy the 9 Km Atal tunnel stretch and navigate through the challenging terrain of the Kunzum Pass." },
+      { day: 3, title: "Kaza to Dhankar (via Hikkim, Komic, Langza)", description: "Ride through the fascinating Spiti Valley, visiting high-altitude villages. See the highest post office at Hikkim, fossil-rich Langza, and the serene Dhankar Monastery." },
+      { day: 4, title: "Dhankhar to Tabo", description: "Visit the Dhankar Monastery, the old royal seat of Spiti. Then proceed to Tabo, famous for its ancient Buddhist monastery." },
+      { day: 5, title: "Tabo to Chandartal", description: "Head towards the mesmerizing Chandartal Lake (Moon Lake). The route takes you through picturesque landscapes and the high-altitude Kunzum Pass." },
+      { day: 6, title: "Chandartal to Manali", description: "Retrace your route back to Manali, crossing the Batal bridge and stopping at Cha-Cha Cha-Chi Restaurant. Celebrate the completion of your epic journey." },
+      { day: 7, title: "Departure", description: "Depart from Manali back to your home, carrying a treasure trove of memories from the Himalayas." }
+    ],
+    inclusions: [
+      ...COMMON_INCLUSIONS,
+      "Hotel Category: Deluxe hotels/Camps",
+      "Meal Plan: MAP (Breakfast + Dinner)",
+      "Volvo bus from Delhi to Manali / Manali to Delhi",
+      "Experience Marshall & Mechanic"
+    ],
+    exclusions: [
+      ...COMMON_EXCLUSIONS,
+      "Monastery fee",
+      "Wildlife fees",
+      "Ladakh Environment Fee (INR 30/-)"
+    ],
+    routePoints: [
+      { name: "Delhi", x: 0, y: 0, elevation: "216m" },
+      { name: "Manali", x: 10, y: 95, elevation: "2,050m" },
+      { name: "Kaza", x: 60, y: 80, elevation: "3,800m" },
+      { name: "Tabo", x: 70, y: 85, elevation: "3,280m" },
+      { name: "Chandratal", x: 50, y: 70, elevation: "4,250m" },
+      { name: "Manali", x: 10, y: 95, elevation: "2,050m" },
+      { name: "Delhi", x: 0, y: 0, elevation: "216m" }
     ]
   }
 ];
@@ -489,8 +557,8 @@ export const TOUR_CATEGORIES = {
   },
   GRAND_CIRCUITS: {
     title: "Grand Circuits",
-    subtitle: "10-12 Days | Multi-City",
-    tours: ["suru-zanskar-valley", "manali-ladakh-manali", "manali-leh-srinagar", "srinagar-leh-manali", "zanskar-umling-la"]
+    subtitle: "7-12 Days | Multi-City",
+    tours: ["spiti-bike-tour", "suru-zanskar-valley", "manali-ladakh-manali", "manali-leh-srinagar", "srinagar-leh-manali", "zanskar-umling-la"]
   }
 };
 
