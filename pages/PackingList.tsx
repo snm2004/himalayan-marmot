@@ -258,6 +258,7 @@ const PackingList: React.FC = () => {
                 )}
             </div>
         </div>
+      </>
     );
 };
 

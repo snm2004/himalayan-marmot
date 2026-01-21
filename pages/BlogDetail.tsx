@@ -4,6 +4,7 @@ import { BLOG_POSTS_DETAILED } from '../constants';
 import { REMAINING_BLOG_POSTS } from '../blog-content-remaining';
 import { BLOG_POSTS_PART2 } from '../blog-content-part2';
 import { BLOG_POSTS_PART3 } from '../blog-content-part3';
+import SEO from '../components/SEO';
 
 // Combine all blog posts
 const ALL_BLOG_POSTS = [
@@ -20,6 +21,7 @@ const BlogDetail: React.FC = () => {
   if (!post) {
     return (
       <div className="min-h-screen bg-slate-50 pt-[180px] md:pt-[200px] pb-20">
+        <SEO title="Blog Not Found" description="The requested blog post could not be found." />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-oswald font-black text-mountain-blue mb-4">Blog Post Not Found</h1>
           <Link to="/blogs" className="text-tibetan-red hover:underline font-bold">
@@ -32,10 +34,17 @@ const BlogDetail: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-50 pt-[180px] md:pt-[200px] pb-20">
+      <SEO
+        title={post.title}
+        description={post.excerpt}
+        image={post.image}
+        url={`/blog/${post.id}`}
+        keywords={`Ladakh blog, ${post.category}, ${post.title}`}
+      />
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Button */}
-        <Link 
-          to="/blogs" 
+        <Link
+          to="/blogs"
           className="inline-flex items-center text-mountain-blue hover:text-tibetan-red font-bold mb-8 transition-colors"
         >
           <span className="mr-2">←</span> Back to All Blogs
@@ -43,8 +52,8 @@ const BlogDetail: React.FC = () => {
 
         {/* Hero Image */}
         <div className="relative h-96 rounded-2xl overflow-hidden mb-8 shadow-2xl">
-          <img 
-            src={post.image} 
+          <img
+            src={post.image}
             alt={post.title}
             className="w-full h-full object-cover"
           />
@@ -81,7 +90,7 @@ const BlogDetail: React.FC = () => {
                   {section.heading}
                 </h2>
               )}
-              
+
               {section.paragraphs && section.paragraphs.map((para, pIndex) => (
                 <p key={pIndex} className="text-slate-700 leading-relaxed mb-4 text-lg">
                   {para}
@@ -130,14 +139,14 @@ const BlogDetail: React.FC = () => {
           <h3 className="text-3xl font-oswald font-bold mb-4">Ready to Experience This Adventure?</h3>
           <p className="text-lg mb-8 opacity-90">Join us on an unforgettable journey through the Himalayas</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              to="/tours" 
+            <Link
+              to="/tours"
               className="bg-golden-yellow text-mountain-blue px-8 py-4 rounded-full font-bold hover:bg-white transition-colors"
             >
               View All Tours
             </Link>
-            <Link 
-              to="/contact" 
+            <Link
+              to="/contact"
               className="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-mountain-blue transition-colors"
             >
               Contact Us
@@ -153,15 +162,15 @@ const BlogDetail: React.FC = () => {
               .filter(p => p.category === post.category && p.id !== post.id)
               .slice(0, 3)
               .map(relatedPost => (
-                <Link 
+                <Link
                   key={relatedPost.id}
                   to={`/blog/${relatedPost.id}`}
                   className="group"
                 >
                   <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
                     <div className="h-48 overflow-hidden">
-                      <img 
-                        src={relatedPost.image} 
+                      <img
+                        src={relatedPost.image}
                         alt={relatedPost.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />

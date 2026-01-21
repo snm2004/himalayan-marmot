@@ -4,6 +4,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { TOUR_PACKAGES, CANCELLATION_POLICIES } from '../constants';
 import InteractiveMap from '../components/InteractiveMap';
 import HotelDetailsTable from '../components/HotelDetailsTable';
+import SEO from '../components/SEO';
 
 const PackageDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -39,6 +40,7 @@ const PackageDetail: React.FC = () => {
   if (!tour) {
     return (
       <div className="min-h-screen flex items-center justify-center">
+        <SEO title="Tour Not Found" description="The requested tour package could not be found." />
         <div className="text-center">
           <h2 className="text-3xl font-oswald mb-4">Tour Not Found</h2>
           <Link to="/" className="text-mountain-blue underline">Return Home</Link>
@@ -57,6 +59,13 @@ const PackageDetail: React.FC = () => {
 
   return (
     <div className="bg-white relative" style={{ paddingTop: 'var(--headerH, 100px)' }}>
+      <SEO
+        title={tour.title}
+        description={`Book ${tour.title} (${displayDuration}). Highlights: ${tour.highlights.join(', ')}. Starting from ${displayPrice}.`}
+        image={tour.image}
+        url={`/package/${tour.id}`}
+        keywords={`${tour.title}, Ladakh bike trip, ${tour.highlights.join(', ')}`}
+      />
       {/* Hero Header */}
       <div className="relative min-h-[50vh] flex items-center justify-center text-white py-12 md:py-20">
         <div className="absolute inset-0 z-0">

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { TOUR_PACKAGES, CONTACT_NUMBERS } from '../constants';
+import SEO from '../components/SEO';
 
 const PHONE_RULES: Record<string, { len: number; placeholder: string; label: string; format: (val: string) => string }> = {
   "+91": {

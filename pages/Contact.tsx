@@ -1,10 +1,16 @@
 
 import React from 'react';
 import { ADDRESS_MAIN, ADDRESS_OFFICE, CONTACT_NUMBERS, EMAIL, FOUNDER_NAME, MAPS_URL } from '../constants';
+import SEO from '../components/SEO';
 
 const Contact: React.FC = () => {
   return (
     <div className="bg-white min-h-screen pt-[180px] md:pt-[200px]">
+      <SEO
+        title="Contact Us"
+        description="Get in touch with Himalayan Marmot. Visit our office in Leh or contact us via WhatsApp for bookings and inquiries."
+        url="/contact"
+      />
       {/* Header */}
       <div className="bg-mountain-blue py-20 text-white">
         <div className="max-w-7xl mx-auto px-4 text-center">

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { TOUR_PACKAGES, TOUR_CATEGORIES } from '../constants';
 import PackageCard from '../components/PackageCard';
+import SEO from '../components/SEO';
 
 const Tours: React.FC = () => {
   const getCategoryTours = (categoryKey: keyof typeof TOUR_CATEGORIES) => {
@@ -13,6 +14,11 @@ const Tours: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-50 pt-[180px] md:pt-[200px]">
+      <SEO
+        title="All Bike Tours"
+        description="Browse our complete range of Ladakh motorcycle expeditions. From local Leh circuits to grand cross-Himalayan journeys."
+        url="/tours"
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-mountain-blue via-slate-800 to-slate-900 text-white py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -42,11 +48,11 @@ const Tours: React.FC = () => {
               {TOUR_CATEGORIES.LOCAL_EXPEDITIONS.subtitle}
             </p>
             <p className="text-slate-500 max-w-2xl mx-auto">
-              Perfect for first-time visitors to Ladakh. These tours start and end in Leh, 
+              Perfect for first-time visitors to Ladakh. These tours start and end in Leh,
               covering the most iconic destinations with comfortable pacing.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {getCategoryTours('LOCAL_EXPEDITIONS').map((tour) => (
               <PackageCard key={tour!.id} tour={tour!} />
@@ -66,11 +72,11 @@ const Tours: React.FC = () => {
               {TOUR_CATEGORIES.GRAND_CIRCUITS.subtitle}
             </p>
             <p className="text-slate-500 max-w-2xl mx-auto">
-              Epic journeys connecting multiple regions. These comprehensive tours cover 
+              Epic journeys connecting multiple regions. These comprehensive tours cover
               the entire trans-Himalayan route from Kashmir to Himachal Pradesh.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {getCategoryTours('GRAND_CIRCUITS').map((tour) => (
               <PackageCard key={tour!.id} tour={tour!} />
@@ -89,14 +95,14 @@ const Tours: React.FC = () => {
             Join thousands of riders who have experienced the magic of Ladakh with us
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              to="/booking" 
+            <Link
+              to="/booking"
               className="bg-golden-yellow text-mountain-blue px-8 py-4 rounded-full font-bold text-lg hover:bg-white transition-colors"
             >
               Book Your Tour
             </Link>
-            <Link 
-              to="/contact" 
+            <Link
+              to="/contact"
               className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-mountain-blue transition-colors"
             >
               Get Custom Quote

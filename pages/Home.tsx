@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import SEO from '../components/SEO';
 import Hero from '../components/Hero';
 import PackageCard from '../components/PackageCard';
 import TrustSection from '../components/TrustSection';
@@ -20,6 +21,11 @@ const Home: React.FC = () => {
 
   return (
     <>
+      <SEO
+        title="Himalayan Marmot | Authentic Ladakh Bike Tours"
+        description="Experience authentic Ladakh bike tours with local experts. Royal Enfield expeditions to Pangong, Nubra, and Umling La. Book your adventure today!"
+        keywords="Ladakh bike tour, Leh motorcycle expedition, Pangong Lake bike trip, Nubra Valley tour, Royal Enfield rental Ladakh"
+      />
       <Hero />
 
       {/* Why Choose Us Section (Why Himalayan Marmot) */}
