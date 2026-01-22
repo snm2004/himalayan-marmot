@@ -77,7 +77,6 @@ npm run build
 - **Vite 5**: Lightning-fast build tool
 
 ### AI & APIs
-- **Google Gemini 3 Flash**: Advanced language model
 - **Real-time Weather**: Mountain condition monitoring
 - **Maps Integration**: Google Maps for location services
 
