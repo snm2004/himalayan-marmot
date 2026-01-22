@@ -31,7 +31,7 @@ npm run build
 ## 🎯 Features
 
 ### 🤖 AI-Powered Customer Support
-- **Google Gemini Integration**: 24/7 intelligent chatbot
+- **chatbot**: 24/7 intelligent chatbot
 - **Website-Scoped Knowledge**: Trained specifically on Himalayan Marmot data
 - **Natural Language Processing**: Understands customer queries in multiple formats
 - **Quick Actions**: Pre-built responses for common questions
@@ -160,61 +160,6 @@ src/
 - Animated trail effects
 - Real-time elevation tracking
 
-## 🚀 Deployment
-
-### Recommended Hosting
-- **Primary**: Vercel (React/Vite optimized)
-- **Alternative**: Netlify, AWS Amplify
-- **Domain**: himalayan-marmot.com
-
-### Environment Variables
-```bash
-GEMINI_API_KEY=your_google_gemini_api_key
-VITE_APP_ENVIRONMENT=production
-```
-
-### Build Commands
-```bash
-# Development
-npm run dev
-
-# Production build
-npm run build
-
-# Preview production
-npm run preview
-
-# Deploy to Vercel
-vercel --prod
-```
-
-## 📈 SEO & Analytics
-
-### Meta Optimization
-- Complete Open Graph tags
-- Twitter Card integration
-- Schema.org structured data
-- Sitemap generation
-
-### Performance Metrics
-- **First Contentful Paint**: < 1.5s
-- **Largest Contentful Paint**: < 2.5s
-- **Cumulative Layout Shift**: < 0.1
-- **First Input Delay**: < 100ms
-
-## 🔒 Security
-
-### Best Practices
-- Environment variable protection
-- Content Security Policy headers
-- Input sanitization and validation
-- API rate limiting considerations
-
-### Privacy
-- GDPR-compliant data handling
-- Cookie consent management
-- User data protection
-- Secure API communications
 
 ## 📱 Mobile Experience
 
@@ -231,61 +176,11 @@ vercel --prod
 - Add to home screen capability
 - Push notification ready
 
-## 🎯 Business Impact
-
-### Conversion Optimization
-- Strategic CTA placement
-- Trust signal integration
-- Social proof elements
-- Simplified booking flow
-
-### Expected Results
-- **300% increase** in website visitors
-- **200% increase** in booking inquiries
-- **60% reduction** in manual customer support
-- **Premium pricing** justification through professional appearance
-
-## 🏆 Awards & Recognition
-
-### Technical Excellence
-- Modern React 19 implementation
-- TypeScript best practices
-- Accessibility compliance (WCAG 2.1 AA)
-- Performance optimization
-
-### Design Achievement
-- Custom brand identity recreation
-- Mobile-first responsive design
-- User experience optimization
-- Visual hierarchy and typography
-
-## 📞 Support
-
-### Documentation
-- [Project Documentation](./PROJECT_DOCUMENTATION.md)
-- [Technical Specifications](./TECHNICAL_SPECIFICATIONS.md)
-- [Deployment Guide](./DEPLOYMENT_GUIDE.md)
-- [Client Handover](./CLIENT_HANDOVER_DOCUMENT.md)
-
 ### Contact
 - **Technical Support**: [Developer contact]
 - **Business Inquiries**: himalayanmarmot19@gmail.com
 - **Emergency**: +91 6006114260
 
-## 🤝 Contributing
-
-### Development Guidelines
-1. Follow TypeScript best practices
-2. Use Tailwind CSS for styling
-3. Maintain component modularity
-4. Write descriptive commit messages
-5. Test on multiple devices
-
-### Code Style
-- ESLint configuration included
-- Prettier for code formatting
-- Consistent naming conventions
-- Component-based architecture
 
 ## 📄 License
 
