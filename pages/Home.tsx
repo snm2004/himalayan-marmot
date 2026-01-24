@@ -24,7 +24,7 @@ const Home: React.FC = () => {
       <SEO
         title="Himalayan Marmot | Authentic Ladakh Bike Tours"
         description="Experience authentic Ladakh bike tours with local experts. Royal Enfield expeditions to Pangong, Nubra, and Umling La. Book your adventure today!"
-        keywords="Ladakh bike tour, Leh motorcycle expedition, Pangong Lake bike trip, Nubra Valley tour, Royal Enfield rental Ladakh"
+        keywords="Ladakh bike tours, Leh Ladakh motorcycle expeditions, Ladakh tour packages, Bike rental + guide, Himalayan tours, Pangong Lake bike trip, Nubra Valley tour, Royal Enfield rental Ladakh"
       />
       <Hero />
 
@@ -38,7 +38,7 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-tibetan-red font-oswald text-xl font-bold uppercase tracking-[0.4em] mb-4">
-              Complete Tour Collection
+              Complete Ladakh Tour Packages
             </h2>
             <h3 className="text-4xl md:text-6xl font-oswald font-bold text-mountain-blue uppercase tracking-tight mb-8">
               All Expeditions

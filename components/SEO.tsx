@@ -12,8 +12,8 @@ interface SEOProps {
 
 const SEO: React.FC<SEOProps> = ({ title, description, image, url, keywords }) => {
     const siteTitle = "Himalayan Marmot | Authentic Ladakh Bike Tours";
-    const defaultImage = "https://himalayan-marmot.com/himalayan-bike-new.jpg"; // Fallback image
-    const siteUrl = "https://himalayan-marmot.com";
+    const defaultImage = "https://www.himalayanmarmotladakh.com/himalayan-bike-new.jpg"; // Fallback image
+    const siteUrl = "https://www.himalayanmarmotladakh.com";
 
     const fullTitle = title === siteTitle ? title : `${title} | Himalayan Marmot`;
     const absoluteImage = image?.startsWith('http') ? image : `${siteUrl}${image || defaultImage}`;

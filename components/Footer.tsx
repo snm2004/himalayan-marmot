@@ -164,7 +164,10 @@ const Footer: React.FC = () => {
       {/* Bottom Copyright Bar */}
       <div className="bg-black/60 py-10 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-[10px] font-black uppercase tracking-[0.3em] text-slate-600 gap-6 text-center">
-          <p>© {new Date().getFullYear()} {COMPANY_NAME}. ALL RIGHTS RESERVED.</p>
+          <div className="flex flex-col gap-2">
+            <p className="text-slate-500 tracking-[0.2em] font-normal opacity-70">Ladakh Tours | Leh Bike Tours | Motorcycle Expeditions</p>
+            <p>© {new Date().getFullYear()} {COMPANY_NAME}. ALL RIGHTS RESERVED.</p>
+          </div>
           <div className="flex flex-wrap justify-center gap-x-10 gap-y-3">
             <span className="text-cyan-700">LADAKH PRIDE</span>
             <span className="text-slate-800">EXPEDITION SPECIALISTS</span>
