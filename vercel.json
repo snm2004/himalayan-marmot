@@ -1,4 +1,17 @@
 {
+    "redirects": [
+        {
+            "source": "/(.*)",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "himalayan-marmot-black.vercel.app"
+                }
+            ],
+            "destination": "https://www.himalayanmarmotladakh.com/$1",
+            "permanent": true
+        }
+    ],
     "rewrites": [
         {
             "source": "/(.*)",
